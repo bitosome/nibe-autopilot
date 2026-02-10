@@ -1,0 +1,56 @@
+alias: NIBE night quiet mode
+description: >-
+  Reduces night-time compressor noise while keeping daytime performance.
+triggers:
+  - trigger: time
+    at: "22:30:00"
+  - trigger: time
+    at: "06:30:00"
+  - trigger: time_pattern
+    minutes: /10
+conditions: []
+actions:
+  - variables:
+      night_start: "22:30:00"
+      night_end: "06:30:00"
+      quiet_max_comp_hz: 75
+      day_max_comp_hz: 120
+      comfort_rescue_delta_c: 0.7
+      t_in: "{{ states('sensor.home_temperature_average')|float(0) }}"
+      t_set: "{{ states('input_number.indoor_target_temperature')|float(22) }}"
+      comfort_deficit: "{{ (t_set - t_in)|float(0) }}"
+      autopilot_on: "{{ is_state('input_boolean.nibe_autopilot_state', 'on') }}"
+      in_night_window: >-
+        {% set hm = now().strftime('%H:%M:%S') %}
+        {{ (hm >= night_start) or (hm < night_end) }}
+      target_comp_hz: >-
+        {% if in_night_window and autopilot_on and (comfort_deficit < comfort_rescue_delta_c) %}
+          {{ quiet_max_comp_hz }}
+        {% else %}
+          {{ day_max_comp_hz }}
+        {% endif %}
+  - choose:
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{
+                (states('number.max_comp_freq_47104')|float(-1) - target_comp_hz|float)|abs > 0.4
+              }}
+        sequence:
+          - data:
+              value: "{{ target_comp_hz }}"
+            target:
+              entity_id: number.max_comp_freq_47104
+            action: number.set_value
+  - choose:
+      - conditions:
+          - condition: template
+            value_template: "{{ in_night_window }}"
+          - condition: state
+            entity_id: switch.hot_water_high_power_mode_48743
+            state: "on"
+        sequence:
+          - target:
+              entity_id: switch.hot_water_high_power_mode_48743
+            action: switch.turn_off
+mode: single

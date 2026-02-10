@@ -1,0 +1,435 @@
+alias: NIBE autopilot
+description: ""
+triggers:
+  - id: startup
+    event: start
+    trigger: homeassistant
+  - id: offset
+    minutes: /10
+    trigger: time_pattern
+  - id: dhw
+    minutes: /2
+    trigger: time_pattern
+  - id: alarm
+    entity_id: sensor.alarm_45001
+    for: "00:00:30"
+    trigger: state
+conditions: []
+actions:
+  - choose:
+      - conditions:
+          - condition: trigger
+            id: startup
+        sequence:
+          - alias: Wait for Modbus entities (max 5 min)
+            wait_template: |-
+              {{
+                states('sensor.outdoors_temperature_average') not in ['unknown','unavailable',''] and
+                states('sensor.bt1_outdoor_temperature_40004') not in ['unknown','unavailable',''] and
+                states('sensor.home_temperature_average') not in ['unknown','unavailable',''] and
+                states('number.heat_offset_s1_47011') not in ['unknown','unavailable',''] and
+                states('number.max_int_add_power_47212') not in ['unknown','unavailable','']
+              }}
+            timeout: "00:05:00"
+          - alias: Calculate initial control targets
+            variables:
+              t_in: "{{ states('sensor.home_temperature_average')|float(0) }}"
+              t_set: "{{ states('input_number.indoor_target_temperature')|float(22) }}"
+              t_out: >-
+                {% set avg = states('sensor.outdoors_temperature_average') %} {%
+                if avg not in ['unknown', 'unavailable', ''] %}
+                  {{ avg|float(99) }}
+                {% else %}
+                  {{ states('sensor.bt1_outdoor_temperature_40004')|float(99) }}
+                {% endif %}
+              err: "{{ (t_set - t_in) | round(2) }}"
+              k_p: 1.5
+              span: 6
+              heat_bias: "{{ states('input_number.nibe_heat_bias')|float(0) }}"
+              desired: "{{ (err * k_p) | round(0) }}"
+              desired_clamped: "{{ [ [ desired|int, -span ] | max, span ] | min }}"
+              desired_with_bias: "{{ desired_clamped|int + heat_bias|int }}"
+              desired_final: "{{ [ [ desired_with_bias|int, -span ] | max, span ] | min }}"
+              brine_in: >-
+                {{
+                states('sensor.eb100_ep14_bt10_brine_in_temp_40015')|float(999)
+                }}
+              brine_out: >-
+                {{
+                states('sensor.eb100_ep14_bt11_brine_out_temp_40016')|float(999)
+                }}
+              have_brine: "{{ (brine_in < 998) and (brine_out < 998) }}"
+              t_deficit: "{{ (t_set - t_in) | float(0) }}"
+              need_heat: "{{ t_deficit > 0.5 }}"
+              base_add_from_outdoor: >-
+                {% if need_heat and (t_out|float <= -10) %}1.5{% else %}0{%
+                endif %}
+              base_add_from_brine: |-
+                {% if need_heat and have_brine %}
+                  {% if brine_in <= 1.0 %}
+                    {{ max_add_heat_kw|float }}
+                  {% elif brine_in <= 3.0 %}
+                    {{ [max_add_heat_kw|float, 2.0]|min }}
+                  {% else %}0{% endif %}
+                {% else %}0{% endif %}
+              desired_temp_add_kw: >-
+                {{ [ base_add_from_outdoor|float, base_add_from_brine|float ] |
+                max }}
+              i_a: "{{ states('sensor.shelly_pro_3em_1_phase_a_current')|float(999) }}"
+              i_b: "{{ states('sensor.shelly_pro_3em_1_phase_b_current')|float(999) }}"
+              i_c: "{{ states('sensor.shelly_pro_3em_1_phase_c_current')|float(999) }}"
+              have_phase_currents: "{{ (i_a < 998) and (i_b < 998) and (i_c < 998) }}"
+              fuse_setting_a: "{{ states('number.fuse_47214')|float(main_breaker_a) }}"
+              effective_breaker_a: "{{ [fuse_setting_a|float, main_breaker_a|float] | min }}"
+              i_headroom_raw: >-
+                {{ [
+                  effective_breaker_a|float - phase_safety_margin_a|float - i_a,
+                  effective_breaker_a|float - phase_safety_margin_a|float - i_b,
+                  effective_breaker_a|float - phase_safety_margin_a|float - i_c
+                ] | min }}
+              i_headroom: "{{ [i_headroom_raw|float, 0] | max }}"
+              p_headroom_kw: >-
+                {% if have_phase_currents %}
+                  {{ ((1.732 * nominal_line_voltage_v|float * i_headroom|float) / 1000) | float(0) }}
+                {% else %}0{% endif %}
+              p_headroom_kw_step: "{{ (((p_headroom_kw|float(0)) * 2) | int) / 2 }}"
+              startup_add_kw: "{{ [ desired_temp_add_kw|float, max_add_heat_kw|float, p_headroom_kw_step|float ] | min }}"
+              startup_add_kw_step: "{{ (((startup_add_kw|float) * 2) | int) / 2 }}"
+          - choose:
+              - conditions:
+                  - condition: state
+                    entity_id: input_boolean.nibe_autopilot_state
+                    state: "on"
+                sequence:
+                  - data:
+                      value: "{{ desired_final }}"
+                    target:
+                      entity_id: number.heat_offset_s1_47011
+                    action: number.set_value
+                  - condition: template
+                    value_template: >-
+                      {{ (states('number.max_int_add_power_47212')|float(-1) -
+                      startup_add_kw_step|float)|abs > 0.09 }}
+                  - data:
+                      value: "{{ startup_add_kw_step }}"
+                    target:
+                      entity_id: number.max_int_add_power_47212
+                    action: number.set_value
+      - conditions:
+          - condition: trigger
+            id: offset
+          - condition: state
+            entity_id: input_boolean.nibe_autopilot_state
+            state: "on"
+          - condition: template
+            value_template: >-
+              {% set dhw_priority = states('sensor.opt_boiler_has_priority_hot_water_41287') %}
+              {% if dhw_priority not in ['unknown', 'unavailable', ''] %}
+                {{ dhw_priority|int(0) == 0 }}
+              {% else %}
+                {% set bt6 = states('sensor.bt6_hw_load_40014')|float(0) %}
+                {% set bt7 = states('sensor.bt7_hw_top_40013')|float(0) %}
+                {% set hz = states('sensor.compressor_frequency_actual_43136')|float(0) %}
+                {{ not (hz > 20 and bt6 >= 45 and bt7 < 54) }}
+              {% endif %}
+          - condition: template
+            value_template: >-
+              {% set t_in = states('sensor.home_temperature_average')|float(0)
+              %} {% set t_set =
+              states('input_number.indoor_target_temperature')|float(22) %} {{
+              t_in <= (t_set + 0.2) }}
+        sequence:
+          - alias: Calculate control + headroom
+            variables:
+              invalid_states:
+                - unknown
+                - unavailable
+                - none
+                - ""
+              room_sensors:
+                - sensor.home_temperature_average
+                - sensor.aqara_thp_1_temperature
+                - sensor.aqara_thp_2_temperature
+                - sensor.aqara_thp_3_temperature
+                - sensor.wc_1_entrance_hallway_storeroom_temperature_average
+                - sensor.kitchen_living_room_temperature_average
+                - sensor.aqara_thp_6_temperature
+                - sensor.wc_2_shower_room_temperature_average
+              coldest_room_temp: >-
+                {% set fallback =
+                states('sensor.home_temperature_average')|float(0) %} {% set
+                temps = [] %} {% for sensor in room_sensors %}
+                  {% set val = states(sensor) %}
+                  {% if val not in invalid_states %}
+                    {% set temps = temps + [ val|float(0) ] %}
+                  {% endif %}
+                {% endfor %} {% if temps|count > 0 %}
+                  {{ (temps|min)|float(0) }}
+                {% else %}
+                  {{ fallback }}
+                {% endif %}
+              t_in: >-
+                {% set fallback =
+                states('sensor.home_temperature_average')|float(0) %} {% set
+                temps = [] %} {% for sensor in room_sensors %}
+                  {% set val = states(sensor) %}
+                  {% if val not in invalid_states %}
+                    {% set temps = temps + [ val|float(0) ] %}
+                  {% endif %}
+                {% endfor %} {% set avg = (temps|sum / temps|count) if
+                temps|count > 0 else fallback %} {% set min_v = (temps|min) if
+                temps else avg %} {% set weight = 0.7 %} {% if min_v < avg %}
+                  {{ (weight * min_v) + ((1 - weight) * avg) }}
+                {% else %}
+                  {{ avg }}
+                {% endif %}
+              t_set: "{{ states('input_number.indoor_target_temperature')|float(22) }}"
+              t_out: >-
+                {% set avg = states('sensor.outdoors_temperature_average') %} {%
+                if avg not in ['unknown', 'unavailable', ''] %}
+                  {{ avg|float(99) }}
+                {% else %}
+                  {{ states('sensor.bt1_outdoor_temperature_40004')|float(99) }}
+                {% endif %}
+              err: "{{ (t_set - t_in) | round(2) }}"
+              k_p: 1.5
+              span: 6
+              maxstep: >-
+                {% set abs_err = (t_set - coldest_room_temp)|abs %} {% if
+                abs_err >= 1.2 %}3{% elif abs_err >= 0.7 %}2{% else %}1{% endif
+                %}
+              heat_bias: "{{ states('input_number.nibe_heat_bias')|float(0) }}"
+              desired_base: "{{ (err * k_p) | round(0) }}"
+              desired_clamped: "{{ [ [ desired_base|int, -span ] | max, span ] | min }}"
+              desired_with_bias: "{{ desired_clamped|int + heat_bias|int }}"
+              desired_final: "{{ [ [ desired_with_bias|int, -span ] | max, span ] | min }}"
+              last: "{{ states('number.heat_offset_s1_47011')|int(0) }}"
+              delta: "{{ desired_final|int - last|int }}"
+              price_active: >-
+                {% set entity_id = cheap_hours_sensor %} {% if entity_id in
+                ['unknown', 'unavailable', 'none', '', None] %}
+                  false
+                {% else %}
+                  {% set status = state_attr(entity_id, 'status_info') %}
+                  {% if status is mapping %}
+                    {{ status.get('current_status') == 'active' }}
+                  {% else %}
+                    {{ states(entity_id)|lower in ['active', 'on', 'cheap'] }}
+                  {% endif %}
+                {% endif %}
+              t_deficit: "{{ (t_set - t_in) | float(0) }}"
+              coldest_deficit: "{{ (t_set - coldest_room_temp) | float(0) }}"
+              need_heat: "{{ [ t_deficit, coldest_deficit ] | max > 0.4 }}"
+              brine_in: >-
+                {{
+                states('sensor.eb100_ep14_bt10_brine_in_temp_40015')|float(999)
+                }}
+              brine_out: >-
+                {{
+                states('sensor.eb100_ep14_bt11_brine_out_temp_40016')|float(999)
+                }}
+              have_brine: "{{ (brine_in < 998) and (brine_out < 998) }}"
+              base_add_from_outdoor: >-
+                {% if need_heat and (t_out|float <= -10) %}1.5{% else %}0{%
+                endif %}
+              base_add_from_brine: |-
+                {% if need_heat and have_brine %}
+                  {% if brine_in <= 1.0 %}
+                    {{ max_add_heat_kw|float }}
+                  {% elif brine_in <= 3.0 %}
+                    {{ [max_add_heat_kw|float, 2.0]|min }}
+                  {% else %}0{% endif %}
+                {% else %}0{% endif %}
+              desired_temp_add_kw: >-
+                {{ [ base_add_from_outdoor|float, base_add_from_brine|float ] |
+                max }}
+              i_a: "{{ states('sensor.shelly_pro_3em_1_phase_a_current')|float(999) }}"
+              i_b: "{{ states('sensor.shelly_pro_3em_1_phase_b_current')|float(999) }}"
+              i_c: "{{ states('sensor.shelly_pro_3em_1_phase_c_current')|float(999) }}"
+              have_phase_currents: "{{ (i_a < 998) and (i_b < 998) and (i_c < 998) }}"
+              fuse_setting_a: "{{ states('number.fuse_47214')|float(main_breaker_a) }}"
+              effective_breaker_a: "{{ [fuse_setting_a|float, main_breaker_a|float] | min }}"
+              i_headroom_raw: >-
+                {{ [
+                  effective_breaker_a|float - phase_safety_margin_a|float - i_a,
+                  effective_breaker_a|float - phase_safety_margin_a|float - i_b,
+                  effective_breaker_a|float - phase_safety_margin_a|float - i_c
+                ] | min }}
+              i_headroom: "{{ [i_headroom_raw|float, 0] | max }}"
+              p_headroom_kw: >-
+                {% if have_phase_currents %}
+                  {{ ((1.732 * nominal_line_voltage_v|float * i_headroom|float) / 1000) | float(0) }}
+                {% else %}0{% endif %}
+              p_headroom_kw_step: "{{ (((p_headroom_kw|float(0)) * 2) | int) / 2 }}"
+              allowed_add_kw: "{{ [ desired_temp_add_kw|float, max_add_heat_kw|float, p_headroom_kw_step|float ] | min }}"
+              allowed_add_kw_step: "{{ (((allowed_add_kw|float(0)) * 2) | int) / 2 }}"
+              step_target: |-
+                {% set lim = maxstep %}
+                {% if price_active %}
+                  {% set half = (delta / 2) | round(0) %}
+                  {% if half > lim %}{{ last + lim }}
+                  {% elif half < -lim %}{{ last - lim }}
+                  {% else %}{{ last + half }}
+                  {% endif %}
+                {% else %}
+                  {% if delta > lim %}{{ last + lim }}
+                  {% elif delta < -lim %}{{ last - lim }}
+                  {% else %}{{ last + delta }}
+                  {% endif %}
+                {% endif %}
+              bias_delta: >-
+                {% set gap = coldest_deficit %} {% if gap >= 1.0 %}0.7{% elif
+                gap >= 0.6 %}0.5{% elif gap >= 0.3 %}0.3{% elif gap <= -0.6
+                %}-0.6{% elif gap <= -0.3 %}-0.3{% else %}0{% endif %}
+              bias_target: >-
+                {% set span = 3 %} {% set candidate = heat_bias + bias_delta %}
+                {% if candidate > span %}
+                  {{ span }}
+                {% elif candidate < -span %}
+                  {{ -span }}
+                {% else %}
+                  {{ candidate|round(1) }}
+                {% endif %}
+          - choose:
+              - conditions:
+                  - condition: template
+                    value_template: "{{ step_target != last }}"
+                sequence:
+                  - data:
+                      value: "{{ step_target }}"
+                    target:
+                      entity_id: number.heat_offset_s1_47011
+                    action: number.set_value
+          - condition: template
+            value_template: >-
+              {{ (states('number.max_int_add_power_47212')|float(-1) -
+              allowed_add_kw_step|float)|abs > 0.09 }}
+          - data:
+              value: "{{ allowed_add_kw_step }}"
+            target:
+              entity_id: number.max_int_add_power_47212
+            action: number.set_value
+          - choose:
+              - conditions:
+                  - condition: template
+                    value_template: "{{ bias_delta != 0 }}"
+                sequence:
+                  - data:
+                      value: "{{ bias_target }}"
+                    target:
+                      entity_id: input_number.nibe_heat_bias
+                    action: input_number.set_value
+      - conditions:
+          - condition: trigger
+            id: dhw
+          - condition: state
+            entity_id: input_boolean.nibe_autopilot_state
+            state: "on"
+        sequence:
+          - alias: Detect periodic increase and allow extra add-heat (within cap)
+            variables:
+              bt6: "{{ states('sensor.bt6_hw_load_40014')|float(0) }}"
+              bt7: "{{ states('sensor.bt7_hw_top_40013')|float(0) }}"
+              compressor_hz: "{{ states('sensor.compressor_frequency_actual_43136')|float(0) }}"
+              periodic_threshold_start: 55
+              dhw_priority_state: "{{ states('sensor.opt_boiler_has_priority_hot_water_41287') }}"
+              dhw_active: >-
+                {% if dhw_priority_state not in ['unknown', 'unavailable', ''] %}
+                  {{ dhw_priority_state|int(0) == 1 }}
+                {% else %}
+                  {{ (compressor_hz > 20) and (bt6 >= 45) and (bt7 < 54) }}
+                {% endif %}
+              periodic_active: "{{ dhw_active and (bt7 >= periodic_threshold_start) }}"
+              i_a: "{{ states('sensor.shelly_pro_3em_1_phase_a_current')|float(999) }}"
+              i_b: "{{ states('sensor.shelly_pro_3em_1_phase_b_current')|float(999) }}"
+              i_c: "{{ states('sensor.shelly_pro_3em_1_phase_c_current')|float(999) }}"
+              have_phase_currents: "{{ (i_a < 998) and (i_b < 998) and (i_c < 998) }}"
+              fuse_setting_a: "{{ states('number.fuse_47214')|float(main_breaker_a) }}"
+              effective_breaker_a: "{{ [fuse_setting_a|float, main_breaker_a|float] | min }}"
+              i_headroom_raw: >-
+                {{ [
+                  effective_breaker_a|float - phase_safety_margin_a|float - i_a,
+                  effective_breaker_a|float - phase_safety_margin_a|float - i_b,
+                  effective_breaker_a|float - phase_safety_margin_a|float - i_c
+                ] | min }}
+              i_headroom: "{{ [i_headroom_raw|float, 0] | max }}"
+              p_headroom_kw: >-
+                {% if have_phase_currents %}
+                  {{ ((1.732 * nominal_line_voltage_v|float * i_headroom|float) / 1000) | float(0) }}
+                {% else %}0{% endif %}
+              p_headroom_kw_step: "{{ (((p_headroom_kw|float(0)) * 2) | int) / 2 }}"
+              periodic_allowed_kw: "{{ [max_add_heat_kw|float, p_headroom_kw_step|float] | min }}"
+              periodic_allowed_kw_step: "{{ (((periodic_allowed_kw|float) * 2) | int) / 2 }}"
+          - choose:
+              - conditions:
+                  - condition: template
+                    value_template: "{{ periodic_active }}"
+                  - condition: template
+                    value_template: >-
+                      {{ (states('number.max_int_add_power_47212')|float(-1) -
+                      periodic_allowed_kw_step|float)|abs > 0.09 }}
+                sequence:
+                  - data:
+                      value: "{{ periodic_allowed_kw_step }}"
+                    target:
+                      entity_id: number.max_int_add_power_47212
+                    action: number.set_value
+      - conditions:
+          - condition: trigger
+            id: alarm
+        sequence:
+          - variables:
+              guard_min_offset: -10
+              alarm_code: "{{ states('sensor.alarm_45001')|int(0) }}"
+          - condition: template
+            value_template: "{{ alarm_code in critical_alarm_codes }}"
+          - condition: state
+            entity_id: input_boolean.nibe_autopilot_state
+            state: "on"
+          - data:
+              value: "{{ guard_min_offset }}"
+            target:
+              entity_id: number.heat_offset_s1_47011
+            action: number.set_value
+          - data:
+              value: 0
+            target:
+              entity_id: number.max_int_add_power_47212
+            action: number.set_value
+          - data:
+              title: NIBE Alarm
+              message: >-
+                Alarm active – heating curve offset set to {{ guard_min_offset
+                }} and Max electrical add capped to 0.0 kW.
+            action: persistent_notification.create
+    default: []
+mode: queued
+variables:
+  max_add_heat_kw: "{{ states('input_number.nibe_max_add_heat_kw')|float(4.0) }}"
+  main_breaker_a: 16
+  phase_safety_margin_a: 2
+  nominal_line_voltage_v: 400
+  cheap_hours_sensor: sensor.real_electricity_price_cheap_hours
+  critical_alarm_codes:
+    - 40
+    - 41
+    - 42
+    - 43
+    - 44
+    - 45
+    - 50
+    - 54
+    - 55
+    - 56
+    - 57
+    - 439
+    - 441
+    - 443
+    - 445
+    - 447
+    - 449
+    - 452
+    - 453
+    - 455
+    - 460
+    - 461

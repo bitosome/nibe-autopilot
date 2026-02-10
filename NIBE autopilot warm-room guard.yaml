@@ -1,0 +1,118 @@
+alias: NIBE autopilot warm-room guard
+description: >-
+  Engages the guard loop when rooms overshoot and releases gently once demand
+  returns.
+triggers:
+  - value_template: >-
+      {% set enabled = is_state('input_boolean.nibe_autopilot_state', 'on') %}
+      {% if not enabled %}
+        false
+      {% else %}
+        {% set t_in = states('sensor.home_temperature_average') %}
+        {% set t_set = states('input_number.indoor_target_temperature') %}
+        {% if t_in in ['unknown', 'unavailable', ''] or t_set in ['unknown', 'unavailable', ''] %}
+          false
+        {% else %}
+          {{ t_in|float >= (t_set|float + 0.4) }}
+        {% endif %}
+      {% endif %}
+    for: "00:02:00"
+    trigger: template
+conditions: []
+actions:
+  - condition: state
+    entity_id: input_boolean.nibe_autopilot_state
+    state: "on"
+  - variables:
+      guard_min_offset: -6
+      guard_exit_offset: 0
+      guard_release_delay: "00:08:00"
+      guard_step: 2
+      guard_step_delay: "00:01:30"
+      pre_guard_offset: "{{ states('number.heat_offset_s1_47011')|int(0) }}"
+  - repeat:
+      sequence:
+        - data:
+            value: >-
+              {% set current = states('number.heat_offset_s1_47011')|int(0) %}
+              {% set candidate = current - guard_step %} {% if candidate <
+              guard_min_offset %}{{ guard_min_offset }}{% else %}{{ candidate
+              }}{% endif %}
+          target:
+            entity_id: number.heat_offset_s1_47011
+          action: number.set_value
+        - delay: "{{ guard_step_delay }}"
+      while:
+        - condition: state
+          entity_id: input_boolean.nibe_autopilot_state
+          state: "on"
+        - condition: template
+          value_template: >-
+            {{ states('number.heat_offset_s1_47011')|float(0) > guard_min_offset
+            }}
+  - data:
+      value: 0
+    target:
+      entity_id: number.max_int_add_power_47212
+    action: number.set_value
+  - wait_for_trigger:
+      - value_template: >-
+          {% set t_in = states('sensor.home_temperature_average') %} {% set
+          t_set = states('input_number.indoor_target_temperature') %} {% if t_in
+          in ['unknown', 'unavailable', ''] or t_set in ['unknown',
+          'unavailable', ''] %}
+            false
+          {% else %}
+            {{ t_in|float <= (t_set|float - 0.3) }}
+          {% endif %}
+        trigger: template
+      - entity_id: input_boolean.nibe_autopilot_state
+        to: "off"
+        trigger: state
+    timeout: "03:00:00"
+  - choose:
+      - conditions:
+          - condition: state
+            entity_id: input_boolean.nibe_autopilot_state
+            state: "on"
+          - condition: template
+            value_template: >-
+              {% set t_in = states('sensor.home_temperature_average') %} {% set
+              t_set = states('input_number.indoor_target_temperature') %} {{
+              t_in|float <= (t_set|float - 0.1) }}
+        sequence:
+          - alias: Ramp offset back toward demand
+            variables:
+              release_target: |-
+                {% if pre_guard_offset|int > guard_exit_offset|int %}
+                  {{ pre_guard_offset|int }}
+                {% else %}
+                  {{ guard_exit_offset|int }}
+                {% endif %}
+          - repeat:
+              sequence:
+                - data:
+                    value: >-
+                      {% set current =
+                      states('number.heat_offset_s1_47011')|int(0) %} {% set
+                      candidate = current + guard_step %} {% if candidate >
+                      release_target %}{{ release_target }}{% else %}{{
+                      candidate }}{% endif %}
+                  target:
+                    entity_id: number.heat_offset_s1_47011
+                  action: number.set_value
+                - delay: "{{ guard_step_delay }}"
+              while:
+                - condition: state
+                  entity_id: input_boolean.nibe_autopilot_state
+                  state: "on"
+                - condition: template
+                  value_template: >-
+                    {{ states('number.heat_offset_s1_47011')|int(0) <
+                    release_target }}
+          - delay: "{{ guard_release_delay }}"
+          - data:
+              entity_id: automation.nibe_autopilot
+              skip_condition: false
+            action: automation.trigger
+mode: single

@@ -1,0 +1,1813 @@
+Installatörshandbok KommunikationsmodulSE
+Installer manual Communications moduleGB
+Installateurhandbuch KommunikationsmodulDE
+Asentajan käsikirja TiedonsiirtomoduuliFIIHB1822-10
+031725
+MODBUS 40
+LEK
+
+
+
+
+Viktig information
+OBS!
+Denna symbol betyder fara för människa eller
+maskin.
+TÄNK PÅ!
+Vid denna symbol finns viktig information om
+vad du ska tänka på när du installerar eller ser-
+var anläggningen.
+TIPS!
+Vid denna symbol finns tips om hur du kan
+underlätta handhavandet av produkten.
+Allmänt
+MedMODBUS40kanenNIBEklimatanläggningstyras
+ochövervakasmedexternModbus- förseddutrustning.
+TÄNK PÅ!
+Klimatanläggningens programvara ska vara av
+senast rekommenderade version eller ha ver-
+sionsnummer högre än 3000 . Om inte, ladda
+nedsenastrekommenderademjukvaruversion
+för er produkt till ett USB -minne från www.ni-
+beuplink.com och installera denna.
+TIPS!
+För att administrera Modbus via Microsoft
+Windows ,laddanerochinstalleraModbusMa-
+nager från www.nibe.se/kommunikation .
+KOMPATIBLA PRODUKTER
+Tillbehöret passar till följande produkter från NIBE :
+• • F750 F1145
+• • F1155 SMO 40
+• • VVM 225 F1255
+• • F1245 VVM 310
+• • VVM 320 F1345
+• • F1355 VVM 325
+• • VVM 500 F370
+• F470
+• F730
+INNEHÅLL
+Apparatlåda 1 st
+Väggfäste 1 st
+KOMPONENTPLACERING MODBUS 40
+LEKAA9-X2 AA9-X1 AA9
+ELKOMPONENTER
+Tillbehörskort AA9
+Anslutningsplint, kommunikation AA9-X1
+Anslutningsplint, MODBUS -master AA9-X2
+3 MODBUS 40 | SESvenska
+
+Montering
+MODBUS 40 kan placeras liggande på en plan yta eller
+hängas på vägg. I de fall MODBUS 40 hängs på vägg
+används det bipackade väggfästet.
+LEK LEK
+OBS!
+Vid väggmontage ska hålet för antennkabeln
+vara riktat neråt för att förhindra att vatten
+kommer in i MODBUS 40 .
+Elinkoppling
+OBS!
+All elektrisk inkoppling ska ske av behörig
+elektriker.
+Elektrisk installation och ledningsdragning ska
+utföras enligt gällande bestämmelser.
+Klimatanläggningen ska vara spänningslös vid
+installation av MODBUS 40 .
+F1345 har olika elinkopplingar beroende på när värme-
+pumpen tillverkades. För att se vilken elinkoppling som
+gäller för din F1345 , kontrollera om beteckningen " 2.0"
+syns ovanför plintarnas högra sida enligt bild.
+LEK
+Elschema finns i slutet av denna installatörshandbok.
+ANSLUTNING AV KOMMUNIKATION
+För följande inkopplingar, använd kabeltyp LiYY, EKKX
+eller likvärdig.F1145, F1155
+Plint X1 på SMS-kortet ( AA9) i MODBUS 40 ansluts till
+plint X4:9-12 på ingångskortet ( AA3) i värmepumpen.
+121110 9 8 7
+12V A B GNDVärmepumpAA3-X4
+AA9-X1MODBUS 40
+AA3-X4
+F1245, F1255
+Plint X1 på SMS-kortet ( AA9) i MODBUS 40 ansluts till
+plint X4:9-12 på ingångskortet ( AA3) i värmepumpen.
+121110 9 8 7
+12V A B GNDVärmepumpAA3-X4
+AA9-X1MODBUS 40
+AA3-X4
+F1345 UTAN 2.0
+Plint X1 på SMS-kortet ( AA9) i MODBUS 40 ansluts till
+plint X6:4-7 i värmepumpen.
+BGND 12V A4 5 6 7X6
+MODBUS 40Värmepump
+AA9-X1
+AA3-X6
+MODBUS 40 | SE 4
+
+F1345 MED 2.0, F1355
+Plint X1 på SMS-kortet ( AA9) i MODBUS 40 ansluts till
+plint AA101-X10:7-10 i värmepumpen.
+BGND 12V A67891011AA101-X10
+MODBUS 40Värmepump
+AA9-X1
+L1-X3 -X4
+1 23-AA101 -AA101
+N L2L3 1 2 3456789-X5
+1 2 3456789-X6-X7 -X8 -X9-FC1
+-AA101 -AA101-AA101 -AA101 -AA101
+1 2 34 1 2 3 1 2 3 1 2 345-X10
+A B A B-AA3-X7K1-AA101
+K2K3 C CNONC
+K4CNONC
+QN10 GP16L N L L L N N N L N L N PE PE6789 10 11 12 13141516171819 20 21 2212VA B 1314
+-BE1
+-GP16
+-BE2
+-BE3
+AUX 4
+AUX 51 2 3456789 10 11 12 131415-AA3
+-X6
+0-10V-EP14 -EP15
+-BF11617182-AA3
+-X22-AA3
+-AA3
+-X20 -X2113123-X23-BT1
+-BT50
+-BT25
+-BT6
+AUX 1
+AUX 2
+AUX 3
+-BT7
+-BT712.01 2 345-X1
+0
+A B A B-AA101
+6789 10 11 12 13141516171819 20 21 2212VA B 1314
+-BE1
+-GP16
+-BE2
+-BE3
+AUX 4
+AUX 50-10VAA101:X10
+F370, F470, F730, F750
+Plint X1 på SMS-kortet ( AA9) i MODBUS 40 ansluts till
+plint X4:9-12 på ingångskortet ( AA3) i värmepumpen.
+121110 9 8 7
+12V A B GNDVärmepumpAA3-X4
+AA9-X1MODBUS 40
+AA3-X4
+VVM 225, VVM 310, VVM 320, VVM 325,
+VVM 500
+Plint X1 på SMS-kortet ( AA9) i MODBUS 40 ansluts till
+plintX4:9-12påingångskortet(AA3)iinomhusmodulen.
+121110 9 8 7
+12V A B GNDInomhusmodulAA3-X4
+AA9-X1MODBUS 40
+AA3-X4
+SMO 40
+Plint X1 på SMS-kortet ( AA9) i MODBUS 40 ansluts till
+plint X4:9-12 på ingångskortet ( AA3) i styrmodulen.
+121110 9 8 7
+12V A B GNDStyrmodulAA3-X4
+AA9-X1MODBUS 40
+LEK
+AA3-X4
+MODBUS 40 TILLSAMMANS MED SMS 40
+ELLER RMU 40
+Ifall MODBUS 40 ska anslutas tillsammans med
+SMS40/RMU40,måsteMODBUS40varaförstaenhe-
+ten inkopplad till klimatanläggningens anslutningsplint.
+InkopplingtillochfrånMODBUS40skeriplintAA9:X1 .
+Detgårinteattkopplainfleräntvåenhetertillklimatan-
+läggningen.
+Ingångskort
+huvudproduktMODBUS40/
+SMS40/
+RMU40RMU40/
+SMS40Tillbehör_singular=translationhint,2=
+value
+SMS 40SMS 4
+0
+B
+A
++12VGND
+B
+A
++12VGNDRMU40/
+SMS40MODBUS40/SMS40/RMU40 IngångskortTillbehör_singular=translationhint,1&2=
+value
+5 MODBUS 40 | SE
+
+ANSLUTNING TILL MODBUS-MASTER
+Den externa Modbus-mastern ansluts till plint X2 på
+Modbus-kortet ( AA9).
+OBS!
+MODBUS 40 använder kommunikationsstan-
+darden RS485 .
+Anslutmasternmedenkabelenligtrekommen-
+dationerna för RS485 .
+EXTERNT MODBUS 40
+ABGNDMODBUS 40 Externt
+Modbus-master
+AA9-X2_
++
+Installation
+INSTÄLLNINGAR
+MODBUS MASTER
+RTU Metod
+9600 baud Hastighet
+8 bitar Ordlängd
+Ingen Paritet
+1 Stoppbitar
+Fast 0x01 till och med
+Modbus 40 v.7 .
+Valbar 1 - 247 från och med
+Modbus 40 v.10 .Adress
+TÄNK PÅ!
+Programvaruversion v.10 i MODBUS 40 krävs
+för att kunna hantera valbar adress. För att
+kontrollera programvaruversion, gå in i meny
+3.1 "Serviceinfo" i din klimatanläggning.
+Klimatanläggningens mjukvara skall vara pro-
+gramvaruversion 5539 ( 4150R7 för NIBE
+F1345) eller senare för att den ska fungera till-
+sammansmedv.10iMODBUS40 .Omsåinte
+är fallet, ska en uppdatering av mjukvaran gö-
+ras. Besök www.nibeuplink.com för att ladda
+ner din uppdateringsfil.
+KLIMATANLÄGGNING
+1.Starta klimatanläggningen och välj MODBUS 40 i
+meny5.2"Systeminställningar"(meny5.2.4förNIBE
+F1345, F1355, SMO 40 , VVM 225 , VVM 310 ,
+VVM 320 , VVM 325 och VVM 500 ).
+2.Ställ in adressen till MODBUS 40 i meny 5.3.11 .
+(Denna meny är bara synlig om MODBUS 40 har
+programvaruversion v.10 eller senare)
+3.I meny 5.3.11 kan du även göra inställningar för
+"word swap ". (Denna meny är bara synlig om
+MODBUS40harprogramvaruversion11ellersena-
+re). Fabriksinställning: Big Endian
+Kommunikation
+TIPS!
+ModbusManager kan laddas ner via
+www.nibe.se/kommunikation .
+UPPDATERING AV MODBUS DATABAS
+TillModbusManagerhörendatabas,sominnehålleralla
+de parametrar som kan loggas/ställas in för de olika
+produkterna.Förattsäkerställaattduhartillgångtillalla
+valbara parametrar och produkter bör du uppdatera
+ModbusManagerdatabas.DettagörsiModbusUpdater
+somföljermedModbusManager .ModbusUpdaterpla-
+ceraspåsammainstallationsplatssomModbusManager.
+När du öppnat Modbus Updater , tryck på " Update data-
+base" för att påbörja uppdateringen av databasen.
+LÄSA VÄRDEN
+Detfinnstvåsättattavläsavärdenfrånklimatanläggning-
+en, automatiskt eller manuellt.
+• Automatisk avläsning: kan hämta upp till 20 fördefini-
+erade parametrar samtidigt.
+• Manuell avläsning: tar längre tid och endast ett värde
+i taget kan hämtas.
+AUTOMATISK AVLÄSNING
+Mindre anläggningar där 20 eller färre parametrar ska
+hämtas är lämpliga att koppla upp med en LOG.SET -fil.
+I dessa fall uppdateras samtliga parametrar två gånger
+i sekunden.
+Istörreanläggningarmedflerparametrarärdetlämpligt
+attanvändaenLOG.SET-filförde20viktigasteparamet-
+rarna, vilket kräver att timeout-tiden justeras till 2,1 se-
+kunder.DeparametrarsomfinnsiLOG.SET-filenhämtas
+två gånger i sekunden, de övriga parametrarna hämtas
+på 2,1 sekunder per parameter.
+MODBUS 40 | SE 6
+
+TIPS!
+Placera de viktigaste parametrarna i
+LOG.SET -filen, t.ex larm och vissa temperatu-
+rer. Utomhustemperatur, värmekurvor och
+andra värden som ändras mer sällan behöver
+inte placeras i LOG.SET -filen.
+Besökwww.nibe.se/kommunikationförattläsa
+mer om LOG.SET .
+1.SkapaenLOG.SETfilsominnehållerdefördefinera-
+devärdensomskallavläsas.FilenskapasiModbus-
+Manager . Se avsnitt " Skapa en logginställningsfil i
+ModbusManager " för instruktioner.
+2.Spara LOG.SET på ett USB- minne.
+3.SättinUSB-minnetiklimatanläggningensdisplayen-
+het.
+4.Gå in i menyn USB.
+5.Gå in i menyn "loggning".
+6.Bocka i "aktiverad".
+7.VäntafemtonsekunderochtasedanutUSB-minnet.
+Hämta värdena till Modbus- master genom att använda
+kommandot " Read holding registers " med de önskade
+parameteradresserna. Använd ModbusManager , titta
+påLOG.SETientexteditorellerseexempellistanpåsida
+8för att se vilken parameteradress ett värde har.
+Se avsnitt Modbus-kommandon på sida8för mer in-
+formation om olika kommandon.
+Skapa en logginställningsfil i ModbusManager
+Installera först programvaran ModbusManager på din
+dator. Programvaran kan laddas ner från
+www.nibe.se/kommunikation .
+1
+2 4
+53
+1.Väljförstmodellpåklimatanläggningenundermenyn
+"Models".2.I vänsterkolumnen kan du bläddra mellan de para-
+metrar som finns tillgängliga för den valda anlägg-
+ningen.
+I rutan under listan visas information om den valda
+parametern.
+Listanpåparametrargårattfiltrerapåvalbartsökord
+genom att välja " File" - "Apply Filter ".
+Var noggrann med att lägga upp en logisk ordning
+på listan. Till exempel:
+EB 100 EP14 BT10 Brine in 40015
+EB 100 EP14 BT11 Brine in 40016
+EB 100 EP15 BT10 Brine in 40100
+EB 100 EP15 BT11 Brine in 40085
+Kontrollera noga vilket värde du läser då listan an-
+vänds.
+3.Markera en parameter och klicka på högerpilen för
+att föra över den till högerkolumnen.
+4.Högerkolumnenvisarvilkaparametrarsomkommer
+att loggas.
+För över alla parametrar du vill logga. Använd väns-
+terpil om du ångrar ett val.
+5.När du är nöjd med listan klickar du på " Save confi-
+guration... ".
+Du får nu upp en dialogruta som frågar var du vill
+spara din logginställningsfil.
+Spara filen på datorn eller direkt på ett USB -minne.
+Välj "Export to file " under menyn " File" om du vill
+sparanervärmepumpensallaparametrariettdoku-
+ment som kan öppnas i valfritt kalkylprogram.
+TÄNK PÅ!
+FilnamnetmåstevaraLOG.SETförattklimatan-
+läggningen ska läsa filen.
+Besökwww.nibe.se/kommunikationförattläsa
+mer om LOG.SET -filer.
+MANUELL AVLÄSNING
+TÄNK PÅ!
+Manuell avläsning är tidskrävande och endast
+ett värde i taget kan läsas, max timeout 2,1 s.
+Parametern behöver dock inte finnas med i
+LOG.SET filen.
+HämtaettvärdetillModbus-mastergenomattanvända
+kommandot " Read holding registers " med önskad para-
+meteradress.AnvändModbusManagerförattsevilken
+parameteradress ett värde har. Se avsnitt Modbus-
+kommandon på sida8för mer information.
+7 MODBUS 40 | SE
+
+SKRIVA VÄRDEN
+TÄNK PÅ!
+Endastettvärdeitagetkanskrivas.Parametern
+behöver inte finnas med i LOG.SET filen.
+Genom att använda kommandot " Write multiple regis-
+ters"medönskadparameteradresskanettvärdeuppda-
+teras,omvärmepumpen/inomhusmodulentillåterdetta.
+DevärdensomkanuppdaterassynsiModbusManager.
+Se avsnitt Modbus-kommandon på sida8för mer in-
+formation.EXEMPEL PÅ PARAMETERADRESSER
+Registeradress Parameter
+40004 Utetemperatur ( BT1)
+40008 Framledningstemperatur ( BT2)
+40012 Returledningstemperatur ( BT3)
+40013 Varmvatten topp ( BT7)
+40014 Varmvatten mitt ( BT6)
+40015 Köldbärare in ( BT10)
+40016 Köldbärare ut ( BT11)
+40033 Rumstemperatur ( BT50)
+43005 Gradminuter
+MODBUS-KOMMANDON
+Max time-
+outAntal regis-
+terRegisteradress Beskrivning Funktions-
+ID
+0,5 s [1-20] [40001-65534 ] inkluderade i LOG.SET Read holding registers 0x03
+2,1 s [1-2]* [40001-65534] ej inkluderade i LOG.SET
+2,1 s [1-2]* [40001-65534 ] Write multiple registers 0x10
+0,5 s N/A N/A Read device identification ** 0x2B
+* Två Modbus- register används för att hämta 32- bitars parametrar.
+** Returnerar märke (t.ex. ' NIBE'), produktkod (t.ex. ' F1245') och mjukvaruversion (t.ex. 5539 ).
+MODBUS 40 | SE 8
+
+Felsökning
+STATUSLAMPOR
+LEKLED-lampor
+Tillbehörskortet ( AA9) i MODBUS 40 har åtta status LED-lampor för enkel kontroll och felsökning.
+Förklaring LED-status Beteckning
+Spänning till MODBUS 40 LED-lampan lyser med fast sken VCC
+Ingen funktion - SYNK
+Aktiv kommunikation mellan MODBUS 40 och yttre styrning LED-lampan blinkar COM2
+Ingen funktion - LEV
+Ingen funktion - -
+Aktiv kommunikation mellan MODBUS 40 och värmepump LED-lampan blinkar COM1
+Ingen funktion - RUN
+Ingen funktion - BATT
+MODBUS 40 HAR INTE KONTAKT MED
+KLIMATANLÄGGNINGEN (SVARAR EJ)
+• MODBUS40ärinteaktiveradivärmepumpens/inom-
+husmodulens meny 5.2 (meny 5.2.4 för NIBE F1345,
+F1355, SMO 40, VVM 225, VVM 310, VVM 320,
+VVM 325 och VVM 500 ).
+• Felaktigt anslutna kablar mellan MODBUS 40 och
+värmepump/inomhusmodul. Detta ger kommunika-
+tionslarmivärmepumpens/inomhusmodulensdisplay.
+•Felaktigmjukvaraivärmepumpen.Mjukvaruversionen
+i värmepumpen ska vara högre än 3000 . Se avsnitt
+"Allmänt" på sida 3.
+• Modbus 40 felaktigt ansluten mot Modbus-master.
+Kontrollera att A är ansluten mot + och B mot -.
+OBS!
+Hitta mer information om MODBUS 40 på
+www.nibe.se/kommunikation .
+ÅTERSTÄLLNING AV MODBUS 40
+Förattåterställaenhetentryckpååterställningsknappen
+somvisaspåbilden.Enhetenstartasdärefterom,inställ-
+ningar i klimatsystem samt Modbus-master påverkas
+inte av återställningen.
+LEKÅterställningsknapp
+Tekniska uppgifter
+TEKNISKA DATA
+MODBUS 40
+12 VDC 45 -80 mA Märkspänning
+154 x 108 x 40 mm Mått
+625 08 05 RSK nr
+067 144 Art nr
+9 MODBUS 40 | SE
+
+Important information
+NOTE
+Thissymbolindicatesdangertopersonorma-
+chine .
+Caution
+This symbol indicates important information
+aboutwhatyoushouldconsiderwheninstalling
+or servicing the installation.
+TIP
+This symbol indicates tips on how to facilitate
+using the product.
+General
+WithMODBUS40,aNIBEclimateunitcanbecontrolled
+andmonitoredbyexternalModbus-equippedequipment.
+Caution
+Theclimateunit’ssoftwaremustbethelatest
+recommended version or have a version num-
+ber greater than 3000 . If not, download the
+latestrecommendedsoftwareversionforyour
+product to a USB memory device from
+www.nibeuplink.com and install it.
+TIP
+ToadministerModbusviaMicrosoftWindows,
+download and install ModbusManager from
+www.nibe.eu/modbus .
+COMPATIBLE PRODUCTS
+The accessory is suitable to following products from
+NIBE:
+• • F750 F1145
+• • F1155 SMO 40
+• • VVM 225 F1255
+• • F1245 VVM 310
+• • VVM 320 F1345
+• • F1355 VVM 325
+• • VVM 500 F370
+• F470
+• F730
+CONTENTS
+Unit box 1 x
+Wall bracket 1 x
+COMPONENT LOCATIONMODBUS 40
+LEKAA9-X2 AA9-X1 AA9
+ELECTRICAL COMPONENTS
+Accessory card AA9
+Terminal block, communication AA9-X1
+Terminal block, MODBUS master AA9-X2
+MODBUS 40 | GB 10English
+
+Mounting
+MODBUS 40 can be positioned lying on a flat surface
+orwall-mounted.WhereMODBUS40iswall-mounted,
+use the supplied wall bracket.
+LEK LEK
+NOTE
+When wall mounting, the hole for the antenna
+cablemustbepointingdownwardstoprevent
+water from entering MODBUS 40 .
+Electrical connection
+NOTE
+All electrical connections must be carried out
+by an authorised electrician.
+Electricalinstallationandwiringmustbecarried
+outinaccordancewiththestipulationsinforce.
+The climate unit must not be powered when
+installing MODBUS 40 .
+F1345 has different electrical connection versions de-
+pendingonwhentheheatpumpwasmanufactured.To
+checkwhichelectricalconnectionappliestoyourF1345,
+check the designation " 2.0" visible above the right hand
+side of the terminal block as illustrated.
+LEK
+TheelectricalcircuitdiagramisattheendofthisInstaller
+handbook.
+CONNECTING COMMUNICATION
+For following connections, use cable type LiYY, EKKX
+or similar.F1145, F1155
+Terminal block X1 on the SMS board ( AA9) in MOD-
+BUS 40 is connected to terminal block X4:9-12 on the
+input board ( AA3) in the heat pump.
+121110 9 8 7
+12V A B GNDHeatpumpAA3-X4
+AA9-X1MODBUS 40
+AA3-X4
+F1245, F1255
+Terminal block X1 on the SMS board ( AA9) in MOD-
+BUS 40 is connected to terminal block X4:9-12 on the
+input board ( AA3) in the heat pump.
+121110 9 8 7
+12V A B GNDHeatpumpAA3-X4
+AA9-X1MODBUS 40
+AA3-X4
+F1345 WITHOUT 2.0
+Terminal block X1 on the SMS card ( AA9) in MOD-
+BUS40isconnectedtoterminalblockX6:4-7intheheat
+pump.
+BGND 12V A4 5 6 7X6
+MODBUS 40Heatpump
+AA9-X1
+AA3-X6
+11 MODBUS 40 | GB
+
+F1345 WITH 2.0, F1355
+Terminal block X1 on the SMS card ( AA9) in MOD-
+BUS40isconnectedtoterminalblockAA101-X10:7-10
+in the heat pump.
+BGND 12V A67891011AA101-X10
+MODBUS 40Heatpump
+AA9-X1
+L1-X3 -X4
+1 23-AA101 -AA101
+N L2L3 1 2 3456789-X5
+1 2 3456789-X6-X7 -X8 -X9-FC1
+-AA101 -AA101-AA101 -AA101 -AA101
+1 2 34 1 2 3 1 2 3 1 2 345-X10
+A B A B-AA3-X7K1-AA101
+K2K3 C CNONC
+K4CNONC
+QN10 GP16L N L L L N N N L N L N PE PE6789 10 11 12 13141516171819 20 21 2212VA B 1314
+-BE1
+-GP16
+-BE2
+-BE3
+AUX 4
+AUX 51 2 3456789 10 11 12 131415-AA3
+-X6
+0-10V-EP14 -EP15
+-BF11617182-AA3
+-X22-AA3
+-AA3
+-X20 -X2113123-X23-BT1
+-BT50
+-BT25
+-BT6
+AUX 1
+AUX 2
+AUX 3
+-BT7
+-BT712.01 2 345-X1
+0
+A B A B-AA101
+6789 10 11 12 13141516171819 20 21 2212VA B 1314
+-BE1
+-GP16
+-BE2
+-BE3
+AUX 4
+AUX 50-10VAA101:X10
+F370, F470, F730, F750
+Terminal block X1 on the SMS board ( AA9) in MOD-
+BUS 40 is connected to terminal block X4:9-12 on the
+input board ( AA3) in the heat pump.
+121110 9 8 7
+12V A B GNDHeatpumpAA3-X4
+AA9-X1MODBUS 40
+AA3-X4
+VVM 225, VVM 310, VVM 320, VVM 325,
+VVM 500
+Terminal block X1 on the SMS board ( AA9) in MOD-
+BUS 40 is connected to terminal block X4:9-12 on the
+input board ( AA3) in the indoor module.
+121110 9 8 7
+12V A B GNDIndoormoduleAA3-X4
+AA9-X1MODBUS 40
+AA3-X4
+SMO 40
+Terminal block X1 on the SMS board ( AA9) in MOD-
+BUS 40 is connected to terminal block X4:9-12 on the
+input board ( AA3) in the control module.
+121110 9 8 7
+12V A B GNDControlmoduleAA3-X4
+AA9-X1MODBUS 40
+LEK
+AA3-X4
+MODBUS 40 TOGETHER WITH SMS 40 OR
+RMU 40
+If MODBUS 40 is to be connected with
+SMS 40/RMU 40, , MODBUS 40 must be the first unit
+connected to the climate unit’s terminal block.
+Connecting to and disconnecting from MODBUS 40
+occurs in terminal AA9:X1 .
+Nomorethantwounitscanbeconnectedtotheclimate
+unit.
+Inputboard
+mainproductMODBUS40/
+SMS40/
+RMU40RMU40/
+SMS40Tillbehör_singular=translationhint,2=
+value
+SMS 40SMS 4
+0
+B
+A
++12VGND
+B
+A
++12VGNDRMU40/
+SMS40MODBUS40/SMS40/RMU40 InputcircuitboardTillbehör_singular=translationhint,1&2=
+value
+MODBUS 40 | GB 12
+
+CONNECTING TO MODBUS-MASTER
+The external Modbus master is connected to terminal
+block X2 on the Modbus board ( AA9).
+NOTE
+MODBUS 40 uses the communications
+standard RS485 .
+Connect the master with a cable according to
+the recommendations for RS485 .
+EXTERNT MODBUS 40
+ABGNDMODBUS 40 External
+Modbusmaster
+AA9-X2_
++
+Installation
+SETTINGS
+MODBUS MASTER
+RTU Method
+9600 baud Speed
+8 bits Word length
+None Parity
+1 Stop bits
+Fixed 0x01 up to and including
+Modbus 40 v.7 .
+Selectable 1 - 247 from and including
+Modbus 40 v.10 .Address
+Caution
+Software version v.10 in MODBUS 40 is re-
+quired to manage selectable addresses. To
+check the software version, enter menu 3.1
+“Service info” in your climate unit.
+The climate unit’s software must be software
+version5539( 4150R7forNIBEF1345 )orlater
+inorderforittoworkwithv.10inMODBUS40.
+If it is not, update the software. Visit
+www.nibeuplink.comtodownloadyourupdate
+file.
+CLIMATE UNIT
+1.Start the climate unit and select MODBUS 40 in
+menu 5.2 “System settings” (menu 5.2.4 for NIBE
+F1345, F1355, SMO 40 , VVM 225 , VVM 310 ,
+VVM 320 , VVM 325 and VVM 500 ).
+2.Enter the address to MODBUS 40 in menu 5.3.11 .
+(This menu is only visible if MODBUS 40 has soft-
+ware version v.10 or later)
+3.In menu 5.3.11 , you can also adjust settings for
+"word swap ". (This menu is only visible if MOD-
+BUS 40 has software version 11 or later). Factory
+setting: Big Endian
+Communication
+TIP
+ModbusManager can be downloaded via
+www.nibe.eu/modbus .
+UPDATING MODBUS DATABASE
+ForModbusManagerthereisadatabase,whichcontains
+all the parameters that can be logged/set for the differ-
+ent products. To ensure that you have access to all se-
+lectable parameters and products you should update
+the ModbusManager database. This is done in Mod-
+busUpdaterthatispartofModbusManager.ModbusUp-
+dater is located in the same installation location as
+ModbusManager .WhenyouhaveopenedModbusUp-
+dater, press "Update database " to start the database
+update.
+READ THE VALUES
+There are two ways of reading the values from the cli-
+mate unit, automatically or manually.
+• Automatic reading: can retrieve up to 20 predefined
+parameters at the same time.
+• Manual reading: takes longer and only one value at a
+time can be retrieved.
+AUTOMATIC READING
+For smaller installations where 20 or fewer parameters
+must be retrieved, it is appropriate to connect with a
+LOG.SETfile.Insuchcases,allparametersareupdated
+twice a second.
+In larger installations with multiple parameters, it is ap-
+propriate to use a LOG.SET file for the 20 most import-
+ant parameters, which requires the timeout time to be
+adjusted to 2,1 seconds. The parameters found in the
+LOG.SETfileareretrievedtwiceasecond,whereasthe
+otherparametersareretrievedat2,1secondsperpara-
+meter.
+13 MODBUS 40 | GB
+
+TIP
+Place the most important parameters in the
+LOG.SETfile,alarmsandcertaintemperatures
+for example. Outdoor temperature, heating
+curves and other values that are changed less
+oftendonotneedtobeplacedintheLOG.SET
+file.
+Visitwww.nibe.eu/modbustoreadmoreabout
+LOG.SET .
+1.Create a LOG.SET file that contains the predefined
+values that are to be read out. The file is created in
+ModbusManager.Seesection" Createalogsettings
+file in ModbusManager " for instructions.
+2.Save LOG.SET to a USB- memory.
+3.InserttheUSB-memorydeviceintotheclimateunit's
+display unit.
+4.Enter menu USB.
+5.Enter menu "logging".
+6.Tick “activated".
+7.Wait fifteen seconds and then remove the
+USB-memory device.
+RetrievethevaluesfortheModbus- masterbyusingthe
+"Read holding registers " command with the desired
+parameter addresses. Use ModbusManager , see
+LOG.SET in a text editor or see the examples list on
+page15to see which parameter address a value has.
+See section The Modbus command on page 15for fur-
+ther information about different commands.
+Create a log settings file in ModbusManager
+First install the software ModbusManager on your
+computer. The software can be downloaded from
+www.nibe.eu/modbus .
+1
+2 4
+53
+1.Select the first model on the climate unit under the
+menu "Models".2.Youcanscrollbetweentheavailableparametersfor
+the selected installation in the left-hand column.
+Information about the selected parameter is dis-
+played in the box under the list.
+Thelistofparameterscanbefilteredbyoptionalkey
+words by selecting " File" - "Apply Filter ".
+Make sure to order the list logically. For example:
+EB 100 EP14 BT10 Brine in 40015
+EB 100 EP14 BT11 Brine in 40016
+EB 100 EP15 BT10 Brine in 40100
+EB 100 EP15 BT11 Brine in 40085
+Check which value you are reading when using the
+list.
+3.Mark a parameter and click on the right-hand arrow
+to transfer it to the right-hand column.
+4.Theright-handcolumnshowswhichparameterswill
+be logged.
+Transferallparametersyouwanttolog.Usetheleft
+arrow to change selection.
+5.When you are satisfied with the list, click " Save
+configuration... ".
+A dialogue box appears that asks where you want
+to save your log settings file.
+Save the file on the computer or directly on a USB
+memory.
+Select "Export to file " under the menu " File" if you
+want to save all heat pump parameters in a docu-
+mentthatcanbeopenedinanycalculationprogram.
+Caution
+ThefilenamemustbeLOG.SETfortheclimate
+unit to read the file.
+Visitwww.nibe.eu/modbustoreadmoreabout
+LOG.SET files.
+MANUAL READING
+Caution
+Manual readout is time consuming and only
+one value at a time can be read, max timeout
+2,1 s. The parameter does not have to be in-
+cluded in the LOG.SET file.
+Retrieve a value for the Modbus-master by using the
+"Read holding registers " command with the desired
+parameteraddress.UseModbusManagertoseewhich
+parameteraddressavaluehas.Seesection TheModbus
+command on page 15for further information.
+MODBUS 40 | GB 14
+
+ENTER THE VALUES
+Caution
+Only one value can be entered at a time. The
+parameter does not have to be included in the
+LOG.SET file.
+By using the " Write multiple registers " command with
+thedesiredparameteraddress,avaluecanbeupdated,
+if the heat pump/indoor module permits it. The values
+thatcanbeupdatedareinModbusManager.Seesection
+TheModbuscommand onpage15formoreinformation.EXAMPLE OF PARAMETER ADDRESSES
+Register address Parameter
+40004 Outdoor temperature ( BT1)
+40008 Supply temperature ( BT2)
+40012 Return temperature ( BT3)
+40013 Hot water, top ( BT7)
+40014 Hot water middle ( BT6)
+40015 Brine in ( BT10)
+40016 Brine out ( BT11)
+40033 Room temperature ( BT50)
+43005 Degree minutes
+THE MODBUS COMMAND
+Max
+timeoutNo. of re-
+gistersRegister address Description Function ID
+0,5 s [1-20] [40001-65534 ] included in LOG.SET Read holding registers 0x03
+2,1 s [1-2]* [40001-65534] not included in LOG.SET
+2,1 s [1-2]* [40001-65534 ] Write multiple registers 0x10
+0,5 s N/A N/A Read device identification ** 0x2B
+* Two Modbus- registers are used to retrieve 32- bit parameters.
+** Returns label (e.g. ' NIBE'), product code (e.g. ' F1245') and software version (e.g. 5539 ).
+15 MODBUS 40 | GB
+
+Troubleshooting
+STATUS LAMPS
+LEKLEDlamps
+The accessory board ( AA9) in MODBUS 40 has eight status LED lamps for easy control and troubleshooting.
+Explanation LED status Designation
+Voltage to MODBUS 40 The LED lights continuously VCC
+No function - SYNK
+Active communication between MODBUS 40 and external
+controlThe LED flashes COM2
+No function - LEV
+No function - -
+ActivecommunicationbetweenMODBUS40andheatpump The LED flashes COM1
+No function - RUN
+No function - BATT
+MODBUS 40 HAS NO CONTACT WITH THE
+CLIMATE UNIT (DOES NOT RESPOND)
+• MODBUS 40 is not activated in heat pump/indoor
+modulemenu5.2(menu5.2.4forNIBEF1345,F1355,
+SMO 40, VVM 225, VVM 310, VVM 320, VVM 325
+and VVM 500 ).
+• Incorrectly connected cables between MODBUS 40
+andheatpump/indoormodule.Givesacommunication
+alarm in the heat pump's/indoor module's display.
+• Incorrect software in the heat pump. The software
+version in the heat pump must be higher than 3000 .
+See section " General" on page 10.
+• Modbus40incorrectlyconnectedtoModbusmaster.
+Check that A is connected to + and B to -.
+NOTE
+Find more information about MODBUS 40 at
+www.nibe.eu/modbus .
+RESETTING MODBUS 40
+Toresetthedevice,presstheresetbuttonasillustrated.
+Thedevicethenrestarts.Settingsintheclimatesystem
+and Modbus master are not affected by the reset.
+LEKResetbutton
+Technical data
+TECHNICAL SPECIFICATIONS
+MODBUS 40
+12 VDC 45 -80 mA Rated voltage
+154 x 108 x 40 mm Dimensions
+067 144 Part No.
+MODBUS 40 | GB 16
+
+Wichtige
+Informationen
+HINWEIS!
+Dieses Symbol kennzeichnet eine Gefahr für
+Personen und Maschinen.
+ACHTUNG!
+DiesesSymbolverweistaufwichtigeAngaben
+dazu, was bei Installation oder Wartung der
+Anlage zu beachten ist.
+TIP!
+Dieses Symbol kennzeichnet Tipps, die den
+Umgang mit dem Produkt erleichtern.
+Allgemeines
+Mithilfe von MODBUS 40 wird die Steuerung und
+Überwachung eines NIBE -Klimatisierungssystem über
+eine Ausrüstung mit externem Modbus- ermöglicht.
+ACHTUNG!
+DieSoftwaredesKlimatisierungssystemsmuss
+in der empfohlenen aktuellen Version oder ab
+Version 3000 vorliegen. Laden Sie andernfalls
+die neueste empfohlene Softwareversion für
+IhrProduktvonwww.nibeuplink.comaufeinen
+USB-Stick herunter und installieren Sie sie.
+TIP!
+Um Modbus über Microsoft Windows zu ver-
+walten, laden Sie ModbusManager von
+www.nibe.eu/modbusherunterundinstallieren
+Sie die Software.
+KOMPATIBLE PRODUKTE
+Das Zubehör passt für folgende Produkte von NIBE :
+• • F750 F1145
+• • F1155 SMO 40
+• • VVM 225 F1255
+• • F1245 VVM 310
+• • VVM 320 F1345
+• • F1355 VVM 325
+• • VVM 500 F370
+• F470
+• F730
+INHALT
+Gerätegehäuse 1 St.
+Wandhalterung 1 St.
+POSITIONDERKOMPONENTENMODBUS40
+LEKAA9-X2 AA9-X1 AA9
+ELEKTRISCHE KOMPONENTEN
+Zubehörplatine AA9
+Anschlussklemme für Kommunikationsleitung AA9-X1
+Anschlussklemme, MODBUS -Master AA9-X2
+17 MODBUS 40 | DEDeutsch
+
+Montage
+MODBUS 40 kann auf einer ebenen Fläche liegend
+eingesetztoderaneinerWandaufgehängtwerden.Wird
+MODBUS 40 an einer Wand aufgehängt, ist die beilie-
+gende Wandhalterung zu nutzen.
+LEK LEK
+HINWEIS!
+BeieinerWandmontagemussdieÖffnungfür
+das Antennenkabel nach unten weisen, damit
+kein Wasser in MODBUS 40 eindringt.
+ElektrischerAnschluss
+HINWEIS!
+Alle elektrischen Anschlüsse müssen von ei-
+nem befugten Elektriker ausgeführt werden.
+Bei der elektrischen Installation und beim Ver-
+legen der Leitungen sind die geltenden Vor-
+schriften zu berücksichtigen.
+Das Klimatisierungssystem darf bei der Instal-
+lation von MODBUS 40 nicht mit Spannung
+versorgt werden.
+F1345verfügtjenachHerstellungsortderWärmepumpe
+über verschiedene elektrische Anschlüsse. Um den je-
+weiligenelektrischenAnschlussfürIhreF1345zuermit-
+teln, kontrollieren Sie, ob sich die Bezeichnung „ 2.0"
+rechts über den Anschlussklemmen befindet, siehe
+Abbildung.
+LEK
+DerSchaltplanbefindetsichamEndediesesInstallateur-
+handbuchs.
+ANSCHLUSS DER
+KOMMUNIKATIONSLEITUNG
+Verwenden Sie für die folgenden Anschlüsse Kabeltyp
+LiYY, EKKX oder gleichwertig.F1145, F1155
+Anschlussklemme X1 an der SMS-Platine ( AA9) in
+MODBUS40wirdmitAnschlussklemmeX4:9-12ander
+Eingangsplatine( AA3)inderWärmepumpeverbunden.
+121110 9 8 7
+12V A B GNDWärmepumpeAA3-X4
+AA9-X1MODBUS 40
+AA3-X4
+F1245, F1255
+Anschlussklemme X1 an der SMS-Platine ( AA9) in
+MODBUS40wirdmitAnschlussklemmeX4:9-12ander
+Eingangsplatine( AA3)inderWärmepumpeverbunden.
+121110 9 8 7
+12V A B GNDWärmepumpeAA3-X4
+AA9-X1MODBUS 40
+AA3-X4
+F1345 OHNE 2.0
+Klemme X1 an der SMS-Platine ( AA9) in MODBUS 40
+wird mit Klemme X6:4-7 in der Wärmepumpe verbun-
+den.
+BGND 12V A4 5 6 7X6
+MODBUS 40Wärmepumpe
+AA9-X1
+AA3-X6
+MODBUS 40 | DE 18
+
+F1345 MIT 2.0, F1355
+Klemme X1 an der SMS-Platine ( AA9) in MODBUS 40
+wirdmitKlemmeAA101-X10:7-10inderWärmepumpe
+verbunden.
+BGND 12V A67891011AA101-X10
+MODBUS 40Wärmepumpe
+AA9-X1
+L1-X3 -X4
+1 23-AA101 -AA101
+N L2L3 1 2 3456789-X5
+1 2 3456789-X6-X7 -X8 -X9-FC1
+-AA101 -AA101-AA101 -AA101 -AA101
+1 2 34 1 2 3 1 2 3 1 2 345-X10
+A B A B-AA3-X7K1-AA101
+K2K3 C CNONC
+K4CNONC
+QN10 GP16L N L L L N N N L N L N PE PE6789 10 11 12 13141516171819 20 21 2212VA B 1314
+-BE1
+-GP16
+-BE2
+-BE3
+AUX 4
+AUX 51 2 3456789 10 11 12 131415-AA3
+-X6
+0-10V-EP14 -EP15
+-BF11617182-AA3
+-X22-AA3
+-AA3
+-X20 -X2113123-X23-BT1
+-BT50
+-BT25
+-BT6
+AUX 1
+AUX 2
+AUX 3
+-BT7
+-BT712.01 2 345-X1
+0
+A B A B-AA101
+6789 10 11 12 13141516171819 20 21 2212VA B 1314
+-BE1
+-GP16
+-BE2
+-BE3
+AUX 4
+AUX 50-10VAA101:X10
+F370, F470, F730, F750
+Anschlussklemme X1 an der SMS-Platine ( AA9) in
+MODBUS40wirdmitAnschlussklemmeX4:9-12ander
+Eingangsplatine( AA3)inderWärmepumpeverbunden.
+121110 9 8 7
+12V A B GNDWärmepumpeAA3-X4
+AA9-X1MODBUS 40
+AA3-X4
+VVM 225, VVM 310, VVM 320, VVM 325,
+VVM 500
+Anschlussklemme X1 an der SMS-Platine ( AA9) in
+MODBUS40wirdmitAnschlussklemmeX4:9-12ander
+Eingangsplatine ( AA3) in der Inneneinheit verbunden.
+121110 9 8 7
+12V A B GNDInnenmodulAA3-X4
+AA9-X1MODBUS 40
+AA3-X4
+SMO 40
+Anschlussklemme X1 an der SMS-Platine ( AA9) in
+MODBUS40wirdmitAnschlussklemmeX4:9-12ander
+Eingangsplatine ( AA3) im Regelgerät verbunden.
+121110 9 8 7
+12V A B GNDSteuermodulAA3-X4
+AA9-X1MODBUS 40
+LEK
+AA3-X4
+MODBUS40ZUSAMMENMITSMS40ODER
+RMU 40
+Wenn MODBUS 40 gemeinsam mit SMS 40/RMU 40,
+angeschlossen werden soll, muss MODBUS 40 als
+erste Einheit mit der Anschlussklemme des Klimatisie-
+rungssystems verbunden werden.
+Der Anschluss für und von MODBUS 40 erfolgt an An-
+schlussklemme AA9:X1 .
+Es können maximal zwei Einheiten mit dem Klimatisie-
+rungssystem verbunden werden.
+Eingangsplatine
+HauptproduktMODBUS40/
+SMS40/
+RMU40RMU40/
+SMS40Tillbehör_singular=translationhint,2=
+value
+SMS 40SMS 4
+0
+B
+A
++12VGND
+B
+A
++12VGNDRMU40/
+SMS40MODBUS40/SMS40/RMU40 EingangskarteTillbehör_singular=translationhint,1&2=
+value
+19 MODBUS 40 | DE
+
+ANSCHLUSS AN MODBUS-MASTER
+DerexterneModbus-MasterwirdmitAnschlussklemme
+X2 an der Modbus-Platine ( AA9) verbunden.
+HINWEIS!
+MODBUS 40 nutzt den Kommunikationsstan-
+dard RS485 .
+SchließenSiedenMastermiteinemKabelan,
+das den Empfehlungen für RS485 entspricht.
+EXTERNT MODBUS 40
+ABGNDMODBUS 40 Extern
+Modbus-Master
+AA9-X2_
++
+Installation
+EINSTELLUNGEN
+MODBUS MASTER
+RTU Methode
+9600 baud Geschwindigkeit
+8 Bits Wortlänge
+Keine Parität
+1 Stoppbits
+Fest 0x01 bis
+Modbus 40 v.7 .
+Auswahlbereich 1 -247 ab
+Modbus 40 v.10 .Adresse
+ACHTUNG!
+Softwareversionv.10inMODBUS40wirdzur
+Verarbeitung verfügbarer Adressen benötigt.
+Zur Kontrolle der Softwareversion rufen Sie
+das Menü 3.1 „Serviceinfo“ in Ihrem Klimati-
+sierungssystem auf.
+DieSoftwaredesKlimatisierungssystemsmuss
+abVersion5539( 4150R7fürNIBEF1345 )vor-
+liegen, damit eine gemeinsame Nutzung mit
+v.10 in MODBUS 40 stattfinden kann. Ist dies
+nicht der Fall, muss die Software aktualisiert
+werden. Unter www.nibeuplink.com können
+Sie eine Aktualisierungsdatei herunterladen.
+KLIMATISIERUNGSSYSTEM
+1.Starten Sie das Klimatisierungssystem und wählen
+Sie MODBUS 40 in Menü 5.2 „Systemeinstellun-
+gen“(Menü5.2.4fürNIBEF1345 ,F1355,SMO40 ,
+VVM 225 , VVM 310 , VVM 320 , VVM 325 und
+VVM 500 ) aus.
+2.Stellen Sie die Adresse für MODBUS 40 in Menü
+5.3.11 ein. (Dieses Menü ist nur sichtbar, wenn
+MODBUS40eineSoftwareversionabv.10besitzt.)
+3.In Menü 5.3.11 lassen sich ebenfalls Einstellungen
+für „word swap “ vornehmen. (Dieses Menü ist nur
+sichtbar, wenn MODBUS 40 eine Softwareversion
+ab 11 besitzt.) Werkseinstellung: Big Endian
+Kommunikation
+TIP!
+ModbusManager kann unter
+www.nibe.eu/modbus heruntergeladen wer-
+den.
+AKTUALISIERUNG DER
+MODBUS-DATENBANK
+Zu ModbusManager gehört eine Datenbank, die alle
+Parameter enthält, die für die verschiedenen Produkte
+protokolliertodereingestelltwerdenkönnen.Umsicher-
+zustellen, dass Sie auf alle verfügbaren Parameter und
+Produktezugreifenkönnen,solltenSieIhreModbusMa-
+nager-Datenbank aktualisieren. Nutzen Sie dazu Mod-
+bus Updater im Lieferumfang von ModbusManager .
+Modbus Updater befindet sich am selben Speicherort
+wieModbusManager .ÖffnenSieModbusUpdaterund
+klicken Sie auf „ Update database “, um die Datenbank
+zu aktualisieren.
+WERTE AUSLESEN
+EsbestehenzweiMöglichkeiten,WertevomKlimatisie-
+rungssystem auszulesen: automatisch oder manuell.
+• Automatische Auslesung: Es können gleichzeitig bis
+zu 20 vordefinierte Parameter abgerufen werden.
+• Manuelle Auslesung: Dieser Vorgang dauert länger
+und es kann nur jeweils ein Wert abgerufen werden.
+AUTOMATISCHE AUSLESUNG
+Für kleinere Anlagen, von denen 20 oder weniger Para-
+meter abgerufen werden sollen, empfiehlt sich eine
+VerbindungperLOG.SET-Datei.IndiesenFällenwerden
+alle Parameter zweimal pro Sekunde aktualisiert.
+FürgrößereAnlagenmiteinerhöherenParameteranzahl
+empfiehltsicheineLOG.SET-Dateifürdie20wichtigsten
+Parameter. Dazu muss die Zeitüberschreitungsdauer
+(Timeout) auf 2,1 s gesetzt werden. Die in der
+MODBUS 40 | DE 20
+
+LOG.SET-DateiaufgeführtenParameterwerdenzweimal
+pro Sekunde abgerufen. Die restlichen Parameter wer-
+den jeweils nach 2,1 s abgerufen.
+TIP!
+Tragen Sie die wichtigsten Parameter in der
+LOG.SET-Dateiein(z.B.Alarmeundbestimmte
+Temperaturen).Außenlufttemperatur,Heizkur-
+venundandereWerte,diesichwenigerhäufig
+ändern, müssen nicht in der LOG.SET -Datei
+eingetragen werden.
+Unterwww.nibe.eu/modbuserfahrenSiemehr
+über LOG.SET .
+1.ErstellenSieeineLOG.SET-Datei,diedievordefinier-
+ten auszulesenden Werte enthält. Die Datei wird in
+ModbusManagererstellt.SieheAbschnitt"Erstellen
+einerProtokolleinstellungsdateiinModbusManager"
+für Anweisungen.
+2.Speichern Sie LOG.SET auf einem USB- Stick.
+3.Verbinden Sie den USB- -Stick mit dem Bedienfeld
+des Klimatisierungssystems.
+4.Öffnen Sie das Menü USB.
+5.Öffnen Sie das Menü "Protokollierung".
+6.Aktivieren Sie "aktiviert".
+7.Warten Sie 15 s, bevor Sie den USB- Stick trennen.
+Die Wertübertragung zum Modbus- master erfolgt über
+denBefehl" Readholdingregisters "mitdengewünsch-
+tenParameteradressen.VerwendenSieModbusMana-
+ger, betrachten Sie LOG.SET in einem Texteditor oder
+nutzen Sie die Beispielliste auf Seite 22, um die Para-
+meteradresse eines Werts anzuzeigen.
+SieheAbschnitt Modbus-Befehle aufSeite 22fürweite-
+re Informationen zu den verschiedenen Befehlen.
+Erstellen einer Protokolleinstellungsdatei in
+ModbusManager
+InstallierenSiezunächstdieSoftwareModbusManager
+auf Ihrem Computer. Die Software kann unter
+www.nibe.eu/modbus heruntergeladen werden.
+1
+2 4
+531.Wählen Sie zunächst in Menü " Models" das Modell
+des Klimatisierungssystems aus.
+2.In der linken Spalte können Sie zwischen den Para-
+meternblättern,diefürdiegewählteAnlageverfüg-
+bar sind.
+Im Kasten unter der Liste werden Informationen zu
+den gewählten Parametern angezeigt.
+Die Parameterliste kann nach frei definierbaren
+Suchbegriffen gefiltert werden. Wählen Sie dazu
+"File" - "Apply Filter " aus.
+ErstellenSiedieListemiteinerlogischenReihenfol-
+ge. Beispiel:
+EB100EP14BT10Wärmequellenmediumein40015
+EB100EP14BT11Wärmequellenmediumein40016
+EB100EP15BT10Wärmequellenmediumein40100
+EB100EP15BT11Wärmequellenmediumein40085
+Kontrollieren Sie sorgfältig den abgelesenen Wert,
+wenn Sie die Liste verwenden.
+3.Markieren Sie einen Parameter und klicken Sie auf
+den rechten Pfeil, um ihn auf die rechte Spalte zu
+übertragen.
+4.DierechteSpaltezeigtan,welcheParameterproto-
+kolliert werden sollen.
+ÜbertragenSieallezuprotokollierendenParameter.
+Mit dem Linkspfeil machen Sie eine Auswahl rück-
+gängig.
+5.Wenn die Liste Ihren Vorstellungen entspricht, kli-
+cken Sie auf " Save configuration... ".
+Es erscheint ein Dialogfeld, in dem Sie gefragt
+werden, wo Sie Ihre Protokolleinstellungsdatei
+speichern wollen.
+Speichern Sie die Datei auf dem Computer oder di-
+rekt auf einem USB -Stick.
+21 MODBUS 40 | DE
+
+Wählen Sie " Export to file " in Menü " File", wenn Sie
+alle Wärmepumpenparameter in einem Dokument
+speichern wollen, das sich in einem beliebigen Ta-
+bellenkalkulationsprogramm öffnen lässt.
+ACHTUNG!
+Der Dateiname muss LOG.SET lauten, damit
+das Klimatisierungssystem die Datei lesen
+kann.
+Unterwww.nibe.eu/modbuserfahrenSiemehr
+über LOG.SET -Dateien.
+MANUELLE AUSLESUNG
+ACHTUNG!
+DiemanuelleAuslesungistzeitintensivundes
+kann jeweils nur ein Wert abgerufen werden,
+max. Timeout 2,1 s. Der Parameter muss je-
+dochnichtinderLOG.SET-Dateienthaltensein.
+Die Wertübertragung zum Modbus-master erfolgt über
+denBefehl"Readholdingregisters"mitdergewünschten
+Parameteradresse. Verwenden Sie ModbusManager ,
+um die Parameteradresse für einen Wert anzuzeigen.
+SieheAbschnitt Modbus-Befehle aufSeite 22fürweite-
+re Informationen.WERTE SCHREIBEN
+ACHTUNG!
+Es kann nur jeweils ein Wert geschrieben
+werden.DerParametermussnichtinderDatei
+LOG.SET enthalten sein.
+Über den Befehl " Write multiple registers " mit der ge-
+wünschtenParameteradressekanneinWertaktualisiert
+werden,wenndiesvonderWärmepumpe/Inneneinheit
+unterstützt wird. Die aktualisierbaren Werte werden in
+ModbusManager angezeigt. Siehe Abschnitt Modbus-
+Befehleauf Seite 22für weitere Informationen.
+BEISPIELE FÜR PARAMETERADRESSEN
+Registeradresse Parameter
+40004 Außenlufttemperatur ( BT1)
+40008 Vorlauftemperatur ( BT2)
+40012 Rücklauftemperatur ( BT3)
+40013 Brauchwasser oben ( BT7)
+40014 Brauchwasser Mitte ( BT6)
+40015 Wärmequellenmedium ein ( BT10)
+40016 Wärmequellenmedium aus ( BT11)
+40033 Raumtemperatur ( BT50)
+43005 Gradminuten
+MODBUS-BEFEHLE
+Max. Ti-
+meoutRegisteran-
+zahlRegisteradresse Beschreibung Funktions-
+ID
+0,5 s [1-20] [40001-65534 ] enthalten in LOG.SET Read holding registers 0x03
+2,1 s [1-2]* [40001-65534] nicht enthalten in
+LOG.SET
+2,1 s [1-2]* [40001-65534 ] Write multiple registers 0x10
+0,5 s N/A N/A Read device identification ** 0x2B
+* Zum Laden von 32- Bit-Parametern werden zwei Modbus- Register genutzt.
+** Gibt Marke (z.B. " NIBE"), Produktcode (z.B. " F1245") und Softwareversion (z.B. 5539 ) aus.
+MODBUS 40 | DE 22
+
+Fehlersuche
+STATUSLAMPEN
+LEKLED-Lampen
+Die Zubehörplatine ( AA9) in MODBUS 40 besitzt für eine einfache Kontrolle und Fehlersuche acht LED-Lampen.
+Erklärung LED-Status Bezeichnung
+Spannung für MODBUS 40 LED-Lampe leuchtet durchgehend VCC
+Keine Funktion - SYNK
+Aktive Kommunikation zwischen MODBUS 40 und externer
+SteuerungLED-Lampe blinkt COM2
+Keine Funktion - LEV
+Keine Funktion - -
+Aktive Kommunikation zwischen MODBUS 40 und Wärme-
+pumpeLED-Lampe blinkt COM1
+Keine Funktion - RUN
+Keine Funktion - BATT
+MODBUS40BESITZTKEINENKONTAKTMIT
+DEMKLIMATISIERUNGSSYSTEM(REAGIERT
+NICHT)
+• MODBUS 40 ist im Menü 5.2 der Wärmepumpe/In-
+neneinheitnichtaktiviert(Menü5.2.4fürNIBEF1345,
+F1355, SMO 40, VVM 225, VVM 310, VVM 320,
+VVM 325 und VVM 500 ).
+• FalschverbundeneKabelzwischenMODBUS40und
+Wärmepumpe/Inneneinheit. Dadurch wird auf dem
+DisplayvonWärmepumpe/InneneinheiteinKommuni-
+kationsalarm ausgegeben.
+• FalscheSoftwareinderWärmepumpe.DieSoftware-
+version in der Wärmepumpe muss neuer als 3000
+sein. Siehe Abschnitt „ Allgemeines “ auf Seite 17.
+•Modbus40falschangeschlossenanModbus-Master.
+Kontrollieren Sie, ob A mit + und B mit - verbunden
+ist.
+HINWEIS!
+WeitereInformationenzuMODBUS40finden
+Sie hier: www.nibe.eu/modbus .
+RESET VON MODBUS 40
+DrückenSiedieResettaste,umdieEinheitzurückzuset-
+zen (siehe Abbildung). Danach wird die Einheit neu ge-
+startet.DieEinstellungenfürdasKlimatisierungssystem
+undModbus-MasterwerdendurchdenResetnichtge-
+ändert.
+LEKResettaste
+23 MODBUS 40 | DE
+
+Technische Daten
+TECHNISCHE DATEN
+MODBUS 40
+12 V GS 45 -80 mA Nennspannung
+154 x 108 x 40 mm Maße
+067 144 Art.nr.
+MODBUS 40 | DE 24
+
+Tärkeää
+HUOM!
+Tämä symboli merkitsee ihmistä tai konetta
+uhkaavaa vaaraa.
+MUISTA!
+Tämä symboli osoittaa tärkeän tiedon, joka pi-
+tää ottaa huomioon laitteistoa asennettaessa
+tai huollettaessa.
+VIHJE!
+Tämä symboli osoittaa vinkin, joka helpottaa
+tuotteen käsittelyä.
+Yleistä
+MODBUS40:navullaNIBE-lämmitysjärjestelmäävoidaan
+ohjata ja valvoa varustuksella, jossa on ulkoinen Mod-
+bus-.
+MUISTA!
+Lämmitysjärjestelmän ohjelmiston on oltava
+uusin suositeltu versio tai uudempi kuin 3000 .
+Elleinäinole,lataauusinsuositeltuohjelmisto-
+versio USB -muistille osoitteesta www.ni-
+beuplink.com ja asenna se.
+VIHJE!
+Hallinnoidaksesi Modbus :a Microsoft Win-
+dows:lla lataa ja asenna ModbusManager
+osoitteesta www.nibe.eu/modbus .
+YHTEENSOPIVAT TUOTTEET
+”Lisävaruste sopii seuraaviin NIBE tuotteisiin:”
+• • F750 F1145
+• • F1155 SMO 40
+• • VVM 225 F1255
+• • F1245 VVM 310
+• • VVM 320 F1345
+• • F1355 VVM 325
+• • VVM 500 F370
+• F470
+• F730
+SISÄLTÖ
+Kojerasia 1 kpl
+Seinäteline 1 kpl
+KOMPONENTTIEN SIJAINTI MODBUS 40
+LEKAA9-X2 AA9-X1 AA9
+SÄHKÖKOMPONENTIT
+Lisävarustekortti AA9
+Liitinrima, tiedonsiirto AA9-X1
+Liitin, MODBUS -isäntä AA9-X2
+25 MODBUS 40 | FISuomeksi
+
+Asennus
+MODBUS 40 voidaan asettaa tasaiselle alustalle tai se
+voidaan ripustaa seinälle. Jos MODBUS 40 ripustetaan
+seinälle,pitääkäyttäämukanatoimitettuaseinätelinettä.
+LEK LEK
+HUOM!
+Seinälle asennettaessa antennikaapelin aukon
+pitääollaalaspäin,jottavettäeipääsevalumaan
+MODBUS 40 :iin.
+Sähköasennukset
+HUOM!
+Sähköasennukset saa tehdä vain valtuutettu
+sähköasentaja.
+Sähköasennukset ja johtimien veto on tehtävä
+voimassa olevien määräysten mukaisesti.
+Lämmitysjärjestelmän pitää olla jännitteetön
+MODBUS 40 :n asennuksen aikana.
+F1345:n sähköliitännät riippuvat lämpöpumpun valmis-
+tusajankohdasta.NähdäksesiomanF1345-lämpöpump-
+pusi liitännät tarkasta onko liittimien yläpuolella oikealla
+puolella kuvan mukainen merkintä " 2.0".
+LEK
+Kytkentäkaavio on tämän asennusohjeen lopussa.
+TIEDONSIIRRON KYTKENTÄ
+Käytä seuraavissa kytkennöissä kaapelia LiYY, EKKX tai
+vastaavaa.F1145, F1155
+LiitinX1SMS-kortissa(AA9)MODBUS40:ssakytketään
+liittimeen X4:9-12 tulokortissa ( AA3) lämpöpumpussa.
+121110 9 8 7
+12V A B GNDLämpöpumppuAA3-X4
+AA9-X1MODBUS 40
+AA3-X4
+F1245, F1255
+LiitinX1SMS-kortissa(AA9)MODBUS40:ssakytketään
+liittimeen X4:9-12 tulokortissa ( AA3) lämpöpumpussa.
+121110 9 8 7
+12V A B GNDLämpöpumppuAA3-X4
+AA9-X1MODBUS 40
+AA3-X4
+F1345 ILMAN 2.0
+Liitin X1 MODBUS 40 :n SMS-kortissa ( AA9) kytketään
+lämpöpumpun liittimeen X6:4-7 .
+BGND 12V A4 5 6 7X6
+MODBUS 40Lämpöpumppu
+AA9-X1
+AA3-X6
+MODBUS 40 | FI 26
+
+F1345 JA 2.0, F1355
+Liitin X1 MODBUS 40 :n SMS-kortissa ( AA9) kytketään
+lämpöpumpun liittimeen AA101-X10:7-10 .
+BGND 12V A67891011AA101-X10
+MODBUS 40Lämpöpumppu
+AA9-X1
+L1-X3 -X4
+1 23-AA101 -AA101
+N L2L3 1 2 3456789-X5
+1 2 3456789-X6-X7 -X8 -X9-FC1
+-AA101 -AA101-AA101 -AA101 -AA101
+1 2 34 1 2 3 1 2 3 1 2 345-X10
+A B A B-AA3-X7K1-AA101
+K2K3 C CNONC
+K4CNONC
+QN10 GP16L N L L L N N N L N L N PE PE6789 10 11 12 13141516171819 20 21 2212VA B 1314
+-BE1
+-GP16
+-BE2
+-BE3
+AUX 4
+AUX 51 2 3456789 10 11 12 131415-AA3
+-X6
+0-10V-EP14 -EP15
+-BF11617182-AA3
+-X22-AA3
+-AA3
+-X20 -X2113123-X23-BT1
+-BT50
+-BT25
+-BT6
+AUX 1
+AUX 2
+AUX 3
+-BT7
+-BT712.01 2 345-X1
+0
+A B A B-AA101
+6789 10 11 12 13141516171819 20 21 2212VA B 1314
+-BE1
+-GP16
+-BE2
+-BE3
+AUX 4
+AUX 50-10VAA101:X10
+F370, F470, F730, F750
+LiitinX1SMS-kortissa(AA9)MODBUS40:ssakytketään
+liittimeen X4:9-12 tulokortissa ( AA3) lämpöpumpussa.
+121110 9 8 7
+12V A B GNDLämpöpumppuAA3-X4
+AA9-X1MODBUS 40
+AA3-X4
+VVM 225, VVM 310, VVM 320, VVM 325,
+VVM 500
+LiitinX1SMS-kortissa(AA9)MODBUS40:ssakytketään
+liittimeen X4:9-12 tulokortissa ( AA3) sisäyksikössä.
+121110 9 8 7
+12V A B GNDSisäyksikköAA3-X4
+AA9-X1MODBUS 40
+AA3-X4
+SMO 40
+LiitinX1SMS-kortissa(AA9)MODBUS40:ssakytketään
+liittimeen X4:9-12 tulokortissa ( AA3) ohjausyksikössä.
+121110 9 8 7
+12V A B GNDOhjausyksikköAA3-X4
+AA9-X1MODBUS 40
+LEK
+AA3-X4
+MODBUS 40 JA SMS 40 TAI RMU 40
+Jos MODBUS 40 ja SMS 40/RMU 40, yhdistetään,
+MODBUS40 :ntäytyyollaensimmäinenlämmitysjärjes-
+telmän liitinrimaan kytketty yksikkö.
+MODBUS 40 :n kytkennät tehdään liittimeen AA9:X1 .
+Lämmitysjärjestelmäänvoiliittääenintäänkaksiyksikköä.
+Tulokortti
+päätuoteMODBUS40/
+SMS40/
+RMU40RMU40/
+SMS40Tillbehör_singular=translationhint,2=
+value
+SMS 40SMS 4
+0
+B
+A
++12VGND
+B
+A
++12VGNDRMU40/
+SMS40MODBUS40/SMS40/RMU40 TulokorttiTillbehör_singular=translationhint,1&2=
+value
+27 MODBUS 40 | FI
+
+KYTKENTÄ MODBUS--ISÄNTÄÄN
+UlkoinenModbus-isäntäkytketäänliittimeenX2Modbus-
+kortissa ( AA9).
+HUOM!
+MODBUS 40 käyttää tiedonsiirtostandardia
+RS485.
+Kytke isäntä RS485 -suositusten mukaisella
+kaapelilla.
+EXTERNT MODBUS 40
+ABGNDMODBUS 40 Ulkoinen
+Modbus-isäntä
+AA9-X2_
++
+Asennus
+ASETUKSET
+MODBUS-ISÄNTÄ
+RTU Menetelmä
+9600 baud Siirtonopeus
+8 bittiä Sanapituus
+Ei ole Pariteetti
+1 Pysäytysbitit
+Kiinteä 0x01 saakka.
+Modbus 40 v.7 .
+Valittava 1 - 247 alkaen
+Modbus 40 v.10 .Osoite
+MUISTA!
+MODBUS40:nohjelmistoversiov.10vaaditaan
+valittavien osoitteiden käsittelyyn. Tarkasta
+ohjelmaversio lämmitysjärjestelmän valikosta
+3.1 Huoltotiedot.
+Lämmitysjärjestelmän ohjelmistoversion pitää
+olla5539( 4150R7NIBE F1345:lla)taiuudempi,
+jotta se toimisi yhdessä v.10 :n kanssa MOD-
+BUS 40:ssa. Ellei näin ole, ohjelmisto pitää
+päivittää. Lataa päivitystiedosto osoitteesta
+www.nibeuplink.com .
+LÄMMITYSJÄRJESTELMÄ
+1.Käynnistä lämmitysjärjestelmä ja valitse MOD-
+BUS40valikossa5.2"Järjestelmäasetukset"(valikko
+5.2.4 NIBE F1345 , F1355, SMO 40 , VVM 225 ,
+VVM 310 , VVM 320 , VVM 325 ja VVM 500 ).
+2.AsetaMODBUS40:nosoitevalikossa5.3.11.(Tämä
+valikkonäkyyvain,josMODBUS40:ssaonohjelmis-
+toversio v.10 tai uudempi)
+3.Valikossa 5.3.11 voit myös tehdä " word swap ” ase-
+tukset. (Tämä valikko näkyy vain, jos MOD-
+BUS 40:ssa on ohjelmistoversio 11 tai uudempi).
+Tehdasasetus: Big Endian
+Tiedonsiirto
+VIHJE!
+ModbusManager voidaan ladata
+www.nibe.eu/modbus kautta.
+MODBUS-TIETOKANNAN PÄIVITTÄMINEN
+ModbusManager -ohjelmaan sisältyy tietokanta, joka si-
+sältää kaikki parametrit, jotka voidaan kirjata/asettaa eri
+tuotteissa. Päivitä ModbusManager -tietokanta varmis-
+taaksesi,ettäpääsetkäsiksikaikkiinvalittaviinparamet-
+reihin ja tuotteisiin. Tämä tehdään Modbus Updater :lla,
+joka sisältyy ModbusManager -ohjelmaan. Modbus Up-
+daterasennetaansamaankansioonkuinModbusMana-
+ger. Kun olet avannut Modbus Updater in, käynnistä tie-
+tokannan päivitys napsauttamalla Update database .
+ARVOJEN LUKU
+Arvotvoidaanlukealämmitysjärjestelmästäkahdellata-
+valla: automaattisesti tai käsin.
+• Automaattinen luku: voi noutaa samanaikaisesti jopa
+20 esimääritettyä parametria.
+• Manuaalinen luku: vie kauemmin ja kerralla voidaan
+noutaa vain yksi arvo.
+AUTOMAATTINEN LUKU
+Pienemmätjärjestelmät,joissanoudettaviaparametreja
+on 20 tai vähemmän, kannattaa yhdistää LOG.SET -tie-
+dostolla.Näissätapauksissakaikkiparametritpäivitetään
+kaksi kertaa sekunnissa.
+Suuremmissa järjestelmissä kannattaa käyttää
+LOG.SET-tiedostoa20tärkeimmilleparametreille.Tämä
+edellyttää, että timeout-aika asetetaan 2,1 sekuntiin.
+LOG.SET -tiedoston parametrit haetaan kaksi kertaa se-
+kunnissa,muutparametrit2,1sekunnissaperparametri.
+MODBUS 40 | FI 28
+
+VIHJE!
+SijoitatärkeimmätparametritLOG.SET-tiedos-
+toon,esim.hälytysjatietytlämpötilat.Äläsijoi-
+taLOG.SET -tiedostoonulkolämpötilaa,lämpö-
+käyriä ja muita harvoin muutettavia arvoja.
+LisätietoaLOG.SET-tiedostostaonosoitteessa
+www.nibe.eu/modbus .
+1.LuoLOG.SET -tiedosto,jokasisältääluettavatesimää-
+ritetytarvot.TiedostoluodaanModbusManager:ssa.
+Katso ohjeet luvusta " Luo kirjausasetustiedosto
+ModbusManager:ssa ".
+2.Tallenna LOG.SET USB- -muistille.
+3.KytkeUSB- -muistilämmitysjärjestelmännäyttöyksik-
+köön.
+4.Mene valikkoon USB. .
+5.Mene valikkoon kirjaus.
+6.Merkitse "aktivoitu".
+7.Odota 15 sekuntia ja irrota USB- muisti.
+Hae arvot Modbus- -isäntä komennolla " Read holding
+registers"jahalutuillaparametriosoitteilla.Katsoarvojen
+parametriosoitteetModbusManager-ohjelmalla,avaamal-
+la LOG.SET -tiedosto tekstieditorissa tai katsomalla esi-
+merkkilista sivulla 30.
+Katso kohta Modbus-komento sivulla30, jossa on lisä-
+tietoa eri komennoista.
+Luo kirjausasetustiedosto ModbusManager :ssa
+Asenna ensin ModbusManager tietokoneeseen. Ohjel-
+misto se voidaan ladata osoitteesta
+www.nibe.eu/modbus .
+1
+2 4
+53
+1.Valitseensinlämmitysjärjestelmävalikossa"Models".
+2.Vasemmassa sarakkeessa voit selata parametreja,
+jotka ovat käytettävissä valitussa järjestelmässä.Luettelonallaolevassaruudussanäkyytietoavalitus-
+ta parametrista.
+Voit suodattaa parametrilistaa hakusanoilla valitse-
+malla "File" - "Apply Filter ".
+Ole tarkkana, että laitat listan loogiseen järjestyk-
+seen. Esimerkki:
+EB 100 EP14 BT10 Liuos sisään 40015
+EB 100 EP14 BT11 Liuos sisään 40016
+EB 100 EP15 BT10 Liuos sisään 40100
+EB 100 EP15 BT11 Liuos sisään 40085
+Tarkastahuolellamitäarvojaluetlistaakäytettäessä.
+3.Merkitseparametrijasiirräseoikeaansarakkeeseen
+napsauttamalla nuolta oikealle.
+4.Oikeassasarakkeessanäkyvätkirjattavatparametrit.
+Siirrä kaikki parametrit, jotka haluat kirjata. Voit pe-
+ruuttaa valinnan vasemmalla nuolella.
+5.Kunolettyytyväinenlistaan,napsautaSaveconfigu-
+ration....
+Näyttööntuleevalintaruutu,jossakysytäänhaluatko
+varmasti tallentaa kirjausasetustiedoston.
+Tallenna tiedosto kiintolevylle tai suoraan
+USB-muistille.
+Valitse "Export to file " valikossa " File", jos haluat tal-
+lentaa lämpöpumpun kaikki parametrit asiakirjaan,
+jonkavoiavatahalutussataulukkolaskentaohjelmas-
+sa.
+MUISTA!
+Tiedoston nimen pitää olla LOG.SET , jotta
+lämmitysjärjestelmä lukee tiedoston.
+LisätietoaLOG.SET-tiedostostaonosoitteessa
+www.nibe.eu/modbus .
+MANUAALINEN LUKU
+MUISTA!
+Manuaalinen luku on aikaa vievää ja vain yksi
+arvovoidaanlukeakerralla,maks.aikakatkaisu
+2,1 s. Parametria ei kuitenkaan tarvitse olla
+LOG.SET -tiedostossa.
+Hae arvo Modbus-master iin komennolla " Read holding
+registers"jahalutuillaparametriosoitteilla.Katsoarvojen
+parametriosoitteet ModbusManager -ohjelmalla. Katso
+lisätietoa kohdasta Modbus-komento sivulla30.
+29 MODBUS 40 | FI
+
+ARVOJEN KIRJOITTAMINEN
+MUISTA!
+Kerralla voidaan kirjoittaa vain yksi arvo. Para-
+metrin ei tarvitse olla LOG.SET -tiedostossa.
+Arvovoidaanpäivittääkomennolla" Writemultipleregis-
+ters" ja halutulla parametriosoitteella, jos lämpöpump-
+pu/sisäyksikkö sallii sen. Päivitettävät arvot näkyvät
+ModbusManagerissa.Katsolisätietoakohdasta Modbus-
+komento sivulla30.ESIMERKKEJÄ PARAMETRIOSOITTEISTA
+Rekisteriosoite Parametri
+40004 Ulkolämpötila ( BT1)
+40008 Menolämpötila ( BT2)
+40012 Paluulämpötila ( BT3)
+40013 Käyttövesi, yläosa ( BT7)
+40014 Käyttövesi, keskiosa ( BT6)
+40015 Lämmönkeruuliuos sisään ( BT10)
+40016 Lämmönkeruuliuos ulos ( BT11)
+40033 Huonelämpötila ( BT50)
+43005 Asteminuutit
+MODBUS-KOMENTO
+Maks. aika-
+katkaisuRekisterien
+lukumääräRekisteriosoite Kuvaus Toimintotun-
+nus
+0,5 s [1-20] [40001-65534 ] sisältyvät LOG.SET Read holding registers 0x03
+2,1 s [1-2]* [40001-65534] ei sisälly LOG.SET
+2,1 s [1-2]* [40001-65534 ] Write multiple registers 0x10
+0,5 s N/A N/A Read device identification ** 0x2B
+* 32--bittisten parametrien noutamiseen käytetään kahta Modbus- -rekisteriä.
+** Palauttaa merkin (esim. ' NIBE'), tuotekoodin (esim. ' F1245') ja ohjelmistoversion (esim. 5539 ).
+MODBUS 40 | FI 30
+
+Vianetsintä
+TILAMERKKIVALOT
+LEKLED-valot
+MODBUS 40 :n lisävarustekortissa ( AA9) on kahdeksan tila-LEDiä helppoa valvontaa ja vianetsintää varten.
+Selvitys LED-tila Merkintä
+Jännite päällä MODBUS 40 LED-valo palaa yhtäjaksoisesti VCC
+Ei toimintoa - SYNK
+Aktiivinen tiedonsiirto MODBUS 40 :n ja ulkoisen ohjauksen
+välilläLED-valo vilkkuu COM2
+Ei toimintoa - LEV
+Ei toimintoa - -
+Aktiivinen tiedonsiirto MODBUS 40 :n ja lämpöpumpun välillä LED-valo vilkkuu COM1
+Ei toimintoa - RUN
+Ei toimintoa - BATT
+MODBUS 40 EI SAA YHTEYTTÄ
+LÄMMITYSJÄRJESTELMÄÄN (EI VASTAA)
+• MODBUS 40 :a ei ole aktivoitu lämpöpumpun/sisäyk-
+sikön valikossa 5.2 (valikko 5.2.4 NIBE F1345, F1355,
+SMO40,VVM225,VVM310,VVM320,VVM325:ssa
+ja VVM 500 ) .
+• MODBUS 40 :n ja lämpöpumpun/sisäyksikön väliset
+kaapelit kytketty väärin. Tuo tiedonsiirtohälytyksen
+lämpöpumpun/sisäyksikön näyttöön.
+• Virheellinenohjelmistolämpöpumpussa.Lämpöpum-
+pun ohjelmistoversion pitää olla uudempi kuin 3000 .
+Katso luku " Yleistä" sivulla25.
+• Modbus 40 kytketty virheellisesti Modbus-isäntään.
+Tarkasta, että A on kytketty plussaan + ja B miinuk-
+seen -.
+HUOM!
+Lisätietoa MODBUS 40 :sta löydät osoitteesta
+www.nibe.eu/modbus .
+MODBUS 40:N UUDELLEENKÄYNNISTYS
+Käynnistäyksikköuudelleenpainamallakuvassanäkyvää
+reset-painiketta. Uudelleenkäynnistäminen ei vaikuta
+lämmitysjärjestelmän asetuksiin eikä Modbus-isännän
+asetuksiin.
+LEKReset-painike
+Tekniset tiedot
+TEKNISET TIEDOT
+MODBUS 40
+12 VDC 45 -80 mA Nimellisjännite
+154 x 108 x 40 mm Mitat
+067 144 Tuotenumero
+31 MODBUS 40 | FI
+
+0.000
+MJN 2017-02-03
+Production GBN 2012-05-15
+WIRING DIAGRAM,SMS40,MODBUS40
+ELSCHEMA, SMS40, MODBUS40
+450119 4MODBUS 40 | 32WIRING DIAGRAM
+
+
+
+
+
+
+
+NIBE Energy Systems
+Hannabadsvägen 5
+Box 14
+SE-285 21 Markaryd
+info@nibe.se
+nibe.eu
+IHB SV 1822-10 031725
+This manual is a publication from NIBE Energy Systems. All product illustrations, facts and
+specifications are based on current information at the time of the publication’s approval.
+NIBE Energy Systems makes reservations for any factual or printing errors in this manual.
+©2018 NIBE ENERGY SYSTEMS
+031725WS name: -Gemensamt
+WS version: a531
+WS release date: 2018-05-30 15:34
+Publish date: 2018-06-13 11:18

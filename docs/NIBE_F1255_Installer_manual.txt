@@ -1,0 +1,5415 @@
+Installer manual
+LEK
+NIBEF1255
+Groundsourceheatpump
+IHBEN1745-5
+331296
+
+Quick guide
+Navigation
+Ok button (confirm/select)
+Back button (back/undo/exit)
+Control knob (move/increase/reduce)A detailed explanation of the button functions can be found on page 38 .
+How to scroll through menus and make different settings is described on page 40 .
+Settheindoorclimate
+2X
+INDOOR CLIMATE
+HEAT PUMP INFOHOT WATER
+The mode for setting the indoor temperature is accessed by pressing the OK button twice, when in the start mode
+in the main menu.
+Increasehotwatervolume
+2X
+1X
+To temporarily increase the amount of hot water, first turn the control knob to mark menu 2 (water droplet) and
+then press the OK button twice.
+
+Table of Contents
+4 1 Important information
+4 Safety information
+6 2 Delivery and handling
+6 Transport
+6 Assembly
+7 Supplied components
+7 Removing the covers
+8 Removing parts of the insulation
+9 3 The heat pump design
+9 General
+11 Distribution boxes
+12 Cooling section
+14 4 Pipe connections
+14 General
+15 Dimensions and pipe connections
+15 Brine side
+16 Heating medium side
+16 Water heater
+16 Docking alternatives
+19 5 Electrical connections
+19 General
+21 Connections
+23 Settings
+26 Optional connections
+30 Connecting accessories
+32 6 Commissioning and adjusting
+32 Preparations
+32 Filling and venting
+33 Start guide
+34 Post adjustment and venting
+36 Setting the cooling/heating curve
+38 7 Control - Introduction
+38 Display unit
+39 Menu system
+42 8 Control - Menus
+42 Menu 1 - INDOOR CLIMATE
+42 Menu 2 - HOT WATER
+42 Menu 3 - INFO
+43 Menu 4 - HEAT PUMP
+44 Menu 5 - SERVICE54 9 Service
+54 Service actions
+60 10Disturbances in comfort
+60 Info-menu
+60 Manage alarm
+60 Troubleshooting
+62 11Accessories
+64 12Technical data
+64 Dimensions and setting-out coordinates
+65 Technical specifications
+71 Energy labelling
+82 Item register
+87 Contact information
+3 Table of Contents | NIBE F1255
+
+Safety information
+This manual describes installation and service procedures
+for implementation by specialists.
+The manual must be left with the customer.
+This appliance can be used by children
+aged from 8 years and above and per-
+sons with reduced physical, sensory or
+mental capabilities or lack of experience
+and knowledge if they have been given
+supervision or instruction concerning use
+of the appliance in a safe way and under-
+stand the hazards involved. Children shall
+not play with the appliance. Cleaning
+and user maintenance shall not be made
+by children without supervision.
+Rights to make any design or technical
+modifications are reserved.
+©NIBE 2017.
+Symbols
+NOTE
+This symbol indicates danger to person or ma-
+chine .
+Caution
+This symbol indicates important information
+about what you should observe when maintain-
+ing your installation.
+TIP
+This symbol indicates tips on how to facilitate
+using the product.
+Marking
+The CE mark is obligatory for most products sold
+in the EU, regardless of where they are made.CE
+Classification of enclosure of electro-technical
+equipment.IP21
+Danger to person or machine.
+!
+Read the User Manual.
+Serial number
+The serial number can be found at the bottom right of
+the front cover and in the info menu (menu 3.1 ) and on
+the type plate ( PF1).
+Serial number
+Caution
+You need the product's ( (14 digit) serial num-
+ber for servicing and support.
+Recovery
+Leave the disposal of the packaging to the in-
+staller who installed the product or to special
+waste stations.
+Do not dispose of used products with normal
+household waste. It must be disposed of at a
+special waste station or dealer who provides this type of
+service.
+Improper disposal of the product by the user results in
+administrative penalties in accordance with current legis-
+lation.
+Environmental information
+This unit contains a fluorinated greenhouse gas that is
+covered by the Kyoto agreement.
+F-GasRegulation(EU)No.517/2014
+The equipment contains R407C, a fluorinated green-
+house gas with a GWP value (Global Warming Potential)
+of 1,774 . Do not release R407C into the atmosphere.
+NIBE F1255 Chapter 1 | Important information 41 Important information
+
+Inspection of the installation
+Current regulations require the heating installation to be inspected before it is commissioned. The inspection must
+be carried out by a suitably qualified person. In addition, fill in the page for the installation data in the User Manual.
+Date Signature Notes Description
+✔
+Brine ( page 15 )
+System flushed
+System vented
+Antifreeze
+Level/Expansion vessel
+Filterball (particle filter)
+Safety valve
+Shut off valves
+Circulation pump setting
+Heating medium ( page 16 )
+System flushed
+System vented
+Expansion vessel
+Filterball (particle filter)
+Safety valve
+Shut off valves
+Circulation pump setting
+Electricity ( page 19 )
+Connections
+Main voltage
+Phase voltage
+Fuses heat pump
+Fuses property
+Outside sensor
+Room sensor
+Current sensor
+Safety breaker
+Earth circuit-breaker
+Setting of emergency mode thermostat
+5 Chapter 1 | Important information NIBE F1255
+
+Transport
+F1255 should be transported and stored vertically in a
+dry place. When being moved into a building, F1255
+may be leant back 45 °.
+Caution
+The product can be tail heavy.
+Remove the outer panels in order to protect them when
+moving in confined spaces inside buildings.
+R0
+R0
+Extracting the cooling module
+To simplify transport and service, the heat pump can be
+separated by pulling the cooling module out from the
+cabinet.
+See page 56 for instructions about the separation.
+Assembly
+■Position F1255 on a fixed foundation that can take the
+weight of the heat pump. Use the product's adjustable
+feet to obtain a horizontal and stable set-up.
+30 - 50 mm
+30 - 50 mm15 - 40 mm20-55 mm
+■Because water comes from F1255 , the area where the
+heating pump is located must be equipped with floor
+drainage.
+■Install with its back to an outside wall, ideally in a room
+where noise does not matter, in order to eliminate
+noise problems. If this is not possible, avoid placing it
+against a wall behind a bedroom or other room where
+noise may be a problem.
+■Wherever the unit is located, walls to sound sensitive
+rooms should be fitted with sound insulation.
+■Route pipes so they are not fixed to an internal wall
+that backs on to a bedroom or living room.Installation area
+Leave a free space of 800 mm in front of the product.
+Approx. 50 mm free space is required on each side, to
+remove the side panels (see image). The panels do not
+need to be removed during service. All service on F1255
+can be carried out from the front. Leave space between
+the heat pump and the wall behind (and any routing of
+supply cables and pipes) to reduce the risk of any vibra-
+tion being propagated.
+(50) (50)800* *
+* A normal installation needs 300 – 400 mm (any side) for connec-
+tion equipment, i.e. level vessel, valves and electrical equipment.
+NIBE F1255 Chapter 2 | Delivery and handling 62 Delivery and handling
+
+Supplied components
+O-rings
+8 x
+Room sensor
+1 x
+Outside sensor
+1 x
+Filterball
+6 kW
+1 x G1
+1 x G3/4
+12/16 kW
+1 x G1
+1 x G1 1/4
+Compression ring
+couplings
+6 kW
+2 x (ø28 x G25 )
+2 x (ø22 x G20 )
+12/16 kW
+4 x (ø28 x G25 )
+InItalyandtheDACHcountries,thefollowing
+components are not enclosed.
+LEK
+Level vessel
+1 x
+LEKSafety valve
+0.3 MPa ( 3 bar)
+1 x
+LEKLEKLEKCurrent sensor
+3 x
+Location
+The kit of supplied items is placed in packaging on top
+of the heat pump.Removing the covers
+Front cover
+12
+LEK LEK LEKLEK LEK
+1. Remove the screws from the lower edge of the front
+panel.
+2. Lift the panel out at the bottom edge and up.
+Side covers
+LEK LEK LEK
+The side covers can be removed to facilitate the installa-
+tion.
+1. Remove the screws from the upper and lower edges.
+2. Twist the cover slightly outward.
+3. Move the hatch outwards and backwards.
+4. Assembly takes place in the reverse order.
+7 Chapter 2 | Delivery and handling NIBE F1255
+
+Removing parts of the
+insulation
+Parts of the insulation can be removed to facilitate the
+installation.
+Insulation, top
+1. Disconnect the cable from the motor and remove
+the motor from the shuttle valve as illustrated.
+LEK
+LEKA
+B
+LEK
+2. Grip the handle and pull straight out as illustrated.
+LEKInsulation, immersion heater
+NOTE
+Electrical installation and service must be car-
+ried out under the supervision of a qualified
+electrician. Electrical installation and wiring
+must be carried out in accordance with the
+stipulations in force.
+1. Remove the cover for the junction box according to
+the description on page 19 .
+2. Grip the handle and pull the insulation carefully to-
+wards you as illustrated.
+LEK
+NIBE F1255 Chapter 2 | Delivery and handling 8
+
+General
+UNBT7
+QN10
+BT2
+EB1
+PF1
+UB1
+QM34
+QM31BT6
+UB2
+QM32QM33
+PF2
+RA3QM22UB3
+AA4
+W130
+SF1
+AA4-XJ4
+AA4-XJ3XL1
+XL6XL4 XL3
+XL7XL2
+FR1
+View from above
+XL5 BT7View from behind
+BF1
+9 Chapter 3 | The heat pump design NIBE F12553 The heat pump design
+
+Pipe connections
+Connection, heating medium flow XL1
+Connection, heating medium return XL2
+Connection, cold water XL3
+Connection, hot water XL4
+Connection, HWC* XL5
+Connection, brine in XL6
+Connection, brine out XL7
+* Only heat pumps with enamelled or stainless steel vessel.
+HVAC components
+Venting, coil QM22
+Shut-off valve, heating medium flow QM31
+Shut off valve, heating medium return QM32
+Shut off valve, brine out QM33
+Shut-off valve, brine in QM34
+Shuttle valve, climate system/water heater QN10
+Sensors etc.
+Flow meter** BF1
+Outdoor temperature sensor* BT1
+Temperature sensors, heating medium flow BT2
+Temperature sensor, hot water charging BT6
+Temperature sensor, hot water top BT7
+**Only heat pumps with energy meter
+* Not illustrated
+Electrical components
+Display unit
+AA4-XJ3 USB socket
+AA4-XJ4 Service outlet (No function)AA4
+Immersion heater EB1
+El. anode* FR1
+Choke** RA3
+Switch SF1
+Network cable for Uplink W130
+* Only heat pump with enamelled vessel.
+** Only for F1255 -12 kW 3X400 V.
+Miscellaneous
+Rating plate PF1
+Type plate, cooling section PF2
+Cable gland, incoming electricity UB1
+Cable gland UB2
+Cable gland, rear side, sensor UB3
+Designations in component locations according to
+standard IEC 81346-1 and 81346-2.
+NIBE F1255 Chapter 3 | The heat pump design 10
+
+Distribution boxes
+FD1
+AA8
+AA1
+FA1
+RA3RA2AA2AA23AA3
+UNFD1
+AA1
+FA1AA3
+AA23
+AA2
+RA2
+RA3AA8
+Electrical components
+Immersion heater card AA1
+Base card AA2
+Input circuit board AA3
+Electrical anode board* AA8
+Communication board AA23
+Miniature circuit-breaker FA1
+Temperature limiter/Emergency mode thermostat FD1
+Choke** RA2
+Choke** RA3
+* Only heat pump with enamelled vessel.
+** Only for F1255 -12 kW 3X400 V.
+Designations in component locations according to
+standard IEC 81346-1 and 81346-2.
+11 Chapter 3 | The heat pump design NIBE F1255
+
+Cooling section
+6kW
+LEK LEKBT12
+GP1
+GP2
+QM2 QM1BT10
+AA100
+BT11
+BT3
+1x230V12kW
+3x230V12kW
+LEKBT12
+GP1GP2
+QM2
+QM1BT10
+AA100
+BT11
+BT3
+3x400V12kW
+LEKBT11BT12
+AA100BT10
+RF2
+BT3GP2
+QM2 QM1GP116kW
+LEKBT12
+RF2
+GP1
+GP2
+QM2
+QM1BT10
+AA100
+BT11
+BT3
+6kW
+LEK LEKEP2
+BT14
+QA40
+BT17
+CA1
+RA1
+BT15
+BP1EP1
+GQ10
+HS1
+BP2
+XL20
+QN1
+XL21
+EB10
+1x230V12kW
+3x230V12kW
+LEKEP2
+QA40
+BT14
+CA1
+XL21
+RA1
+BT15
+BP1BT17EP1
+GQ10
+HS1
+BP2
+XL20
+QN1
+EB10
+3x400V12kW
+LEKEP2
+QA40BT17
+BT14
+XL21
+BT15
+BP1EP1
+GQ10
+HS1
+BP2
+XL20
+QN1
+EB10
+NIBE F1255 Chapter 3 | The heat pump design 12
+
+3x400V16kW
+LEKEP2
+BT14
+BT17
+QA40 BP2
+BT15
+BP1
+EB10EP1
+GQ10
+HS1
+XL20
+QN1
+XL21 Pipe connections
+Service connection, high pressure XL20
+Service connection, low pressure XL21
+HVAC components
+Circulation pump GP1
+Brine pump GP2
+Drainage, climate system QM1
+Draining, brine side QM2
+Sensors etc.
+High pressure pressostat BP1
+Low pressure pressostat BP2
+Temperature sensors, heating medium return BT3
+Temperature sensor, brine in BT10
+Temperature sensor, brine out BT11
+Temperature sensor, condenser supply line BT12
+Temperature sensor, hot gas BT14
+Temperature sensor, fluid pipe BT15
+Temperature sensor, suction gas BT17
+Electrical components
+Joint card AA100
+Capacitor CA1
+Compressor heater EB10
+Inverter QA40
+Choke RA1
+EMC-filter RF2*
+* Only 12 & 16 kW 3X400 V.
+Cooling components
+Evaporator EP1
+Condenser EP2
+Compressor GQ10
+Drying filter HS1
+Expansion valve QN1
+Designations in component locations according to
+standard IEC 81346-1 and 81346-2.
+13 Chapter 3 | The heat pump design NIBE F1255
+
+General
+Pipe installation must be carried out in accordance with
+current norms and directives. F1255 can operate with a
+return temperature of up to 58 °C and an outgoing
+temperature from the heat pump of 70 ( 65 °C with only
+the compressor).
+F1255 is not equipped with external shut off valves; these
+must be installed to facilitate any future servicing.
+Caution
+Ensure that incoming water is clean. When us-
+ing a private well, it may be necessary to sup-
+plement with an extra water filter.
+Caution
+Any high points in the climate system, must be
+equipped with air vents.
+NOTE
+The pipe system needs to be flushed out before
+the heat pump is connected so that debris
+cannot damage component parts.
+Symbol key
+Meaning Symbol
+Shut-off valve
+Non-return valve
+Mixing valve
+Shunt / shuttle valve
+Safety valve
+Temperature sensor
+Pressure gauge
+P
+Circulation pump
+Particle filter
+Filterball (ball valve with integrated particle fil-
+ter)
+Compressor
+Expansion vessel
+Level vessel
+Heat exchanger
+System diagram
+F1255 consists of a heat pump, water heater, electrical
+module, circulation pumps and a control system. F1255
+is connected to the brine and heating medium circuits.
+In the heat pump evaporator, the brine (water mixed
+with anti-freeze, glycol or ethanol) releases its energy to
+the refrigerant, which is vaporised in order to be com-
+pressed in the compressor. The refrigerant, of which the
+temperature has now been raised, is passed to the con-
+denser where it gives off its energy to the heating medi-
+um circuit and, if necessary, to the water heater. If there
+is a greater need for heating/hot water than the com-
+pressor can provide there is an integrated immersion
+heater.
+VVKV KBin VBf VBrKButXL1 XL6 XL7 XL4 XL3 XL2
+Connection, heating medium flow XL1
+Connection, heating medium return XL2
+Connection, cold water XL3
+Connection, hot water XL4
+Connection, brine in XL6
+Connection, brine out XL7
+NIBE F1255 Chapter 4 | Pipe connections 144 Pipe connections
+
+Dimensions and pipe
+connections
+620600560 44070
+1775650*
+ 25-502550130210390470525650*
+620600560 44070
+1775650*
+ 25-502550130210390470525650*XL1 XL6 XL7 XL4 XL3 XL2
+Pipe dimensions
+16
+kW12
+kW6
+kWConnection
+28 22 (mm) (XL1)/(XL2) Heating medium
+flow/return ext Ø
+22 (mm) (XL3)/(XL4) Cold/hot water Ø
+28 (mm) (XL6)/(XL7) Brine in/out ext ØBrine side
+Collector
+Caution
+The length of the collector hose varies depend-
+ing on the rock/soil conditions, climate zone
+and on the climate system (radiators or under-
+floor heating) and the heating requirement of
+the building Each installation must be sized
+individually.
+Max length per coil for the collector should not exceed
+400 m.
+In those cases where it is necessary to have several col-
+lectors, these should be connected in parallel with the
+possibility for adjusting the flow of the relevant coil.
+For surface soil heat, the hose should be buried at a
+depth determined by local conditions and the distance
+between the hoses should be at least 1 metre.
+For several bore holes, the distance between the holes
+must be determined according to local conditions.
+Ensure the collector hose rises constantly towards the
+heat pump to avoid air pockets. If this is not possible,
+airvents should be used.
+Because the temperature of the brine system can fall
+below 0 °C, it must be protected against freezing down
+to -15 °C. When making the volume calculation, use 1
+litres of ready mixed brine per metre of collector hose
+(applies when using PEM-hose 40 x2.4 PN 6.3 ) as a guide
+value.
+Side connection
+It is possible to angle the brine connections, for connec-
+tion to the side instead of top connection.
+To angle out a connection:
+1. Disconnect the pipe at the top connection.
+2. Angle the pipe in the desired direction.
+3. If necessary, cut the pipe to the desired length.
+* Can be angled for side connection.
+15 Chapter 4 | Pipe connections NIBE F1255
+
+Connecting the brine side
+■Insulate all indoor brine pipes against condensation.
+■The level vessel must be installed at the highest point
+in the brine system, on the incoming pipe before the
+brine pump (Alt. 1 ).
+If the level vessel cannot be placed at the highest point,
+an expansion vessel must be used (Alt. 2 ).
+NOTE
+Note that condensation may drip from the level
+vessel. Position the vessel so that this does not
+harm other equipment.
+■Details of the antifreeze used must be shown on the
+level vessel.
+■Install the enclosed safety valve under the level vessel
+as illustrated. The entire length of the overflow water
+pipe from the safety valve must be inclined to prevent
+water pockets and must also be frost-free.
+■Install shut off valves as close to the heat pump as
+possible.
+■Fit the enclosed filterball on the incoming pipe.
+In the case of connection to an open groundwater sys-
+tem, an intermediate frost-protected circuit must be
+provided, because of the risk of dirt and freezing in the
+evaporator. This requires an extra heat exchanger.
+PAlt. 1 Alt. 2
+XL6
+XL7
+Heating medium side
+Connecting the climate system
+A climate system is a system that regulates indoor com-
+fort with the help of the control system in F1255 and for
+example radiators, underfloor heating/cooling, fan
+convectors etc.
+■Install all necessary safety devices, shut-off valves (as
+close to the heat pump as possible) and the enclosed
+filterball.
+■The safety valve must have a maximum 0.25 MPa ( 2.5
+bar) opening pressure and be installed on the heating
+medium return as illustrated. The entire length of the
+overflow water pipe from the safety valves must be
+inclined to prevent water pockets and must also be
+frost proof.■When connecting to a system with thermostats on all
+radiators, a relief valve must be fitted, or some of the
+thermostats must be removed to ensure sufficient flow.
+PXL1 XL4 XL3 XL2
+Water heater
+Connecting the hot water heater
+■The hot water heater in the heat pump must be sup-
+plied with necessary set of valves.
+■The mixing valve must be installed if the setting is
+changed so that the temperature can exceed 60 °C.
+■The setting for hot water is made in menu 5.1.1 .
+■The safety valve must have a maximum opening pres-
+sure of 1.0 MPa ( 10.0 bar) and be installed on the in-
+coming domestic water line as illustrated. The entire
+length of the overflow water pipe from the safety valve
+must be inclined to prevent water pockets and must
+also be frost-free.
+Docking alternatives
+F1255 can be connected in several different ways, some
+of which are shown below.
+Further option information is available at nibe.eu and in
+the respective assembly instructions for the accessories
+used. See page 62 for a list of the accessories that can
+be used with F1255 .
+Buffer vessel
+If the climate system volume is too small for the heat
+pump output, the radiator system can be supplemented
+with a buffer vessel, for example NIBE UKV.
+UKV
+P
+P
+NIBE F1255 Chapter 4 | Pipe connections 16
+
+Extra electric hot water heater
+The heat pump should be supplemented with an electric
+water heater, if a hot tub or other significant consumer
+of hot water is installed.
+VVKVCOMPACTCW
+HW
+Ground water system
+An intermediate heat exchanger is used to protect the
+heat pump's exchanger from dirt. The water is released
+into a buried filtration unit or a drilled well. See page 30
+for more information about connecting a ground water
+pump.
+If this docking alternative is used, "min. brine out" in
+menu 5.1.7 "br pmp al set." must be changed to a suit-
+able value to prevent freezing in the heat exchanger.
+Ventilation recovery
+The installation can be supplemented with the exhaust
+air module FLM to enable ventilation recovery.
+■Pipes and other cold surfaces must be insulated with
+diffusion-proof material to prevent condensation.
+■The brine system must be supplied with a pressure
+expansion vessel ( CM3 ). If there is a level vessel ( CM2 )
+this should be replaced.
+P
+PExtract airExhaust
+air
+FLMExtract air
+Ø 160Exhaust air
+Ø 160
+P
+17 Chapter 4 | Pipe connections NIBE F1255
+
+Free cooling
+The accessory PCS 44 allows the connection of passive
+cooling, for example with fan coils. The cooling system
+is connected to the heat pump brine circuit, whereby
+cooling is supplied from the collector via a circulation
+pump and shunt valve.
+■Pipes and other cold surfaces must be insulated with
+diffusion-proof material to prevent condensation.
+■Where the cooling demand is high, fan convectors
+with drip trays and drain connection are needed.
+■The brine system must be supplied with a pressure
+expansion vessel ( CM3 ). If there is a level vessel ( CM2 )
+this should be replaced.
+PCollector
+Underfloor heating system/preheating FTX
+The external circulation pump is dimensioned for the
+under floor heating system’s demand.
+To ensure a heating supply during hot water production,
+the heating system can be supplemented with a NIBE
+UKV vessel, e.g. when there is a water coil in the FTX
+ventilation.
+PUKVTwo or more climate systems
+In buildings with several climate systems that require
+different supply temperatures, the accessory
+ECS 40/ECS 41 can be connected. A shunt valve then
+lowers the temperature to the underfloor heating sys-
+tem, for example.
+P
+Pool
+By supplementing the installation with the accessory
+POOL 40 , pool heating is enabled in your climate unit.
+During pool heating, the heating medium circulates
+between the F1255 and the pool exchanger using the
+heat pump’s internal circulation pumps.
+P
+NIBE F1255 Chapter 4 | Pipe connections 18
+
+General
+All electrical equipment, except the outdoor sensors,
+room sensors and the current sensors are ready connec-
+ted at the factory.
+■Disconnect the heat pump before insulation testing
+the house wiring.
+■If the building is equipped with an earth-fault breaker,
+F1255 should be equipped with a separate one.
+■If a miniature circuit breaker is used this should have
+at least motor characteristic “C”. See page 65 for fuse
+size.
+■Electrical wiring diagrams for the heat pump, see sep-
+arate installation handbook for electrical wiring dia-
+grams.
+■Communication and sensor cables to external connec-
+tions must not be laid close to high current cables.
+■The minimum area of communication and sensor
+cables to external connections must be 0.5 mm² up to
+50 m, for example EKKX or LiYY or equivalent.
+■When cable routing in F1255 , cable grommets (e.g.
+UB1 -UB3 , marked in image) must be used. In UB1 -UB3
+the cables are inserted through the heat pump from
+the back to the front.
+NOTE
+The switch ( SF1) must not be moved to "
+ " or
+"
+" until the boiler has been filled with water.
+Component parts of the product can be dam-
+aged.
+NOTE
+Electrical installation and service must be car-
+ried out under the supervision of a qualified
+electrician. Cut the current with the circuit
+breaker before carrying out any servicing.
+Electrical installation and wiring must be car-
+ried out in accordance with the stipulations in
+force.
+NOTE
+Check the connections, main voltage and phase
+voltage before the machine is started, to pre-
+vent damage to the heat pump electronics.
+F1255
+FD1
+FA1FD1-SF2
+UB2UB1UB3Miniature circuit-breaker
+The heat pump operating circuit and some of its internal
+components are internally fused by a miniature circuit
+breaker ( FA1).
+Temperature limiter
+The temperature limiter ( FD1 ) cuts the power to the
+electric additional heat if the temperature exceeds 89 °C
+and is reset manually.
+Resetting
+The temperature limiter ( FD1 ) is accessible behind the
+front cover. Reset the temperature limiter by pressing
+the button ( FD1-SF2) using a small screwdriver.
+Accessibility, electrical connection
+The plastic cap of the electrical boxes is opened using a
+screwdriver.
+NOTE
+The cover for the input card is opened without
+a tool.
+19 Chapter 5 | Electrical connections NIBE F12555 Electrical connections
+
+Removingthecover,inputcircuitboard
+1
+2
+1. Push the catch down.
+2. Angle out the cover and remove it.
+Removingthecover,immersionheatercircuitboard
+1
+2A
+B
+1. Insert the screwdriver (A) and pry the catch carefully
+downwards (B).
+2. Angle out the cover and remove it.
+Removingthecover,baseboard
+Caution
+To remove the cover for the base board, the
+cover for the input circuit board must first be
+removed.
+LEK
+1
+LEK
+1A
+B
+22
+31. Disconnect the switches using a screwdriver.
+2. Insert the screwdriver (A) and pry the catch carefully
+downwards (B).
+3. Angle out the cover and remove it.
+Cable lock
+Use a suitable tool to release/lock cables in the heat
+pump terminal blocks.
+LEK1
+12
+23
+31
+23
+34
+12
+LEK1
+12
+23
+31
+23
+34
+121
+2
+NIBE F1255 Chapter 5 | Electrical connections 20
+
+Connections
+NOTE
+To prevent interference, unscreened commu-
+nication and/or sensor to external connections
+cables must not be laid closer than 20 cm to
+high voltage cable when cable routing.
+Power connection
+F1255 must be installed with a disconnection option on
+the supply cable. Minimum cable area must be sized ac-
+cording to the fuse rating used. Enclosed cable for incom-
+ing supply electricity is connected to terminal block X1
+on the immersion heater board ( AA1 ). All installations
+must be carried out in accordance with current norms
+and directives.
+AA1-X1
+NOTE
+F1255 is not reconnectable between 1-phase
+and 3-phase, neither is it reconnectable
+between 3 x230 V and 3 x400 V.
+Connection3x230V
+PE11 L2 2 L3 L1 PEAA1-X1 Connection3x400V
+AA1-X1
+PE1L1 1 L2 L3PE 0 N
+Connection1x230V
+PE10 L1 1 PE NAA1-X1
+If separate supply to the compressor and immersion
+heater is required, see section " Switch for external
+blocking of addition and/or compressor" on page 28 .Tariff control
+If the voltage to the immersion heater and/or the com-
+pressor disappears during a certain period, there must
+also be blocking via the AUX-input, see "Connection
+options - Possible selection for AUX inputs" page. 28
+Connecting external operating voltage for
+the control system
+NOTE
+Only applies to power connection of 3x400V.
+NOTE
+Mark up any junction boxes with warnings for
+external voltage.
+If you wish to connect external operating voltage for the
+control system to F1255 on the immersion heater circuit
+board ( AA1 ) the edge connector at AA1:X2 must be
+moved toAA1:X9 (as illustrated).
+Operating voltage (1x230V ~ 50Hz) is connected to
+AA1:X11 (as illustrated).
+1  2  3  4  5  6ON
+L1 1 L2 L3PE
+PE0 N
+N L
+1x230V+
+N+PE1x230V+N+PE operating voltageAA1AA1-X8
+AA1-X2
+AA1-X9
+AA1-X11
+21 Chapter 5 | Electrical connections NIBE F1255
+
+Connecting sensors
+AA3-X6
+Connect the sensor(s) to
+terminal X6 on input
+board(AA3) according to
+the instructions below.
+Outsidesensor
+Install the outdoor temper-
+ature sensor ( BT1) in the
+shade on a wall facing north
+or north-west, so it is unaf-
+fected by the morning sun
+for example.
+Connect the sensor to ter-
+minal block X6:1 and X6:2 on the input board (AA3). Use
+a twin core cable of at least 0.5 mm² cable area.
+If a conduit is used it must be sealed to prevent condens-
+ation in the sensor capsule.
+1
+2
+3
+4AA3-X6 BT1External F1255
+Temperaturesensor,externalflowline
+If temperature sensor, external flow line ( BT25 ) needs
+to be used, connect it to terminal block X6:5 and X6:6
+on the input card ( AA3 ). Use a 2 core cable of at least
+0.5 mm² cable area.
+F1245
+4
+5
+6
+7AA3-X6BT25F1255
+Roomsensor
+F1255 is supplied with a room sensor enclosed ( BT50 ).
+The room sensor has a number of functions:
+1. Shows current room temperature in the display on
+F1255 .
+2. Option of changing the room temperature in °C.
+3. Provides the option of fine-tuning the room temper-
+ature.
+Install the sensor in a neutral position where the set
+temperature is required. A suitable location is on a free
+inner wall in a hall approx. 1.5 m above the floor. It is
+important that the sensor is not obstructed from meas-
+uring the correct room temperature by being located,
+for example, in a recess, between shelves, behind a cur-
+tain, above or close to a heat source, in a draft from an
+external door or in direct sunlight. Closed radiator ther-
+mostats can also cause problems.The heat pump operates without the sensor, but if one
+wishes to read off the accommodation's indoor temper-
+ature in F1255 's display, the sensor must be installed.
+Connect the room sensor to X6:3 and X6:4 on the input
+board ( AA3 ).
+If the sensor is to be used to change the room temperat-
+ure in °C and/or to fine-tune the room temperature, the
+sensor must be activated in menu 1.9.4 .
+If the room sensor is used in a room with underfloor
+heating, it should only have an indicatory function, not
+control of the room temperature.
+F1245 RG 05
+2
+3
+4
+5AA3-X6 BT50External F1255
+Caution
+Changes of temperature in accommodation
+take time. For example, short time periods in
+combination with underfloor heating will not
+give a noticeable difference in room temperat-
+ure.
+Connecting external energy meter
+NOTE
+Connection of external energy meter requires
+version 35 or later on input board (AA3) as well
+as "display version" 7312 or later.
+One or two energy meters ( BE6, BE7) are connected to
+terminal block X22 and/or X23 on input board (AA3) .
+1
+2
+3P
+roduktNamn Extern energimätare
++5VF1255
+AA3-X22/23External
+AA3-X22/23
+Activate the energy meter(s) in menu 5.2.4 and then set
+the desired value (energy per pulse) in menu 5.3.21 .
+NIBE F1255 Chapter 5 | Electrical connections 22
+
+Settings
+AA1-X7AA1-X3AA1-SF2FD1-BT30
+Electrical addition - maximum output
+Number of steps, maximum electrical output and supply
+on connection for the immersion heater varies depend-
+ing on model. See tables.
+The electric additional heat may be restricted depending
+on the selected country.
+Numberofconnectionsteps Max F1255-6
+9 4.5 kW 1x230V
+9 4.5 kW 3x230V
+13 6.5 kW 3x400V
+Number of connection steps Max F1255-12
+7 7 kW 1x230V
+4 9 kW 3x230V
+Numberofconnec-
+tion stepsSwitch-
+able toMax
+(Factory
+setting)F1255-12
+& -16
+7 steps (4 steps if the
+immersion heater is
+switched to maxim-
+um 9 kW)9 kW 7 kW 3x400V
+Settingmaxelectricaloutput
+Setting maximum output in the electric additional heat
+is done in menu 5.1.12 .
+The table displays the total phase current for the immer-
+sion heater at start up. If an immersion heater has already
+been started and is not used for its full capacity the val-
+ues in the table can be changed because the control
+initially uses this immersion heater.Switching to maximum electrical output
+NOTE
+This connection only applies for 3 x400 V for
+F1255 -12 and -16.
+If more than the maximum output ( 7 kW) for the immer-
+sion heater connected on delivery is needed, the heat
+pump can be switched to maximum 9 kW.
+Move the white cable from terminal block X7:23 to ter-
+minal block X3:13 (the seal on the terminal block must
+be broken) on the immersion heater card (AA1).
+3x400V V (maximum electrical output, connected
+upon delivery 7 kW for F1255 -12 / -16)
+Max phase
+current
+L3(A)Max phase
+current
+L2(A)Max phase
+current
+L1(A)Maxelectric-
+al addition
+(kW)
+– – – 0
+4.3 – – 1
+– 8.7 – 2
+4.3 8.7 – 3
+8.7 8.7 – 4
+13.0 8.7 – 5
+8.7 8.7 8.7 6
+13.0 8.7 8.7 7
+3x400V (maximum electrical output, switched to 9
+kW for F1255 -12 / -16.)
+Max phase
+current
+L3(A)Max phase
+current
+L2(A)Max phase
+current
+L1(A)Maxelectric-
+al addition
+(kW)
+– – – 0
+– 8.7 – 2
+8.7 8.7 – 4
+8.7 8.7 8.7 6
+15.6 15.6 8.7 9
+23 Chapter 5 | Electrical connections NIBE F1255
+
+3x400V, F1255 -6
+Max phase
+current
+L3(A)Max phase
+current
+L2(A)Max phase
+current
+L1(A)Maxelectric-
+al addition
+(kW)
+– – – 0.0
+– – 2.2 0.5
+– 4.3 – 1.0
+– 4.3 2.2 1.5
+8.7 – – 2.0
+8.7 – 2.2 2.5
+8.7 4.3 – 3.0
+8.7 4.3 2.2 3.5
+7.5 4.3 7.5 4.0
+7.5 4.3 9.7 4.5
+16.2 – 7.5 5.0
+16.2 – 9.7 5.5
+16.2 4.3 7.5 6.0
+16.2 4.3 9.7 6.5
+3x230V, F1255 -6
+Max phase
+current
+L3(A)Max phase
+current
+L2(A)Max phase
+current
+L1(A)Maxelectric-
+al addition
+(kW)
+– – – 0.0
+2.2 2.2 – 0.5
+4.3 4.3 – 1.0
+6.5 6.5 – 1.5
+8.6 8.6 – 2.0
+10.8 10.8 – 2.5
+11.5 4.3 8.7 3.0
+13.2 6.5 8.7 3.5
+15.0 8.6 8.7 4.0
+16.9 10.8 8.7 4.5
+3x230V, F1255 -12
+Max phase
+current
+L3(A)Max phase
+current
+L2(A)Max phase
+current
+L1(A)Maxelectric-
+al addition
+(kW)
+– – – 0
+8.7 8.7 – 2
+15.1 8.7 8.7 4
+15.1 15.1 15.1 6
+27.1 27.1 15.1 91x230V, F1255 -6
+Max phase current L1 (A) Max electrical addition
+(kW)
+– 0.0
+2.2 0.5
+4.3 1.0
+6.5 1.5
+8.6 2.0
+10.8 2.5
+13.0 3.0
+15.2 3.5
+17.3 4.0
+19.5 4.5
+1x230V, F1255 -12
+Max phase current L1 (A) Max electrical addition
+(kW)
+– 0.0
+4.3 1.0
+8.7 2.0
+13.0 3.0
+17.4 4.0
+21.7 5.0
+26.1 6.0
+30.4 7.0
+If the current sensors are connected, the heat pump
+monitors the phase currents and allocates the electrical
+steps automatically to the least loaded phase.
+Emergency mode
+When the heat pump is set to emergency mode ( SF1 is
+set to
+ ) only the most necessary functions are activated.
+■The compressor is off and heating is managed by the
+immersion heater.
+■Hot water is not produced.
+■The load monitor is not connected.
+NOTE
+The switch ( SF1) must not be moved to "
+ " or
+"
+" until F1255 has been filled with water.
+Components in the product can be damaged.
+Powerinemergencymode
+The immersion heater's output in emergency mode is
+set with the dip-switch ( S2) on the immersion heater
+board ( AA1 ) according to the table below. The factory
+setting is 3.5 kW for F1255 -6 and 6 kW for F1255 -12 / -
+16.
+NIBE F1255 Chapter 5 | Electrical connections 24
+
+3x400V(maximumelectricaloutput,connectedupon
+delivery 7 kW) for F1255 -12 / -16) and 1x230V
+F1255-12
+6 5 4 3 2 1 kW
+on off off off off off 1
+off off off on off off 2
+on off off on off off 3
+off on off on off off 4
+on off off on off on 5
+off on off on off on 6
+on on off on off on 7
+3x400V (maximum electrical output, switched to 9
+kW) for F1255 -12 / -16)
+6 5 4 3 2 1 kW
+off on off off off off 2
+off on off on off off 4
+off on off on off on 6
+on on on on off on 9
+3x400V for F1255 -6
+6 5 4 3 2 1 kW
+off off off off off on 0.5
+off off off on off off 1.0
+off off off on off on 1.5
+off on off off off off 2.0
+off on off off off on 2.5
+off on off on off off 3.0
+off on off on off on 3.5
+on off off on on off 4.0
+on off off on on on 4.5
+on on off off on off 5.0
+on on off off on on 5.5
+on on off on on off 6.0
+on on off on on on 6.5
+3x230V for F1255 -12
+6 5 4 3 2 1 kW
+off off on off off off 2
+off off on off on off 4
+off off on off on on 6
+off off on on on on 93x230V for F1255 -6
+6 5 4 3 2 1 kW
+off off off off on off 0.5
+off off on off off off 1.0
+off off on off on off 1.5
+off off off off off on 2.0
+off off off off on on 2.5
+off off on off off on 3.0
+off off on off on on 3.5
+off on on off off on 4.0
+off on on off on on 4.5
+1x230V for F1255 -6
+6 5 4 3 2 1 kW
+off off off off off on 0.5
+off off off on off off 1.0
+off off off on off on 1.5
+on on off off off off 2.0
+off on off off off on 2.5
+off on off on off off 3.0
+off on off on off on 3.5
+on on off on off off 4.0
+on on off on off on 4.5
+1x230V and 3x400V for F1255 -6 / -12 and 3 x400V
+for F1255 -12 / -16
+1  2  3  4  5  6ONAA1-SF2
+The image shows the dip-switch ( AA1-SF2 ) in the factory
+setting, i.e. 3.5 kW for F1255 -6 and 6 kW F1255 -12 / -16 .
+25 Chapter 5 | Electrical connections NIBE F1255
+
+3x230V for F1255 -6 and -12
+1  2  3  4  5  6ONAA1-SF2
+Only 3x230V, the image shows the dip-switch ( AA1-SF2 )
+in the factory setting, i.e. 3.5 kW for F1255 -6 and 6 kW
+F1255 -12.
+Emergency mode thermostat
+The supply temperature in emergency mode is set using
+a thermostat ( FD1-BT30). It can be set to 35 (pre-set, for
+example under floor heating) or 45 °C (for example radi-
+ators).
+LEKLEKF ör markvärme!
+F
+ör frånluftsvärme!
+Optional connections
+Load monitor
+Integratedloadmonitor
+F1255 is equipped with a simple form of integrated load
+monitor, which limits the power steps for the electric
+additional heat by calculating whether future power
+steps can be connected to the relevant phase without
+the specified main fuse being exceeded. In those cases
+where the current would exceed the specified main fuse,
+the power step is not permitted. The size of the prop-
+erty’s main fuse is specified in menu 5.1.12 .Loadmonitorwithcurrentsensor
+When many power-consuming products are connected
+in the property at the same time as the electric additional
+heat is in operation, there is a risk of the property’s main
+fuses tripping. F1255 is equipped with a load monitor
+that, with the aid of current sensors, controls the power
+steps for the electric additional heat by redistributing
+the power between the different phases or disengaging
+the electric additional heat in event of an overload in a
+phase. If the overload remains despite the electric addi-
+tional heat being disengaged, the compressor winds
+down. Reconnection occurs when other current consump-
+tion is reduced.
+Connecting currentsensors
+NOTE
+The building's phases can have different loads.
+If the inverter is connected to a heavily loaded
+phase, there is a risk of the compressor shutting
+down and the electrical addition operating
+longer than expected. This means that savings
+will not be as expected.
+A current sensor should be installed on each incoming
+phase conductor in to the distribution box to measure
+the current. The distribution box is an appropriate install-
+ation point.
+Connect the current sensors to a multi-core cable in an
+enclosure directly adjacent to the electrical distribution
+unit. The multi-core cable between the enclosure and
+F1255 must have a cable area of at least 0.5 mm².
+Connect the cable to the input board ( AA3 ) on terminal
+block X4:1-4 where X4:1 is the common terminal block
+for the three current sensors.
+L PEN1L2L3
+AA3-X4
+ AA3-X4Electrical distribution
+unit
+Heat pumpIncoming electricity
+1 2 3 4-T1 -T2 -T3
+NIBE F1255 Chapter 5 | Electrical connections 26
+
+Uplink
+Connect the network connected cable (straight, Cat.5e
+UTP) with RJ45-contact (male) to RJ45 contact (female)
+on the rear of the heat pump.
+External connection options
+F1255 has software-controlled AUX inputs/outputs on
+the input board (AA3), for connecting the external switch
+function or sensor. This means that, when an external
+switch function or sensor is connected to one of six spe-
+cial connections, the correct function must be selected
+for the correct connection in the software in F1255 .
+Caution
+If an external switch function or sensor is con-
+nected to F1255 , the function to use input or
+output must be selected in menu 5.4 , see page
+53.
+Selectable inputs on the input board for these functions
+are:
+AA3-X6:9-10 AUX1
+AA3-X6:11-12 AUX2
+AA3-X6:13-14 AUX3
+AA3-X6:15-16 AUX4
+AA3-X6:17-18 AUX5
+Selectable output is AA3-X7 .
+block heating
+activate temp lux
+not used
+not used
+not used
+alarm outputsoft in/outputs 5.4
+F1245 E xternt
+9
+10
+11
+12
+13
+14
+15
+1
+6B
+AAA3-X6External F1255
+AA3-X6
+The example above uses the inputs AUX1 (X6:9-10) and AUX2
+(X6:11-12) on the input circuit board ( AA3 ).
+Caution
+Some of the following functions can also be
+activated and scheduled via menu settings.
+27 Chapter 5 | Electrical connections NIBE F1255
+
+Possible selection for AUX inputs
+Caution
+The external switch function or sensor is con-
+nected to terminal block X6 on the input board
+(AA3) , which is positioned behind the front
+cover. The function for use input must be selec-
+ted in menu 5.4 .
+Temperaturesensor,cooling/heating
+An extra temperature sensor ( BT74 ) can be connected
+to F1255 in order to determine when it is time to switch
+between heating and cooling operation.
+The temperature sensor is connected to the selected in-
+put (menu 5.4, the alternative is only displayed if cooling
+accessory is installed, se page 53 ) on terminal block X6
+on the input card (AA3) which is located behind the front
+cover and is positioned in a suitable place in the climate
+system.
+Use a 2 core cable of at least 0.5 mm² cable area.
+Switchforexternalblockingofadditionand/or
+compressor
+Blocking for addition heat and compressor is connected
+on two different AUX inputs.
+If external blocking of additional heat and/or compressor
+is wanted, this can be connected to terminal block X6
+on the input board ( AA3 ), which is positioned behind
+the front cover.
+The additional heat and/or the compressor are discon-
+nected by connecting a potential-free switch function
+to the input selected in menu 5.4 , see page 53 .
+External blocking of addition and compressor can be
+combined.
+A closed contact results in the electrical output being
+disconnected.
+Contactforexternaltariffblocking
+In those cases where external tariff blocking is used, it
+can be connected to terminal block X6 on the input
+board ( AA3 ), which is positioned behind the front cover.
+Tariff blocking means that the additional heat, the
+compressor, the heating and hot water are blocked by
+connecting a potential-free switch function to the input
+selected in menu 5.4 , see page 53 .
+Closed switch means that tariff blocking is activated.
+NOTE
+When tariff blocking is activated, the min.
+supply line does not apply.
+Switchfor" SGready "
+NOTE
+This function can only be used in mains net-
+works that support the " SG Ready"-standard .
+"SG Ready" requires two AUX inputs.
+In cases where this function is required, it must be con-
+nected to terminal block X6 on the input card ( AA3 ).
+"SG Ready" is a smart form of tariff control where your
+electricity supplier can affect the indoor, hot water
+and/or pool temperatures (if applicable) or simply block
+the additional heat and/or compressor in the heat pump
+at certain times of the day (can be selected in menu 4.1.5
+after the function is activated). Activate the function by
+connecting potential-free switch functions to two inputs
+selected in menu 5.4 ( SG Ready A and SG Ready B ), see
+page 53 .
+Closed or open switch means one of the following:
+■Blocking ( A: Closed, B : Open)
+"SG Ready" is active. The compressor in the heat pump
+and additional heat is blocked like the day's tariff
+blocking.
+■Normal mode ( A: Open, B : Open)
+"SG Ready" is not active. No effect on the system.
+■Low price mode ( A: Open, B : Closed)
+"SG Ready" is active. The system focuses on costs sav-
+ings and can for example exploit a low tariff from the
+electricity supplier or over-capacity from any own
+power source (effect on the system can be adjusted
+in the menu 4.1.5 ).
+■Overcapacity mode ( A: Closed, B : Closed)
+"SG Ready" is active. The system is permitted to run at
+full capacity at over capacity (very low price) with the
+electricity supplier (effect on the system is settable in
+menu 4.1.5 ).
+(A = SG Ready A and B = SG Ready B )
+Switchfor+Adjust
+Using +Adjust, the installation communicates with the
+underfloor heating's control centre* and adjusts the heat
+curve and calculated supply temperature according to
+the underfloor heating system's reconnection.
+Activate the climate system you want +Adjust to affect
+by highlighting the function and pressing the OK button.
+*Support for +Adjust required
+NOTE
++Adjust must first be selected in menu 5.4 ”soft
+inputs/outputs”.
+NIBE F1255 Chapter 5 | Electrical connections 28
+
+NOTE
+Circuit board AA3  in the installation must  have
+at least  "Input version・ 34 and the software
+version must have "display version 5539 or later
+for +Adjust to work. The version can be
+checked in menu 3.1 under ”input version” re-
+spectively ”display version”. New software can
+be downloaded for free from
+www.nibeuplink.com.
+NOTE
+In systems with both under floor heating and
+radiators, NIBE ECS 40/41 should be used for
+optimum operation.
+Contactforexternalblockingofheating
+In those cases where external blocking of heat is used,
+it can be connected to terminal block X6 on the input
+board ( AA3 ), which is positioned behind the front cover.
+Heating operation is disconnected by connecting a po-
+tential-free switch function to the input selected in menu
+5.4, see page 53 .
+A closed switch results in blocked heating operation.
+NOTE
+When heat blocking is activated, the min. sup-
+ply line does not apply.
+Switchforexternalblockingofhotwater
+In cases where external blocking of hot water is used,
+this can be connected to terminal block X6 on the input
+board ( AA3 ), which is positioned behind the front cover.
+Hot water operation is disconnected by connecting a
+potential-free switch function to the input selected in
+menu 5.4 , see page 53 .
+A closed switch results in blocked hot water operation.
+Switchforexternalforcedcontrolofbrinepump
+In those cases external forced control of brine pump is
+used, this can be connected to terminal block X6 on the
+input board ( AA3 ), which is positioned behind the front
+cover.
+The brine pump can be force controlled by connecting
+a potential free switch function to the input selected in
+menu 5.4 , see page 53 .
+A closed switch means that the brine pump is active.
+Contactforactivationof“temporarylux"
+An external switch function can be connected to F1255
+for activation of the hot water function "temporary lux".
+The switch must be potential-free and connected to the
+selected input (menu 5.4, see page 53) on terminal block
+X6 on the input board ( AA3 ).
+"temporary lux" is activated for the time that the contact
+is connected.Contactforactivationof“economy"
+An external switch function can be connected to F1255
+to activate comfort mode “economy” for hot water op-
+eration. The switch must be potential-free and connected
+to the selected input (menu 5.4, see page 53 ) on terminal
+block X6 on the input board ( AA3 ).
+Comfort mode “economy” is activated for the time that
+the contact is connected.
+Contactforactivationof“externaladjustment"
+An external contact function can be connected to F1255
+to change the supply temperature and the room temper-
+ature.
+When the switch is closed the temperature changes in
+°C (if the room sensor is connected and activated). If a
+room sensor is not connected or activated, the desired
+change of "temperature" (heating curve offset) with the
+number of steps selected is set. The value is adjustable
+between -10 and +10 .
+■climatesystem1
+The switch must be potential-free and connected to
+the selected input (menu 5.4 , see page 53) on terminal
+block X6 on the input board ( AA3 ).
+The value for the change is set in menu 1.9.2, "external
+adjustment".
+■climatesystem2to8
+External adjustment for climate systems 2 to 8 requires
+accessories ( ECS 40 or ECS 41 ).
+See the accessory’s installer handbook for installation
+instructions.
+Contactforactivationoffanspeed
+Caution
+The external contact function functions only if
+the accessory FLM is installed and activated.
+An external contact function can be connected to F1255
+for activation of one of the four fan speeds. The switch
+must be potential free and connected to the selected
+input (menu 5.4 , see page 53 ) on terminal block X6 on
+the input circuit board ( AA3 ). When the switch closes,
+the selected fan speed is activated. Normal speed is re-
+sumed when the contact is opened again.
+NV10,pressure/level/flowmonitorbrine
+If the level sensor (accessory NV10 ) is desired for the
+brine installation it can be connected on the selected
+input (menu 5.4 , see page 53 ) on terminal block X6 on
+the input circuit board ( AA3 ).
+Pressure and flow sensors can also be connected to the
+input.
+The input must be closed during normal operation.
+29 Chapter 5 | Electrical connections NIBE F1255
+
+Possible selection for AUX output (potential
+free variable relay)
+It is possible to have an external connection through the
+relay function via a potential free variable relay (max 2
+A) on the input circuit board ( AA3 ), terminal block X7 .
+Optional functions for external connection:
+■Indication of buzzer alarm.
+■Controlling ground water pump.
+■Cooling mode indication (only applies if cooling ac-
+cessories are available).
+■Control of circulation pump for hot water circulation.
+■External circulation pump (for heating medium).
+■External, reversing valve for hot water.
+■Holiday indication.
+If any of the above is installed to terminal block X7 it
+must be selected in menu 5.4 , see page 53 .
+The common alarm is preselected at the factory.
+NOTE
+An accessory card is required if several func-
+tions are connected to terminal block X7 at the
+same time that the buzzer alarm is activated
+(see page 62 ).
+AA3-X7
+C NO NC
+1 2 3
+AA3-X7
+The picture shows the relay in the alarm position.
+When switch ( SF1) is in the "
+ " or “
+ ” position the relay
+is in the alarm position.External circulation pump, ground water pump or hot
+water circulation pump connected to the buzzer alarm
+relay as illustrated below.
+NOTE
+Mark up any junction boxes with warnings for
+external voltage.
+LL
+NN
+PEPEF1X45
+E
+xterntAA3-X7C NO NC
+1 2 3
+ExternalF1255
+Circulation pump
+AA3-X7
+Caution
+The relay outputs can have a max load of 2 A
+(230V ~).
+Connecting accessories
+Instructions for connecting accessories are in the install-
+ation instructions provided for the respective accessory.
+See information at nibe.eu for the list of the accessories
+that can be used with F1255 .
+Accessories with circuit board AA5
+Accessories that contain circuit board AA5 are connected
+to the heat pump terminal block AA3-X4: 13-15. Use
+cable type LiYY, EKKX or similar.
+If several accessories are to be connected, connect the
+first accessory card directly to the heat pump terminal
+block. Other accessory boards are connected to the first
+in series.
+Because there can be different connections for accessor-
+ies with circuit boards AA5 , you should always read the
+instructions in the manual for the accessory that you are
+going to install.
+NIBE F1255 Chapter 5 | Electrical connections 30
+
+1
+2
+3
+4
+5
+6
+7
+8AA5-X415
+A
+B
+GNDA
+B
+GNDA
+B
+GNDA
+B
+GNDA
+B
+GND14
+13AA3-X4
+1
+2
+3
+4
+5
+6
+7
+8AA5-X4
+F1255
+Accessory card 1
+Accessory card 2
+ON
+1 2 3 4 5 6 7 8 -X9
+-
+X224 20 21 22 23 15 16 17 18 19 10 11 12 13 14 5 6 7 8 9 1
+1
+N
+L
+PE
+PE1
+2
+3
+4
+5
+6
+7
+8234567892 3 4
+-X8
+-X4
+-X10
+-X1AA5-X4
+ON
+1 2 3 4 5 6 7 8 -X9
+-
+X224 20 21 22 23 15 16 17 18 19 10 11 12 13 14 5 6 7 8 9 1
+1
+N
+L
+PE
+PE1
+2
+3
+4
+5
+6
+7
+8234567892 3 4
+-X8
+-X4
+-X10
+-X1
+AA5-X4AA3-X4EB100
+Accessories with circuit board AA9
+Accessories that contain the circuit board AA9 are con-
+nected to the heat pump's terminal block X4:9-12 on
+the input board AA3 . Use cable type LiYY, EKKX or
+equivalent.
+Because there can be different connections for accessor-
+ies with circuit boards AA9 , you should always read the
+instructions in the manual for the accessory that you are
+going to install.
+121110 9 8 7
+12V A B GND
+12111098712V
+A
+B
+G
+NDAA3-X4
+AA9-X1F1255
+Accessories
+AA3-X4
+31 Chapter 5 | Electrical connections NIBE F1255
+
+Preparations
+1. Ensure that F1255 has not been damaged during
+transport.
+2. Check that the switch ( SF1) is in position "
+ ".
+3. Check for water in the hot water heater and climate
+system.
+Caution
+Check the miniature circuit-breaker and the
+motor protection breakers. They may have
+tripped during transportation.
+NOTE
+Do not start F1255 if there is a risk that the
+water in the system has frozen.
+Filling and venting
+Caution
+Insufficient venting can damage internal com-
+ponents in F1255 .
+Filling and venting the climate system
+Filling
+1. Open the filling valve (external, not included with
+the product). Fill the coil in the hot water heater and
+the rest of the climate system with water.
+2. Open the venting valve (QM22) .
+3. When the water that exits the venting valve (QM22)
+is not mixed with air, close the valve. After a while
+the pressure starts to rise.
+4. Close the filling valve when the correct pressure is
+obtained.
+Venting
+1. Bleed the heat pump via a vent valve (QM22) and
+the rest of the climate system via their relevant vent
+valves.
+2. Keep topping up and venting until all air has been
+removed and the pressure is correct.
+NOTE
+The pipe from the coil in the container must
+be drained of water before air can be released.
+This means that the system is not necessarily
+bled despite the flow of water when the vent
+valve (QM22) is opened.
+Filling the hot water heater
+1. Open a hot water tap in the house.
+2. Fill the hot water heater through the cold water
+connection ( XL3).3. When the water that comes out of the hot water
+tap is no longer mixed with air, the water heater is
+full and the tap can be closed.
+Filling and venting the brine system
+When filling the brine system, mix the water with anti-
+freeze in an open container. The mixture should be
+protected against freezing down to about -15°C. The
+brine is topped up by connecting a filling pump.
+1. Check the brine system for leakage.
+2. Connect the filling pump and return line on the brine
+system’s filling connection ( QZ20) (accessory).
+3. If alternative 1 (level vessel) is used, close the valve
+under the level vessel ( CM2 ).
+4. Close the reversing valve in the filling connection
+(QZ20).
+5. Open the valves on the filling connection ( QZ20).
+6. Start the filling pump.
+7. Fill until liquid enters the return pipe.
+8. Close the valves on the filling connection ( QZ20).
+9. Open the reversing valve in the filling connection
+(QZ20).
+10. If alternative 1 (level vessel) is used, open the valve
+under the level vessel ( CM2 ).
+PClosesAlt. 2 Alt. 1XL6 XL7
+NIBE F1255 Chapter 6 | Commissioning and adjusting 326 Commissioning and adjusting
+
+620600560 44070
+1775650*
+ 25-502550130210390470525650*XL1 XL6 XL7 XL4 XL3 XL2
+Connection, heating medium flow XL1
+Connection, heating medium return XL2
+Connection, cold water XL3
+Connection, hot water XL4
+Connection, brine in XL6
+Connection, brine out XL7
+Symbol key
+Meaning Symbol
+Shut-off valve
+Shunt / shuttle valve
+Safety valve
+Pressure gauge
+P
+Filterball (ball valve with integrated particle fil-
+ter)
+Expansion vessel
+Level vessel
+Start guide
+NOTE
+There must be water in the climate system be-
+fore the switch is set to "
+ ".
+1. Set switch ( SF1) on F1255 to position "
+ ".
+2. Follow the instructions in the display's start guide.
+If the start guide does not start when you start the
+F1255 , start it manually in menu 5.7 .
+TIP
+See page 38 for a more in-depth introduction
+to the heat pump’s control system (operation,
+menus etc.).
+If the building is cooled when F1255 starts, the com-
+pressor may not be able to meet the entire demand
+without having to use additional heating.Commissioning
+The first time the heat pump is started a start guide is
+started. The start guide instructions state what needs to
+carried out at the first start together with a run through
+of the heat pump’s basic settings.
+The start guide ensures that start-up is carried out cor-
+rectly and cannot be bypassed.The start guide can be
+started later in menu 5.7 .
+Caution
+As long as the start guide is active, no function
+in the installation will start automatically.
+The guide will appear at each installation re-
+start until it is deselected on the last page.
+Operation in the start guide
+language 4.6
+If the start guide is left on this page it closes
+automatically in
+60minA.Page
+C.Option / settingB.Name and menu number
+A.Page
+Here you can see how far you have come in the start
+guide.
+Scroll between the pages of the start guide as follows:
+1. Turn the control knob until one of the arrows in the
+top left corner (at the page number) has been
+marked.
+2. Press the OK button to skip between the pages in
+the start guide.
+B.Nameandmenunumber
+Read what menu in the control system this page of the
+start guide is based on. The digits in brackets refer to the
+menu number in the control system.
+If you want to read more about affected menus either
+consult the help menu or read the user manual.
+C.Option/setting
+Make settings for the system here.
+33 Chapter 6 | Commissioning and adjusting NIBE F1255
+
+D.Helpmenu
+In many menus there is a symbol that indicates that
+extra help is available.
+To access the help text:
+1. Use the control knob to select the help symbol.
+2. Press the OK button.
+The help text often consists of several windows that you
+can scroll between using the control knob.
+Post adjustment and venting
+Pump adjustment, automatic operation
+Brineside
+The brine pump must run at the correct speed for the
+correct flow in the brine system. F1255 has a brine pump
+that can be automatically controlled in standard mode.
+Certain functions and accessories may require that they
+are run manually and the correct speed must then be
+set, see section Pump adjustment, manual operation.
+The automatic control occurs when the compressor is
+running and it sets the speed of the brine pump to obtain
+the optimal temperature difference between the supply
+and return lines. For passive cooling operation, for ex-
+ample, the brine pump must run at a set speed, which
+is set in menu 5.1.9
+Heatingmediumside
+The heating medium pump must run at the correct speed
+for the correct flow in the heating medium system, F1255
+has a heating medium pump that can be automatically
+controlled in standard mode. Certain functions and ac-
+cessories may require that they are run manually and
+the correct speed must then be set, see section Pump
+adjustment, manual operation.
+This automatic control occurs when the compressor is
+running and sets the speed of the heating medium
+pump, for the present operating mode, to obtain the
+optimal temperature difference between the supply and
+return lines. During heating operation, the set DOT (di-
+mensioned outdoor temperature) and temperature dif-
+ferential in menu 5.1.14 are used. If necessary, the max-
+imum speed of the circulation pump can be limited in
+menu 5.1.11 .
+Pump adjustment, manual operation
+Brineside
+F1255 has a brine pump that is automatically controlled.
+If a manual speed is required, open menu 5.1.9 (see page
+46) and deactivate "auto" and set the pump's speed ac-
+cording to the diagram below.
+Caution
+When an accessory for passive cooling is used,
+the brine pump speed must be set in menu
+5.1.9 .
+020406080100120140160180200
+00,2 0,4 0,6 0,8 1 1,2020406080100120140160180200
+00,10 0,20 0,30 0,40 0,50 0,60
+020406080100120140160180200
+00,1 0,2 0,3 0,4 0,5 0,6 0,7 0,8 0,9 10102030405060708090100
+0
+0,05 0,10 0,15 0,20 0,25 0,30 0,35 0,40 0,45 0,50
+010203040506070809010
+0
+0 0,05 0,10 0,15 0,20 0,25 0,30 0,35 0,40 0,45 0,500102030405060708090100
+0 0,05 0,10 0,15 0,20 0,25 0,30 0,35 0,40 0,45 0,50Tillgängligt tryck, kPa / Eleffekt, W
+EleffektTillgängligt tryckFlöde
+l/s
+P
+P100%
+100%P80%
+80%P60%
+60%P40%
+40%Tillgängligt tryck, kPa / Eleffekt, W
+EleffektTillgängligt tryckFlöde
+l/s
+P
+Tillgängligt tryck, kPa / Eleffekt, W
+EleffektTillgängligt tryckFlöde
+l/s
+P
+Eleffekt, WTillgängligt tryck, kPa
+EleffektTillgängligt tryckFlöde
+l/s
+PP100%
+P90%
+P70%
+P50% 100%90%
+70%
+50%
+Eleffekt, WTillgängligt tryck, kPa
+EleffektTillgängligt tryckFlöde
+l/s
+PP100%
+P90%
+P80%
+P70%
+P60%
+100%90% 60%70%80%
+Eleffekt, WTillgängligt tryck, kPa
+EleffektTillgängligt tryckFlöde
+l/s
+PP100%
+P80%
+P60%
+100%
+60%80%F114
+5/F1245 5kW
+F1145/F1245 6kW
+F1145/F1245 8kW
+F1145/F1245 10kW
+F1145/F1245 12kW
+F1145/F1245 15 & 17kWP100%
+100%P80%
+80% P60%
+60%P40%
+40%
+P100%
+100%P80%
+80%P60%
+60%P40%
+40%Available pressure, kPa
+Electrical output, WF12556kW
+Available pressure, kPa
+Flow l/sElectrical input, W
+Pumpkapacitet, köldbärarsida för F1155-1255 -6 kW, manuell drift. 
+Til
+lgängligt tryck
+kPaEleffekt
+W
+0
+0,0 0,1 0,2 0,3 0,4 0,5 0,630
+20
+104050607080
+0100
+90
+80
+70
+60
+50
+40
+30
+20
+10
+Flöde l/sP100%
+P80%
+100%
+80%
+60%
+40%P40%P60%
+F125512kW
+0 20 40 60 80 100 120 140 160 180 200 
+0 20 40 60 80 100 120 140 
+0,1 
+0,2 0,3 0,4 0,5 0,6 0,0 0,7 
+Flöde l/sPumpkapacitet, värmebärars
+ida för F1155-1255 -12 kW, manuell drift. 
+P100%
+100%
+80%
+60%
+40%P80%
+P60%
+P40%kPaT
+illgängligt tryck
+WEleffektAvailable pressure, kPa Electrical input, W
+Flow l/sAvailable pressure, kPa
+Flow l/sElectrical input, W
+Pumpkapacitet, köldbärarsida för F1155-1255 -12 kW, manuell drift. 
+Til
+lgängligt tryck
+kPaEleffekt
+W
+0
+0,0 0,1 0,2 0,3 0,4 0,5 0,6 0,740
+206080100120140
+0200
+180
+160
+140
+120
+100
+80
+60
+40
+20
+Flöde l/sP100%
+P80%
+100%
+80%
+60% 40%
+P40%P60%
+F125516kW
+Flöde
+T
+illgängligt tryck, kPa
+P Eleffekt, WkPaT
+illgängligt tryck
+WEleffektPumpkapacitet, köldbärarsida för F1155-1255 -6 kW, manuell drift. 
+01020304050607080
+20406080100120140P100%
+100%
+80%
+60%
+40%P80%
+P60%
+P40%
+0102030405060708090100
+0,00
+0,10 0,20 0,30 0,40 0,60 0,50 l/s
+Flöde
+T
+illgängligt tryck, kPa
+P Eleffekt, WkPaT
+illgängligt tryck
+WEleffektPumpkapacitet, köldbärarsida för F1155-1255 -16 kW, manuell drift. 
+0P100%
+100%
+80%
+60%
+40%P80%
+P60%
+P40%
+020406080100120140160180200
+0,00
+0,10 0,20 0,40 0,30 0,50 0,80 0,70 0,60 l/sAvailable pressure, kPa
+Flow l/sElectrical input, WAvailable pressure, kPa
+Flow l/sElectrical input, W
+Pumpkapacitet, köldbärarsida för F1155-1255 -16 kW, manuell drift. 
+Til
+lgängligt tryck
+kPaEleffekt
+W
+0
+0,0 0,1 0,2 0,3 0,4 0,5 0,6 0,7 0,840
+206080100120140
+0200
+180
+160
+140
+120
+100
+80
+60
+40
+20
+Flöde l/sP100%
+P80% 100%
+80%
+60%
+40%P40%P60%
+Heatingmediumside
+F1255 has a heating medium that is automatically con-
+trolled. If a manual speed is required, open menu 5.1.11
+(see page 47 ) and deactivate "auto" and set the pump's
+speed according to the diagram below.
+NIBE F1255 Chapter 6 | Commissioning and adjusting 34
+
+020406080100120140160180200
+00,2 0,4 0,6 0,8 1 1,2020406080100120140160180200
+00,10 0,20 0,30 0,40 0,50 0,60
+020406080100120140160180200
+00,1 0,2 0,3 0,4 0,5 0,6 0,7 0,8 0,9 10102030405060708090100
+0
+0,05 0,10 0,15 0,20 0,25 0,30 0,35 0,40 0,45 0,50
+010203040506070809010
+0
+0 0,05 0,10 0,15 0,20 0,25 0,30 0,35 0,40 0,45 0,500102030405060708090100
+0 0,05 0,10 0,15 0,20 0,25 0,30 0,35 0,40 0,45 0,50Tillgängligt tryck, kPa / Eleffekt, W
+EleffektTillgängligt tryckFlöde
+l/s
+P
+P100%
+100%P80%
+80%P60%
+60%P40%
+40%Tillgängligt tryck, kPa / Eleffekt, W
+EleffektTillgängligt tryckFlöde
+l/s
+P
+Tillgängligt tryck, kPa / Eleffekt, W
+EleffektTillgängligt tryckFlöde
+l/s
+P
+Eleffekt, WTillgängligt tryck, kPa
+EleffektTillgängligt tryckFlöde
+l/s
+PP100%
+P90%
+P70%
+P50% 100%90%
+70%
+50%
+Eleffekt, WTillgängligt tryck, kPa
+EleffektTillgängligt tryckFlöde
+l/s
+PP100%
+P90%
+P80%
+P70%
+P60%
+100%90% 60%70%80%
+Eleffekt, WTillgängligt tryck, kPa
+EleffektTillgängligt tryckFlöde
+l/s
+PP100%
+P80%
+P60%
+100%
+60%80%F114
+5/F1245 5kW
+F1145/F1245 6kW
+F1145/F1245 8kW
+F1145/F1245 10kW
+F1145/F1245 12kW
+F1145/F1245 15 & 17kWP100%
+100%P80%
+80% P60%
+60%P40%
+40%
+P100%
+100%P80%
+80%P60%
+60%P40%
+40%Available pressure, kPa
+Electrical output, WF12556kW
+Available pressure, kPa
+Flow l/sElectrical input, W
+Pumpkapacitet, värmebärarsida för F1155-1255 -6 kW, manuell drift. 
+Til
+lgängligt tryck
+kPaEleffekt
+W
+0
+0,00 0,05 0,10 0,15 0,20 0,25 0,30 0,45 0,40 0,35 0,5030
+1020405060708090
+070
+60
+50
+40
+30
+20
+10
+Flöde l/sP100%
+P80%100%
+80%
+60%
+40%P40%P60%
+F125512kW
+Available pressure, kPa
+Flow l/sElectrical input, W
+Pumpkapacitet, värmebärarsida för F1155-1255 -12 kW, manuell drift. 
+Til
+lgängligt tryck
+kPaEleffekt
+W
+0
+0,0 0,1 0,2 0,3 0,4 0,5 0,630
+10204050607080
+070
+60
+50
+40
+30
+20
+10
+Flöde l/sP100%
+P80%
+100%
+80%
+60%
+40%P40%P60%
+F125516kW
+Available pressure, kPa
+Flow l/sElectrical input, W
+Pumpkapacitet, värmebärarsida för F1155-1255 -16 kW, manuell drift. 
+Til
+lgängligt tryck
+kPaEleffekt
+W
+0
+0,00 0,10 0,05 0,15 0,25 0,20 0,35 0,30 0,45 0,40 0,5030
+1020405060708090
+0100
+90
+80
+6070
+4050
+30
+10
+Flöde l/s20P100%
+P80%
+100%
+80%60%
+40%P40%P60%
+Readjusting, venting, heat medium side
+Air is initially released from the hot water and venting
+may be necessary. If gurgling sounds can be heard from
+the heat pump or climate system, the entire system will
+require additional venting.Readjusting, venting, collector side
+Levelvessel
+2/3 
+LEK 1/3
+LEK1/3
+LEK2/3
+LEK
+Gam la bilder, med säk erhetsventi l på nivåkär let
+Check the fluid level in the level vessel
+(CM2 ). If the fluid level has dropped, top up
+the system.
+1. Close the valve under the vessel.
+2. Disconnect the connection on top of the
+vessel.
+3. Fill with brine until approx 2/3 of the
+vessel is full.
+4. Reconnect the connector at the top of
+the vessel.
+5. Open the valve under the vessel.
+If the pressure in the system needs to be raised, this is
+done by closing the valve on the outgoing main line
+when the brine pump ( GP2 ) is in operation and the level
+vessel ( CM2 ) is open, so that liquid is drawn down from
+the vessel.
+Expansionvessel
+LEK
+If a pressure expansion vessel ( CM3 ) is used
+instead of a level vessel, the pressure level
+is checked. If the pressure drops, the system
+should be replenished.
+Post adjusting the room
+temperature
+If the required room temperature is not obtained, read-
+justment may be necessary.
+Coldweatherconditions
+■When the room temperature is too low, increase
+"heating curve" in menu 1.9.1.1 by one increment.
+■When the room temperature is too high, reduce
+"heating curve" in menu 1.9.1.1 by one increment.
+Warmweatherconditions
+■When the room temperature is too low, increase
+"temperature" (offset heating curve) in menu 1.1.1 by
+one increment.
+■When the room temperature is too high, reduce
+"temperature" (offset heating curve) in menu 1.1.1 by
+one increment.
+35 Chapter 6 | Commissioning and adjusting NIBE F1255
+
+Setting the cooling/heating
+curve
+heating curve 1.9.1.1
+system
+outdoor temp. °Cflow temperature °C
+cooling curve 1.9.1.2
+system
+outdoor temp. °Cflow temperature °C
+heating curve
+Setting range: 0 – 15
+Default value: 9
+cooling curve (accessory required)
+Setting range: 0 – 9
+Default value: 0
+You can select heating or cooling in the curve menu.
+The next menu (heating curve/cooling curve) shows the
+heating and cooling curves for your house. The task of
+the curve is to give an even indoor temperature, regard-
+less of the outdoor temperature, and thereby energy
+efficient operation. It is from these heat curves that the
+heat pump’s control computer determines the temper-
+ature of the water to the system, the supply temperature,
+and therefore the indoor temperature. Select the curve
+and read off how the supply temperature changes at
+different outdoor temperatures here. The number to the
+far right of "system" displays which system you have se-
+lected the heating curve/cooling curve for.
+Curve coefficient
+The slopes of the heating /cooling curves indicate how
+many degrees the supply temperature is to be in-
+creased/reduced when the outdoor temperature
+drops/increases. A steeper slope means a higher supply
+temperature for heating or a lower supply temperature
+for cooling at a certain outdoor temperature.
+0
+0 10 0 -10 -20 -30 -40304050607080Framledningstempereratur
+(°C)
+Utetemperatur
+(°C)Steeper curve slopeSupply temperature
+Outdoor temperatureThe optimum slope depends on the climate conditions
+in your location, if the house has radiators or under floor
+heating and how well insulated the house is.
+The curve is set when the heating installation is installed,
+but may need adjusting later. Normally, the curve will
+not need further adjustment.
+Caution
+When making fine adjustments of the indoor
+temperature, the curve must be offset up or
+down instead, this is done in menu 1.1 temper-
+ature .
+Curve offset
+An offset of the curve means that the supply temperature
+changes by the same amount for all the outdoor temper-
+atures, e.g. that a curve offset of +2 steps increases the
+supply temperature by 5 °C at all outdoor temperatures.
+Flow line temperature– maximum and
+minimum values
+Because the flow line temperature cannot be calculated
+higher than the set maximum value or lower than the
+set minimum value the heating curve flattens out at
+these temperatures.
+Caution
+Under floor heating systems are normally max
+flow line temperature set to between 35 and
+45 °C.
+Must be restricted with underfloor cooling min.
+flow line temp. to prevent condensation.
+Check the max temperature for your floor with
+your installer/floor supplier.
+The figure at the end of the curve indicates the curve
+slope. The figure beside the thermometer gives the curve
+offset. Use the control knob to set a new value. Confirm
+the new setting by pressing the OK button.
+Curve 0 is an own curve created in menu 1.9.7 .
+To select another curve (slope):
+NOTE
+If you only have one climate system, the num-
+ber of the curve is already marked when the
+menu window opens.
+1. Select the climate system (if more than one) for
+which the curve is to be changed.
+NIBE F1255 Chapter 6 | Commissioning and adjusting 36
+
+2. When the climate system selection has been con-
+firmed, the curve number is marked.
+3. Press the OK button to access the setting mode
+4. Select a new curve. The curves are numbered from
+0 to 15 , the greater the number, the steeper the
+slope and the greater the supply temperature. Curve
+0 means that own curve (menu 1.9.7 ) is used.
+5. Press the OK button to exit the setting.
+To read off a curve:
+1. Turn the control knob so that the ring on the shaft
+with the outdoor temperature is marked.
+2. Press the OK button.
+3. Follow the grey line up to the curve and out to the
+left to read off the value for the supply temperature
+at the selected outdoor temperature.
+4. You can now select to take read outs for different
+outdoor temperatures by turning the control knob
+to the right or left and read off the corresponding
+flow temperature.
+5. Press the OK or Back button to exit read off mode.
+TIP
+Wait 24 hours before making a new setting,
+so that the room temperature has time to sta-
+bilise.
+If it is cold outdoors and the room temperature
+is too low, increase the curve slope by one in-
+crement.
+If it is cold outdoors and the room temperature
+is too high, lower the curve slope by one incre-
+ment.
+If it is warm outdoors and the room temperat-
+ure is too low, increase the curve offset by one
+increment.
+If it is warm outdoors and the room temperat-
+ure is too high, lower the curve offset by one
+increment.
+37 Chapter 6 | Commissioning and adjusting NIBE F1255
+
+Display unit
+A
+B
+C
+D
+E
+FDisplay
+Status lamp
+OK button
+Back button
+Control knob
+Switch
+INDOOR CLIMATE
+HEAT PUMP INFOHOT WATER
+F1255G USB port
+Display
+Instructions, settings and operational information
+are shown on the display. You can easily navigate
+between the different menus and options to set
+the comfort or obtain the information you re-
+quire.A
+Status lamp
+The status lamp indicates the status of the heat
+pump. It:
+■lights green during normal operation.
+■lights yellow in emergency mode.
+■lights red in the event of a deployed alarm.B
+OK button
+The OK button is used to:
+■confirm selections of sub menus/options/set
+values/page in the start guide.C
+Back button
+The back button is used to:
+■go back to the previous menu.
+■change a setting that has not been confirmed.D
+Control knob
+The control knob can be turned to the right or
+left. You can:
+■scroll in menus and between options.
+■increase and decrease the values.
+■change page in multiple page instructions (for
+example help text and service info).ESwitch ( SF1)
+The switch assumes three positions:
+■On (
+ )
+■Standby (
+ )
+■Emergency mode (
+ )
+Emergency mode must only be used in the event
+of a fault on the heat pump. In this mode, the
+compressor switches off and the immersion
+heater engages. The heat pump display is not il-
+luminated and the status lamp illuminates yellow.F
+USB port
+The USB port is hidden beneath the plastic badge
+with the product name on it.
+The USB port is used to update the software.
+Visit http://www.nibeuplink.com and click the
+"Software" tab to download the latest software
+for your installation.G
+NIBE F1255 Chapter 7 | Control - Introduction 387 Control - Introduction
+
+Menu system
+When the door to the heat pump is opened, the menu
+system’s four main menus are shown in the display as
+well as certain basic information.
+INDOOR CLIMATE
+HEAT PUMP INFOHOT WATER
+SERVICEIndoor temperature - (if room sensors are installed)
+Hot water temp.
+Temporary lux (if activated)Outdoor
+temperature
+Estimated amount of hot waterInformation aboutoperation
+Menu 1 - INDOOR CLIMATE
+Setting and scheduling the indoor climate. See informa-
+tion in the help menu or user manual.
+Menu 2 - HOT WATER
+Setting and scheduling hot water production. See inform-
+ation in the help menu or user manual.
+Menu 3 - INFO
+Display of temperature and other operating information
+and access to the alarm log. See information in the help
+menu or user manual.
+Menu 4 - HEAT PUMP
+Setting time, date, language, display, operating mode
+etc. See information in the help menu or user manual.
+Menu 5 - SERVICE
+Advanced settings. These settings are only intended for
+installers or service engineers. The menu is visible when
+the Back button is pressed for 7 seconds, when you are
+in the start menu. See page 44 .Symbols in the display
+The following symbols can appear in the display during
+operation.
+Description Symbol
+This symbol appears by the information
+sign if there is information in menu 3.1 that
+you should note.
+These two symbols indicate whether the
+compressor or addition is blocked in F1255 .
+These can, for example, be blocked depend-
+ing on which operating mode is selected
+in menu 4.2 , if blocking is scheduled in
+menu 4.9.5 or if an alarm has occurred that
+blocks one of them.
+Blocking the compressor.
+Blocking additional heat.
+This symbol appears if periodic increase or
+lux mode for the hot water is activated.
+This symbol indicates whether "holiday
+setting" is active in 4.7 .
+This symbol indicates whether F1255 has
+contact with Uplink .
+This symbol indicates the actual speed of
+the fan if the speed has changed from the
+normal setting.
+Accessory NIBE FLM is needed.
+This symbol indicates whether pool heating
+is active.
+Accessory needed.
+This symbol indicates whether cooling is
+active.
+Accessory needed.
+39 Chapter 7 | Control - Introduction NIBE F1255
+
+INDOOR CLIMATE
+HEAT PUMP INFOHOT WATER
+temperatureINDOOR CLIMATE 1
+ventilation
+scheduling
+advancedoffnormal
+Marked main menuMenu number – marked sub menu Name and menu number – main menu
+Symbol – main
+menu
+Status information – sub menus Name – sub menus Symbols – sub menus
+Operation
+To move the cursor, turn the control knob to
+the left or the right. The marked position is
+white and/or has a turned up tab.
+Selecting menu
+To advance in the menu system select a main menu by
+marking it and then pressing the OK button. A new
+window then opens with sub menus.
+Select one of the sub menus by marking it and then
+pressing the OK button.
+Selecting options
+economycomfort mode 2.2
+normal
+luxurysmart control
+In an options menu the current selected option is
+indicated by a green tick.
+To select another option:
+1.
+ Mark the applicable option. One of the options
+is pre-selected (white).
+2.
+ Press the OK button to confirm the selected op-
+tion. The selected option has a green tick.Setting a value
+time & date 4.4
+time
+day
+yearmonth24 h
+12 h
+date
+Values to be changed
+To set a value:
+1.
+ Mark the value you want to set using the con-
+trol knob.
+2.
+ Press the OK button. The background of the
+value becomes green, which means that you
+have accessed the setting mode.
+3.
+ Turn the control knob to the right to increase
+the value and to the left to reduce the value.
+4.
+ Press the OK button to confirm the value you
+have set. To change and return to the original
+value, press the Back button.
+NIBE F1255 Chapter 7 | Control - Introduction 40
+
+Use the virtual keyboard
+Different keyboards
+In some menus where text may require entering, a virtual
+keyboard is available.
+Depending on the menu, you can gain access to different
+character sets which you can select using the control
+knob. To change character table, press the Back button.
+If a menu only has one character set the keyboard is
+displayed directly.
+When you have finished writing, mark "OK" and press
+the OK button.
+Scroll through the windows
+A menu can consist of several windows. Turn the control
+knob to scroll between the windows.
+Current menu
+windowNumber of windowsin the menu
+Scrollthroughthewindowsinthestartguide
+language 4.6
+If the start guide is left on this page it closes
+automatically in
+60minArrows to scroll through window in start guide
+1. Turn the control knob until one of the arrows in the
+top left corner (at the page number) has been
+marked.
+2. Press the OK button to skip between the steps in the
+start guide.Help menu
+In many menus there is a symbol that indicates that
+extra help is available.
+To access the help text:
+1. Use the control knob to select the help symbol.
+2. Press the OK button.
+The help text often consists of several windows that you
+can scroll between using the control knob.
+41 Chapter 7 | Control - Introduction NIBE F1255
+
+Menu 1 - INDOOR CLIMATE
+1.1.1 - heating 1.1 - temperature 1 - INDOOR CLIMATE
+1.1.2 - cooling *
+1.2 - ventilation *
+1.3.1 - heating 1.3 - scheduling
+1.3.2 - cooling *
+1.3.3 - ventilation *
+1.9.1.1 heating curve 1.9.1 - curve 1.9 - advanced
+1.9.1.2 - cooling curve *
+1.9.2 - external adjustment
+1.9.3.1 - heating 1.9.3 - min. flow line temp.
+1.9.3.2 - cooling *
+1.9.4 - room sensor settings
+1.9.5 - cooling settings *
+1.9.6 - fan return time *
+1.9.7.1 - heating 1.9.7 - own curve
+1.9.7.2 - cooling *
+1.9.8 - point offset
+1.9.9 - night cooling
+1.9.11 - +Adjust
+1.9.12 - FLM cooling *
+Menu 2 - HOT WATER
+2.1 - temporary lux 2 - HOT WATER
+2.2 - comfort mode
+2.3 - scheduling
+2.9.1 - periodic increase 2.9 - advanced
+2.9.2 - hot water recirc.
+Menu 3 - INFO
+3.1 - service info 3 - INFO
+3.2 - compressor info
+3.3 - add. heat info
+3.4 - alarm log
+3.5 - indoor temp. log
+* Accessories are needed.
+NIBE F1255 Chapter 8 | Control - Menus 428 Control - Menus
+
+Menu 4 - HEAT PUMP
+4.1.1 - pool * 4.1 - plus functions 4 - HEAT PUMP
+4.1.3.1 - Uplink 4.1.3 - internet
+4.1.3.8 - tcp/ip settings
+4.1.3.9 - proxy settings
+4.1.4 - sms *
+4.1.5 - SG Ready
+4.1.6 - smart price adaption™
+4.1.7 - smart home
+4.1.8.1 - settings 4.1.8 - smart energy source™
+4.1.8.2 - set. price
+4.1.8.3 - CO2 impact
+4.1.8.4 - tariff periods, electri-
+city
+4.1.8.5 - tariff periods, fixed
+price
+4.1.8.6 - tariff per, ext. shunt
+add
+4.1.8.7 - tariff per, ext. step
+add
+4.1.8.8 - tariff periods, OPT10
+Menu 4.1.10 – solar electricity
+*
+4.2 - op. mode
+4.3 - my icons
+4.4 - time & date
+4.6 - language
+4.7 - holiday setting
+4.9.1 - op. prioritisation 4.9 - advanced
+4.9.2 - auto mode setting
+4.9.3 - degree minute setting
+4.9.4 - factory setting user
+4.9.5 - schedule blocking
+* Accessory needed.
+43 Chapter 8 | Control - Menus NIBE F1255
+
+Menu 5 - SERVICE
+Overview
+5.1.1 - hot water settings 5.1 - operating settings 5 - SERVICE
+5.1.2 - max flow line temperature
+5.1.3 - max diff flow line temp.
+5.1.4 - alarm actions
+5.1.5 - fan sp. exhaust air *
+5.1.7 - br pmp al set.
+5.1.8 - operating mode brine pump
+5.1.9 - brine pump speed
+5.1.10 - op. mod heat med pump
+5.1.11 - pump speed heating medium
+5.1.12 - internal electrical addition
+5.1.14 - flow set. climate system
+5.1.22 - heat pump testing
+5.1.24 - blockFreq
+5.2 - system settings
+5.3.1 - FLM * 5.3 - accessory settings
+5.3.2 - shunt controlled add. heat *
+5.3.3 - extra climate system *
+5.3.4 - solar heating *
+5.3.6 - step controlled add. heat
+5.3.8 - hot water comfort *
+5.3.11 - modbus *
+5.3.12 - exhaust/supply air module *
+5.3.15 - GBM communications module
+*
+5.3.16 - humidity sensor *
+5.3.21 - external energy meter *
+5.4 - soft in/outputs
+5.5 - factory setting service
+5.6 - forced control
+5.7 - start guide
+5.8 - quick start
+5.9 - floor drying function
+5.10 - change log
+* Accessory needed.
+Go to the main menu and hold the Back button in for 7
+seconds to access the Service menu.
+Sub-menus
+Menu SERVICE has orange text and is intended for the
+advanced user. This menu has several sub-menus. Status
+information for the relevant menu can be found on the
+display to the right of the menus.
+operating settings Operating settings for the heat
+pump.system settings System settings for the heat pump, ac-
+tivating accessories etc.
+accessory settings Operational settings for different
+accessories.
+soft in/outputs Setting software controlled in and out-
+puts on the input circuit board ( AA3 ).
+factory setting service Total reset of all settings (includ-
+ing settings available to the user ) to default values.
+forced control Forced control of the different compon-
+ents in the heat pump.
+NIBE F1255 Chapter 8 | Control - Menus 44
+
+start guide Manual start of the start guide which is run
+the first time the heat pump is started.
+quick start Quick starting the compressor.
+NOTE
+Incorrect settings in the service menus can
+damage the heat pump.
+Menu 5.1 - operating settings
+Operating settings can be made for the heat pump in
+the sub menus.
+Menu 5.1.1 - hot water settings
+starttemp.economy/normal/lux
+Setting range: 5 – 70 °C
+Factory setting (°C):
+luxury normal eco-
+nomy
+47 44 40 Enamel
+50 47 43 Copper
+47 44 40 Stainless
+stoptemp.economy/normal/lux
+Setting range: 5 – 70 °C
+Factory setting (°C):
+luxury normal eco-
+nomy
+51 48 44 Enamel
+54 51 47 Copper
+51 48 44 Stainless
+stoptemp.per.increase
+Setting range: 55 – 70 °C
+Factory setting: 55 °C
+highpower
+Setting range: on/off
+Factory setting: off
+Here you set the start and stop temperature of the hot
+water for the different comfort options in menu 2.2 as
+well as the stop temperature for periodic increase in
+menu 2.9.1 .
+For a higher charge output click the high output selec-
+tion.
+With “high power” activated, the hot water is charged
+with greater power than standard mode and therefore
+has a faster recharging time.Menu 5.1.2 - max flow line temperature
+climatesystem
+Setting range: 20-80 °C
+Default value: 60 °C
+Set the maximum supply temperature for the climate
+system here. If the installation has more than one climate
+system, individual maximum supply temperatures can
+be set for each system. Climate systems 2 - 8 cannot be
+set to a higher max supply temperature than climate
+system 1.
+Caution
+Underfloor heating systems are normally max
+flow line temperature set between 35 and 45
+°C.
+Check the max floor temperature with your
+floor supplier.
+Menu 5.1.3 - max diff flow line temp.
+maxdiffcompressor
+Setting range: 1 – 25 °C
+Default value: 10 °C
+maxdiffaddition
+Setting range: 1 – 24 °C
+Default value: 3 °C
+Here you set the maximum permitted difference
+between the calculated and actual supply temperature
+during compressor respectively add. heat mode. Max
+diff. additional heat can never exceed max diff. com-
+pressor
+maxdiffcompressor
+If the current supply temperature exceeds the calculated
+flow with set value, the degree minute value is set to 0 .
+The compressor in the heat pump stops when there is
+only a heating demand.
+maxdiffaddition
+If "addition” is selected and activated in menu 4.2 and
+the present supply temp exceeds the calculated with
+set value, the additional heat is forced to stop.
+45 Chapter 8 | Control - Menus NIBE F1255
+
+Menu 5.1.4 - alarm actions
+Select how you want the heat pump to alert you that
+there is an alarm in the display here.
+The different alternatives are that the heat pump stops
+producing hot water (default setting) and/or reduces
+the room temperature.
+Caution
+If no alarm action is selected, it can result in
+higher energy consumption in the event of an
+alarm.
+Menu 5.1.5 - fan sp. exhaust air (accessory is
+required)
+normalandspeed1-4
+Setting range: 0 – 100 %
+Set the speed for the five different selectable speeds for
+the fan here.
+Caution
+An incorrectly set ventilation flow can damage
+the house and may also increase energy con-
+sumption.
+Menu 5.1.7 - br pmp al set.
+min.brineout
+Setting range: -12 – 15 °C
+Default value: -8 °C
+min.brineout
+Set the temperature at which the heat pump is to activ-
+ate the alarm for low temperature in outgoing brine.
+If "automatic reset" is selected, the alarm resets when
+the temperature has increased by 1 °C below the set
+value.
+The compressor winds down when the brine temperat-
+ure reaches the set minimum value for brine temperat-
+ure. Compressor control attempts to maintain the brine
+at a temperature 2 ° greater than the set value for brine
+out.
+Menu 5.1.8 - operating mode brine pump
+op.mode
+Setting range: intermittent, continuous, 10 days con-
+tinuous
+Default value: intermittent
+Set the operating mode of the brine pump here.
+intermittent: The brine pump starts approx. 20 seconds
+before and stops approx.20 seconds after the com-
+pressor.
+continuous: Continuous operation.10dayscontinuous: Continuous operation for 10 days.
+Then the pump shifts to intermittent operation.
+TIP
+You can use “10 days continuous" at start-up
+to obtain continuous circulation during a start-
+up time in order to make it easier to bleed the
+system.
+Menu 5.1.9 - brine pump speed
+op.mode
+Setting range: auto / manual / fixed delta
+Default value: auto
+deltaT
+Setting range: 2 - 10 °C
+Factory setting: 4 °C
+speedinwaitmode
+Setting range: 1 - 100 %
+Factory setting: 70 %
+manual
+Setting range: 1 - 100 %
+Factory setting: 100 %
+speedactivecooling(accessoryisrequired)
+Setting range: 1 - 100 %
+Factory setting: 70 %
+speedpassivecooling(accessoryisrequired)
+Setting range: 1 - 100 %
+Factory setting: 100 %
+Set the speed of the brine pump here. Select "auto" if
+the speed of the brine pump is to be regulated automat-
+ically (factory setting) for optimal operation.
+For manual operation of the brine pump deactivate
+"auto" and set the value to between 1 and 100 %.
+For operation of brine pump with "fixed delta", select
+"fixed delta" under "op. mode" and set the value
+between 2 and 10 °C.
+If there are accessories for cooling present or if the heat
+pump has a built-in function for cooling you can also set
+the brine pump speed during passive cooling operation
+(the brine pump then runs in manual operation).
+If the continuous operating mode (see " Menu 5.1.8 -
+operating mode brine pump", page 46 ) has been selec-
+ted one can also choose waiting mode. The circulation
+pump continues to run while the compressor stops.
+NIBE F1255 Chapter 8 | Control - Menus 46
+
+Menu 5.1.10 - op. mod heat med pump
+op.mode
+Setting range: auto, intermittent
+Default value: auto
+Set the operating mode of the heating medium pump
+here.
+auto : The heating medium pump runs according to the
+current operating mode for F1255 .
+intermittent: The heating medium pump starts approx.
+20 seconds before and stops at the same time as the
+compressor.
+Menu 5.1.11 - pump speed heating medium
+Operatingstatus
+Setting range: auto / manual
+Default value: auto
+Manual setting, hot water
+Setting range: 1 - 100 %
+Default values: 70 %
+Manual setting, heating
+Setting range: 1 - 100 %
+Default values: 70 %
+Manual setting, pool
+Setting range: 1 - 100 %
+Default values: 70 %
+waitmode
+Setting range: 1 - 100 %
+Default values: 30 %
+max.allowedspeed
+Setting range: 50 - 100 %
+Default values: 100 %
+speedactivecooling(accessoryisrequired)
+Setting range: 1 - 100 %
+Default values: 70 %
+speedpassivecooling(accessoryisrequired)
+Setting range: 1 - 100 %
+Default values: 70 %
+Set the speed at which the heating medium pump is to
+operate in the present operating mode. Select "auto" if
+the speed of the heating medium pump is to be regu-
+lated automatically (factory setting) for optimal opera-
+tion.If "auto" is activated for heating operation, you can also
+make the setting "max. allowed speed" which restricts
+the heating medium pump and does not allow it to run
+at a higher speed than the set value.
+For manual operation of the heating medium pump,
+deactivate "auto" for the current operating mode and
+set the value to between 0 and 100 % (the previously set
+value for "max. allowed speed" no longer applies).
+"heating" means operating mode heating for the heat-
+ing medium pump.
+"waitmode" means heating or cooling operating modes
+for the heating medium pump but when the heat pump
+has neither a need for compressor operation nor electric-
+al addition and slows down.
+"hot water" means operating mode hot water for the
+heating medium pump.
+"pool" (accessory required) means operating mode pool
+heating for the heating medium pump.
+"cooling" (accessory required) means operating mode
+cooling for the heating medium pump.
+If there are accessories for cooling present or if the heat
+pump has a built-in function for cooling you can also set
+the heating medium pump speed during active respect-
+ively cooling operating modes (the heating medium
+pump then runs in manual operation).
+Menu 5.1.12 - internal electrical addition
+maxconnectedel.add.3 x400V,F1255 -12/-16
+Setting range F1255 -12 / -16: 7 / 9 kW
+Factory setting F1255 -12 / -16: 7 kW
+setmaxelectricaladd.
+Setting range F1255 -6 1x230 V: 0 - 4.5 kW
+Setting range F1255 -6 3x230 V: 0 - 4.5 kW
+Setting range F1255 -12 1 x230 V: 0 - 7 kW
+Setting range F1255 -12 3 x230 V: 0 - 9 kW
+Setting range F1255 -6 3x400V: 0 - 6.5 kW
+Setting range F1255 -12 & -16 3 x400V: 0 - 9 kW
+Factory setting F1255 -6 1x230V: 4.5 kW
+Factory setting F1255 -6 3x230V: 4.5 kW
+Factory setting F1255 -12 1 x230 V: 7 kW
+Factory setting F1255 -12 3 x230 V: 9 kW
+Factory setting F1255 -6 3x400V: 6 kW
+Factory setting F1255 -12 & -16 3 x400V: 6 kW
+fusesize
+Setting range: 1 - 400 A
+Default values: 25 A
+transformationratio
+Setting range: 300 - 3000
+Factory setting: 300
+47 Chapter 8 | Control - Menus NIBE F1255
+
+Here you set the max. electrical output of the internal
+electrical addition in F1255 and the fuse size for the in-
+stallation.
+Here you can also check which current sensor is installed
+on which incoming phase to the property (this requires
+current sensors to be installed, see page 26 ). Check by
+marking "detect phase order" and pressing the OK but-
+ton.
+The results of these checks appear just below the menu
+selection "detect phase order".
+Menu 5.1.14 - flow set. climate system
+presettings
+Setting range: radiator, floor heat., rad. + floor heat.,
+DOT °C
+Default value: radiator
+Setting range DOT: -40.0 – 20.0 °C
+Factory setting DOT: -18.0 °C
+ownsetting
+Setting range dT at DOT: 0.0 – 25.0
+Factory setting dT at DOT: 10.0
+Setting range DOT: -40.0 – 20.0 °C
+Factory setting DOT: -18.0 °C
+The type of heating distribution system the heating
+medium pump (GP1) works towards is set here.
+dT at DOT is the difference in degrees between flow and
+return temperatures at dimensioned outdoor temperat-
+ure.
+Menu 5.1.22 - heat pump testing
+NOTE
+This menu is intended for testing F1255 accord-
+ing to different standards.
+Use of this menu for other reasons may result
+in your installation not functioning as intended.
+This menu contains several sub-menus, one for each
+standard.Menu 5.1.24 - blockFreq
+blockFreq1
+Selectable setting range in the display:
+start: 17 – 115 Hz
+stop: 22 – 120 Hz
+Maximum setting range: 50 Hz.
+blockFreq2
+Selectable setting range in the display:
+start: 17 – 115 Hz
+stop: 22 – 120 Hz
+Maximum setting range: 50 Hz.
+Here you can set a frequency range where the com-
+pressor is blocked. The parameters for the setting range
+differ depending on which product is controlled by the
+setting.
+NOTE
+A large blocked frequency range can cause the
+compressor to run jerkily.
+Menu 5.2 - system settings
+Make different system settings for the heat pump here,
+e.g. which accessories are installed.
+There are two ways of activating connected accessories.
+You can either highlight the alternative in the list or use
+the automatic function "search installed acc.".
+searchinstalledacc.
+Mark "search installed acc." and press the OK button to
+automatically find connected accessories for F1255 .
+Caution
+Certain accessories are not found automatically
+but must be ticked off by hand, see menu 5.4.
+NOTE
+Only mark the option for ground water pump
+if the accessory AXC 40 is to be used to control
+the circulation pump.
+Menu 5.3 - accessory settings
+The operating settings for accessories that are installed
+and activated are made in the sub-menus for this.
+NIBE F1255 Chapter 8 | Control - Menus 48
+
+Menu 5.3.1 - FLM
+continuouspumpop.
+Setting range: on/off
+Factory setting: off
+timebetweendefrosts
+Setting range: 1 – 30 h
+Default value: 10 h
+monthsbtwnfilteralarms
+Setting range: 1 – 12
+Default value: 3
+activatecooling
+Setting range: on/off
+Factory setting: off
+continuouspumpop. : Select for continuous operation
+of the circulation pump in the exhaust air module.
+time between defrosts : Set the minimum time that
+must pass between defrostings of the heat exchanger
+in the exhaust air module.
+When the exhaust air module is in operation the heat
+exchanger is cooled so that ice builds up on it. When too
+much ice builds up the heat transfer capacity of the heat
+exchanger is reduced and defrosting is required. Defrost-
+ing warms up the heat exchanger so that the ice melts
+and runs off via the condensation hose.
+months btwn filter alarms : Set how many months
+should pass before the heat pump informs that it is time
+to clean the filter in the exhaust air module.
+Clean the exhaust air module's air filter regularly, how
+often depends on the amount of dust in the ventilation
+air.
+activate cooling: Activate cooling via the exhaust air
+module here. When the function has been activated, the
+cooling settings are displayed in the menu system.
+See the accessory installation instructions for function
+description.Menu 5.3.2 - shunt controlled add. heat
+prioritisedadditionalheat
+Setting range: on/off
+Factory setting: off
+startdiffadditionalheat
+Setting range: 0 – 2000 DM
+Default values: 400 DM
+minimumrunningtime
+Setting range: 0 – 48 h
+Default value: 12 h
+mintemp.
+Setting range: 5 – 90 °C
+Default value: 55 °C
+mixingvalveamplifier
+Setting range: 0.1 – 10.0
+Default value: 1.0
+mixingvalvestepdelay
+Setting range: 10 – 300 s
+Default values: 30 s
+Set when the addition is to start, the minimum run time
+and the minimum temperature for external addition
+with shunt here. External addition with shunt is for ex-
+ample a wood/oil/gas/pellet boiler.
+You can set shunt valve amplification and shunt valve
+waiting time.
+Selecting "prioritised additional heat" uses the heat from
+the external additional heat instead of the heat pump.
+The shunt valve is regulated as long as heat is available,
+otherwise the shunt valve is closed.
+See the accessory installation instructions for function
+description.
+49 Chapter 8 | Control - Menus NIBE F1255
+
+Menu 5.3.3 - extra climate system
+useinheatingmode
+Setting range: on/off
+Factory setting: on
+useincoolingmode
+Setting range: on/off
+Factory setting: off
+mixingvalveamplifier
+Setting range: 0.1 – 10.0
+Default value: 1.0
+mixingvalvestepdelay
+Setting range: 10 – 300 s
+Default values: 30 s
+In menu 5.3.3 , you choose the climate system ( 2 - 8 ) you
+wish to set. In the next menu you can make settings for
+the climate system that you have selected.
+If the heat pump is connected to more than one climate
+system, condensation may occur in these, if they are not
+intended for cooling.
+To prevent condensation, check that "use in heating
+mode" is checked for the climate systems that are not
+intended for cooling. This means that the sub-shunts to
+the extra climate systems close, when cooling operation
+is activated.
+Caution
+This setting option only appears if "passive/act-
+ive cooling 2-pipe" or "passive cooling 2-pipe"
+is activated in menu 5.2 .
+The shunt amplification and shunt waiting time for the
+different extra climate systems that are installed are also
+set here.
+See the accessory installation instructions for function
+description.Menu 5.3.4 - solar heating
+startdelta-T
+Setting range: 1 - 40 °C
+Default value: 8 °C
+stopdelta-T
+Setting range: 0 - 40 °C
+Default value: 4 °C
+max.tanktemperature
+Setting range: 5 - 110 °C
+Default value: 95 °C
+max.solarcollectortemp.
+Setting range: 80 - 200 °C
+Default value: 125 °C
+anti-freezetemperature
+Setting range: -20 - +20 °C
+Default value: 2 °C
+startsolarcollectorcooling
+Setting range: 80 - 200 °C
+Default value: 110 °C
+passiverecharging-activationtemperature
+Setting range: 50 - 125 °C
+Default value: 110 °C
+passiverecharging-deactivationtemperature
+Setting range: 30 - 90 °C
+Default value: 50 °C
+activerecharging-activatingdT
+Setting range: 8 - 60 °C
+Default value: 40 °C
+activerecharging-deactivatingdT
+Setting range: 4 - 50 °C
+Default value: 20 °C
+NIBE F1255 Chapter 8 | Control - Menus 50
+
+startdelta-T,stopdelta-T: Here you can set the temper-
+ature difference between solar panel and solar tank at
+which the circulation pump is to start and stop.
+max. tank temperature, max. solar collector temp. :
+Here you can set the maximum temperatures in tank
+respectively solar panel at which the circulation pump
+is to stop. This is to protect against excess temperatures
+in the solar tank.
+If the unit has an anti-freeze function, solar panel cooling
+and/or passive/active recharging you can activate them
+here. When the function has been activated, you can
+make settings for them. "solar panel cooling", "passive
+recharging" and "active recharging" cannot be combined,
+only one function can be activated.
+freezeprotection
+anti-freezetemperature: Here you can set the temper-
+ature in the solar panel at which the circulation pump is
+to start to prevent freezing.
+solarpanelcooling
+start solar collector cooling: If the temperature in the
+solar panel is greater than this setting at the same time
+that the temperature in the solar tank is greater than
+the set maximum temperature, the external function for
+cooling is activated.
+passiverecharging
+activationtemperature: If the temperature in the solar
+panel is greater than this setting, the function activates.
+The function is blocked for an hour if the temperature
+of the brine in the heat pump ( BT10 ) is higher than the
+set value for "max brine in" in menu 5.1.7
+deactivation temperature: If the temperature in the
+solar panel is less than this setting, the function deactiv-
+ates.
+activerecharging
+activatingdT: If the difference between the temperature
+in the solar panel ( BT53 ) and the temperature of the
+brine in the heat pump (BT10) is greater than this setting
+the function is activated. The function is blocked for an
+hour if the temperature of the brine in the heat pump
+(BT10 ) is higher than the set value for "max brine in" in
+menu 5.1.7
+deactivatingdT: If the difference between the temper-
+ature in the solar panel ( BT53 ) and the temperature of
+the brine in the heat pump (BT10) is less than this setting
+the function deactivates.
+See the accessory installation instructions for function
+description.Menu 5.3.6 - step controlled add. heat
+startdiffadditionalheat
+Setting range: 0 – 2000 DM
+Default values: 400 DM
+diff.betweenadditionalsteps
+Setting range: 0 – 1000 DM
+Default values: 100 DM
+maxstep
+Setting range
+(binary stepping deactivated): 0 – 3
+Setting range
+(binary stepping activated): 0 – 7
+Default value: 3
+binarystepping
+Setting range: on/off
+Factory setting: off
+Make settings for step controlled addition here. Step
+controlled addition is for example an external electric
+boiler.
+It is possible, for example, to select when the additional
+heat is to start, to set the maximum number of permitted
+steps and whether binary stepping is to be used.
+When binary stepping is deactivated (off), the settings
+refer to linear stepping.
+See the accessory installation instructions for function
+description.
+Menu 5.3.8 - hot water comfort
+activatingthemixingvalve
+Setting range: on/off
+Factory setting: off
+outgoinghotwater
+Setting range: 40 - 65 °C
+Default value: 55 °C
+mixingvalveamplifier
+Setting range: 0.1 – 10.0
+Default value: 1.0
+mixingvalvestepdelay
+Setting range: 10 – 300 s
+Default values: 30 s
+Make settings for the hot water comfort here.
+See the accessory installation instructions for function
+description.
+51 Chapter 8 | Control - Menus NIBE F1255
+
+activatingthemixingvalve : Activated if mixer valve is
+installed and it is to be controlled from F1255 . When the
+option is active, you can set the outgoing hot water
+temperature, shunt amplification and shunt waiting time
+for the mixer valve.
+outgoinghotwater: Set the temperature at which the
+mixing valve is to restrict hot water from the water
+heater.
+Menu 5.3.11 - modbus
+address
+Factory setting: address 1
+From and including Modbus 40 version 10 the address
+can be set between 1 - 247 . Earlier versions have a static
+address.
+See the accessory installation instructions for function
+description.
+Meny 5.3.12 - exhaust/supply air module
+lowest extract air temp.
+Setting range: 0 – 10 °C
+Default value: 5 °C
+bypass at excess temperature
+Setting range: 2 – 10 °C
+Default value: 4 °C
+bypass during heating
+Setting range: on/off
+Factory setting: off
+cut-out value, exh. air temp.
+Setting range: 5 – 30 °C
+Default value: 25 °C
+months btwn filter alarms
+Setting range: 1 – 24
+Default value: 3
+lowest extract air temp. : Set the minimum extract air
+temperature to prevent the heat exchanger freezing.
+bypass at excess temperature: If a room sensor is in-
+stalled, set the over-temperature at which the bypass
+damper must open here.
+months btwn filter alarms : Set how often the filter
+alarm must be displayed.
+See the installation instructions for ERS for function de-
+scription.Menu 5.3.15 - GBM communication module
+start diff additional heat
+Setting range: 10 – 2,000 DM
+Factory setting: 400 DM
+hysteresis
+Setting range: 10 – 2,000 DM
+Factory setting: 100 DM
+Make settings for the gas boiler GBM 10-15 here. For
+example . you can select when the gas boiler is to start.
+See the accessory installation instructions for a descrip-
+tion of function.
+Menu 5.3.16 - humidity sensor
+preventcondensation,syst.
+Setting range: on/off
+Factory setting: off
+limitRHintheroom,syst.
+Setting range: on/off
+Factory setting: off
+Here you select whether your system(s) is/are to limit
+the relative humidity level (RH) during heating or cooling
+operation.
+You can also select to limit min. cooling supply to prevent
+condensation on pipes and components in the cooling
+system.
+See the installation instructions for HTS 40 for function
+description.
+Menu 5.3.21 - external energy meter
+setmode
+Setting range: energy per pulse / pulses per kWh
+Default value: energy per pulse
+energyperpulse
+Setting range: 0 – 10000 Wh
+Factory setting: 1000 Wh
+pulsesperkWh
+Setting range: 0 – 10000
+Factory setting: 500
+The energy meter(s) are used to send pulse signals every
+time a certain amount of energy has been consumed.
+energy per pulse: Here you set the amount of energy
+each pulse is to correspond to.
+pulsesperkWh: Here you set the number of pulses per
+kWh that are sent to F1255 .
+NIBE F1255 Chapter 8 | Control - Menus 52
+
+Menu 5.4 - soft in/outputs
+Here you can select which input/output on the input
+board ( AA3 ) the external contact function (page 26 )
+must be connected to.
+Selectable inputs on terminal block AUX 1-5 ( AA3-X6:9-
+18) and output AA3-X7 on the input board.
+Menu 5.5 - factory setting service
+All settings can be reset (including settings available to
+the user) to default values here.
+NOTE
+When resetting, the start guide is displayed the
+next time the heat pump is restarted.
+Menu 5.6 - forced control
+You can force control the different components in the
+heat pump and any connected accessories here.
+NOTE
+Forced control is only intended to be used for
+troubleshooting purposes. Using the function
+in any other way may cause damage to the
+components in your climate system.
+Menu 5.7 - start guide
+When the heat pump is started for the first time the start
+guide starts automatically. Start it manually here.
+See page 33 for more information about the start guide.
+Menu 5.8 - quick start
+It is possible to start the compressor from here.
+Caution
+There must be a heating or hot water demand
+to start the compressor.
+Caution
+Do not quick start the compressor too many
+times over a short period of time as this may
+damage the compressor and its surrounding
+equipment.
+Menu 5.9 - floor drying function
+lengthofperiod1–7
+Setting range: 0 – 30 days
+Factory setting, period 1 – 3, 5 – 7 : 2 days
+Factory setting, period 4 : 3 days
+temp.period1–7
+Setting range: 15 – 70 °C
+Default value:
+20 °C temp. period 1
+30 °C temp. period 2
+40 °C temp. period 3
+45 C temp. period 4
+40 °C temp. period 5
+30 °C temp. period 6
+20 °C temp. period 7
+Set the function for under floor drying here.
+You can set up to seven period times with different cal-
+culated flow temperatures. If less than seven periods are
+to be used, set the remaining period times to 0 days.
+Mark the active window to activate the underfloor drying
+function. A counter at the bottom shows the number of
+days the function has been active. The function counts
+degree minutes as during normal heating operation but
+for the supply temperatures that are set for the respect-
+ive period.
+NOTE
+During under floor drying, the heating medium
+pump in 100 % runs, regardless of the setting
+in menu 5.1.10 .
+TIP
+If operating mode "add. heat only" is to be
+used, select it in menu 4.2 .
+For a more even flow temperature the addition
+can be started earlier by setting "start for addi-
+tion" in menus 4.9.2 to -80. When set under
+floor drying periods have stopped, reset the
+menus 4.2 and 4.9.2 as per previous settings.
+Menu 5.10 - change log
+Read off any previous changes to the control system
+here.
+The date, time and ID no. (unique to certain settings)
+and the new set value is shown for every change.
+NOTE
+The change log is saved at restart and remains
+unchanged after factory setting.
+53 Chapter 8 | Control - Menus NIBE F1255
+
+Service actions
+NOTE
+Servicing should only be carried out by persons
+with the necessary expertise.
+When replacing components on F1255 only
+replacement parts from NIBE may be used.
+Emergency mode
+NOTE
+The switch ( SF1) must not be moved to "
+ " or
+"
+" until F1255 has been filled with water.
+Component parts in the product can be dam-
+aged.
+Emergency mode is used in event of operational interfer-
+ence and in conjunction with service. Hot water is not
+produced in emergency mode.
+Emergency mode is activated by setting switch ( SF1) in
+mode "
+ ". This means that:
+■The status lamp illuminates yellow.
+■The display is not lit and the control computer is not
+connected.
+■The temperature at the immersion heater is controlled
+by the thermostat ( FD1-BT30). It can be set either to
+35 or 45 °C.
+■The compressor and the brine system are off and only
+the heating medium pump and the electric additional
+heat are active. The additional heat power in emer-
+gency mode is set in the immersion heater board
+(AA1 ). See page 24 for instructions.
+6kW
+LEK LEKGP1
+GP2
+QM2
+QM112kW
+LEKGP1
+GP2
+QM2
+QM1
+16kW
+LEKGP1
+GP2
+QM2
+QM1
+NIBE F1255 Chapter 9 | Service 549 Service
+
+UN
+F1255QM34SF1
+QM32QM33
+QM31FD1-BT30XL1
+XL6XL4 XL3
+XL7XL2Draining the water heater
+The siphon principle is used to empty the hot water
+heater. This can be done either via the drain valve on the
+incoming cold water pipe or by inserting a hose into the
+cold water connection.
+Draining the climate system
+In order to carry out service on the climate system, it may
+be easier to drain the system first. This can be done in
+different ways depending on what needs doing:
+NOTE
+There may be some hot water when draining
+the heating medium side/climate system. There
+is a risk of scalding.
+Drainingtheheatingmediumsideinthecooling
+module
+If, for example, the heating medium pump requires re-
+placing or the cooling module requires servicing, drain
+the heating medium side as follows:
+1. Close the shut-off valves to heating medium side
+(QM31 ) and ( QM32 ).
+2. Connect a hose to the bleed valve ( QM1 ) and open
+the valve. Some liquid will run out.3. Air must get into the system for the remaining liquid
+to run out. To let in air, slacken off the connection
+slightly at the shut-off valve ( QM32 ) that joins the
+heat pump with the cooling module.
+When the heating medium side is empty, the required
+service can be carried out and/or replacement of any
+components carried out.
+Drainingtheheatingmediumsystemintheheat
+pump
+If F1255 requires servicing, drain the heating medium
+side as follows:
+1. Close the shut-off valves outside the heat pump for
+the heating medium side (return and flow line).
+2. Connect a hose to the bleed valve ( QM1 ) and open
+the valve. Some liquid will run out.
+3. Air must get into the system for the remaining liquid
+to run out. To let in air, slacken off the connection
+slightly at the shut-off valve that joins the heat pump
+with the cooling module ( XL2).
+When the heating medium side is empty, the required
+service can be carried out.
+Drainingtheentireclimatesystem
+If the entire climate system requires draining, do this as
+follows:
+1. Connect a hose to the bleed valve ( QM1 ) and open
+the valve. Some liquid will run out.
+2. Air must get into the system for the remaining liquid
+to run out. To allow air in, unscrew the bleed screw
+on the highest radiator in the house.
+When the climate system is empty, the required service
+can be carried out.
+Emptying the brine system
+In order to service the brine system it may be easier to
+drain the system first. This can be done in different ways
+depending on what needs doing:
+Drainingthebrinesysteminthecoolingmodule
+If, for example, the brine pump requires replacing or the
+cooling module requires servicing, drain the brine system
+by:
+1. Close the shut-off valves to brine system (QM33) and
+(QM34) .
+2. Connect a hose to the drain valve ( QM2 ), place the
+other opening of the hose in a container and open
+the valve. A small amount of brine will flow into the
+container.
+3. Air must get into the system in order for the remain-
+ing brine to run out. To let in air, slacken off the
+connection slightly at the shut-off valve (QM33) that
+joins the heat pump with the cooling module.
+When the brine system is empty, the required service
+can be carried out.
+Drainingthebrinesystemintheheatpump
+If the heat pump requires servicing, drain the brine sys-
+tem by:
+55 Chapter 9 | Service NIBE F1255
+
+1. Close the shut-off valve outside the heat pump for
+the brine system.
+2. Connect a hose to the drain valve ( QM2 ), place the
+other opening of the hose in a container and open
+the valve. A small amount of brine will flow into the
+container.
+3. Air must get into the system for the remaining brine
+to run out. To let in air, slacken off the connection
+slightly at the shut-off valve that joins the brine side
+with the heat pump at connection ( XL7).
+When the brine system is empty, the required service
+can be carried out.
+Helping the circulation pump to start
+1. Shut off, F1255 by setting the switch ( (SF1) ) to "
+ ".
+2. Remove the front cover
+3. Remove the cover for the cooling module.
+4. Loosen the venting screw (QM5) with a screwdriver.
+Hold a cloth around the screwdriver blade as a small
+amount of water may run out.
+5. Insert a screwdriver and turn the pump motor
+around.
+6. Screw in the venting screw (QM5) .
+7. Start F1255 by setting the switch (SF1) to "
+ " and
+check whether the circulation pump works.
+It is usually easier to start the circulation pump with
+F1255 running, switch (SF1) set to "
+ ". If the circulation
+pump is helped to start while F1255 is running, be pre-
+pared for the screwdriver to jerk when the pump starts.
+LuftningsskruvGP1Vent screw (QM5)
+The image shows an example of what a circulation pump can look
+like.Temperature sensor data
+Voltage (VDC) Resistance
+(kOhm)Temperature
+(°C)
+3.256 351.0 -40
+3.240 251.6 -35
+3.218 182.5 -30
+3.189 133.8 -25
+3.150 99.22 -20
+3.105 74.32 -15
+3.047 56.20 -10
+2.976 42.89 -5
+2.889 33.02 0
+2.789 25.61 5
+2.673 20.02 10
+2.541 15.77 15
+2.399 12.51 20
+2.245 10.00 25
+2.083 8.045 30
+1.916 6.514 35
+1.752 5.306 40
+1.587 4.348 45
+1.426 3.583 50
+1.278 2.968 55
+1.136 2.467 60
+1.007 2.068 65
+0.891 1.739 70
+0.785 1.469 75
+0.691 1.246 80
+0.607 1.061 85
+0.533 0.908 90
+0.469 0.779 95
+0.414 0.672 100
+Pulling out the cooling module
+The cooling module can be pulled out for service and
+transport.
+NOTE
+Shut off the heat pump and turn off the current
+on the safety breaker.
+Caution
+The cooling module is easy to remove if it is
+drained first (see page 55 ).
+Caution
+Remove the front cover according to the de-
+scription on page 7 .
+NIBE F1255 Chapter 9 | Service 56
+
+Close the shut-off valves ( QM31 ), (QM32 ), (QM33 )
+and ( QM34 ).
+Drain the compressor module according to the in-
+structions on page 55
+F1255
+F1255QM33
+QM32 QM34QM31
+1
+Pull off the lock catches.
+2
+LEK3
+2QM31
+Disconnect the pipe connection at the shut-off valve
+(QM31 ).
+3
+Remove the two screws.
+4
+LEK4Remove the connection from the base card ( AA2 )
+using a screwdriver.
+5
+5
+Disconnect the connectors ( A) and ( B) from the un-
+derside of the base card cabinet.
+6
+Disconnect the connector ( C) from the immersion
+heater circuit board ( AA1 ) using a screwdriver.
+7
+Disconnect the connector ( D) from the joint circuit
+board ( AA100 ).
+8
+Carefully pull out the cooling module.
+9
+LEK
+LEK6
+A
+B
+7
+CD8
+95
+TIP
+The cooling module is installed in reverse order.
+57 Chapter 9 | Service NIBE F1255
+
+NOTE
+At reinstallation, the supplied O-rings must re-
+place the existing ones at the connections to
+the heat pump (see image).
+F1255
+F1255QM33
+QM32 QM34
+USB service outlet
+LEK
+The display unit is equipped with a USB socket that can
+be used to update the software, save logged information
+and handle the settings in F1255 .
+INDOOR CLIMATE
+HEAT PUMP INFOHOT WATER
+USB
+update firmwareUSB 7
+logging
+manage settingsWhen a USB memory is connected a new menu (menu
+7) appears in the display.
+Menu7.1-updatefirmware
+update firmware 7.1
+start updating
+choose another file
+This allows you to update the software in F1255 .
+NOTE
+For the following functions to work the USB
+memory must contain files with software for
+F1255 from NIBE .
+The fact box at the top of the display shows information
+(always in English) of the most probable update that the
+update software has selected form the USB memory.
+This information states which product the software is
+intended for, the software version and general informa-
+tion about them. If you wish to select another file than
+the one selected, the correct file can be selected by
+"choose another file".
+NIBE F1255 Chapter 9 | Service 58
+
+start updating
+Select “start updating" if you want to start the update.
+You are asked whether you really want to update the
+software. Respond "yes" to continue or "no" to undo.
+If you responded"yes" to the previous question the up-
+date starts and you can now follow the progress of the
+update on the display. When the update is complete
+F1255 restarts.
+NOTE
+A software update does not reset the menu
+settings in F1255 .
+NOTE
+If the update is interrupted before it is com-
+plete (for example power cut etc.), the software
+can be reset to the previous version if the OK
+button is held in during start up until the green
+lamp starts to illuminate (takes about 10
+seconds).
+choose another file
+update firmware 7.1
+Select “choose another file" if you do not want to use
+the suggested software. When you scroll through the
+files, information about the marked software is shown
+in a fact box just as before. When you have selected a
+file with the OK button you will return to the previous
+page (menu 7.1 ) where you can choose to start the up-
+date.
+Menu7.2-logging
+logging 7.2
+activated
+interval sec 5
+Setting range: 1 s – 60 min
+Factory setting range: 5 sHere you can choose how current measurement values
+from F1255 should be saved onto a log file on the USB
+memory.
+1. Set the desired interval between loggings.
+2. Tick “activated".
+3. The present values from F1255 are saved in a file in
+the USB memory at the set interval until “activated"
+is unticked.
+NOTE
+Untick "activated" before removing the USB
+memory.
+Menu7.3-managesettings
+manage settings 7.3
+save settings
+recover settings
+Here you can manage (save as or retrieve from) all the
+menu settings (user and service menus) in F1255 with a
+USB memory.
+Via "save settings" you save the menu settings to the
+USB memory in order to restore them later or to copy
+the settings to another F1255 .
+NOTE
+When you save the menu settings to the USB
+memory you replace any previously saved set-
+tings on the USB memory.
+Via "recover settings" you reset all menu settings from
+the USB memory.
+NOTE
+Reset of the menu settings from the USB
+memory cannot be undone.
+59 Chapter 9 | Service NIBE F1255
+
+In most cases, the heat pump notes operational interfer-
+ence (operational interference can lead to disturbance
+in comfort) and indicates this with alarms and shows
+action instructions in the display.
+Info-menu
+All the heat pump measurement values are gathered
+under menu 3.1 in the heat pump menu system. Looking
+through the values in this menu can often simplify find-
+ing the source of the fault. See help menu or user
+manual for more information about menu 3.1 .
+Manage alarm
+info / action
+reset alarm
+aid modeLow pressure alarm
+alarm
+In the event of an alarm, some kind of malfunction has
+occurred, which is indicated by the status lamp changing
+from green continuously to red continuously. In addition,
+an alarm bell appears in the information window.
+Alarm
+In the event of an alarm with a red status lamp a malfunc-
+tion has occurred that the heat pump cannot remedy
+itself. In the display, by turning the control knob and
+pressing the OK button, you can see the type of alarm it
+is and reset it. You can also choose to set the heat pump
+to aid mode.
+info / action Here you can read what the alarm means
+and receive tips on what you can do to correct the
+problem that caused the alarm.
+resetalarm In many cases, it is sufficient to select “reset
+alarm” in order for the product to revert to normal oper-
+ation. If a green light comes on after selecting “reset
+alarm” , the alarm has been remedied. If a red light is still
+visible and a menu called “alarm” is visible in the display,
+the problem that caused the alarm remains. If the alarm
+disappears and then returns, see the troubleshooting
+section ( page 60 ).
+aidmode ”aid mode” is a type of emergency mode. This
+means that the heat pump produces heat and/or hot
+water despite there being some kind of problem. This
+can mean that the heat pump's compressor is not run-
+ning. In this case the immersion heater produces heat
+and/or hot water.
+NOTE
+To select aid mode an alarm action must be
+selected in the menu 5.1.4 .
+Caution
+Selecting "aid mode” is not the same as correct-
+ing the problem that caused the alarm. The
+status lamp will therefore continue to be red.
+Troubleshooting
+If the operational interference is not shown in the display
+the following tips can be used:
+Basic actions
+Start by checking the following items:
+■The switch's (SF1) position.
+■Group and main fuses of the accommodation.
+■The property's earth circuit breaker.
+■The heat pump's miniature circuit breaker (FA1).
+■The heat pump's temperature limiter ( FD1 ).
+■Correctly set load monitor (if installed).
+Low hot water temperature or no hot water
+■Closed or choked filling valve
+–Open the valve.
+■Heat pump in incorrect operating mode.
+–If mode "manual" is selected, select "addition".
+■Large hot water consumption.
+–Wait until the hot water has heated up. Temporarily
+increased hot water capacity (temporary lux) can be
+activated in menu 2.1 .
+■Too low hot water setting.
+–Enter menu 2.2 and select a higher comfort mode.
+■Too low or no operating prioritisation of hot water.
+–Enter menu 4.9.1 and increase the time for when
+hot water is to be prioritised.
+Low room temperature
+■Closed thermostats in several rooms.
+–Set the thermostats to max, in as many rooms as
+possible. Adjust the room temperature via menu 1.1,
+instead of choking the thermostats.
+■Heat pump in incorrect operating mode.
+–Enter menu 4.2 . If mode "auto" is selected, select a
+higher value on "stop heating" in menu 4.9.2 .
+–If mode "manual" is selected, select "heating". If this
+is not enough, select "addition".
+■Too low set value on the automatic heating control.
+–Enter menu 1.1 "temperature" and adjust the offset
+heating curve up. If the room temperature is only
+low in cold weather the curve slope in menu 1.9.1
+"heating curve" needs adjusting up.
+■Too low or no operating prioritisation of heat.
+–Enter menu 4.9.1 and increase the time for when
+heating is to be prioritised.
+NIBE F1255 Chapter 10 | Disturbances in comfort 6010 Disturbances in comfort
+
+■"Holiday mode" activated in menu 4.7 .
+–Enter menu 4.7 and select "Off".
+■External switch for changing the room heating activ-
+ated.
+–Check any external switches.
+■Air in the climate system.
+–Vent the climate system (see page 32 ).
+■Closed valves ( QM20 ), (QM32 ) to the climate system.
+Closed valves to the climate system.
+(QM40 ), (QM41 ) to the climate system.
+–Open the valves.
+High room temperature
+■Too high set value on the automatic heating control.
+–Enter menu 1.1 (temperature) and reduce the offset
+heating curve. If the room temperature is only high
+in cold weather the curve slope in menu 1.9.1
+"heating curve" needs adjusting down.
+■External switch for changing the room heating activ-
+ated.
+–Check any external switches.
+Uneven room temperature.
+■Incorrectly set heating curve.
+–Adjust the heating curve in menu 1.9.1. .
+■Too high set value on "dT at DOT"..
+–Enter menu 5.1.14 (flow set. climate system) and
+reduce the value of "dT at DOT".
+■Uneven flow over the radiators.
+–Adjust the flow distribution between the radiators.
+Low system pressure
+■Not enough water in the climate system.
+–Top up the water in the climate system (see page
+32).
+Low or a lack of ventilation
+This part of the fault-tracing chapter only applies if the
+NIBE FLM accessory is installed.
+■Filter (HQ10) blocked.
+–Clean or replace the filter.
+■The ventilation is not adjusted.
+–Order/implement ventilation adjustment.
+■Exhaust air device blocked or throttled down too much.
+–Check and clean the exhaust air devices.
+■Fan speed in reduced mode.
+–Enter menu 1.2 and select "normal".
+■External switch for changing the fan speed activated.
+–Check any external switches.
+High or distracting ventilation
+This part of the fault-tracing chapter only applies if the
+NIBE FLM accessory is installed.■Filter blocked.
+–Clean or replace the filter.
+■The ventilation is not adjusted.
+–Order/implement ventilation adjustment.
+■Fan speed in forced mode.
+–Enter menu 1.2 and select "normal".
+■External switch for changing the fan speed activated.
+–Check any external switches.
+The compressor does not start
+■There is no heating requirement.
+–The heat pump does not call on heating nor hot
+water.
+■Compressor blocked due to the temperature condi-
+tions.
+–Wait until the temperature is within the product’s
+working range.
+■Minimum time between compressor starts has not
+been reached.
+–Wait 30 minutes and then check if the compressor
+has started.
+■Alarm tripped.
+–Follow the display instructions.
+Whining noise in the radiators
+■Closed thermostats in the rooms and incorrectly set
+heating curve.
+–Set the thermostats to max. in as many rooms as
+possible. Adjust the heating curve via menu 1.1 , in-
+stead of choking the thermostats.
+■Circulation pump speed set too high.
+–Enter menu 5.1.11 (pump speed heating medium)
+and reduce the speed of the circulation pump.
+■Uneven flow over the radiators.
+–Adjust the flow distribution between the radiators.
+Gurgling sound
+This part of the troubleshooting chapter only applies if
+the NIBE FLM accessory is installed.
+■Not enough water in the water seal.
+–Refill the water seal with water.
+■Choked water seal.
+–Check and adjust the condensation water hose.
+61 Chapter 10 | Disturbances in comfort NIBE F1255
+
+Not all accessories are available on all markets.
+Accessory card AXC 40
+This accessory is used to enable connection and control of
+shunt controlled additional heat, step controlled additional
+heat, external circulation pump or ground water pump.
+Part no. 067 060
+Active/Passive cooling HPAC 40
+The accessory HPAC 40 is a climate exchange module that
+is to be included in a system with F1255 .
+Part no. 067 076
+Auxiliary relay HR 10
+Auxiliary relay HR 10 is used to control external 1 to 3 phase
+loads such as oil burners, immersion heaters and pumps.
+Part no 067 309
+Base extension EF 45
+This accessory is used to create a larger connection area
+under F1255 .
+Part no. 067 152
+Buffer vessel UKV
+UKV100
+Part no. 088 207UKV40
+Part no. 088 470
+UKV300
+Part no. 080 301UKV200
+Part no. 080 300
+UKV500
+Part no. 080 302
+Communications module MODBUS 40
+MODBUS 40 enables F1255 to be controlled and monitored
+using a DUC (computer sub-centre) in the building. Com-
+munication is then performed using MODBUS-RTU .
+Part no 067 144
+Communications module SMS 40
+When there is no internet connection, you can use the ac-
+cessory SMS 40 to control F1255 via SMS.
+Part no 067 073Exhaust air module NIBE FLM
+NIBE FLM is an exhaust air module designed to combine
+recovery of mechanical exhaust air with ground source
+heating.
+BracketpackFLM
+Part no. 067 083NIBEFLM
+Part no. 067 011
+External electric additional heat ELK
+These accessories require accessories card AXC 40 (step
+controlled addition).
+ELK213
+7-13 kW, 3 x 400 V
+Part no. 069 500ELK15
+15 kW, 3 x 400 V
+Part no. 069 022
+Extra shunt group ECS 40/ECS 41
+This accessory is used when F1255 is installed in houses
+with two or more different heating systems that require
+different supply temperatures.
+ECS41(approx.80 -250
+m²)
+Part no 067 288ECS40(Max80m²)
+Part no 067 287
+Filling valve kit KB 25/32
+Valve kit for filling brine in the collector hose. Includes
+particle filter and insulation.
+KB32(max.30 kW)
+Part no 089 971KB25(max.12 kW)
+Part no 089 368
+Free cooling PCS 44
+This accessory is used when F1255 is installed in an install-
+ation with passive cooling.
+Part no 067 296
+Gas accessory
+CommunicationsmoduleOPT10
+OPT 10 is used to enable connection and control of gas
+boiler NIBE GBM 10-15 .
+Part no. 067 513
+Humidity sensor HTS 40
+This accessory is used to show and regulate humidity and
+temperatures during both heating and cooling operation.
+Part no. 067 538
+NIBE F1255 Chapter 11 | Accessories 6211 Accessories
+
+Level monitor NV 10
+Level monitor for extended checks of the brine level.
+Part no. 089 315
+Measurement kit for solar generated
+electricity EME 10
+EME 10 is used to optimise the use of solar generated
+electricity.
+Part no. 067 541
+Passive cooling
+PCM42
+Part no. 067 078PCM40
+Part no. 067 077
+Pool heating POOL 40
+POOL 40 is used to enable pool heating with F1255 .
+Part no 067 062
+Room unit RMU 40
+RMU 40 means that control and monitoring of F1255 can
+be carried out in a different part of your home to where it
+is located.
+Part no 067 064
+Solar package NIBE PV
+Solar panel package with extremely long service-life to
+produce your own electricity.
+9kW
+30 Solar panels6kW
+20 Solar panels3kW
+10 Solar panels
+21kW
+70 Solar panels12kW
+40 Solar panels
+Ventilation heat exchanger
+This accessory is used to supply the accommodation with
+energy that has been recovered from the ventilation air.
+The unit ventilates the house and heats the supply air as
+necessary.
+ERS20-250
+Part no. 066 068ERS10-500
+Part no. 066 078
+Water heater/Accumulator tank
+AHPS
+Accumulator tank without an immersion heater with solar
+coil (copper) and a hot water coil (stainless steel).
+Part no. 056 283AHP
+Volume expansion vessel that is primarily used for expand-
+ing the volume together with AHPS .
+Part no. 056 284
+AHPH
+Accumulator tank without an immersion heater with integ-
+rated hot water coil (stainless steel).
+Part no. 081 036
+63 Chapter 11 | Accessories NIBE F1255
+
+Dimensions and setting-out coordinates
+620600560 44070
+1775650*
+ 25-502550130210390470525650*
+* This dimension applies at 90 ° angle on the brine pipes (side connection). The dimension can vary approx. ± 100 mm in height as the
+brine pipes partially consist of flexible pipes.
+NIBE F1255 Chapter 12 | Technical data 6412 Technical data
+
+Technical specifications
+IP21
+1x230V
+F1255-6
+Electrical data
+230V ~ 50 Hz Rated voltage
+15(16) Arms Max operating current including 0 – 0.5 kW immersion heater (Recommended fuse rating).
+20(20) Arms Max operating current including 1 – 1.5 kW immersion heater (Recommended fuse rating).
+24(25) Arms Max operating current including 2 – 2.5 kW immersion heater (Recommended fuse rating).
+31(32) Arms Max operating current including 3 – 4 kW immersion heater (Recommended fuse rating).
+33(40) Arms Max operating current including 4.5 kW immersion heater (Recommended fuse rating).
+0.5/1/1.5/2/2.5/3
+/3.5/4/4.5kW Additional power
+F1255-12
+Electrical data
+230 V ~ 50 Hz Rated voltage
+26(32) Arms Max operating current including 0 – 1 kW immersion heater (Recommended fuse rating).
+39(40) Arms Max operating current including 2 – 4 kW immersion heater (Recommended fuse rating).
+52(63) Arms Max operating current including 5 – 7 kW immersion heater (Recommended fuse rating).
+1/2/3/4/5/6/7 kW Additional power
+3x230V
+F1255-6
+Electrical data
+230V 3 ~ 50Hz Rated voltage
+16(16) Arms Max operating current including 0 – 1 kW immersion heater (Recommended fuse rating).
+20(20) Arms Max operating current including 1.5 – 4.5 kW immersion heater (Recommended fuse rating).
+0.5/1/1.5/2/2.5/3
+/3.5/4/4.5kW Additional power
+F1255-12
+Electrical data
+230V 3 ~ 50Hz Rated voltage
+28(32) Arms Max operating current including 2 – 4 kW immersion heater (Recommended fuse rating).
+36(40) Arms Max operating current including 6 kW immersion heater (Recommended fuse rating).
+46(50) Arms Max operating current including 9 kW immersion heater (Recommended fuse rating).
+1/2/3/4/5/6/7/8/9 kW Additional power
+65 Chapter 12 | Technical data NIBE F1255
+
+3x400V
+F1255-6
+Electrical data
+400V 3N ~ 50 Hz Rated voltage
+12(16) Arms Max operating current including 0 kW immersion heater (Recommended fuse rating).
+16(16) Arms Max operating current including 0.5 – 6.5 kW immersion heater (Recommended fuse rating).
+0.5/1/1.5/2/2.5/3
+/3.5/4/4.5/5/5.5/6/6.5kW Additional power
+F1255-12
+Electrical data
+400V 3N ~ 50Hz Rated voltage
+9(10) Arms Max operating current including 0 kW immersion heater (Recommended fuse rating).
+12(16) Arms Max operating current including 1 kW immersion heater (Recommended fuse rating).
+16(20) Arms Max operating current including 2 – 4 kW immersion heater (Recommended fuse rating).
+21(25) Arms Max operating current including 5 – 7 kW immersion heater (Recommended fuse rating).
+24(25) Arms Max operating current including 9 kW immersion heater, requires reconnection (Recommended fuse rating).
+1/2/3/4/5/6/7 (switchable
+to 2/4/6/9 )kW Additional power
+F1255-16
+Electrical data
+400V 3N ~ 50Hz Rated voltage
+10(10) Arms Max operating current including 0 kW immersion heater (Recommended fuse rating).
+13(16) Arms Max operating current including 1 kW immersion heater (Recommended fuse rating).
+17(20) Arms Max operating current including 2 – 4 kW immersion heater (Recommended fuse rating).
+21(25) Arms Max operating current including 5 – 7 kW immersion heater (Recommended fuse rating).
+24(25) Arms Max operating current including 9 kW immersion heater, requires reconnection (Recommended fuse rating).
+1/2/3/4/5/6/7 (switchable
+to 2/4/6/9 )kW Additional power
+2.0 MVA Short circuit power ( Ssc)*
+*) This equipment complies with IEC 61000-3-12, on the condition that the short circuit power Ssc is greater than or equal to 2.0 MVA at
+the connection point between the customer installation electrical supply and the mains network. It is the responsibility of the installer or
+user to ensure, through consultation with the distribution network operator if required, that the equipment is only connected to a supply
+with a short circuit power Ssc equal to or greater than 2.0 MVA.
+NIBE F1255 Chapter 12 | Technical data 66
+
+1x230V, 3x230 V and 3x400 V
+F1255-16 F1255-12 F1255-6
+Output data according to EN 14511
+4 – 16 3 – 12 1.5 – 6 kW Heating capacity (PH)
+0/35 nominal
+8.89 5.06 3.15 kW Heating capacity (PH)
+1.83 1.04 0.67 kW Supplied power (PE)
+4.85 4.87 4.72 COP
+0/45 nominal
+8.63 4.78 2.87 kW Heating capacity (PH)
+2.29 1.27 0.79 kW Supplied power (PE)
+3.77 3.75 3.61 COP
+10/35 nominal
+11.22 6.33 4.30 kW Heating capacity (PH)
+1.84 1.03 0.66 kW Supplied power (PE)
+6.11 6.12 6.49 COP
+10/45 nominal
+10.92 5.98 3.98 kW Heating capacity (PH)
+2.32 1.30 0.83 kW Supplied power (PE)
+4.72 4.59 4.79 COP
+SCOP according to EN 14825
+16 12 6 kW Rated heating output ( Pdesignh )
+5.5 / 4.2 5.4 / 4.3 5.5 / 4.1 SCOPEN14825 cold climate 35 °C / 55 °C
+5.2 / 4.1 5.2 / 4.1 5.2 / 4.0 SCOPEN14825 average climate, 35 °C / 55 °C
+Energy rating, average climate
+A++ / A++ A++ / A++ A++ / A++ Efficiency class, room heating 35 °C / 55 °C1)
+A+++ / A+++ A+++ / A+++ A+++ / A+++ Space heating efficiency class of the system 35 °C /
+55 °C2)
+A / XL A / XL A / XL Efficiency class, hot water / charging profile3)
+Noise
+36 – 47 36 – 47 36 – 43 dB(A) Sound power level (LWA)acc to EN 12102 at 0/35
+21 – 32 21 – 32 21 – 28 dB(A) Sound pressure level (LPA)calculated values according to EN
+ISO 11203 at 0/35 and 1m range
+Electrical data
+20 – 180 3 – 180 10 – 87 W Output, Brine pump
+10 – 87 2 – 60 2 – 63 W Output, Heating medium pump
+IP21 Enclosure class
+Refrigerant circuit
+R407C Type of refrigerant
+1,774 GWP refrigerant
+2.2 2.0 1.16 kg Volume
+3.90 3.55 2.06 ton CO2equivalent
+3.2 ( 32 bar) / 0.15 ( 1.5 bar) MPa Cut-out value pressure switch HP / LP
+-0.7 (- 7 bar) / 0.15 ( 1.5 bar) MPa Difference pressure switch HP / LP
+Brine circuit
+0.05 ( 0.5 bar) / 0.45 ( 4.5 bar) MPa Min/max system pressure brine
+0.51 0.29 0.18 l/s Nominal flow
+95 115 64 kPa Max external avail. press at nom flow
+see diagram °C Min/Max incoming Brine temp
+-12 °C Min. outgoing brine temp.
+Heating medium circuit
+0.05 ( 0.5 bar) / 0.45 ( 4.5 bar) MPa Min/Max system pressure heating medium
+0.22 0.12 0.08 l/s Nominal flow
+71 73 69 kPa Max external avail. press at nom flow
+see diagram °C Min/max HM-temp
+Pipe connections
+28 mm Brine ext diam. CU pipe
+28 22 mm Heating medium ext diam. CU pipes
+22 mm Hot water connection external diam
+22 mm Cold water connection external diam
+Water heater
+approx. 180 l Volume water heater
+1.0 ( 10 bar) MPa Max pressure in water heater
+67 Chapter 12 | Technical data NIBE F1255
+
+F1255-16 F1255-12 F1255-6
+Hot water heating capacity (comfort mode Normal)According to EN16147
+240 240 245 Amount of hot water ( 40 °C)
+2.5 2.5 2.6 COPDHW (load profile XL)
+Compressor oil
+POE Oil type
+1.45 0.9 0.68 l Volume
+Dimensions and weight
+600 mm Width
+620 mm Depth
+1800 mm Height
+1950 mm Required ceiling height4)
+E Rf Cu E Rf Cu E Rf Cu Corrosion protection5)
+270 235 255 230V:
+260230V:
+220230V:
+240235 200 220 kg Weight complete heat pump
+400V:
+270400V:
+230400V:
+250
+125 230V : 110 90 kg Weight only cooling module
+400V : 120
+065 406 065
+273Part number, 1 x230V
+065 405 065
+316Part number, 3 x230V, with energy meter
+065 239 065 257 065
+059065 401 065 402 065
+400065
+268065
+269065
+267Part number, 3 x400V
+065 258 065 314 065 403 065 404 065
+270065
+319Part number, 3 x400V, with energy meter
+1)Scale for the product’s efficiency class room heating: A++ – G .
+2)Scale for the system’s efficiency class room heating: A+++ – G . Reported efficiency for the system takes the product’s temperature regu-
+lator into account.
+3)Scale for efficiency class hot water: A – G .
+4)With feet removed, the required ceiling height is approx. 1,930 mm.
+5)Cu: copper, Rf : stainless steel, E : enamel.
+Working range heat pump, compressor
+operation
+The compressor provides a supply temperature up to 65
+°C, at 0 °C incoming brine temperature, the remainder
+(up to 70 °C) is obtained using the additional heat.
+F1255-6,-12,-16
+This diagram shows the working range below 75 % for
+F1255 -6 and the entire working range for F1255 -12, -
+16.
+Vattentemperatur
+°CArbetsområde under 75% f
+ör F1155-1255 6kW, 
+för hela arbetsområdet 12 och 16 kW. 
+°C
+Framledning
+Returledning0
+-15 -10 -5 0 5 10 15 20 25 30 3520
+103040506070
+Köldbärare in, temperaturTemperature, °C
+Flow pipe
+Return pipeIncoming brine temp, °CF1255-6
+This diagram shows the working range above 75 % for
+F1255 -6.
+Vattentemperatur
+°CArbetsområde 
+över 75% för F1155-1255 6kW
+°C
+Framledning
+Returledning0
+-15 -10 -5 0 5 10 15 20 25 30 3520
+103040506070
+Köldbärare in, temperaturTemperature, °C
+Flow pipe
+Return pipeIncoming brine temp, °C
+Caution
+For operation of F1255 -6 above 75 % com-
+pressor speed, unlock in menu 5.1.24 . This can
+produce a louder noise level than the value
+stated in the technical specifications.
+NIBE F1255 Chapter 12 | Technical data 68
+
+Diagram, dimensioning compressor speed
+Heatingmode35°C
+Use this diagram to dimension the heat pump.
+The percentage show approximate compressor speed.
+F1255-6
+Specified heating output, kW
+0
+-10 -5 0 5 10 15 20 25 304
+26810
+Köldbärare in, temperatur75%A
+vgiven värmeeffekt
+kW
+°CDimensionering kompr. hastighet för F1155-1255 -6 kW.
+100%
+50%
+1%
+Incoming brine temp, °C
+F1255-12230V
+Specified heating output, kW
+Avgiven värmeeffekt
+kW
+°CDimensionering k
+ompr. hastighet för F1155-1255 -12 kW 230 V.
+0
+-10 -5 0 5 10 15 20 25 3010
+5152025
+Köldbärare in, temperatur100%
+50%
+1%
+Incoming brine temp, °C
+F1255-12400V
+Specified heating output, kW
+Avgiven värmeeffekt
+kW
+°CDimensionering k
+ompr. hastighet för F1155-1255 -12 kW.
+0
+-10 -5 0 5 10 15 20 25 3010
+5152025
+Köldbärare in, temperatur100%
+50%
+1%
+Incoming brine temp, °CF1255-16
+Specified heating output, kW
+Avgiven värmeeffekt
+kW
+°CDimensionering k
+ompr. hastighet för F1155-1255 -16 kW.
+0
+-10 -5 0 5 10 15 20 25 3010
+5152025
+Köldbärare in, temperatur100%
+50%
+1%
+Incoming brine temp, °C
+Coolingmode(Accessoryrequired)
+Caution
+To dimension heating dump, see the diagram
+for heating operation.
+Supply temperature, heating medium 35 °°C
+F1255-6
+Specified cooling output, kW
+Framledningstemp. Värmebärare 35 °C för F1155-1255 -6 kW.
+A
+vgiven kyleffekt
+kW
+°C0
+-10 -5 0 5 10 15 20 25 305
+4
+3
+2
+1678910
+Köldbärare in, temperatur100%
+50%
+1%
+Incoming brine temp, °C
+F1255-12230V
+Specified cooling output, kW
+Framledningstemp. Värmebärare 35 °C för F1155-1255 -12 kW 230V.
+A
+vgiven kyleffekt
+kW
+°C0
+-10 -5 0 5 10 15 20 25 3068
+2412
+10141618
+Köldbärare in, temperatur100%
+50%
+1%
+Incoming brine temp, °C
+69 Chapter 12 | Technical data NIBE F1255
+
+F1255-12400V
+Specified cooling output, kW
+Framledningstemp. Värmebärare 35 °C för F1155-1255 -12 kW.
+A
+vgiven kyleffekt
+kW
+°C0
+-10 -5 0 5 10 15 20 25 3068
+2412
+10141618
+Köldbärare in, temperatur100%
+50%
+1%
+Incoming brine temp, °C
+F1255-16
+Specified cooling output, kW
+Framledningstemp. Värmebärare 35 °C för F1155-1255 -16 kW.
+A
+vgiven kyleffekt
+kW
+°C0
+-10 -5 0 5 10 15 20 25 3010
+5152025
+Köldbärare in, temperatur100%
+50%
+1%
+Incoming brine temp, °C
+Supply temperature, heating medium 50 °°C
+F1255-6
+Specified cooling output, kW
+Framledningstemp. Värmebärare 50 °C för F1155-1255 -6 kW.
+A
+vgiven kyleffekt
+kW
+°C01
+-10 -5 0 5 10 15 20 25 3045
+237
+68910
+Köldbärare in, temperatur100%
+50%
+1%
+Incoming brine temp, °C
+F1255-12230V
+Specified cooling output, kW
+Framledningstemp. Värmebärare 50 °C för F1155-1255 -12 kW 230V.
+A
+vgiven kyleffekt
+kW
+°C0
+-10 -5 0 5 10 15 20 25 3068
+2412
+10141618
+Köldbärare in, temperatur100%
+50%
+1%
+Incoming brine temp, °CF1255-12400V
+Specified cooling output, kW
+Framledningstemp. Värmebärare 50 °C för F1155-1255 -12 kW.
+A
+vgiven kyleffekt
+kW
+°C0
+-10 -5 0 5 10 15 20 25 3068
+2412
+10141618
+Köldbärare in, temperatur100%
+50%
+1%
+Incoming brine temp, °C
+F1255-16
+Specified cooling output, kW
+Framledningstemp. Värmebärare 50 °C för F1155-1255 -16 kW.
+A
+vgiven kyleffekt
+kW
+°C0
+-10 -5 0 5 10 15 20 25 3010
+5152025
+Köldbärare in, temperatur100%
+50%
+1%
+Incoming brine temp, °C
+NIBE F1255 Chapter 12 | Technical data 70
+
+Energy labelling
+Information sheet
+NIBE AB Supplier
+F1255-12 1x230V F1255-6 1x230V Model
+35 / 55 35 / 55 °C Temperature application
+XL XL Declared load profile for water heating
+A++ / A++ A++ / A++ Seasonal space heating energy efficiency class, average
+climate
+A A Water heating energy efficiency class, average climate
+12 6 kW Rated heat output ( Pdesignh ), average climate
+4,582 / 6,213 2,188 / 2,875 kWh Annual energy consumption space heating, average
+climate
+1,709 1,642 kWh Annual energy consumption water heating, average
+climate
+201 / 157 200 / 150 % Seasonal space heating energy efficiency, average cli-
+mate
+98 102 % Water heating energy efficiency, average climate
+44 42 dB Sound power level LWAindoors
+12 6 kW Rated heat output ( Pdesignh ), cold climate
+12 6 kW Rated heat output ( Pdesignh ), warm climate
+5,292 / 7,173 2,481 / 3,287 kWh Annual energy consumption space heating, cold cli-
+mate
+1,709 1,642 kWh Annual energy consumption water heating, cold cli-
+mate
+2,928 / 3,999 1,408 / 1,852 kWh Annual energy consumption space heating, warm cli-
+mate
+1,709 1,642 kWh Annual energy consumption water heating, warm
+climate
+208 / 162 211 / 157 % Seasonal space heating energy efficiency, cold climate
+98 102 % Water heating energy efficiency, cold climate
+204 / 158 201 / 151 % Seasonal space heating energy efficiency, warm cli-
+mate
+98 102 % Water heating energy efficiency, warm climate
+- - dB Sound power level LWAoutdoors
+71 Chapter 12 | Technical data NIBE F1255
+
+NIBE AB Supplier
+F1255-12 3x230V F1255-6 3x230V Model
+35 / 55 35 / 55 °C Temperature application
+XL XL Declared load profile for water heating
+A++ / A++ A++ / A++ Seasonal space heating energy efficiency class, average
+climate
+A A Water heating energy efficiency class, average climate
+12 6 kW Rated heat output ( Pdesignh ), average climate
+4,582 / 6,213 2,188 / 2,875 kWh Annual energy consumption space heating, average
+climate
+1,709 1,642 kWh Annual energy consumption water heating, average
+climate
+201 / 157 200 / 150 % Seasonal space heating energy efficiency, average cli-
+mate
+98 102 % Water heating energy efficiency, average climate
+44 42 dB Sound power level LWAindoors
+12 6 kW Rated heat output ( Pdesignh ), cold climate
+12 6 kW Rated heat output ( Pdesignh ), warm climate
+5,292 / 7,173 2,481 / 3,287 kWh Annual energy consumption space heating, cold cli-
+mate
+1,709 1,642 kWh Annual energy consumption water heating, cold cli-
+mate
+2,928 / 3,999 1,408 / 1,852 kWh Annual energy consumption space heating, warm cli-
+mate
+1,709 1,642 kWh Annual energy consumption water heating, warm
+climate
+208 / 162 211 / 157 % Seasonal space heating energy efficiency, cold climate
+98 102 % Water heating energy efficiency, cold climate
+204 / 158 201 / 151 % Seasonal space heating energy efficiency, warm cli-
+mate
+98 102 % Water heating energy efficiency, warm climate
+- - dB Sound power level LWAoutdoors
+NIBE F1255 Chapter 12 | Technical data 72
+
+NIBE AB Supplier
+F1255-16 3x400V F1255-12 3x400V F1255-6 3x400V Model
+35 / 55 35 / 55 35 / 55 °C Temperature application
+XL XL XL Declared load profile for water heating
+A++ / A++ A++ / A++ A++ / A++ Seasonal space heating energy efficiency class, average
+climate
+A A A Water heating energy efficiency class, average climate
+16 12 6 kW Rated heat output ( Pdesignh ), average climate
+6,373 / 8,167 4,582 / 6,213 2,188 / 2,875 kWh Annual energy consumption space heating, average
+climate
+1,709 1,709 1,642 kWh Annual energy consumption water heating, average
+climate
+199 / 154 201 / 157 200 / 150 % Seasonal space heating energy efficiency, average cli-
+mate
+98 98 102 % Water heating energy efficiency, average climate
+42 44 42 dB Sound power level LWAindoors
+16 12 6 kW Rated heat output ( Pdesignh ), cold climate
+16 12 6 kW Rated heat output ( Pdesignh ), warm climate
+7,218 / 9,434 5,292 / 7,173 2,481 / 3,287 kWh Annual energy consumption space heating, cold cli-
+mate
+1,709 1,709 1,642 kWh Annual energy consumption water heating, cold cli-
+mate
+4,169 / 5,386 2,928 / 3,999 1,408 / 1,852 kWh Annual energy consumption space heating, warm cli-
+mate
+1,709 1,709 1,642 kWh Annual energy consumption water heating, warm
+climate
+211 / 159 208 / 162 211 / 157 % Seasonal space heating energy efficiency, cold climate
+98 98 102 % Water heating energy efficiency, cold climate
+197 / 151 204 / 158 201 / 151 % Seasonal space heating energy efficiency, warm cli-
+mate
+98 98 102 % Water heating energy efficiency, warm climate
+- - - dB Sound power level LWAoutdoors
+73 Chapter 12 | Technical data NIBE F1255
+
+Data for energy efficiency of the package
+F1255-12 1x230V F1255-6 1x230V Model
+35 / 55 35 / 55 °C Temperature application
+VI Controller, class
+4 % Controller, contribution to efficiency
+205 / 161 204 / 154 % Seasonal space heating energy efficiency of the pack-
+age, average climate
+A+++ A+++ Seasonal space heating energy efficiency class of the
+package, average climate
+212 / 166 215 / 161 % Seasonal space heating energy efficiency of the pack-
+age, cold climate
+208 / 162 205 / 155 % Seasonal space heating energy efficiency of the pack-
+age, warm climate
+F1255-12 3x230V F1255-6 3x230V Model
+35 / 55 35 / 55 °C Temperature application
+VI Controller, class
+4 % Controller, contribution to efficiency
+205 / 161 204 / 154 % Seasonal space heating energy efficiency of the pack-
+age, average climate
+A+++ A+++ Seasonal space heating energy efficiency class of the
+package, average climate
+212 / 166 215 / 161 % Seasonal space heating energy efficiency of the pack-
+age, cold climate
+208 / 162 205 / 155 % Seasonal space heating energy efficiency of the pack-
+age, warm climate
+F1255-16 3x400V F1255-12 3x400V F1255-6 3x400V Model
+35 / 55 35 / 55 35 / 55 °C Temperature application
+VI Controller, class
+4 % Controller, contribution to efficiency
+203 / 158 205 / 161 204 / 154 % Seasonal space heating energy efficiency of the pack-
+age, average climate
+A+++ A+++ A+++ Seasonal space heating energy efficiency class of the
+package, average climate
+215 / 163 212 / 166 215 / 161 % Seasonal space heating energy efficiency of the pack-
+age, cold climate
+201 / 155 208 / 162 205 / 155 % Seasonal space heating energy efficiency of the pack-
+age, warm climate
+The reported efficiency of the package also takes the controller into account. If an external supplementary boiler or solar heating is added
+to the package, the overall efficiency of the package should be recalculated.
+NIBE F1255 Chapter 12 | Technical data 74
+
+Technical documentation
+F1255-6 1x230V Model
+Air-water
+Exhaust-water
+Brine-water
+Water-waterType of heat pump
+Yes
+ NoLow-temperature heat pump
+Yes
+ NoIntegrated immersion heater for additional heat
+Yes
+ NoHeat pump combination heater
+Average
+ Cold
+ WarmClimate
+Average (55 °C)
+ Low (35 °C)Temperature application
+EN-14825 & EN-16147 Applied standards
+% 150 ƞs Seasonal space heating energy efficiency kW 5,5 Prated Rated heat output
+Declaredcoefficientofperformanceforspaceheatingatpartloadandat
+outdoortemperatureTjDeclaredcapacityforspaceheatingatpartloadandatoutdoortemperature
+Tj
+- 3.06 COPd Tj = -7 °C kW 5.0 Pdh Tj = -7 °C
+- 3.97 COPd Tj = +2 °C kW 3.0 Pdh Tj = +2 °C
+- 4.63 COPd Tj = +7 °C kW 2.0 Pdh Tj = +7 °C
+- 4.86 COPd Tj = +12 °C kW 1.2 Pdh Tj = +12 °C
+- 2.84 COPd Tj = biv kW 5.4 Pdh Tj = biv
+- 2.84 COPd Tj = TOL kW 5.4 Pdh Tj = TOL
+- COPd Tj = -15 °C (if TOL < -20 °C) kW Pdh Tj = -15 °C (if TOL < -20 °C)
+°C -10 TOL Min. outdoor air temperature °C -10 Tbiv Bivalent temperature
+- COPcyc Cycling interval efficiency kW Pcych Cycling interval capacity
+°C 65 WTOL Max supply temperature - 0.99 Cdh Degradation coefficient
+Additionalheat Powerconsumptioninmodesotherthanactivemode
+kW 0.1 Psup Rated heat output kW 0.002 POFF Off mode
+kW 0.007 PTO Thermostat-off mode
+Electric Type of energy input kW 0.007 PSB Standby mode
+kW 0.009 PCK Crankcase heater mode
+Otheritems
+m3/h Rated airflow (air-water) Variable Capacity control
+m3/h Nominal heating medium flow dB 42 / - LWA Sound power level, indoors/outdoors
+m3/h 0.68 Brine flow brine-water or water-water heat
+pumpskWh 2,875 QHE Annual energy consumption
+Forheatpumpcombinationheater
+% 102 ƞwh Water heating energy efficiency XL Declared load profile for water heating
+kWh Qfuel Daily fuel consumption kWh 7.73 Qelec Daily energy consumption
+GJ AFC Annual fuel consumption kWh 1,642 AEC Annual energy consumption
+NIBE Energy Systems – Box 14 – Hannabadsvägen 5 – 285 21 Markaryd – Sweden Contact information
+75 Chapter 12 | Technical data NIBE F1255
+
+F1255-12 1x230V Model
+Air-water
+Exhaust-water
+Brine-water
+Water-waterType of heat pump
+Yes
+ NoLow-temperature heat pump
+Yes
+ NoIntegrated immersion heater for additional heat
+Yes
+ NoHeat pump combination heater
+Average
+ Cold
+ WarmClimate
+Average (55 °C)
+ Low (35 °C)Temperature application
+EN-14825 & EN-16147 Applied standards
+% 157 ƞs Seasonal space heating energy efficiency kW 12,4 Prated Rated heat output
+Declaredcoefficientofperformanceforspaceheatingatpartloadandat
+outdoortemperatureTjDeclaredcapacityforspaceheatingatpartloadandatoutdoortemperature
+Tj
+- 3.18 COPd Tj = -7 °C kW 11.1 Pdh Tj = -7 °C
+- 4.12 COPd Tj = +2 °C kW 6.8 Pdh Tj = +2 °C
+- 4.67 COPd Tj = +7 °C kW 4.4 Pdh Tj = +7 °C
+- 5.06 COPd Tj = +12 °C kW 2.6 Pdh Tj = +12 °C
+- 2.91 COPd Tj = biv kW 12.3 Pdh Tj = biv
+- 2.91 COPd Tj = TOL kW 12.3 Pdh Tj = TOL
+- COPd Tj = -15 °C (if TOL < -20 °C) kW Pdh Tj = -15 °C (if TOL < -20 °C)
+°C -10 TOL Min. outdoor air temperature °C -10 Tbiv Bivalent temperature
+- COPcyc Cycling interval efficiency kW Pcych Cycling interval capacity
+°C 65 WTOL Max supply temperature - 0.99 Cdh Degradation coefficient
+Additionalheat Powerconsumptioninmodesotherthanactivemode
+kW 0.1 Psup Rated heat output kW 0.005 POFF Off mode
+kW 0.015 PTO Thermostat-off mode
+Electric Type of energy input kW 0.007 PSB Standby mode
+kW 0.0 PCK Crankcase heater mode
+Otheritems
+m3/h Rated airflow (air-water) Variable Capacity control
+m3/h Nominal heating medium flow dB 44 / - LWA Sound power level, indoors/outdoors
+m3/h 1.46 Brine flow brine-water or water-water heat
+pumpskWh 6,213 QHE Annual energy consumption
+Forheatpumpcombinationheater
+% 98 ƞwh Water heating energy efficiency XL Declared load profile for water heating
+kWh Qfuel Daily fuel consumption kWh 7.78 Qelec Daily energy consumption
+GJ AFC Annual fuel consumption kWh 1,709 AEC Annual energy consumption
+NIBE Energy Systems – Box 14 – Hannabadsvägen 5 – 285 21 Markaryd – Sweden Contact information
+NIBE F1255 Chapter 12 | Technical data 76
+
+F1255-6 3x230V Model
+Air-water
+Exhaust-water
+Brine-water
+Water-waterType of heat pump
+Yes
+ NoLow-temperature heat pump
+Yes
+ NoIntegrated immersion heater for additional heat
+Yes
+ NoHeat pump combination heater
+Average
+ Cold
+ WarmClimate
+Average (55 °C)
+ Low (35 °C)Temperature application
+EN-14825 & EN-16147 Applied standards
+% 150 ƞs Seasonal space heating energy efficiency kW 5,5 Prated Rated heat output
+Declaredcoefficientofperformanceforspaceheatingatpartloadandat
+outdoortemperatureTjDeclaredcapacityforspaceheatingatpartloadandatoutdoortemperature
+Tj
+- 3.06 COPd Tj = -7 °C kW 5.0 Pdh Tj = -7 °C
+- 3.97 COPd Tj = +2 °C kW 3.0 Pdh Tj = +2 °C
+- 4.63 COPd Tj = +7 °C kW 2.0 Pdh Tj = +7 °C
+- 4.86 COPd Tj = +12 °C kW 1.2 Pdh Tj = +12 °C
+- 2.84 COPd Tj = biv kW 5.4 Pdh Tj = biv
+- 2.84 COPd Tj = TOL kW 5.4 Pdh Tj = TOL
+- COPd Tj = -15 °C (if TOL < -20 °C) kW Pdh Tj = -15 °C (if TOL < -20 °C)
+°C -10 TOL Min. outdoor air temperature °C -10 Tbiv Bivalent temperature
+- COPcyc Cycling interval efficiency kW Pcych Cycling interval capacity
+°C 65 WTOL Max supply temperature - 0.99 Cdh Degradation coefficient
+Additionalheat Powerconsumptioninmodesotherthanactivemode
+kW 0.1 Psup Rated heat output kW 0.002 POFF Off mode
+kW 0.007 PTO Thermostat-off mode
+Electric Type of energy input kW 0.007 PSB Standby mode
+kW 0.009 PCK Crankcase heater mode
+Otheritems
+m3/h Rated airflow (air-water) Variable Capacity control
+m3/h Nominal heating medium flow dB 42 / - LWA Sound power level, indoors/outdoors
+m3/h 0.68 Brine flow brine-water or water-water heat
+pumpskWh 2,875 QHE Annual energy consumption
+Forheatpumpcombinationheater
+% 102 ƞwh Water heating energy efficiency XL Declared load profile for water heating
+kWh Qfuel Daily fuel consumption kWh 7.48 Qelec Daily energy consumption
+GJ AFC Annual fuel consumption kWh 1,642 AEC Annual energy consumption
+NIBE Energy Systems – Box 14 – Hannabadsvägen 5 – 285 21 Markaryd – Sweden Contact information
+77 Chapter 12 | Technical data NIBE F1255
+
+F1255-12 3x230V Model
+Air-water
+Exhaust-water
+Brine-water
+Water-waterType of heat pump
+Yes
+ NoLow-temperature heat pump
+Yes
+ NoIntegrated immersion heater for additional heat
+Yes
+ NoHeat pump combination heater
+Average
+ Cold
+ WarmClimate
+Average (55 °C)
+ Low (35 °C)Temperature application
+EN-14825 & EN-16147 Applied standards
+% 157 ƞs Seasonal space heating energy efficiency kW 12,4 Prated Rated heat output
+Declaredcoefficientofperformanceforspaceheatingatpartloadandat
+outdoortemperatureTjDeclaredcapacityforspaceheatingatpartloadandatoutdoortemperature
+Tj
+- 3.18 COPd Tj = -7 °C kW 11.1 Pdh Tj = -7 °C
+- 4.12 COPd Tj = +2 °C kW 6.8 Pdh Tj = +2 °C
+- 4.67 COPd Tj = +7 °C kW 4.4 Pdh Tj = +7 °C
+- 5.06 COPd Tj = +12 °C kW 2.6 Pdh Tj = +12 °C
+- 2.91 COPd Tj = biv kW 12.3 Pdh Tj = biv
+- 2.91 COPd Tj = TOL kW 12.3 Pdh Tj = TOL
+- COPd Tj = -15 °C (if TOL < -20 °C) kW Pdh Tj = -15 °C (if TOL < -20 °C)
+°C -10 TOL Min. outdoor air temperature °C -10 Tbiv Bivalent temperature
+- COPcyc Cycling interval efficiency kW Pcych Cycling interval capacity
+°C 65 WTOL Max supply temperature - 0.99 Cdh Degradation coefficient
+Additionalheat Powerconsumptioninmodesotherthanactivemode
+kW 0.1 Psup Rated heat output kW 0.005 POFF Off mode
+kW 0.015 PTO Thermostat-off mode
+Electric Type of energy input kW 0.007 PSB Standby mode
+kW 0.0 PCK Crankcase heater mode
+Otheritems
+m3/h Rated airflow (air-water) Variable Capacity control
+m3/h Nominal heating medium flow dB 44 / - LWA Sound power level, indoors/outdoors
+m3/h 1.46 Brine flow brine-water or water-water heat
+pumpskWh 6,213 QHE Annual energy consumption
+Forheatpumpcombinationheater
+% 98 ƞwh Water heating energy efficiency XL Declared load profile for water heating
+kWh Qfuel Daily fuel consumption kWh 7.78 Qelec Daily energy consumption
+GJ AFC Annual fuel consumption kWh 1,709 AEC Annual energy consumption
+NIBE Energy Systems – Box 14 – Hannabadsvägen 5 – 285 21 Markaryd – Sweden Contact information
+NIBE F1255 Chapter 12 | Technical data 78
+
+F1255-6 3x400V Model
+Air-water
+Exhaust-water
+Brine-water
+Water-waterType of heat pump
+Yes
+ NoLow-temperature heat pump
+Yes
+ NoIntegrated immersion heater for additional heat
+Yes
+ NoHeat pump combination heater
+Average
+ Cold
+ WarmClimate
+Average (55 °C)
+ Low (35 °C)Temperature application
+EN-14825 & EN-16147 Applied standards
+% 150 ƞs Seasonal space heating energy efficiency kW 5,5 Prated Rated heat output
+Declaredcoefficientofperformanceforspaceheatingatpartloadandat
+outdoortemperatureTjDeclaredcapacityforspaceheatingatpartloadandatoutdoortemperature
+Tj
+- 3.06 COPd Tj = -7 °C kW 5.0 Pdh Tj = -7 °C
+- 3.97 COPd Tj = +2 °C kW 3.0 Pdh Tj = +2 °C
+- 4.63 COPd Tj = +7 °C kW 2.0 Pdh Tj = +7 °C
+- 4.86 COPd Tj = +12 °C kW 1.2 Pdh Tj = +12 °C
+- 2.84 COPd Tj = biv kW 5.4 Pdh Tj = biv
+- 2.84 COPd Tj = TOL kW 5.4 Pdh Tj = TOL
+- COPd Tj = -15 °C (if TOL < -20 °C) kW Pdh Tj = -15 °C (if TOL < -20 °C)
+°C -10 TOL Min. outdoor air temperature °C -10 Tbiv Bivalent temperature
+- COPcyc Cycling interval efficiency kW Pcych Cycling interval capacity
+°C 65 WTOL Max supply temperature - 0.99 Cdh Degradation coefficient
+Additionalheat Powerconsumptioninmodesotherthanactivemode
+kW 0.1 Psup Rated heat output kW 0.002 POFF Off mode
+kW 0.007 PTO Thermostat-off mode
+Electric Type of energy input kW 0.007 PSB Standby mode
+kW 0.009 PCK Crankcase heater mode
+Otheritems
+m3/h Rated airflow (air-water) Variable Capacity control
+m3/h Nominal heating medium flow dB 42 / - LWA Sound power level, indoors/outdoors
+m3/h 0.68 Brine flow brine-water or water-water heat
+pumpskWh 2,875 QHE Annual energy consumption
+Forheatpumpcombinationheater
+% 102 ƞwh Water heating energy efficiency XL Declared load profile for water heating
+kWh Qfuel Daily fuel consumption kWh 7.48 Qelec Daily energy consumption
+GJ AFC Annual fuel consumption kWh 1,642 AEC Annual energy consumption
+NIBE Energy Systems – Box 14 – Hannabadsvägen 5 – 285 21 Markaryd – Sweden Contact information
+79 Chapter 12 | Technical data NIBE F1255
+
+F1255-12 3x400V Model
+Air-water
+Exhaust-water
+Brine-water
+Water-waterType of heat pump
+Yes
+ NoLow-temperature heat pump
+Yes
+ NoIntegrated immersion heater for additional heat
+Yes
+ NoHeat pump combination heater
+Average
+ Cold
+ WarmClimate
+Average (55 °C)
+ Low (35 °C)Temperature application
+EN-14825 & EN-16147 Applied standards
+% 157 ƞs Seasonal space heating energy efficiency kW 12,4 Prated Rated heat output
+Declaredcoefficientofperformanceforspaceheatingatpartloadandat
+outdoortemperatureTjDeclaredcapacityforspaceheatingatpartloadandatoutdoortemperature
+Tj
+- 3.18 COPd Tj = -7 °C kW 11.1 Pdh Tj = -7 °C
+- 4.12 COPd Tj = +2 °C kW 6.8 Pdh Tj = +2 °C
+- 4.67 COPd Tj = +7 °C kW 4.4 Pdh Tj = +7 °C
+- 5.06 COPd Tj = +12 °C kW 2.6 Pdh Tj = +12 °C
+- 2.91 COPd Tj = biv kW 12.3 Pdh Tj = biv
+- 2.91 COPd Tj = TOL kW 12.3 Pdh Tj = TOL
+- COPd Tj = -15 °C (if TOL < -20 °C) kW Pdh Tj = -15 °C (if TOL < -20 °C)
+°C -10 TOL Min. outdoor air temperature °C -10 Tbiv Bivalent temperature
+- COPcyc Cycling interval efficiency kW Pcych Cycling interval capacity
+°C 65 WTOL Max supply temperature - 0.99 Cdh Degradation coefficient
+Additionalheat Powerconsumptioninmodesotherthanactivemode
+kW 0.1 Psup Rated heat output kW 0.005 POFF Off mode
+kW 0.015 PTO Thermostat-off mode
+Electric Type of energy input kW 0.007 PSB Standby mode
+kW 0.0 PCK Crankcase heater mode
+Otheritems
+m3/h Rated airflow (air-water) Variable Capacity control
+m3/h Nominal heating medium flow dB 44 / - LWA Sound power level, indoors/outdoors
+m3/h 1.46 Brine flow brine-water or water-water heat
+pumpskWh 6,213 QHE Annual energy consumption
+Forheatpumpcombinationheater
+% 98 ƞwh Water heating energy efficiency XL Declared load profile for water heating
+kWh Qfuel Daily fuel consumption kWh 7.78 Qelec Daily energy consumption
+GJ AFC Annual fuel consumption kWh 1,709 AEC Annual energy consumption
+NIBE Energy Systems – Box 14 – Hannabadsvägen 5 – 285 21 Markaryd – Sweden Contact information
+NIBE F1255 Chapter 12 | Technical data 80
+
+F1255-16 3x400V Model
+Air-water
+Exhaust-water
+Brine-water
+Water-waterType of heat pump
+Yes
+ NoLow-temperature heat pump
+Yes
+ NoIntegrated immersion heater for additional heat
+Yes
+ NoHeat pump combination heater
+Average
+ Cold
+ WarmClimate
+Average (55 °C)
+ Low (35 °C)Temperature application
+EN-14825 & EN-16147 Applied standards
+% 154 ƞs Seasonal space heating energy efficiency kW 16,0 Prated Rated heat output
+Declaredcoefficientofperformanceforspaceheatingatpartloadandat
+outdoortemperatureTjDeclaredcapacityforspaceheatingatpartloadandatoutdoortemperature
+Tj
+- 3.0 COPd Tj = -7 °C kW 14.2 Pdh Tj = -7 °C
+- 4.1 COPd Tj = +2 °C kW 8.7 Pdh Tj = +2 °C
+- 4.9 COPd Tj = +7 °C kW 5.6 Pdh Tj = +7 °C
+- 5.0 COPd Tj = +12 °C kW 5.5 Pdh Tj = +12 °C
+- 2.8 COPd Tj = biv kW 15.4 Pdh Tj = biv
+- 2.8 COPd Tj = TOL kW 15.4 Pdh Tj = TOL
+- COPd Tj = -15 °C (if TOL < -20 °C) kW Pdh Tj = -15 °C (if TOL < -20 °C)
+°C -10 TOL Min. outdoor air temperature °C -10 Tbiv Bivalent temperature
+- COPcyc Cycling interval efficiency kW Pcych Cycling interval capacity
+°C 65 WTOL Max supply temperature - 0.99 Cdh Degradation coefficient
+Additionalheat Powerconsumptioninmodesotherthanactivemode
+kW 0.6 Psup Rated heat output kW 0.002 POFF Off mode
+kW 0.020 PTO Thermostat-off mode
+Electric Type of energy input kW 0.007 PSB Standby mode
+kW 0.030 PCK Crankcase heater mode
+Otheritems
+m3/h Rated airflow (air-water) Variable Capacity control
+m3/h Nominal heating medium flow dB 42 / - LWA Sound power level, indoors/outdoors
+m3/h 1.84 Brine flow brine-water or water-water heat
+pumpskWh 8,167 QHE Annual energy consumption
+Forheatpumpcombinationheater
+% 98 ƞwh Water heating energy efficiency XL Declared load profile for water heating
+kWh Qfuel Daily fuel consumption kWh 7.78 Qelec Daily energy consumption
+GJ AFC Annual fuel consumption kWh 1,709 AEC Annual energy consumption
+NIBE Energy Systems – Box 14 – Hannabadsvägen 5 – 285 21 Markaryd – Sweden Contact information
+81 Chapter 12 | Technical data NIBE F1255
+
+Item register
+A
+Accessibility, electrical connection, 19
+Accessories, 62
+Alarm, 60
+Assembly, 6
+B
+Back button, 38
+Brine side, 15
+C
+Cable lock, 20
+Commissioning and adjusting, 32
+Filling and venting, 32
+Post adjustment and bleeding, 34
+Preparations, 32
+Start guide, 33
+Connecting accessories, 30
+Connecting current sensors, 26
+Connecting external operating voltage for the control system, 21
+Connecting the climate system, 16
+Connecting the hot water heater, 16
+Connections, 21
+Connector for +Adjust , 28
+Contact for activation of fan speed, 29
+Contact for activation of “external adjustment", 29
+Contact for activation of “temporary lux", 29
+Contact for external tariff blocking, 28
+Control, 38 , 42
+Control - Introduction, 38
+Control - Menus, 42
+Control - Introduction, 38
+Display unit, 38
+Menu system, 39
+Control knob, 38
+Controlling ground water pump, 30
+Control - Menus, 42
+Menu 5 - SERVICE, 44
+Cooling mode indication, 30
+Cooling section, 12
+D
+Data for energy efficiency of the system, 74
+Delivery and handling, 6
+Assembly, 6
+Drawing out the cooling module, 6
+Installation area, 6
+Removing parts of the insulation, 8
+Removing the covers, 7
+Supplied components, 7
+Transport, 6
+Diagram, dimensioning compressor speed, 69
+Dimensions and pipe connections, 15
+Dimensions and setting-out coordinates, 64
+Display, 38
+Display unit, 38
+Back button, 38
+Control knob, 38
+Display, 38
+OK button, 38
+Status lamp, 38
+Switch, 38
+Disturbances in comfort, 60
+Alarm, 60
+Manage alarm, 60
+Troubleshooting, 60
+Docking alternatives, 16
+Extra electric hot water heater, 17Free cooling, 18
+Ground water system, 17
+Neutralization vessel, 16
+Pool, 18
+Two or more climate systems, 18
+Under floor heating systems, 18
+Ventilation recovery, 17
+Draining the climate system, 55
+Draining the hot water heater, 55
+Drawing out the cooling module, 6 , 56
+E
+Electrical addition - maximum output, 23
+Setting max electrical output, 23
+Switching to maximum electrical output, 23
+Electrical cabinets, 11
+Electrical connections, 19
+Accessibility, electrical connection, 19
+Cable lock, 20
+Connecting accessories, 30
+Connecting external operating voltage for the control system, 21
+Connections, 21
+Electrical addition - maximum output, 23
+External connection options, 27
+General, 19
+Load monitor, 26
+Miniature circuit-breaker, 19
+Optional connections, 26
+Outdoor sensor, 22
+Power connection, 21
+Removing the cover, base board, 20
+Removing the cover, immersion heater circuit board, 20
+Removing the hatch, input circuit board, 20
+Room sensor, 22
+Settings, 23
+Standby mode, 24
+Temperature limiter, 19
+Temperature sensor, external flow line, 22
+Uplink , 27
+Emptying the brine system, 55
+Energy labelling, 71
+Data for energy efficiency of the package, 74
+Information sheet, 71 –73
+Technical documentation, 75 , 77, 79
+External connection options, 27
+Connector for +Adjust , 28
+Contact for activation of fan speed, 29
+Contact for activation of “economy", 29
+Contact for activation of “external adjustment", 29
+Contact for activation of “temporary lux", 29
+Contact for external tariff blocking, 28
+Controlling ground water pump, 30
+Cooling mode indication, 30
+Extra circulation pump, 30
+Hot water circulation, 30
+NV 10, pressure/level/flow monitor brine, 29
+Possible selection for AUX inputs, 28
+Possible selection for AUX output (potential free variable re-
+lay), 30
+Switch for " Smart Grid ready ", 28
+Switch for external blocking of addition and/or compressor, 28
+Switch for external blocking of heating, 29
+Switch for external forced control of brine pump, 29
+Temperature sensor, cooling/heating, 28
+Extra circulation pump, 30
+NIBE F1255 Chapter 13 | Item register 8213 Item register
+
+F
+Filling and venting, 32
+Filling and venting the brine system, 32
+Filling and venting the climate system, 32
+Filling the hot water heater, 32
+Symbol key, 33
+Filling and venting the brine system, 32
+Filling and venting the climate system, 32
+Filling the hot water heater, 32
+H
+Heating medium side, 16
+Connecting the climate system, 16
+Helping the circulation pump to start, 56
+Help menu, 34 , 41
+Hot water circulation, 30
+Hot water heater, 16
+Connecting the hot water heater, 16
+I
+Important information, 4
+Recovery, 4
+Information sheet, 71
+Inspection of the installation, 5
+Installation area, 6
+M
+Manage alarm, 60
+Marking, 4
+Menu 5 - SERVICE, 44
+Menu system, 39
+Help menu, 34 , 41
+Operation, 40
+Scroll through the windows, 41
+Selecting menu, 40
+Selecting options, 40
+Setting a value, 40
+Use the virtual keyboard, 41
+Miniature circuit-breaker, 19
+N
+NV 10, pressure/level/flow monitor brine, 29
+O
+OK button, 38
+Operation, 40
+Optional connections, 26
+Outdoor sensor, 22
+P
+Pipe and ventilation connections
+Symbol key, 14
+Pipe connections, 14
+Brine side, 15
+Dimensions and pipe connections, 15
+Docking alternatives, 16
+General, 14
+Heating medium side, 16
+Hot water heater, 16
+Pipe dimensions, 15
+System diagram, 14
+Pipe dimensions, 15
+Possible selection for AUX inputs, 28
+Possible selection for AUX output (potential free variable relay), 30
+Post adjusting the room temperature, 35
+Post adjustment and bleeding, 34
+Post adjusting the room temperature, 35
+Pump adjustment, automatic operation, 34
+Pump adjustment, manual operation, 34
+Pump capacity diagram, brine side, manual operation, 34
+Readjusting, venting, heat medium side, 35
+Power connection, 21
+Preparations, 32Pump adjustment, automatic operation, 34
+Brine side, 34
+Heating medium side, 34
+Pump adjustment, manual operation, 34
+Heating medium side, 34
+Pump capacity diagram, brine side, manual operation, 34
+R
+Readjusting, venting, heat medium side, 35
+Remove parts of the insulation, 8
+Removing the cover, base board, 20
+Removing the cover, immersion heater circuit board, 20
+Removing the covers, 7
+Removing the hatch, input circuit board, 20
+Room sensor, 22
+S
+Safety information
+Inspection of the installation, 5
+Marking, 4
+Serial number, 4
+Symbols, 4
+Symbols on F1255 , 4
+Scroll through the windows, 41
+Selecting menu, 40
+Selecting options, 40
+Serial number, 4
+Service, 54
+Service actions, 54
+Service actions, 54
+Draining the climate system, 55
+Draining the hot water heater, 55
+Drawing out the cooling module, 56
+Emptying the brine system, 55
+Helping the circulation pump to start, 56
+Standby mode, 54
+Temperature sensor data, 56
+USB service outlet, 58
+Setting a value, 40
+Settings, 23
+Standby mode, 54
+Power in emergency mode, 24
+Start guide, 33
+Status lamp, 38
+Supplied components, 7
+Switch, 38
+Switch for " Smart Grid ready ", 28
+Switch for external blocking of addition and/or compressor, 28
+Switch for external blocking of heating, 29
+Switch for external forced control of brine pump, 29
+Symbol key, 14 , 33
+Symbols, 4
+Symbols on F1255 , 4
+System diagram, 14
+T
+Technical data, 64
+Dimensions and setting-out coordinates, 64
+Energy labelling, 71
+Data for energy efficiency of the system, 74
+Information sheet, 71
+Technical documentation, 75
+Technical Data, 65
+Technical Data, 65
+Diagram, dimensioning compressor speed, 69
+Working range heat pump, 68
+Technical documentation, 75
+Temperature limiter, 19
+Resetting, 19
+Temperature sensor, cooling/heating, 28
+Temperature sensor, external flow line, 22
+Temperature sensor data, 56
+83 Chapter 13 | Item register NIBE F1255
+
+The heat pump design, 9
+Component list cooling section, 12
+Component list electrical cabinets, 11
+Component location cooling section, 12
+Component location electrical cabinets, 11
+Component locations, 9
+List of components, 9
+Transport, 6
+Troubleshooting, 60
+U
+Uplink , 27
+USB service outlet, 58
+Use the virtual keyboard, 41
+W
+Working range heat pump, 68
+NIBE F1255 Chapter 13 | Item register 84
+
+
+
+
+
+Contact information
+KNV Energietechnik GmbH , Gahberggasse 11, AT-4861 Schörfling
+Tel: +43 (0)7662 8963 E-mail: mail@knv.at www.knv.atAT
+NIBE Wärmetechnik c/o ait Schweiz AG , Industriepark, CH-6246 Altishofen
+Tel: +41 58 252 21 00 E-mail: info@nibe.ch www.nibe.chCH
+Druzstevni zavody Drazice s.r.o , Drazice 69, CZ - 294 71 Benatky nad Jizerou
+Tel: +420 326 373 801 E-mail: nibe@nibe.cz www.nibe.czCZ
+NIBE Systemtechnik GmbH , Am Reiherpfahl 3, 29223 Celle
+Tel: +49 (0)5141 7546-0 E-mail: info@nibe.de www.nibe.deDE
+Vølund Varmeteknik A/S , Member of the Nibe Group, Brogårdsvej 7, 6920 Videbæk
+Tel: +45 97 17 20 33 E-mail: info@volundvt.dk www.volundvt.dkDK
+NIBE Energy Systems OY , Juurakkotie 3, 01510 Vantaa
+Tel: +358 (0)9-274 6970 E-mail: info@nibe.fi www.nibe.fiFI
+NIBE Energy Systems France Sarl, Zone industrielle RD 28, Rue du Pou du Ciel, 01600 Reyrieux
+Tel : 04 74 00 92 92 E-mail: info@nibe.fr www.nibe.frFR
+NIBE Energy Systems Ltd , 3C Broom Business Park, Bridge Way, S419QG Chesterfield
+Tel: +44 (0)845 095 1200 E-mail: info@nibe.co.uk www.nibe.co.ukGB
+NIBE Energietechniek B.V. , Postbus 634, NL 4900 AP Oosterhout
+Tel: 0168 477722 E-mail: info@nibenl.nl www.nibenl.nlNL
+ABK AS , Brobekkveien 80, 0582 Oslo, Postadresse: Postboks 64 Vollebekk, 0516 Oslo
+Tel: +47 23 17 05 20 E-mail: post@abkklima.no www.nibe.noNO
+NIBE-BIAWAR Sp. z o. o. Aleja Jana Pawła II 57, 15-703 BIALYSTOK
+Tel: +48 (0)85 662 84 90 E-mail: sekretariat@biawar.com.pl www.biawar.com.plPL
+© "EVAN" 17, per. Boynovskiy, RU-603024 Nizhny Novgorod
+Tel: +7 831 419 57 06 E-mail: kuzmin@evan.ru www.nibe-evan.ruRU
+NIBE AB Sweden , Box 14, Hannabadsvägen 5, SE-285 21 Markaryd
+Tel: +46 (0)433 73 000 E-mail: info@nibe.se www.nibe.seSE
+For countries not mention in this list, please contact Nibe Sweden or check www.nibe.eu for more information.
+
+WS name: -Gemensamt
+WS version: a452
+WS release date: 2017-12-13 11:22
+Publish date: 2018-01-03 11:34
+NIBE AB Sweden 
+H
+annabadsvägen 5
+Box 14 
+SE-285 21 Markaryd
+info@nibe.se
+www.nibe.eu 
+331296
