@@ -132,7 +132,7 @@ Current project uses 34 NIBE entities directly in automations/cards.
 - Force add-heat cap to 0 while guarding.
 - Exit wait until indoor avg <= target - 0.3 C.
 - Release:
-  - ramp offset up toward max(pre-guard offset, `guard_exit_offset: 0`)
+  - ramp offset up toward `min( max(pre-guard offset, guard_exit_offset: 0), zone_offset_cap )` — release is clamped by open floor loops so it never pushes heat back into closed loops.
   - delay `guard_release_delay: 8 min`
   - retrigger main autopilot.
 
@@ -286,7 +286,7 @@ These were checked live via SSH and are available/meaningful.
 ## 7) Deployment / Update Order
 
 1. Keep NibeGW transport active and verify entity availability.
-2. Enable entities from `nibe_entities_to_enable.txt` (Settings -> Devices/Entities, or registry), then reload the NIBE config entry. Includes new overheat sensors: `bm1_pressure_40857`, `calc_supply_s1_43009`, `eb100_ep14_bt12_condensor_out_40017`, `bf1_ep14_flow_40072`.
+2. Enable entities from `nibe_entities_to_enable.txt` (Settings -> Devices/Entities, or registry), then reload the NIBE config entry. Includes overheat sensors `bm1_pressure_40857` (currently unknown), `calc_supply_s1_43009`, `eb100_ep14_bt12_condensor_out_40017`, `bf1_ep14_flow_40072` (currently unknown), and `max_supply_system_1_47019` (recommended: set 40-45 C for underfloor).
 3. Load/update automations:
    - `NIBE autopilot.yaml`
    - `NIBE autopilot warm-room guard.yaml`
@@ -346,3 +346,29 @@ These were checked live via SSH and are available/meaningful.
 - If tuning duplicated constants, update all occurrences (startup/offset/DHW branches).
 - Do not add RMU temperature injection controls unless explicitly requested.
 - When recommending new entities, verify live state quality first (not only registry presence).
+
+## 12) Doc-Validated Control Facts (F1255 Installer manual, `docs/`)
+
+### Compressor frequency envelope
+- Operating range ~17-120 Hz (menu 5.1.24 blockFreq: start 17-115, stop 22-120).
+- Confirms zone compressor caps (50-120 Hz) and night cap (75) are all valid; `min_comp_freq_47103` bounds the low end.
+
+### Internal electrical addition (menu 5.1.12)
+- F1255-6 3x400V range: 0 - 6.5 kW (factory 6 kW). So `number.max_int_add_power_47212` max is 6.5 kW.
+- `input_number.nibe_max_add_heat_kw` (default 4.0) must stay <= 6.5.
+- Phase-current-vs-kW allocation table exists; heat pump auto-allocates add-heat to least-loaded phase when current sensors connected (matches the Shelly headroom clamp intent).
+
+### Overheat / high-pressure — how the pump already protects itself
+- Max flow line temp (menu 5.1.2): range 20-80 C, default 60 C. Underfloor recommended 35-45 C. Entity `number.max_supply_system_1_47019`.
+  - RECOMMENDED: enable and set to ~40-45 C (confirm max floor temp with floor supplier). This is a hard supply-temp ceiling and the most robust overheat guard — more reliable than offset shaping alone.
+- Max diff flow line temp (menu 5.1.3): maxdiff compressor default 10 C, maxdiff addition default 3 C.
+  - When actual supply (BT2) exceeds calculated supply by maxdiff, degree minutes are set to 0 and the compressor stops (heating-only demand); additive heat is force-stopped at maxdiff addition.
+  - This is why the "Overheat watch" card compares `sensor.calc_supply_s1_43009` (target) vs `sensor.bt2_supply_temp_s1_40008` (actual): a closing gap toward +10 C means the pump is about to cut out.
+
+### Pressure signal clarification
+- `sensor.bm1_pressure_40857` (BM1) is heating-system WATER pressure (fill/expansion, ~0.5-2.5 bar) — use for water-side health (low = air/leak), NOT the refrigerant trip. NOTE: on this install BM1 currently reads `unknown` (no sensor data), same as `sensor.bf1_ep14_flow_40072` — do not rely on either yet.
+- The actual high-pressure trip is refrigerant pressostat BP1 (hardware safety switch, no Modbus register). Best software proxy for refrigerant overheat is `sensor.eb100_ep14_bt12_condensor_out_40017` (condenser-out temp, live ~50 C) plus the BT2-vs-calc-supply gap above.
+- Caveat: calc-supply-vs-BT2 only compares meaningfully during space heating. During DHW, BT2/condenser run hot (~50 C) while `calc_supply_s1` stays at the low space-heat target, so a large gap during DHW is normal, not an overheat.
+
+### Curve offset scaling
+- Offset of +2 steps raises supply temp ~5 C at all outdoor temps (~2.5 C per step). Confirms span +/-6 is a meaningful control range for this system.

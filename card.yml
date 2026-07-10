@@ -465,7 +465,7 @@ cards:
   - type: custom:apexcharts-card
     header:
       show: true
-      title: Overheat watch (enable pressure/condenser sensors first)
+      title: Overheat watch (condenser & supply)
     graph_span: 24h
     all_series_config:
       stroke_width: 2
@@ -484,15 +484,7 @@ cards:
         name: Condenser out BT12
         yaxis_id: temp
         color: '#ef4444'
-      - entity: sensor.bm1_pressure_40857
-        name: System pressure
-        yaxis_id: bar
-        color: '#2563eb'
     yaxis:
       - id: temp
         decimals: 1
         opposite: false
-      - id: bar
-        min: 0
-        decimals: 2
-        opposite: true

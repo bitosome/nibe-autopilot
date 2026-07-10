@@ -9,6 +9,7 @@ number.heat_offset_s1_47011
 number.max_comp_freq_47104
 number.max_int_add_power_47212
 number.max_speed_circ_pump_heat_48458
+number.max_supply_system_1_47019
 number.min_comp_freq_47103
 number.periodic_hw_interval_47051
 number.speed_brine_pump_47418

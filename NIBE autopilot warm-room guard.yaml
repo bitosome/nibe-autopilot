@@ -81,14 +81,29 @@ actions:
               t_set = states('input_number.indoor_target_temperature') %} {{
               t_in|float <= (t_set|float - 0.1) }}
         sequence:
-          - alias: Ramp offset back toward demand
+          - alias: Ramp offset back toward demand (respecting open floor loops)
             variables:
-              release_target: |-
-                {% if pre_guard_offset|int > guard_exit_offset|int %}
-                  {{ pre_guard_offset|int }}
-                {% else %}
-                  {{ guard_exit_offset|int }}
-                {% endif %}
+              open_zones: >-
+                {% set ns = namespace(n=0) %} {% for e in zone_climate_entities
+                %}
+                  {% if state_attr(e, 'hvac_action') == 'heating' %}{% set ns.n = ns.n + 1 %}{% endif %}
+                {% endfor %} {{ ns.n }}
+              active_zones: >-
+                {% set ns = namespace(a=0) %} {% for e in zone_climate_entities
+                %}
+                  {% if states(e) not in ['off', 'unavailable', 'unknown'] %}{% set ns.a = ns.a + 1 %}{% endif %}
+                {% endfor %} {{ ns.a }}
+              zone_offset_cap: >-
+                {% set n = open_zones|int(0) %} {% if n >= 5 %}6{% elif n == 4
+                %}4{% elif n == 3 %}2{% elif n == 2 %}0{% elif n == 1 %}-2{% else
+                %}-4{% endif %}
+              release_base: >-
+                {% if pre_guard_offset|int > guard_exit_offset|int %}{{
+                pre_guard_offset|int }}{% else %}{{ guard_exit_offset|int }}{%
+                endif %}
+              release_target: >-
+                {{ [release_base|int, zone_offset_cap|int] | min if
+                (active_zones|int(0) > 0) else release_base|int }}
           - repeat:
               sequence:
                 - data:
@@ -116,3 +131,12 @@ actions:
               skip_condition: false
             action: automation.trigger
 mode: single
+variables:
+  zone_climate_entities:
+    - climate.thermostat_controller_workshop
+    - climate.thermostat_controller_mira_s_room
+    - climate.thermostat_controller_office
+    - climate.thermostat_controller_wc_1_entrance_storeroom_hallway
+    - climate.thermostat_controller_kitchen_living_room
+    - climate.thermostat_controller_bedroom
+    - climate.thermostat_controller_wc_2_shower_room
