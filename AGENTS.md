@@ -286,7 +286,7 @@ These were checked live via SSH and are available/meaningful.
 ## 7) Deployment / Update Order
 
 1. Keep NibeGW transport active and verify entity availability.
-2. Enable entities from `nibe_entities_to_enable.txt` (Settings -> Devices/Entities, or registry), then reload the NIBE config entry. Includes overheat sensors `bm1_pressure_40857` (currently unknown), `calc_supply_s1_43009`, `eb100_ep14_bt12_condensor_out_40017`, `bf1_ep14_flow_40072` (currently unknown), and `max_supply_system_1_47019` (recommended: set 40-45 C for underfloor).
+2. Enable entities from `nibe_entities_to_enable.txt` (Settings -> Devices/Entities, or registry), then reload the NIBE config entry. Includes overheat sensors `bm1_pressure_40857` (currently unknown), `calc_supply_s1_43009`, `eb100_ep14_bt12_condensor_out_40017`, `bf1_ep14_flow_40072` (currently unknown), and `max_supply_system_1_47019` (enabled + set to 42 C for underfloor).
 3. Load/update automations:
    - `NIBE autopilot.yaml`
    - `NIBE autopilot warm-room guard.yaml`
@@ -360,7 +360,7 @@ These were checked live via SSH and are available/meaningful.
 
 ### Overheat / high-pressure — how the pump already protects itself
 - Max flow line temp (menu 5.1.2): range 20-80 C, default 60 C. Underfloor recommended 35-45 C. Entity `number.max_supply_system_1_47019`.
-  - RECOMMENDED: enable and set to ~40-45 C (confirm max floor temp with floor supplier). This is a hard supply-temp ceiling and the most robust overheat guard — more reliable than offset shaping alone.
+  - DONE: enabled and set to 42 C (2026-07-10). Hard supply-temp ceiling for the underfloor loops — the most robust overheat guard, independent of offset shaping. Adjust only after confirming max floor temp with the floor supplier.
 - Max diff flow line temp (menu 5.1.3): maxdiff compressor default 10 C, maxdiff addition default 3 C.
   - When actual supply (BT2) exceeds calculated supply by maxdiff, degree minutes are set to 0 and the compressor stops (heating-only demand); additive heat is force-stopped at maxdiff addition.
   - This is why the "Overheat watch" card compares `sensor.calc_supply_s1_43009` (target) vs `sensor.bt2_supply_temp_s1_40008` (actual): a closing gap toward +10 C means the pump is about to cut out.

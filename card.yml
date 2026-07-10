@@ -476,6 +476,12 @@ cards:
         yaxis_id: temp
         color: '#94a3b8'
         stroke_dash: 4
+      - entity: number.max_supply_system_1_47019
+        name: Max supply ceiling
+        yaxis_id: temp
+        color: '#dc2626'
+        stroke_width: 1
+        stroke_dash: 6
       - entity: sensor.bt2_supply_temp_s1_40008
         name: Supply BT2
         yaxis_id: temp
