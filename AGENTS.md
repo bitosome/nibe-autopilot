@@ -1,6 +1,6 @@
 # NIBE F1255-6 R Autopilot (NibeGW + Home Assistant)
 
-Last updated: February 10, 2026.
+Last updated: July 9, 2026.
 
 ## 0) TL;DR
 
@@ -9,10 +9,13 @@ NIBE F1255-6 R can overheat / trip on high pressure when floor loops close (slow
 
 ### Current architecture
 - Transport: local RS-485 via `elupus/esphome-nibe` (NibeGW), no myUplink control path.
+- Underfloor heating zones: ESPHome `thermostat-controller.yaml` (8-channel relay board, `/config/esphome/`) drives per-room Tiemme loop actuators via 7 `climate.thermostat_controller_*` zones. `hvac_action == 'heating'` means that room's floor loop is open.
 - Control writer: Home Assistant automations.
 - Core control targets:
   - `number.heat_offset_s1_47011`
   - `number.max_int_add_power_47212`
+  - `number.max_comp_freq_47104` (sole writer: `NIBE night quiet mode`)
+- Zone-loop-aware overheat protection: autopilot + governor reduce offset / add-heat / compressor frequency when few floor loops are open (prevents high pressure into a shrinking loop area).
 - Electrical safety: 3-phase headroom clamp using Shelly 3EM + NIBE fuse setting.
 - Night noise control: dedicated quiet automation caps compressor frequency.
 
@@ -26,12 +29,14 @@ NIBE F1255-6 R can overheat / trip on high pressure when floor loops close (slow
 
 - `nibegw.yaml`
   - ESPHome firmware for NibeGW bridge (UDP mirror to HA).
+- `thermostat-controller.yaml` (deployed on HA at `/config/esphome/`)
+  - ESPHome firmware for the 8-channel relay board driving the 7 underfloor-heating zone actuators. Exposes `climate.thermostat_controller_*` entities.
 - `NIBE autopilot.yaml`
-  - Main control automation.
+  - Main control automation (offset + add-heat + zone-loop overheat guard).
 - `NIBE autopilot warm-room guard.yaml`
   - Overshoot guard with staged release.
 - `NIBE night quiet mode.yaml`
-  - Night compressor-noise limiter.
+  - Compressor-frequency governor: night noise limiter + zone-loop compressor cap. Sole writer of `number.max_comp_freq_47104`.
 - `NIBE derived power and COP sensors.yaml`
   - Derived input/produced power and estimated COP sensors.
 - `card.yml`
@@ -65,18 +70,21 @@ Current project uses 34 NIBE entities directly in automations/cards.
 - Every 10 min (`offset` loop).
 - Every 2 min (`dhw` / periodic helper).
 - Alarm state change (`sensor.alarm_45001`, 30 s).
+- Zone floor-loop change (`hvac_action` on the 7 `climate.thermostat_controller_*` zones, 60 s debounce).
 
 ### Inputs
 - Indoor demand:
   - `sensor.home_temperature_average`
   - `input_number.indoor_target_temperature`
 - Room weighting (for tuned behavior):
-  - multiple room sensors, weighted toward coldest room.
+  - per-zone room sensors (aligned to the 7 thermostat-controller zones), weighted toward coldest room: `sensor.workshop_light_switch_temperature`, `sensor.mira_s_room_light_switch_temperature`, `sensor.office_light_switch_1_temperature`, `sensor.wc_1_entrance_hallway_temperature_average`, `sensor.living_room_temperature_average`, `sensor.wc_2_light_switch_1_temperature`, `sensor.wc_2_shower_room_temperature_average`.
 - Source/conditions:
   - `sensor.bt1_outdoor_temperature_40004`
   - `sensor.eb100_ep14_bt10_brine_in_temp_40015`
   - `sensor.eb100_ep14_bt11_brine_out_temp_40016`
   - DHW priority signal: `sensor.opt_boiler_has_priority_hot_water_41287`
+- Floor-loop demand (zone-loop overheat protection, see 3.4):
+  - 7 `climate.thermostat_controller_*` zones (`hvac_action == 'heating'` = loop open).
 - Electrical headroom:
   - `sensor.shelly_pro_3em_1_phase_a_current`
   - `sensor.shelly_pro_3em_1_phase_b_current`
@@ -128,14 +136,43 @@ Current project uses 34 NIBE entities directly in automations/cards.
   - delay `guard_release_delay: 8 min`
   - retrigger main autopilot.
 
-## 3.3 Night quiet mode: `NIBE night quiet mode`
+## 3.3 Night quiet mode / compressor governor: `NIBE night quiet mode`
 
 ### Logic
-- Time window: 22:30 -> 06:30.
-- If autopilot is on and comfort deficit < 0.7 C:
-  - cap `number.max_comp_freq_47104` to 75 Hz.
-- Otherwise restore to 120 Hz.
+- Sole writer of `number.max_comp_freq_47104`.
+- Triggers: 22:30, 06:30, every 10 min, and on any zone `hvac_action` change (30-60 s debounce).
+- Noise target:
+  - Time window 22:30 -> 06:30.
+  - If autopilot is on and comfort deficit < 0.7 C: 75 Hz, else 120 Hz.
+- Zone-loop cap (only when autopilot on, `active_zones > 0`, and not DHW priority — so summer DHW is never throttled):
+  - open loops -> cap: `>=5`=120, `4`=100, `3`=85, `2`=65, `1`=55, `0`=50 Hz.
+- Final `max_comp_freq` = `min(noise_target, zone_cap)`.
 - Ensure `switch.hot_water_high_power_mode_48743` is off at night.
+
+## 3.4 Zone-loop overheat protection (autopilot + governor)
+
+### Rationale
+When most floor loops close (rooms satisfied), pushing full supply temp / add-heat / compressor frequency into a shrinking loop area causes high pressure / overheat. The 7 `climate.thermostat_controller_*` zones report open loops via `hvac_action == 'heating'`.
+
+### Zones (relay -> room)
+- `climate.thermostat_controller_workshop`
+- `climate.thermostat_controller_mira_s_room`
+- `climate.thermostat_controller_office`
+- `climate.thermostat_controller_wc_1_entrance_storeroom_hallway`
+- `climate.thermostat_controller_kitchen_living_room` (2 relays)
+- `climate.thermostat_controller_bedroom`
+- `climate.thermostat_controller_wc_2_shower_room`
+
+### Definitions
+- `open_zones` = count of zones with `hvac_action == 'heating'`.
+- `active_zones` = count of zones not in `off` (participating this heating season).
+- Self-regulating: a cold room opens its own loop (raising `open_zones`), which relaxes the caps.
+
+### Caps by open loops (moderate profile)
+- Offset upper cap: `>=5`=+6, `4`=+4, `3`=+2, `2`=0, `1`=-2, `0`=-4.
+- Add-heat factor: `>=4`=1.0, `3`=0.5, `<=2`=0.0.
+- Compressor cap: see 3.3.
+- Fast guard (autopilot `zones` trigger): clamps offset down to the zone cap and forces add-heat to 0 when `open_zones <= 2`, gated off during DHW priority.
 
 ## 4) Power, Heat, and COP Telemetry
 
@@ -195,6 +232,13 @@ NIBE block includes:
 
 These were checked live via SSH and are available/meaningful.
 
+### Overheat / high-pressure observability (added to enable list, enable + reload)
+- `sensor.bm1_pressure_40857` — system water pressure (direct high-pressure signal).
+- `sensor.calc_supply_s1_43009` — heat pump's calculated target supply temp.
+- `sensor.eb100_ep14_bt12_condensor_out_40017` — condenser-out (hot side) temp.
+- `sensor.bf1_ep14_flow_40072` — system flow (verify value quality after enabling).
+- Recommended follow-up: once normal ranges are observed, add a hard guard that caps add-heat to 0 / lowers offset when pressure or condenser-out exceeds a validated threshold.
+
 ### Priority A (high value for control/diagnostics)
 - `switch.allow_additive_heating_47370`
   - hard block/allow additive heating by automation context.
@@ -242,15 +286,16 @@ These were checked live via SSH and are available/meaningful.
 ## 7) Deployment / Update Order
 
 1. Keep NibeGW transport active and verify entity availability.
-2. Load/update automations:
+2. Enable entities from `nibe_entities_to_enable.txt` (Settings -> Devices/Entities, or registry), then reload the NIBE config entry. Includes new overheat sensors: `bm1_pressure_40857`, `calc_supply_s1_43009`, `eb100_ep14_bt12_condensor_out_40017`, `bf1_ep14_flow_40072`.
+3. Load/update automations:
    - `NIBE autopilot.yaml`
    - `NIBE autopilot warm-room guard.yaml`
    - `NIBE night quiet mode.yaml`
-3. Load/update sensors:
+4. Load/update sensors:
    - `NIBE derived power and COP sensors.yaml`
-4. Reload Templates / restart HA if needed.
-5. Apply dashboard from `card.yml`.
-6. Confirm only one writer controls offset/add-heat.
+5. Reload Templates / restart HA if needed.
+6. Apply dashboard from `card.yml`.
+7. Confirm single writers: offset/add-heat = `NIBE autopilot` (+ warm-room guard); `max_comp_freq_47104` = `NIBE night quiet mode` only.
 
 ## 8) Validation Checklist
 
@@ -258,6 +303,7 @@ These were checked live via SSH and are available/meaningful.
 - `number.max_int_add_power_47212` follows demand + headroom even when offset doesn’t change.
 - During high room temp, guard engages and add-heat cap drops to 0.
 - Night window caps compressor max frequency unless comfort deficit exceeds threshold.
+- Zone protection: with few floor loops open, offset/add-heat/compressor caps engage; caps relax as more loops open. DHW priority and all-zones-off (summer) disable the zone compressor cap.
 - Produced power/COP sensors become stable after derivative warm-up window (~15 min).
 - No breaker nuisance under EV charging (watch Shelly per-phase currents + add-heat cap).
 

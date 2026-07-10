@@ -14,6 +14,18 @@ triggers:
     entity_id: sensor.alarm_45001
     for: "00:00:30"
     trigger: state
+  - id: zones
+    trigger: state
+    entity_id:
+      - climate.thermostat_controller_workshop
+      - climate.thermostat_controller_mira_s_room
+      - climate.thermostat_controller_office
+      - climate.thermostat_controller_wc_1_entrance_storeroom_hallway
+      - climate.thermostat_controller_kitchen_living_room
+      - climate.thermostat_controller_bedroom
+      - climate.thermostat_controller_wc_2_shower_room
+    attribute: hvac_action
+    for: "00:01:00"
 conditions: []
 actions:
   - choose:
@@ -94,7 +106,31 @@ actions:
                 {% else %}0{% endif %}
               p_headroom_kw_step: "{{ (((p_headroom_kw|float(0)) * 2) | int) / 2 }}"
               startup_add_kw: "{{ [ desired_temp_add_kw|float, max_add_heat_kw|float, p_headroom_kw_step|float ] | min }}"
-              startup_add_kw_step: "{{ (((startup_add_kw|float) * 2) | int) / 2 }}"
+              open_zones: >-
+                {% set ns = namespace(n=0) %} {% for e in zone_climate_entities
+                %}
+                  {% if state_attr(e, 'hvac_action') == 'heating' %}{% set ns.n = ns.n + 1 %}{% endif %}
+                {% endfor %} {{ ns.n }}
+              active_zones: >-
+                {% set ns = namespace(a=0) %} {% for e in zone_climate_entities
+                %}
+                  {% if states(e) not in ['off', 'unavailable', 'unknown'] %}{% set ns.a = ns.a + 1 %}{% endif %}
+                {% endfor %} {{ ns.a }}
+              zone_active: "{{ active_zones|int(0) > 0 }}"
+              zone_offset_cap: >-
+                {% set n = open_zones|int(0) %} {% if n >= 5 %}6{% elif n == 4
+                %}4{% elif n == 3 %}2{% elif n == 2 %}0{% elif n == 1 %}-2{% else
+                %}-4{% endif %}
+              zone_add_factor: >-
+                {% set n = open_zones|int(0) %} {% if n >= 4 %}1.0{% elif n == 3
+                %}0.5{% else %}0.0{% endif %}
+              desired_startup_zoned: >-
+                {{ [desired_final|int, zone_offset_cap|int] | min if zone_active
+                else desired_final|int }}
+              startup_add_kw_zoned: >-
+                {{ startup_add_kw|float * (zone_add_factor|float if zone_active
+                else 1.0) }}
+              startup_add_kw_step: "{{ (((startup_add_kw_zoned|float) * 2) | int) / 2 }}"
           - choose:
               - conditions:
                   - condition: state
@@ -102,7 +138,7 @@ actions:
                     state: "on"
                 sequence:
                   - data:
-                      value: "{{ desired_final }}"
+                      value: "{{ desired_startup_zoned }}"
                     target:
                       entity_id: number.heat_offset_s1_47011
                     action: number.set_value
@@ -147,13 +183,12 @@ actions:
                 - none
                 - ""
               room_sensors:
-                - sensor.home_temperature_average
-                - sensor.aqara_thp_1_temperature
-                - sensor.aqara_thp_2_temperature
-                - sensor.aqara_thp_3_temperature
-                - sensor.wc_1_entrance_hallway_storeroom_temperature_average
-                - sensor.kitchen_living_room_temperature_average
-                - sensor.aqara_thp_6_temperature
+                - sensor.workshop_light_switch_temperature
+                - sensor.mira_s_room_light_switch_temperature
+                - sensor.office_light_switch_1_temperature
+                - sensor.wc_1_entrance_hallway_temperature_average
+                - sensor.living_room_temperature_average
+                - sensor.wc_2_light_switch_1_temperature
                 - sensor.wc_2_shower_room_temperature_average
               coldest_room_temp: >-
                 {% set fallback =
@@ -203,8 +238,29 @@ actions:
               desired_clamped: "{{ [ [ desired_base|int, -span ] | max, span ] | min }}"
               desired_with_bias: "{{ desired_clamped|int + heat_bias|int }}"
               desired_final: "{{ [ [ desired_with_bias|int, -span ] | max, span ] | min }}"
+              open_zones: >-
+                {% set ns = namespace(n=0) %} {% for e in zone_climate_entities
+                %}
+                  {% if state_attr(e, 'hvac_action') == 'heating' %}{% set ns.n = ns.n + 1 %}{% endif %}
+                {% endfor %} {{ ns.n }}
+              active_zones: >-
+                {% set ns = namespace(a=0) %} {% for e in zone_climate_entities
+                %}
+                  {% if states(e) not in ['off', 'unavailable', 'unknown'] %}{% set ns.a = ns.a + 1 %}{% endif %}
+                {% endfor %} {{ ns.a }}
+              zone_active: "{{ active_zones|int(0) > 0 }}"
+              zone_offset_cap: >-
+                {% set n = open_zones|int(0) %} {% if n >= 5 %}6{% elif n == 4
+                %}4{% elif n == 3 %}2{% elif n == 2 %}0{% elif n == 1 %}-2{% else
+                %}-4{% endif %}
+              zone_add_factor: >-
+                {% set n = open_zones|int(0) %} {% if n >= 4 %}1.0{% elif n == 3
+                %}0.5{% else %}0.0{% endif %}
+              desired_final_zoned: >-
+                {{ [desired_final|int, zone_offset_cap|int] | min if zone_active
+                else desired_final|int }}
               last: "{{ states('number.heat_offset_s1_47011')|int(0) }}"
-              delta: "{{ desired_final|int - last|int }}"
+              delta: "{{ desired_final_zoned|int - last|int }}"
               price_active: >-
                 {% set entity_id = cheap_hours_sensor %} {% if entity_id in
                 ['unknown', 'unavailable', 'none', '', None] %}
@@ -262,7 +318,8 @@ actions:
                 {% else %}0{% endif %}
               p_headroom_kw_step: "{{ (((p_headroom_kw|float(0)) * 2) | int) / 2 }}"
               allowed_add_kw: "{{ [ desired_temp_add_kw|float, max_add_heat_kw|float, p_headroom_kw_step|float ] | min }}"
-              allowed_add_kw_step: "{{ (((allowed_add_kw|float(0)) * 2) | int) / 2 }}"
+              allowed_add_kw_zoned: "{{ allowed_add_kw|float * (zone_add_factor|float if zone_active else 1.0) }}"
+              allowed_add_kw_step: "{{ (((allowed_add_kw_zoned|float(0)) * 2) | int) / 2 }}"
               step_target: |-
                 {% set lim = maxstep %}
                 {% if price_active %}
@@ -319,6 +376,59 @@ actions:
                     target:
                       entity_id: input_number.nibe_heat_bias
                     action: input_number.set_value
+      - conditions:
+          - condition: trigger
+            id: zones
+          - condition: state
+            entity_id: input_boolean.nibe_autopilot_state
+            state: "on"
+        sequence:
+          - alias: Fast floor-loop overheat guard (reacts to zone open/close)
+            variables:
+              open_zones: >-
+                {% set ns = namespace(n=0) %} {% for e in zone_climate_entities
+                %}
+                  {% if state_attr(e, 'hvac_action') == 'heating' %}{% set ns.n = ns.n + 1 %}{% endif %}
+                {% endfor %} {{ ns.n }}
+              active_zones: >-
+                {% set ns = namespace(a=0) %} {% for e in zone_climate_entities
+                %}
+                  {% if states(e) not in ['off', 'unavailable', 'unknown'] %}{% set ns.a = ns.a + 1 %}{% endif %}
+                {% endfor %} {{ ns.a }}
+              dhw_priority_state: "{{ states('sensor.opt_boiler_has_priority_hot_water_41287') }}"
+              dhw_active: >-
+                {% if dhw_priority_state not in ['unknown', 'unavailable', ''] %}
+                  {{ dhw_priority_state|int(0) == 1 }}
+                {% else %}
+                  false
+                {% endif %}
+              zone_active: "{{ (active_zones|int(0) > 0) and (not dhw_active) }}"
+              zone_offset_cap: >-
+                {% set n = open_zones|int(0) %} {% if n >= 5 %}6{% elif n == 4
+                %}4{% elif n == 3 %}2{% elif n == 2 %}0{% elif n == 1 %}-2{% else
+                %}-4{% endif %}
+              current_offset: "{{ states('number.heat_offset_s1_47011')|int(0) }}"
+              current_add: "{{ states('number.max_int_add_power_47212')|float(0) }}"
+          - choose:
+              - conditions:
+                  - condition: template
+                    value_template: "{{ zone_active and (current_offset|int > zone_offset_cap|int) }}"
+                sequence:
+                  - data:
+                      value: "{{ zone_offset_cap }}"
+                    target:
+                      entity_id: number.heat_offset_s1_47011
+                    action: number.set_value
+          - choose:
+              - conditions:
+                  - condition: template
+                    value_template: "{{ zone_active and (open_zones|int <= 2) and (current_add|float > 0.09) }}"
+                sequence:
+                  - data:
+                      value: 0
+                    target:
+                      entity_id: number.max_int_add_power_47212
+                    action: number.set_value
       - conditions:
           - condition: trigger
             id: dhw
@@ -406,6 +516,14 @@ actions:
 mode: queued
 variables:
   max_add_heat_kw: "{{ states('input_number.nibe_max_add_heat_kw')|float(4.0) }}"
+  zone_climate_entities:
+    - climate.thermostat_controller_workshop
+    - climate.thermostat_controller_mira_s_room
+    - climate.thermostat_controller_office
+    - climate.thermostat_controller_wc_1_entrance_storeroom_hallway
+    - climate.thermostat_controller_kitchen_living_room
+    - climate.thermostat_controller_bedroom
+    - climate.thermostat_controller_wc_2_shower_room
   main_breaker_a: 16
   phase_safety_margin_a: 2
   nominal_line_voltage_v: 400

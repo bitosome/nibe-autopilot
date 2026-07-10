@@ -19,6 +19,8 @@ select.hot_water_comfort_mode_47041
 select.operational_mode_brine_medium_pump_47139
 select.operational_mode_heat_medium_pump_47138
 sensor.alarm_45001
+sensor.bf1_ep14_flow_40072
+sensor.bm1_pressure_40857
 sensor.brine_pump_dt_actual_44910
 sensor.brine_pump_dt_set_point_44911
 sensor.brine_pump_state_ep14_43433
@@ -26,6 +28,7 @@ sensor.bt1_outdoor_temperature_40004
 sensor.bt2_supply_temp_s1_40008
 sensor.bt6_hw_load_40014
 sensor.bt7_hw_top_40013
+sensor.calc_supply_s1_43009
 sensor.compr_in_power_43141
 sensor.compr_in_power_mean_43375
 sensor.compressor_frequency_actual_43136
@@ -36,6 +39,7 @@ sensor.compressor_starts_eb100_ep14_43416
 sensor.compressor_state_ep14_43427
 sensor.eb100_ep14_bt10_brine_in_temp_40015
 sensor.eb100_ep14_bt11_brine_out_temp_40016
+sensor.eb100_ep14_bt12_condensor_out_40017
 sensor.eb100_ep14_bt3_return_temp_40012
 sensor.ep14_gp2_brine_pump_status_ep14_43439
 sensor.heat_medium_flow_dt_actual_43065

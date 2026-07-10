@@ -243,28 +243,28 @@ cards:
       stroke_width: 2
       curve: smooth
     series:
-      - entity: sensor.aqara_thp_1_temperature
-        name: Room 1
+      - entity: sensor.workshop_light_switch_temperature
+        name: Workshop
         yaxis_id: temp
         color: '#ef4444'
-      - entity: sensor.aqara_thp_2_temperature
-        name: Room 2
+      - entity: sensor.mira_s_room_light_switch_temperature
+        name: Mira's room
         yaxis_id: temp
         color: '#f97316'
-      - entity: sensor.aqara_thp_3_temperature
-        name: Room 3
-        yaxis_id: temp
-        color: '#facc15'
-      - entity: sensor.kitchen_living_room_temperature_average
-        name: Living/kitchen
-        yaxis_id: temp
-        color: '#22c55e'
-      - entity: sensor.aqara_thp_6_temperature
+      - entity: sensor.office_light_switch_1_temperature
         name: Office
         yaxis_id: temp
+        color: '#facc15'
+      - entity: sensor.wc_1_entrance_hallway_temperature_average
+        name: WC1/entrance/hallway
+        yaxis_id: temp
+        color: '#22c55e'
+      - entity: sensor.living_room_temperature_average
+        name: Kitchen/living
+        yaxis_id: temp
         color: '#0ea5e9'
-      - entity: sensor.wc_1_entrance_hallway_storeroom_temperature_average
-        name: Hallway
+      - entity: sensor.wc_2_light_switch_1_temperature
+        name: Bedroom
         yaxis_id: temp
         color: '#6366f1'
       - entity: sensor.wc_2_shower_room_temperature_average
@@ -327,7 +327,8 @@ cards:
   - type: custom:apexcharts-card
     header:
       show: true
-      title: Curve & Power
+      title: Control outputs (offset & add-heat)
+    graph_span: 24h
     all_series_config:
       stroke_width: 2
     series:
@@ -355,3 +356,143 @@ cards:
         max: 10
         decimals: 0
         opposite: false
+      - id: kw
+        min: 0
+        decimals: 1
+        opposite: true
+  - type: custom:apexcharts-card
+    header:
+      show: true
+      title: Floor loops open (by room)
+    graph_span: 24h
+    stacked: true
+    all_series_config:
+      type: column
+      stroke_width: 0
+    series:
+      - entity: climate.thermostat_controller_workshop
+        attribute: hvac_action
+        name: Workshop
+        color: '#ef4444'
+        transform: 'return x === ''heating'' ? 1 : 0;'
+      - entity: climate.thermostat_controller_mira_s_room
+        attribute: hvac_action
+        name: Mira's room
+        color: '#f97316'
+        transform: 'return x === ''heating'' ? 1 : 0;'
+      - entity: climate.thermostat_controller_office
+        attribute: hvac_action
+        name: Office
+        color: '#facc15'
+        transform: 'return x === ''heating'' ? 1 : 0;'
+      - entity: climate.thermostat_controller_wc_1_entrance_storeroom_hallway
+        attribute: hvac_action
+        name: WC1/entrance/hallway
+        color: '#22c55e'
+        transform: 'return x === ''heating'' ? 1 : 0;'
+      - entity: climate.thermostat_controller_kitchen_living_room
+        attribute: hvac_action
+        name: Kitchen/living
+        color: '#0ea5e9'
+        transform: 'return x === ''heating'' ? 1 : 0;'
+      - entity: climate.thermostat_controller_bedroom
+        attribute: hvac_action
+        name: Bedroom
+        color: '#6366f1'
+        transform: 'return x === ''heating'' ? 1 : 0;'
+      - entity: climate.thermostat_controller_wc_2_shower_room
+        attribute: hvac_action
+        name: Shower
+        color: '#a855f7'
+        transform: 'return x === ''heating'' ? 1 : 0;'
+    yaxis:
+      - min: 0
+        max: 7
+        decimals: 0
+  - type: custom:apexcharts-card
+    header:
+      show: true
+      title: Input vs produced power & COP
+    graph_span: 24h
+    all_series_config:
+      stroke_width: 2
+      curve: smooth
+    series:
+      - entity: sensor.nibe_total_input_power_kw
+        name: Input kW
+        yaxis_id: kw
+        color: '#ef4444'
+      - entity: sensor.nibe_produced_heat_total_power_kw
+        name: Produced kW
+        yaxis_id: kw
+        color: '#22c55e'
+      - entity: sensor.nibe_estimated_cop_instant
+        name: COP
+        yaxis_id: cop
+        color: '#a855f7'
+        stroke_dash: 3
+    yaxis:
+      - id: kw
+        min: 0
+        decimals: 1
+        opposite: false
+      - id: cop
+        min: 0
+        max: 8
+        decimals: 1
+        opposite: true
+  - type: custom:apexcharts-card
+    header:
+      show: true
+      title: Produced heat totals
+    graph_span: 7d
+    all_series_config:
+      stroke_width: 2
+      curve: smooth
+    series:
+      - entity: sensor.heat_meter_heat_cpr_and_add_total_system_42439
+        name: Space heat total
+        yaxis_id: kwh
+        color: '#f97316'
+      - entity: sensor.heat_meter_hw_cpr_and_add_total_system_42437
+        name: DHW total
+        yaxis_id: kwh
+        color: '#0ea5e9'
+    yaxis:
+      - id: kwh
+        decimals: 0
+        opposite: false
+  - type: custom:apexcharts-card
+    header:
+      show: true
+      title: Overheat watch (enable pressure/condenser sensors first)
+    graph_span: 24h
+    all_series_config:
+      stroke_width: 2
+      curve: smooth
+    series:
+      - entity: sensor.calc_supply_s1_43009
+        name: Calc supply target
+        yaxis_id: temp
+        color: '#94a3b8'
+        stroke_dash: 4
+      - entity: sensor.bt2_supply_temp_s1_40008
+        name: Supply BT2
+        yaxis_id: temp
+        color: '#f97316'
+      - entity: sensor.eb100_ep14_bt12_condensor_out_40017
+        name: Condenser out BT12
+        yaxis_id: temp
+        color: '#ef4444'
+      - entity: sensor.bm1_pressure_40857
+        name: System pressure
+        yaxis_id: bar
+        color: '#2563eb'
+    yaxis:
+      - id: temp
+        decimals: 1
+        opposite: false
+      - id: bar
+        min: 0
+        decimals: 2
+        opposite: true
