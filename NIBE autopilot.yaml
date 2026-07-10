@@ -26,6 +26,11 @@ triggers:
       - climate.thermostat_controller_wc_2_shower_room
     attribute: hvac_action
     for: "00:01:00"
+  - id: hotgas
+    trigger: numeric_state
+    entity_id: sensor.eb100_ep14_bt14_hot_gas_temp_40018
+    above: 115
+    for: "00:00:30"
 conditions: []
 actions:
   - choose:
@@ -36,7 +41,7 @@ actions:
           - alias: Wait for Modbus entities (max 5 min)
             wait_template: |-
               {{
-                states('sensor.outdoors_temperature_average') not in ['unknown','unavailable',''] and
+                states('sensor.ecowitt_ws90_1_outdoor_temperature') not in ['unknown','unavailable',''] and
                 states('sensor.bt1_outdoor_temperature_40004') not in ['unknown','unavailable',''] and
                 states('sensor.home_temperature_average') not in ['unknown','unavailable',''] and
                 states('number.heat_offset_s1_47011') not in ['unknown','unavailable',''] and
@@ -48,7 +53,7 @@ actions:
               t_in: "{{ states('sensor.home_temperature_average')|float(0) }}"
               t_set: "{{ states('input_number.indoor_target_temperature')|float(22) }}"
               t_out: >-
-                {% set avg = states('sensor.outdoors_temperature_average') %} {%
+                {% set avg = states('sensor.ecowitt_ws90_1_outdoor_temperature') %} {%
                 if avg not in ['unknown', 'unavailable', ''] %}
                   {{ avg|float(99) }}
                 {% else %}
@@ -159,14 +164,19 @@ actions:
             state: "on"
           - condition: template
             value_template: >-
-              {% set dhw_priority = states('sensor.opt_boiler_has_priority_hot_water_41287') %}
-              {% if dhw_priority not in ['unknown', 'unavailable', ''] %}
-                {{ dhw_priority|int(0) == 0 }}
+              {% set prio = states('sensor.prio_43086') %}
+              {% if prio not in ['unknown', 'unavailable', 'none', ''] %}
+                {{ 'water' not in prio|lower }}
               {% else %}
-                {% set bt6 = states('sensor.bt6_hw_load_40014')|float(0) %}
-                {% set bt7 = states('sensor.bt7_hw_top_40013')|float(0) %}
-                {% set hz = states('sensor.compressor_frequency_actual_43136')|float(0) %}
-                {{ not (hz > 20 and bt6 >= 45 and bt7 < 54) }}
+                {% set dhw_priority = states('sensor.opt_boiler_has_priority_hot_water_41287') %}
+                {% if dhw_priority not in ['unknown', 'unavailable', ''] %}
+                  {{ dhw_priority|int(0) == 0 }}
+                {% else %}
+                  {% set bt6 = states('sensor.bt6_hw_load_40014')|float(0) %}
+                  {% set bt7 = states('sensor.bt7_hw_top_40013')|float(0) %}
+                  {% set hz = states('sensor.compressor_frequency_actual_43136')|float(0) %}
+                  {{ not (hz > 20 and bt6 >= 45 and bt7 < 54) }}
+                {% endif %}
               {% endif %}
           - condition: template
             value_template: >-
@@ -220,7 +230,7 @@ actions:
                 {% endif %}
               t_set: "{{ states('input_number.indoor_target_temperature')|float(22) }}"
               t_out: >-
-                {% set avg = states('sensor.outdoors_temperature_average') %} {%
+                {% set avg = states('sensor.ecowitt_ws90_1_outdoor_temperature') %} {%
                 if avg not in ['unknown', 'unavailable', ''] %}
                   {{ avg|float(99) }}
                 {% else %}
@@ -397,7 +407,10 @@ actions:
                 {% endfor %} {{ ns.a }}
               dhw_priority_state: "{{ states('sensor.opt_boiler_has_priority_hot_water_41287') }}"
               dhw_active: >-
-                {% if dhw_priority_state not in ['unknown', 'unavailable', ''] %}
+                {% set prio = states('sensor.prio_43086') %}
+                {% if prio not in ['unknown', 'unavailable', 'none', ''] %}
+                  {{ 'water' in prio|lower }}
+                {% elif dhw_priority_state not in ['unknown', 'unavailable', ''] %}
                   {{ dhw_priority_state|int(0) == 1 }}
                 {% else %}
                   false
@@ -444,7 +457,10 @@ actions:
               periodic_threshold_start: 55
               dhw_priority_state: "{{ states('sensor.opt_boiler_has_priority_hot_water_41287') }}"
               dhw_active: >-
-                {% if dhw_priority_state not in ['unknown', 'unavailable', ''] %}
+                {% set prio = states('sensor.prio_43086') %}
+                {% if prio not in ['unknown', 'unavailable', 'none', ''] %}
+                  {{ 'water' in prio|lower }}
+                {% elif dhw_priority_state not in ['unknown', 'unavailable', ''] %}
                   {{ dhw_priority_state|int(0) == 1 }}
                 {% else %}
                   {{ (compressor_hz > 20) and (bt6 >= 45) and (bt7 < 54) }}
@@ -484,6 +500,36 @@ actions:
                     target:
                       entity_id: number.max_int_add_power_47212
                     action: number.set_value
+      - conditions:
+          - condition: trigger
+            id: hotgas
+          - condition: state
+            entity_id: input_boolean.nibe_autopilot_state
+            state: "on"
+        sequence:
+          - alias: Hot-gas overheat guard (BT14 discharge temp)
+            variables:
+              bt14: "{{ states('sensor.eb100_ep14_bt14_hot_gas_temp_40018')|float(0) }}"
+              hotgas_guard_c: 115
+          - condition: template
+            value_template: "{{ bt14 >= hotgas_guard_c }}"
+          - data:
+              value: 0
+            target:
+              entity_id: number.max_int_add_power_47212
+            action: number.set_value
+          - data:
+              value: "{{ [ states('number.heat_offset_s1_47011')|int(0) - 3, -10 ] | max }}"
+            target:
+              entity_id: number.heat_offset_s1_47011
+            action: number.set_value
+          - data:
+              title: NIBE hot-gas guard
+              message: >-
+                Hot gas (BT14) {{ bt14 }} C >= {{ hotgas_guard_c }} C: add-heat
+                forced to 0 and offset lowered to protect against a
+                high-pressure / high-temp trip.
+            action: persistent_notification.create
       - conditions:
           - condition: trigger
             id: alarm

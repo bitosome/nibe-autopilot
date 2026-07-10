@@ -22,6 +22,7 @@ select.operational_mode_heat_medium_pump_47138
 sensor.alarm_45001
 sensor.bf1_ep14_flow_40072
 sensor.bm1_pressure_40857
+binary_sensor.freeze_protection_status_43013
 sensor.brine_pump_dt_actual_44910
 sensor.brine_pump_dt_set_point_44911
 sensor.brine_pump_state_ep14_43433
@@ -41,6 +42,9 @@ sensor.compressor_state_ep14_43427
 sensor.eb100_ep14_bt10_brine_in_temp_40015
 sensor.eb100_ep14_bt11_brine_out_temp_40016
 sensor.eb100_ep14_bt12_condensor_out_40017
+sensor.eb100_ep14_bt14_hot_gas_temp_40018
+sensor.eb100_ep14_bt15_liquid_line_40019
+sensor.eb100_ep14_bt17_suction_40022
 sensor.eb100_ep14_bt3_return_temp_40012
 sensor.ep14_gp2_brine_pump_status_ep14_43439
 sensor.heat_medium_flow_dt_actual_43065
@@ -50,8 +54,11 @@ sensor.heat_meter_hw_cpr_and_add_total_system_42437
 sensor.int_el_add_power_43084
 sensor.int_el_add_state_43091
 sensor.inverter_alarm_code_40323
+sensor.inverter_fault_code_40324
+sensor.inverter_limit_status_40316
 sensor.max_compressor_frequency_heating_40322
 sensor.opt_boiler_has_priority_hot_water_41287
+sensor.prio_43086
 sensor.state_ground_water_pump_44756
 sensor.supply_pump_speed_ep14_43437
 sensor.supply_pump_state_ep14_43431
