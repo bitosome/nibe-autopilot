@@ -17,6 +17,7 @@ number.speed_circ_pump_heat_47414
 number.speed_circ_pump_hw_47413
 number.stop_temperature_periodic_hw_47046
 select.hot_water_comfort_mode_47041
+select.operational_mode_47137
 select.operational_mode_brine_medium_pump_47139
 select.operational_mode_heat_medium_pump_47138
 sensor.alarm_45001
