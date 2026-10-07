@@ -30,4 +30,4 @@ No extra UI helpers or YAML package are required by the new backend. Keep the ol
 
 ## Distribution
 
-The existing GitHub repository is private and contains historical household configuration. A HACS public release requires a separate privacy review of both the current tree and Git history. No visibility change or history rewrite is part of this implementation. Manual deployment of the runtime-only ZIP is available in the meantime.
+The owner made the repository public on October 7, 2026. It can be added as a HACS custom repository (Integration). A runtime-only manual-install ZIP is also available. Historical household configuration remains in Git history; do not add live registry exports, credentials, raw logs or private deployment backups to the public repository.

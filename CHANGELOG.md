@@ -8,4 +8,4 @@
 - Persistent protection state, guarded takeover, single-writer reconciliation and bounded write confirmation.
 - Native comfort controls, controller telemetry, redacted diagnostics and dashboard discovery attributes.
 - Synthetic engine and Home Assistant framework tests; runtime-only installation ZIP.
-- Production installation/activation and public HACS distribution remain separate approval steps.
+- Monitor-first installation, explicit supervised takeover and documented rollback; public HACS custom-repository distribution.

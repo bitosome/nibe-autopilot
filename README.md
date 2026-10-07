@@ -10,11 +10,11 @@ It uses your existing **NIBE Heat Pump integration and NibeGW bridge**. It does 
 
 Requires Home Assistant **2026.9.4 or newer**. Tested against 2026.9.4 / Python 3.14; later versions still require regression testing.
 
-This repository currently remains **private**, so normal HACS installation is not yet available. HACS requires a public GitHub repository. Do not make this repository public without reviewing its household configuration and full history. See [HACS requirements](https://www.hacs.xyz/docs/publish/start/).
+The repository is public and supports installation as a HACS custom repository. This is not a listing in the default HACS catalog. Do not publish live configuration, credentials, registry exports or raw household logs in issues or pull requests.
 
 For manual installation, the build artifact contains only `custom_components/nibe_autopilot/`. Install that directory under the HA configuration directory, restart HA, then choose **Settings > Devices & services > Add integration > NIBE Autopilot**. Installing files/restarting a live system still requires the owner's approval.
 
-After a privacy-reviewed public release, add `https://github.com/bitosome/nibe-autopilot` in **HACS > Custom repositories**, category **Integration**, download it and restart HA. The `hacs.json` and standard integration directory layout are already provided. HACS listing/submission is separate from a custom-repository installation.
+Add `https://github.com/bitosome/nibe-autopilot` in **HACS > Custom repositories**, category **Integration**, download it and restart HA. The `hacs.json` and standard integration directory layout are provided. HACS listing/submission is separate from a custom-repository installation.
 
 ## Native Configuration
 
