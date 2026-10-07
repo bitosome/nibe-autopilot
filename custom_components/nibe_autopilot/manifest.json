@@ -1,0 +1,13 @@
+{
+  "domain": "nibe_autopilot",
+  "name": "NIBE Autopilot",
+  "codeowners": ["@bitosome"],
+  "config_flow": true,
+  "documentation": "https://github.com/bitosome/nibe-autopilot",
+  "integration_type": "service",
+  "iot_class": "calculated",
+  "issue_tracker": "https://github.com/bitosome/nibe-autopilot/issues",
+  "requirements": [],
+  "single_config_entry": true,
+  "version": "0.1.0"
+}
