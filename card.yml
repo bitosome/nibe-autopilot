@@ -1,240 +1,42 @@
 type: vertical-stack
 cards:
   - type: entities
+    title: NIBE controls
     entities:
       - entity: input_boolean.nibe_autopilot_state
-        name: Autopilot enabled
+        name: Autopilot
       - entity: automation.nibe_night_quiet_mode
         name: Night quiet mode
-      - entity: switch.allow_heating_47371
-        name: Allow space heating
-      - entity: switch.allow_additive_heating_47370
-        name: Allow additive heat
-      - entity: switch.hw_production_47387
-        name: Allow DHW production
-      - entity: switch.periodic_hw_47050
-        name: Periodic HW enabled
-      - entity: switch.hot_water_high_power_mode_48743
-        name: HW high power mode
-      - entity: water_heater.nibe_f1255_6_r_hot_water
-        name: Hot water controller
-      - entity: select.hot_water_comfort_mode_47041
-        name: Hot water comfort mode
       - entity: input_number.indoor_target_temperature
         name: Indoor target
       - entity: input_number.nibe_max_add_heat_kw
         name: Max add-heat cap
       - entity: input_number.nibe_heat_bias
         name: Heat bias trim
+      - entity: number.max_supply_system_1_47019
+        name: Max supply ceiling
       - entity: number.heat_offset_s1_47011
         name: Heating curve offset
       - entity: number.max_int_add_power_47212
         name: Max add heat (kW)
-      - entity: number.fuse_47214
-        name: Fuse setting (A)
-      - entity: number.min_comp_freq_47103
-        name: Min compressor freq (Hz)
       - entity: number.max_comp_freq_47104
         name: Max compressor freq (Hz)
-      - entity: sensor.max_compressor_frequency_heating_40322
-        name: Max compressor freq heating
-      - entity: number.degree_minutes_32_bit_40940
-        name: Degree minutes
-      - entity: number.degree_minutes_16_bit_43005
-        name: Degree minutes (16-bit)
-      - entity: number.dm_start_heating_47206
-        name: DM start heating
-      - entity: number.dm_between_add_steps_47209
-        name: DM between add steps
-      - entity: number.dm_start_add_with_shunt_47210
-        name: DM start add with shunt
-      - entity: sensor.alarm_45001
-        name: Active alarm code
-      - entity: sensor.inverter_alarm_code_40323
-        name: Inverter alarm code
-      - entity: button.nibe_f1255_6_r_alarm_reset
-        name: Reset alarm
+  - type: glance
+    title: NIBE status
+    columns: 3
+    entities:
       - entity: sensor.compressor_state_ep14_43427
         name: Compressor
-      - entity: sensor.compressor_frequency_request_40321
-        name: Compressor freq request
-      - entity: sensor.compressor_frequency_target_43182
-        name: Compressor freq target
       - entity: sensor.compressor_frequency_actual_43136
-        name: Compressor freq actual
-      - entity: sensor.compressor_slow_down_reason_40813
-        name: Compressor slow-down reason
-      - entity: sensor.compressor_starts_eb100_ep14_43416
-        name: Compressor starts
-      - entity: sensor.compr_in_power_43141
-        name: Compressor input power
-      - entity: sensor.compr_in_power_mean_43375
-        name: Compressor input power mean
-      - entity: sensor.nibe_total_input_power_kw
-        name: Total input power
-      - entity: sensor.nibe_produced_space_heat_power_kw
-        name: Produced space heat power
-      - entity: sensor.nibe_produced_dhw_heat_power_kw
-        name: Produced DHW heat power
-      - entity: sensor.nibe_produced_heat_total_power_kw
-        name: Produced heat power
+        name: Freq Hz
+      - entity: sensor.prio_43086
+        name: Priority
+      - entity: sensor.eb100_ep14_bt14_hot_gas_temp_40018
+        name: Hot gas
       - entity: sensor.nibe_estimated_cop_instant
-        name: Estimated COP (instant)
-      - entity: sensor.int_el_add_state_43091
-        name: Add heat state
-      - entity: sensor.opt_boiler_has_priority_hot_water_41287
-        name: DHW priority
-      - entity: sensor.supply_pump_state_ep14_43431
-        name: Supply pump state
-      - entity: sensor.supply_pump_speed_ep14_43437
-        name: Supply pump speed
-      - entity: select.operational_mode_heat_medium_pump_47138
-        name: Heat pump mode
-      - entity: number.speed_circ_pump_heat_47414
-        name: Heat pump speed set
-      - entity: number.max_speed_circ_pump_heat_48458
-        name: Heat pump max speed
-      - entity: sensor.brine_pump_state_ep14_43433
-        name: Brine pump state
-      - entity: sensor.ep14_gp2_brine_pump_status_ep14_43439
-        name: Brine pump GP2
-      - entity: select.operational_mode_brine_medium_pump_47139
-        name: Brine pump mode
-      - entity: number.speed_brine_pump_47418
-        name: Brine pump speed set
-      - entity: number.speed_circ_pump_hw_47413
-        name: HW pump speed set
-      - entity: sensor.brine_pump_dt_actual_44910
-        name: Brine ΔT actual
-      - entity: sensor.brine_pump_dt_set_point_44911
-        name: Brine ΔT set
-      - entity: sensor.heat_medium_flow_dt_actual_43065
-        name: Heat medium ΔT actual
-      - entity: sensor.heat_medium_flow_dt_set_point_43064
-        name: Heat medium ΔT set
-      - entity: sensor.heat_meter_heat_cpr_and_add_total_system_42439
-        name: Produced heat total
-      - entity: sensor.heat_meter_hw_cpr_and_add_total_system_42437
-        name: Produced DHW total
-      - entity: number.periodic_hw_interval_47051
-        name: Periodic HW interval
-      - entity: number.stop_temperature_periodic_hw_47046
-        name: Periodic HW stop temp
-      - entity: sensor.tot_op_time_compr_eb100_ep14_43420
-        name: Compressor total op time
-      - entity: sensor.tot_hw_op_time_compr_eb100_ep14_43424
-        name: Compressor DHW op time
-      - entity: sensor.tot_hw_op_time_add_43239
-        name: Add heat DHW op time
-      - entity: sensor.tot_ext_hw_add_op_time_40755
-        name: Ext add HW op time
-      - entity: sensor.state_ground_water_pump_44756
-        name: Ground water pump state
-  - type: custom:apexcharts-card
-    header:
-      show: true
-      title: Compressor Frequency
-    all_series_config:
-      stroke_width: 2
-      curve: smooth
-    series:
-      - entity: sensor.compressor_frequency_request_40321
-        name: Requested Hz
-        color: '#a855f7'
-        yaxis_id: hz
-        stroke_dash: 5
-      - entity: sensor.compressor_frequency_target_43182
-        name: Target Hz
-        color: '#22c55e'
-        yaxis_id: hz
-        stroke_dash: 3
-      - entity: sensor.compressor_frequency_actual_43136
-        name: Actual Hz
-        color: '#2563eb'
-        yaxis_id: hz
-      - entity: number.max_comp_freq_47104
-        name: Max limit Hz
-        color: '#94a3b8'
-        yaxis_id: hz
-        stroke_dash: 2
-    yaxis:
-      - id: hz
-        decimals: 0
-        min: 0
-        max: 130
-        opposite: false
-  - type: custom:apexcharts-card
-    header:
-      show: true
-      title: Pump Speeds
-    all_series_config:
-      stroke_width: 2
-      curve: smooth
-    series:
-      - entity: sensor.supply_pump_speed_ep14_43437
-        name: Supply pump %
-        yaxis_id: pct
-        color: '#0ea5e9'
-      - entity: number.speed_circ_pump_heat_47414
-        name: Heat pump set %
-        yaxis_id: pct
-        color: '#22c55e'
-        stroke_dash: 3
-      - entity: number.speed_circ_pump_hw_47413
-        name: HW pump set %
-        yaxis_id: pct
-        color: '#f59e0b'
-        stroke_dash: 4
-      - entity: number.speed_brine_pump_47418
-        name: Brine pump set %
-        yaxis_id: pct
-        color: '#14b8a6'
-        stroke_dash: 5
-    yaxis:
-      - id: pct
-        decimals: 0
-        min: 0
-        max: 100
-        opposite: false
-  - type: custom:apexcharts-card
-    header:
-      show: true
-      title: Heating Temperatures
-    all_series_config:
-      stroke_width: 2
-      curve: smooth
-    series:
-      - entity: sensor.home_temperature_average
-        name: Indoor avg
-        yaxis_id: temp
-      - entity: input_number.indoor_target_temperature
-        name: Target
-        yaxis_id: temp
-        color: '#999999'
-        stroke_width: 1
-        stroke_dash: 4
-      - entity: sensor.bt2_supply_temp_s1_40008
-        name: Supply S1
-        yaxis_id: temp
-        color: '#f97316'
-      - entity: sensor.eb100_ep14_bt3_return_temp_40012
-        name: Return S1
-        yaxis_id: temp
-        color: '#22c55e'
-      - entity: sensor.outdoors_temperature_average
-        name: Outdoor avg
-        yaxis_id: temp
-        color: '#3b82f6'
-      - entity: sensor.bt1_outdoor_temperature_40004
-        name: Outdoor BT1
-        yaxis_id: temp
-        color: '#93c5fd'
-        stroke_width: 1
-        stroke_dash: 4
-    yaxis:
-      - id: temp
-        decimals: 1
-        opposite: false
+        name: COP
+      - entity: sensor.alarm_45001
+        name: Alarm
   - type: custom:apexcharts-card
     header:
       show: true
@@ -286,48 +88,7 @@ cards:
   - type: custom:apexcharts-card
     header:
       show: true
-      title: Brine Temperatures
-    all_series_config:
-      stroke_width: 2
-      curve: smooth
-    series:
-      - entity: sensor.eb100_ep14_bt10_brine_in_temp_40015
-        name: Brine in
-        yaxis_id: temp
-        color: '#0ea5e9'
-      - entity: sensor.eb100_ep14_bt11_brine_out_temp_40016
-        name: Brine out
-        yaxis_id: temp
-        color: '#2563eb'
-    yaxis:
-      - id: temp
-        decimals: 1
-        opposite: false
-  - type: custom:apexcharts-card
-    header:
-      show: true
-      title: Brine ΔT
-    all_series_config:
-      stroke_width: 2
-      curve: smooth
-    series:
-      - entity: sensor.brine_pump_dt_actual_44910
-        name: ΔT actual
-        yaxis_id: delta
-        color: '#f59e0b'
-      - entity: sensor.brine_pump_dt_set_point_44911
-        name: ΔT set
-        yaxis_id: delta
-        color: '#94a3b8'
-        stroke_dash: 4
-    yaxis:
-      - id: delta
-        decimals: 1
-        opposite: false
-  - type: custom:apexcharts-card
-    header:
-      show: true
-      title: Control outputs (offset & add-heat)
+      title: Control & compressor
     graph_span: 24h
     all_series_config:
       stroke_width: 2
@@ -337,28 +98,25 @@ cards:
         type: column
         yaxis_id: offset
         color: '#6366f1'
-      - entity: sensor.int_el_add_power_43084
-        name: Add heat power
-        yaxis_id: kw
-        color: '#f97316'
-      - entity: sensor.compr_in_power_43141
-        name: Compressor input
-        yaxis_id: kw
-        color: '#0ea5e9'
-      - entity: number.max_int_add_power_47212
-        name: Add heat limit
-        yaxis_id: kw
+      - entity: sensor.compressor_frequency_actual_43136
+        name: Compressor Hz
+        yaxis_id: hz
+        color: '#2563eb'
+      - entity: number.max_comp_freq_47104
+        name: Max Hz limit
+        yaxis_id: hz
         color: '#94a3b8'
-        stroke_dash: 4
+        stroke_dash: 3
     yaxis:
       - id: offset
         min: -10
         max: 10
         decimals: 0
         opposite: false
-      - id: kw
+      - id: hz
         min: 0
-        decimals: 1
+        max: 130
+        decimals: 0
         opposite: true
   - type: custom:apexcharts-card
     header:
@@ -412,59 +170,6 @@ cards:
   - type: custom:apexcharts-card
     header:
       show: true
-      title: Input vs produced power & COP
-    graph_span: 24h
-    all_series_config:
-      stroke_width: 2
-      curve: smooth
-    series:
-      - entity: sensor.nibe_total_input_power_kw
-        name: Input kW
-        yaxis_id: kw
-        color: '#ef4444'
-      - entity: sensor.nibe_produced_heat_total_power_kw
-        name: Produced kW
-        yaxis_id: kw
-        color: '#22c55e'
-      - entity: sensor.nibe_estimated_cop_instant
-        name: COP
-        yaxis_id: cop
-        color: '#a855f7'
-        stroke_dash: 3
-    yaxis:
-      - id: kw
-        min: 0
-        decimals: 1
-        opposite: false
-      - id: cop
-        min: 0
-        max: 8
-        decimals: 1
-        opposite: true
-  - type: custom:apexcharts-card
-    header:
-      show: true
-      title: Produced heat totals
-    graph_span: 7d
-    all_series_config:
-      stroke_width: 2
-      curve: smooth
-    series:
-      - entity: sensor.heat_meter_heat_cpr_and_add_total_system_42439
-        name: Space heat total
-        yaxis_id: kwh
-        color: '#f97316'
-      - entity: sensor.heat_meter_hw_cpr_and_add_total_system_42437
-        name: DHW total
-        yaxis_id: kwh
-        color: '#0ea5e9'
-    yaxis:
-      - id: kwh
-        decimals: 0
-        opposite: false
-  - type: custom:apexcharts-card
-    header:
-      show: true
       title: Overheat watch (condenser & supply)
     graph_span: 24h
     all_series_config:
@@ -490,6 +195,10 @@ cards:
         name: Condenser out BT12
         yaxis_id: temp
         color: '#ef4444'
+      - entity: sensor.eb100_ep14_bt14_hot_gas_temp_40018
+        name: Hot gas BT14
+        yaxis_id: temp
+        color: '#b91c1c'
     yaxis:
       - id: temp
         decimals: 1

@@ -65,7 +65,10 @@ actions:
         {{ ns.a }}
       dhw_priority_state: "{{ states('sensor.opt_boiler_has_priority_hot_water_41287') }}"
       dhw_active: >-
-        {% if dhw_priority_state not in ['unknown', 'unavailable', ''] %}
+        {% set prio = states('sensor.prio_43086') %}
+        {% if prio not in ['unknown', 'unavailable', 'none', ''] %}
+          {{ 'water' in prio|lower }}
+        {% elif dhw_priority_state not in ['unknown', 'unavailable', ''] %}
           {{ dhw_priority_state|int(0) == 1 }}
         {% else %}
           false
