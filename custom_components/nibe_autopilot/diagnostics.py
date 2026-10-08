@@ -21,6 +21,7 @@ async def async_get_config_entry_diagnostics(hass, entry):
                 "electrical_allowance",
                 "sensors_ok",
                 "zones_ok",
+                "cold_room_rescue",
             )
         },
         "pending_output_roles": list(c.pending),

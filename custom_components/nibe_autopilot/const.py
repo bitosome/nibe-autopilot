@@ -4,7 +4,7 @@ from dataclasses import dataclass
 
 DOMAIN = "nibe_autopilot"
 PLATFORMS = ["sensor", "binary_sensor", "number", "switch"]
-VERSION = "0.1.0"
+VERSION = "0.1.1"
 OUTPUTS = ("offset_entity", "heater_limit_entity", "frequency_limit_entity")
 CRITICAL_ALARMS = frozenset(
     [
@@ -119,6 +119,14 @@ SETTINGS = {
     "kp": Setting("Proportional gain", 1.5, 0.1, 3, 0.1, "heating"),
     "warm_enter": Setting("Warm guard entry above target", 0.4, 0.1, 2, 0.1, "heating", "°C"),
     "warm_exit": Setting("Warm guard exit below target", 0.3, 0.1, 2, 0.1, "heating", "°C"),
+    "room_rescue_enter": Setting("Cold-room rescue entry deficit", 1, 0.5, 2, 0.1, "heating", "°C"),
+    "room_rescue_exit": Setting(
+        "Cold-room rescue exit deficit", 0.3, 0.1, 0.9, 0.1, "heating", "°C"
+    ),
+    "room_rescue_seconds": Setting(
+        "Sustained cold-room delay", 1200, 600, 3600, 60, "heating", "s"
+    ),
+    "room_rescue_offset": Setting("Cold-room rescue offset ceiling", 0, -4, 0, 1, "heating"),
     "recovery_seconds": Setting("Warm guard recovery delay", 480, 60, 1800, 60, "heating", "s"),
     "offset_interval": Setting("Offset ramp interval", 600, 600, 3600, 60, "heating", "s"),
     "zone_delay": Setting("Actuator opening allowance", 480, 60, 1800, 60, "heating", "s"),

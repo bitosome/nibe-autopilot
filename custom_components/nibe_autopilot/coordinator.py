@@ -278,6 +278,17 @@ class AutopilotCoordinator(DataUpdateCoordinator):
                 self.error = "bindings_changed_review_takeover"
                 self.transient = Transient()
                 self.pending.clear()
+            elif any(
+                new[key] != self.config[key]
+                for key in (
+                    "room_rescue_enter",
+                    "room_rescue_exit",
+                    "room_rescue_seconds",
+                    "room_rescue_offset",
+                )
+            ):
+                self.transient.cold_since.clear()
+                self.transient.rescue_rooms.clear()
             self.config = new
             await self.persist()
             self._listen()

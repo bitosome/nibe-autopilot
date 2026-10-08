@@ -19,7 +19,7 @@ The existing integration owns transport, polling and register entities. This bac
 | `diagnostics.py` | Downloadable diagnostics without household entity IDs/labels |
 | `strings.json`, `translations/en.json` | UI labels/help, generated from the catalog |
 
-Memory persists the warm latch, recovery/global/condenser deadlines and offset/heater cooldown timestamps. Enable/error state is also persisted. No `initial` values wipe existing holds. First installation starts disabled. Evidence timers for actuator opening and actual heater idle restart after process/reload or binding changes. Ordinary tuning preserves timers.
+Memory persists the warm latch, recovery/global/condenser deadlines and offset/heater cooldown timestamps. Enable/error state is also persisted. No `initial` values wipe existing holds. First installation starts disabled. Evidence timers for actuator opening, cold-room rescue and actual heater idle restart after process/reload or binding changes. Ordinary tuning preserves actuator/idle timers; rescue setting changes clear only rescue evidence. Version 0.1.1 retains the version-1 storage schema and merges new bounded presets into older config entries without changing their existing settings.
 
 ## Important Semantics
 
@@ -30,6 +30,7 @@ Memory persists the warm latch, recovery/global/condenser deadlines and offset/h
 - Output validation checks entity registry integration/register identity, common pump instance, numeric availability, min/max/step and a fixed model envelope. Configurable source selectors are not permission to write arbitrary number entities.
 - External ownership is checked per write, including after persistence awaits. A changed safety/priority decision during persistence cancels the proposed command. Network/service execution cannot be atomic with physical pump operation.
 - A pending register value is not physical operation. Normal duplicates wait for acknowledgement. Protective decreases and DHW release can supersede pending values. Timeouts and exceptions latch control off. No automatic alarm reset is available.
+- Warm-house rescue is a narrow offset exception, not a warm-latch reset. Each ready, actively heating room has its own continuous deficit timer (default 1 C for 1200 seconds after readiness) and 0.3 C exit hysteresis. Timers are not shared between rooms. Only known space-heating/OFF priority, valid inputs, no global/condenser/recovery hold and an existing warm latch permit qualification. DHW or loss of those conditions clears rescue evidence. Offset recovery remains bounded by demand, zone ceiling and a configurable nonpositive rescue ceiling, at one step per existing offset interval. Space-heating electric assistance stays blocked by the warm latch; frequency rules are unchanged. Status includes rescue reasons/room IDs, whereas downloadable diagnostics omit room IDs.
 - No YAML or `.storage` files belonging to another integration are edited. The only storage file written is the component's own versioned HA Store record.
 
 ## Validation Scope

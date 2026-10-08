@@ -54,6 +54,8 @@ def validate(config: dict) -> dict:
             raise ValueError("Zone ceilings must be nondecreasing")
     if config["brine_cold"] > config["brine_mild"] or config["reserve_a"] >= config["breaker_a"]:
         raise ValueError("Inconsistent thresholds")
+    if config["room_rescue_exit"] >= config["room_rescue_enter"]:
+        raise ValueError("Cold-room rescue exit must be below entry")
     for key in REQUIRED_SOURCES:
         if not config.get(key):
             raise ValueError(f"{key}: required")
@@ -161,6 +163,8 @@ class Memory:
 class Transient:
     zones_since: dict[str, float] = field(default_factory=dict)
     heater_idle_since: float | None = None
+    cold_since: dict[str, float] = field(default_factory=dict)
+    rescue_rooms: set[str] = field(default_factory=set)
 
 
 @dataclass
@@ -222,6 +226,7 @@ def evaluate(
             m.recovery_until = now + c["recovery_seconds"]
     warm = m.warm or now < m.recovery_until
     errors, ready = [], []
+    room_errors = {}
     zones_ok, all_off = bool(c["climates"]), bool(c["climates"])
     for entity_id in c["climates"]:
         zone = states.get(entity_id, Reading())
@@ -245,6 +250,7 @@ def evaluate(
         zones_ok &= valid
         if valid and zone.state == "heat":
             errors.append(target - current)
+            room_errors[entity_id] = target - current
         if valid and zone.state == "heat" and action == "heating":
             since = transient.zones_since.setdefault(entity_id, now)
             if now - since >= c["zone_delay"]:
@@ -258,7 +264,34 @@ def evaluate(
     error = 0.7 * max(errors) + 0.3 * sum(errors) / len(errors) if errors else 0
     zone_cap = c[f"zone_offset_{min(count, 5)}"]
     unsafe_space = global_hold or condenser_hold
-    protective = unsafe_space or warm or not sensors_ok or not zones_ok or not priority_ok
+    # A room-specific exception never clears the durable warm/fault/recovery holds.
+    # Evidence restarts on DHW, faults, missing inputs or loss of ready demand.
+    rescue_allowed = (
+        m.warm
+        and now >= m.recovery_until
+        and not unsafe_space
+        and sensors_ok
+        and zones_ok
+        and priority_ok
+        and not dhw
+    )
+    candidates = set(ready) if rescue_allowed else set()
+    for entity_id in set(transient.cold_since) | transient.rescue_rooms | candidates:
+        deficit = room_errors.get(entity_id, 0)
+        if entity_id not in candidates or deficit <= c["room_rescue_exit"] + 1e-6:
+            transient.cold_since.pop(entity_id, None)
+            transient.rescue_rooms.discard(entity_id)
+        elif entity_id not in transient.rescue_rooms:
+            if deficit >= c["room_rescue_enter"] - 1e-6:
+                since = transient.cold_since.setdefault(entity_id, now)
+                if now - since >= c["room_rescue_seconds"]:
+                    transient.rescue_rooms.add(entity_id)
+            else:
+                transient.cold_since.pop(entity_id, None)
+    rescue = bool(transient.rescue_rooms)
+    protective = (
+        unsafe_space or (warm and not rescue) or not sensors_ok or not zones_ok or not priority_ok
+    )
     desired_offset = (
         -10
         if unsafe_space
@@ -266,13 +299,15 @@ def evaluate(
         if protective
         else min(max(round(error * c["kp"] + c["heat_bias"]), -6), zone_cap)
     )
+    if rescue:
+        desired_offset = min(desired_offset, c["room_rescue_offset"])
     offset = get("offset_entity").numeric()
     targets: dict[str, float] = {}
     if offset is not None and (not dhw or unsafe_space):
-        if protective or offset > zone_cap:
+        if protective or offset > zone_cap or (rescue and offset > c["room_rescue_offset"]):
             targets["offset_entity"] = min(offset, desired_offset)
         elif now - m.last_offset >= c["offset_interval"]:
-            step = 3 if error > 1.5 else 2 if error > 0.7 else 1
+            step = 1 if rescue else 3 if error > 1.5 else 2 if error > 0.7 else 1
             targets["offset_entity"] = min(max(desired_offset, offset - step), offset + step)
     mains = [states.get(e, Reading()) for e in c["mains_sensors"]]
     mains_ok = len(mains) == 3 and all(
@@ -360,6 +395,7 @@ def evaluate(
             (global_hold, "global_fault_hold"),
             (condenser_hold, "condenser_space_hold"),
             (warm, "warm_guard"),
+            (rescue, "cold_room_rescue"),
             (not sensors_ok, "stale_or_missing_inputs"),
             (not priority_ok, "unknown_priority"),
             (not zones_ok, "unknown_zones"),
@@ -382,6 +418,11 @@ def evaluate(
             "circuit_power": power,
             "heater_idle_stable": idle_stable,
             "warm_guard": warm,
+            "cold_room_rescue": rescue,
+            "cold_room_rescue_entities": sorted(transient.rescue_rooms),
+            "cold_room_pending_entities": sorted(
+                set(transient.cold_since) - transient.rescue_rooms
+            ),
             "global_hold": global_hold,
             "condenser_hold": condenser_hold,
             "requested_heater": safe_add,
