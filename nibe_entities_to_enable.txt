@@ -1,6 +1,5 @@
 button.nibe_f1255_6_r_alarm_reset
 number.degree_minutes_16_bit_43005
-number.degree_minutes_32_bit_40940
 number.dm_between_add_steps_47209
 number.dm_start_add_with_shunt_47210
 number.dm_start_heating_47206

@@ -42,7 +42,7 @@
       }
     },
     "error": {
-      "invalid_configuration": "Invalid mapping or setting. Select at least one room and indoor sensor, exactly three distinct current phases, valid source domains, nondecreasing zone caps and values within their documented bounds.",
+      "invalid_configuration": "Invalid mapping or setting. Select at least one room and indoor sensor, exactly three distinct current phases, valid source domains, nondecreasing zone caps and values within their documented bounds. Cold-room rescue exit must be below entry.",
       "disable_first": "Turn off Control enabled before changing entity mappings or ownership."
     },
     "abort": {
@@ -119,11 +119,15 @@
       },
       "heating": {
         "title": "Heating response and warm guard",
-        "description": "Slow underfloor actuators require a conservative opening allowance (default eight minutes). Changes do not establish hydraulic safety. Protective decreases bypass the ordinary offset cooldown; warm recovery never restores an old cached offset. Offset alone cannot stop heating when the pump's minimum-supply target binds.",
+        "description": "Slow underfloor actuators require a conservative opening allowance (default eight minutes). While the house warm guard remains latched, a ready room at least 1 C below its own target for another 20 minutes can permit limited offset recovery. Rescue ends at a 0.3 C deficit or loss of valid ready demand; exit must be below entry. It ramps one step per interval, never above zero or the ready-zone ceiling, and never permits electric space heat through the warm guard. Fault/recovery holds, DHW and invalid inputs cancel rescue evidence; restart and rescue-tuning changes restart it. This is not hydraulic protection. Offset alone cannot stop heating when minimum supply binds.",
         "data": {
           "kp": "Proportional gain",
           "warm_enter": "Warm guard entry above target",
           "warm_exit": "Warm guard exit below target",
+          "room_rescue_enter": "Cold-room rescue entry deficit",
+          "room_rescue_exit": "Cold-room rescue exit deficit",
+          "room_rescue_seconds": "Sustained cold-room delay",
+          "room_rescue_offset": "Cold-room rescue offset ceiling",
           "recovery_seconds": "Warm guard recovery delay",
           "offset_interval": "Offset ramp interval",
           "zone_delay": "Actuator opening allowance",
@@ -192,7 +196,7 @@
       }
     },
     "error": {
-      "invalid_configuration": "Invalid mapping or setting. Select at least one room and indoor sensor, exactly three distinct current phases, valid source domains, nondecreasing zone caps and values within their documented bounds.",
+      "invalid_configuration": "Invalid mapping or setting. Select at least one room and indoor sensor, exactly three distinct current phases, valid source domains, nondecreasing zone caps and values within their documented bounds. Cold-room rescue exit must be below entry.",
       "disable_first": "Turn off Control enabled before changing entity mappings or ownership."
     }
   }

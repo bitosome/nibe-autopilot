@@ -7,6 +7,7 @@ from .entity import AutopilotEntity
 
 SENSORS = {
     "warm_guard": "Warm-room guard",
+    "cold_room_rescue": "Cold-room rescue",
     "global_hold": "Global fault hold",
     "condenser_hold": "Condenser space-heating hold",
     "mains_fresh": "Mains readings fresh",

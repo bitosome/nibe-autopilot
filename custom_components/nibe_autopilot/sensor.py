@@ -77,6 +77,7 @@ class AutopilotSensor(AutopilotEntity, SensorEntity):
                 ("allowance", "sensor", "electrical_allowance"),
                 ("ready_zones", "sensor", "ready_zones"),
                 ("warm_guard", "binary_sensor", "warm_guard"),
+                ("cold_room_rescue", "binary_sensor", "cold_room_rescue"),
                 ("mains_fresh", "binary_sensor", "mains_fresh"),
                 ("global_hold", "sensor", "global_until"),
                 ("condenser_hold", "sensor", "condenser_until"),
@@ -109,6 +110,9 @@ class AutopilotSensor(AutopilotEntity, SensorEntity):
                 "migration_ready",
                 "pending_writes",
                 "unavailable_outputs",
+                "cold_room_rescue",
+                "cold_room_rescue_entities",
+                "cold_room_pending_entities",
             )
         } | {
             "nibe_autopilot": True,
