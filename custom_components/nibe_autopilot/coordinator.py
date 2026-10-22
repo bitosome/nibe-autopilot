@@ -19,6 +19,7 @@ from homeassistant.util import dt as dt_util
 
 from .const import DOMAIN, LEGACY_HOLDS, LEGACY_IDS, LEGACY_WRITERS, OUTPUTS, SOURCES
 from .engine import Memory, Reading, Transient, evaluate, number, validate
+from .observations import Observations
 
 LOGGER = logging.getLogger(__name__)
 
@@ -39,6 +40,7 @@ class AutopilotCoordinator(DataUpdateCoordinator):
         self.config = validate(dict(entry.data) | dict(entry.options))
         self.memory = Memory()
         self.transient = Transient()
+        self.observations = Observations()
         self.enabled = False
         self.error = ""
         self.storage_error = False
@@ -67,6 +69,23 @@ class AutopilotCoordinator(DataUpdateCoordinator):
                     raise ValueError("Invalid enabled state")
                 self.enabled = stored["enabled"]
                 self.error = str(stored.get("error", ""))
+                saved_observations = stored.get("observations", {})
+                for key in ("last", "last_target"):
+                    record = (
+                        saved_observations.get(key, {})
+                        if isinstance(saved_observations, dict)
+                        else {}
+                    )
+                    if (
+                        isinstance(record, dict)
+                        and record.get("result")
+                        in ("target_reached_inferred", "target_not_observed", "failed_alarm_181")
+                        and all(
+                            number(record.get(k)) is not None
+                            for k in ("started", "ended", "target", "peak_bt6")
+                        )
+                    ):
+                        setattr(self.observations, key, record)
             else:
                 now = dt_util.utcnow().timestamp()
                 self.memory.last_offset = self.memory.last_add = now
@@ -194,7 +213,15 @@ class AutopilotCoordinator(DataUpdateCoordinator):
             raise HomeAssistantError(
                 "Persistent state unavailable; restore the controller storage before enabling control"
             )
-        value = {"memory": asdict(self.memory), "enabled": self.enabled, "error": self.error}
+        value = {
+            "memory": asdict(self.memory),
+            "enabled": self.enabled,
+            "error": self.error,
+            "observations": {
+                "last": self.observations.last,
+                "last_target": self.observations.last_target,
+            },
+        }
         if value == self._saved:
             return
         try:
@@ -277,6 +304,7 @@ class AutopilotCoordinator(DataUpdateCoordinator):
                 self.enabled = False
                 self.error = "bindings_changed_review_takeover"
                 self.transient = Transient()
+                self.observations = Observations()
                 self.pending.clear()
             elif any(
                 new[key] != self.config[key]
@@ -285,9 +313,12 @@ class AutopilotCoordinator(DataUpdateCoordinator):
                     "room_rescue_exit",
                     "room_rescue_seconds",
                     "room_rescue_offset",
+                    "room_rescue_mild_enter",
+                    "room_rescue_mild_seconds",
                 )
             ):
                 self.transient.cold_since.clear()
+                self.transient.mild_since.clear()
                 self.transient.rescue_rooms.clear()
             self.config = new
             await self.persist()
@@ -416,6 +447,9 @@ class AutopilotCoordinator(DataUpdateCoordinator):
                 if not self.storage_error:
                     await self.persist()
             decision = self._evaluate()
+            observed = self.observe(
+                not interlock and self.enabled and not self.error and self.started
+            )
             if not self.storage_error:
                 await self.persist()
             unavailable_outputs = [
@@ -424,22 +458,64 @@ class AutopilotCoordinator(DataUpdateCoordinator):
                 if (state := self.hass.states.get(self.config[key])) is None
                 or number(state.state) is None
             ]
-            return decision.data | {
-                "status": "blocked"
-                if self.error
-                or self.storage_error
-                or (self.enabled and (interlock or unavailable_outputs))
-                else "active"
-                if self.enabled and self.started
-                else "monitor",
-                "enabled": self.enabled,
-                "interlock": interlock or ("output_unavailable" if unavailable_outputs else None),
-                "unavailable_outputs": unavailable_outputs,
-                "error": self.error,
-                "migration_ready": imported,
-                "pending_writes": list(self.pending),
-                "memory": asdict(self.memory),
-            }
+            return (
+                decision.data
+                | observed
+                | {
+                    "status": "blocked"
+                    if self.error
+                    or self.storage_error
+                    or (self.enabled and (interlock or unavailable_outputs))
+                    else "active"
+                    if self.enabled and self.started
+                    else "monitor",
+                    "enabled": self.enabled,
+                    "interlock": interlock
+                    or ("output_unavailable" if unavailable_outputs else None),
+                    "unavailable_outputs": unavailable_outputs,
+                    "error": self.error,
+                    "migration_ready": imported,
+                    "pending_writes": list(self.pending),
+                    "memory": asdict(self.memory),
+                }
+            )
+
+    def observe(self, active):
+        """Discover optional telemetry only on the configured output's pump."""
+        registry = er.async_get(self.hass)
+        output = registry.async_get(self.config["offset_entity"])
+        snapshot = self.snapshot()
+        readings = {
+            key: snapshot.get(self.config[source], Reading())
+            for key, source in (
+                ("priority", "priority_entity"),
+                ("alarm", "alarm_entity"),
+                ("cap", "frequency_limit_entity"),
+            )
+        }
+        for role, source, register in (
+            ("actual", "actual_frequency_entity", "43136"),
+            ("temperature", "dhw_temperature_entity", "40014"),
+            ("stop", "periodic_stop_entity", "47046"),
+            ("periodic", "periodic_enabled_entity", "47050"),
+        ):
+            entity_id = self.config.get(source)
+            if not entity_id and output and output.config_entry_id:
+                matches = [
+                    e.entity_id
+                    for e in registry.entities.values()
+                    if e.platform == "nibe_heatpump"
+                    and e.config_entry_id == output.config_entry_id
+                    and str(e.unique_id).endswith(register)
+                    and not e.disabled_by
+                ]
+                entity_id = matches[0] if len(matches) == 1 else None
+            readings[role] = snapshot.get(entity_id, Reading())
+        if not self.hass.is_running:
+            readings = {}
+        return self.observations.update(
+            readings, dt_util.utcnow().timestamp(), self.config["pump_max_age"], active
+        )
 
     async def async_stop(self):
         self.closing = True

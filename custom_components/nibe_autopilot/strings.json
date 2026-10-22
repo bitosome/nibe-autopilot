@@ -29,6 +29,10 @@
         "title": "Electrical and source sensors",
         "description": "Select all three house-input current phases in amperes, not just the pump or EV circuits. Optional circuit power can be one dedicated power meter or three phase power sensors; these are summed with W/kW conversion. They are not used as electrical headroom. No produced heat or COP is fabricated.",
         "data": {
+          "actual_frequency_entity": "Actual compressor frequency (optional)",
+          "dhw_temperature_entity": "DHW loading temperature BT6 (optional)",
+          "periodic_stop_entity": "Periodic increase stop temperature (optional)",
+          "periodic_enabled_entity": "Periodic increase enabled (optional)",
           "outdoor_entity": "Outdoor temperature",
           "outdoor_fallback_entity": "Outdoor fallback BT1",
           "brine_entity": "Brine inlet BT10",
@@ -101,6 +105,10 @@
         "title": "Electrical and source sensors",
         "description": "Select all three house-input current phases in amperes, not just the pump or EV circuits. Optional circuit power can be one dedicated power meter or three phase power sensors; these are summed with W/kW conversion. They are not used as electrical headroom. No produced heat or COP is fabricated.",
         "data": {
+          "actual_frequency_entity": "Actual compressor frequency (optional)",
+          "dhw_temperature_entity": "DHW loading temperature BT6 (optional)",
+          "periodic_stop_entity": "Periodic increase stop temperature (optional)",
+          "periodic_enabled_entity": "Periodic increase enabled (optional)",
           "outdoor_entity": "Outdoor temperature",
           "outdoor_fallback_entity": "Outdoor fallback BT1",
           "brine_entity": "Brine inlet BT10",
@@ -119,7 +127,7 @@
       },
       "heating": {
         "title": "Heating response and warm guard",
-        "description": "Slow underfloor actuators require a conservative opening allowance (default eight minutes). While the house warm guard remains latched, a ready room at least 1 C below its own target for another 20 minutes can permit limited offset recovery. Rescue ends at a 0.3 C deficit or loss of valid ready demand; exit must be below entry. It ramps one step per interval, never above zero or the ready-zone ceiling, and never permits electric space heat through the warm guard. Fault/recovery holds, DHW and invalid inputs cancel rescue evidence; restart and rescue-tuning changes restart it. This is not hydraulic protection. Offset alone cannot stop heating when minimum supply binds.",
+        "description": "Slow underfloor actuators require a conservative opening allowance (default eight minutes). While the house warm guard remains latched, a ready room at least 1 C below its own target for another 20 minutes can permit limited offset recovery. A mild deficit of at least 0.5 C sustained for one hour can also qualify after the opening allowance. Both delays and thresholds are configurable. Rescue ends at a 0.3 C deficit or loss of valid ready demand; exit must be below entry. It ramps one step per interval, never above zero or the ready-zone ceiling, and never permits electric space heat through the warm guard. Fault/recovery holds, DHW and invalid inputs cancel rescue evidence; restart and rescue-tuning changes restart it. This is not hydraulic protection. Offset alone cannot stop heating when minimum supply binds.",
         "data": {
           "kp": "Proportional gain",
           "warm_enter": "Warm guard entry above target",
@@ -127,6 +135,8 @@
           "room_rescue_enter": "Cold-room rescue entry deficit",
           "room_rescue_exit": "Cold-room rescue exit deficit",
           "room_rescue_seconds": "Sustained cold-room delay",
+          "room_rescue_mild_enter": "Sustained mild room deficit",
+          "room_rescue_mild_seconds": "Mild room deficit delay",
           "room_rescue_offset": "Cold-room rescue offset ceiling",
           "recovery_seconds": "Warm guard recovery delay",
           "offset_interval": "Offset ramp interval",

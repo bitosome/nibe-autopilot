@@ -89,3 +89,35 @@ PYTHONPATH=. .venv/bin/python scripts/generate_integration_strings.py
 ```
 
 Tests use synthetic HA states and mocked pump services, never production equipment. The release ZIP contains only runtime integration files. Existing YAML, audit documents and historical tests remain in this repository as migration references, not as an additional controller to run alongside the integration. See [architecture](docs/integration-architecture.md).
+
+### Operational observations (0.1.2)
+
+- `Frequency limit exceeded` checks fresh Hz readings during confirmed space
+  heating while control is active. A stable priority/cap gets ten minutes to
+  settle; an excess greater than 3 Hz must then persist for five minutes. Missing
+  inputs make this diagnostic unavailable. DHW, cap changes and restarts reset
+  evidence. It warns only: it neither rewrites registers nor changes protection.
+  Register 47104 is NOT established as an effective physical speed limiter on
+  this installation. Do not use it as proof of hydraulic protection or quietness.
+- `DHW cycle observation` records observed DHW cycles against the periodic stop
+  temperature while periodic increase is enabled. `target_reached_inferred`
+  requires a fully observed transition into DHW below target, BT6 reaching the
+  unchanged target during DHW, and a subsequent valid exit. Alarm 181 reports
+  failure. Unknown inputs, gaps and restart discard in-flight evidence. The last
+  target-reaching record and its timestamp survive restart. Ordinary DHW may
+  also reach this target: no dedicated periodic-cycle identity or pump success
+  flag is available, and this is not proof of water hygiene.
+- Optional telemetry bindings are under Configure > Electrical and source
+  sensors. Unbound telemetry is discovered only among enabled register entities
+  on the same NIBE entry as the offset output; no entities are enabled for you.
+- A ready room at least 0.5 C below its own target for another continuous hour
+  can now qualify for the SAME bounded rescue as the existing 1 C/20-minute
+  rule. Both thresholds/delays are configurable. Offset still ramps by one step
+  per interval, never above zero or the ready-zone ceiling. Electric space heat
+  remains blocked by the warm latch. No higher frequency ceilings are introduced.
+
+The observer does not backfill recorder history. A blank last-target timestamp
+means no qualifying cycle has yet been observed by this version, not a failed
+previous cycle. EV schedules, electric limits, Auto mode and pump schedules are
+unchanged. Runtime rollback to 0.1.1 must keep the latest controller Store so
+protection holds are not lost; 0.1.1 ignores the added observation records.

@@ -8,6 +8,7 @@ from .entity import AutopilotEntity
 SENSORS = {
     "warm_guard": "Warm-room guard",
     "cold_room_rescue": "Cold-room rescue",
+    "frequency_limit_exceeded": "Frequency limit exceeded",
     "global_hold": "Global fault hold",
     "condenser_hold": "Condenser space-heating hold",
     "mains_fresh": "Mains readings fresh",
@@ -24,6 +25,13 @@ async def async_setup_entry(hass, entry, async_add_entities):
 
 class AutopilotBinary(AutopilotEntity, BinarySensorEntity):
     _attr_entity_category = EntityCategory.DIAGNOSTIC
+
+    @property
+    def available(self):
+        return super().available and (
+            self.key != "frequency_limit_exceeded"
+            or (self.coordinator.data or {}).get(self.key) is not None
+        )
 
     @property
     def is_on(self):

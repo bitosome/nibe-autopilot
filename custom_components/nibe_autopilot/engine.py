@@ -30,6 +30,7 @@ def number(value: Any) -> float | None:
 
 def validate(config: dict) -> dict:
     """Server-side validation also applies to native entity changes."""
+    explicit_mild = "room_rescue_mild_enter" in config
     config = DEFAULTS | config
     for key, setting in SETTINGS.items():
         value = number(config.get(key))
@@ -56,6 +57,16 @@ def validate(config: dict) -> dict:
         raise ValueError("Inconsistent thresholds")
     if config["room_rescue_exit"] >= config["room_rescue_enter"]:
         raise ValueError("Cold-room rescue exit must be below entry")
+    if not explicit_mild:
+        config["room_rescue_mild_enter"] = max(0.5, round(config["room_rescue_exit"] + 0.1, 1))
+    if (
+        not config["room_rescue_exit"]
+        < config["room_rescue_mild_enter"]
+        <= config["room_rescue_enter"]
+    ):
+        raise ValueError("Mild rescue entry must be above exit and no greater than cold entry")
+    if config["room_rescue_mild_seconds"] < config["room_rescue_seconds"]:
+        raise ValueError("Mild rescue delay must not be shorter than cold rescue delay")
     for key in REQUIRED_SOURCES:
         if not config.get(key):
             raise ValueError(f"{key}: required")
@@ -164,6 +175,7 @@ class Transient:
     zones_since: dict[str, float] = field(default_factory=dict)
     heater_idle_since: float | None = None
     cold_since: dict[str, float] = field(default_factory=dict)
+    mild_since: dict[str, float] = field(default_factory=dict)
     rescue_rooms: set[str] = field(default_factory=set)
 
 
@@ -276,12 +288,21 @@ def evaluate(
         and not dhw
     )
     candidates = set(ready) if rescue_allowed else set()
-    for entity_id in set(transient.cold_since) | transient.rescue_rooms | candidates:
+    for entity_id in (
+        set(transient.cold_since) | set(transient.mild_since) | transient.rescue_rooms | candidates
+    ):
         deficit = room_errors.get(entity_id, 0)
         if entity_id not in candidates or deficit <= c["room_rescue_exit"] + 1e-6:
             transient.cold_since.pop(entity_id, None)
+            transient.mild_since.pop(entity_id, None)
             transient.rescue_rooms.discard(entity_id)
         elif entity_id not in transient.rescue_rooms:
+            if deficit >= c["room_rescue_mild_enter"] - 1e-6:
+                since = transient.mild_since.setdefault(entity_id, now)
+                if now - since >= c["room_rescue_mild_seconds"]:
+                    transient.rescue_rooms.add(entity_id)
+            else:
+                transient.mild_since.pop(entity_id, None)
             if deficit >= c["room_rescue_enter"] - 1e-6:
                 since = transient.cold_since.setdefault(entity_id, now)
                 if now - since >= c["room_rescue_seconds"]:
@@ -421,7 +442,7 @@ def evaluate(
             "cold_room_rescue": rescue,
             "cold_room_rescue_entities": sorted(transient.rescue_rooms),
             "cold_room_pending_entities": sorted(
-                set(transient.cold_since) - transient.rescue_rooms
+                (set(transient.cold_since) | set(transient.mild_since)) - transient.rescue_rooms
             ),
             "global_hold": global_hold,
             "condenser_hold": condenser_hold,
