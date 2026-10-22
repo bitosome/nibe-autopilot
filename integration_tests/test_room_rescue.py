@@ -213,3 +213,29 @@ async def test_new_entities_and_tuning_reset_only_rescue_evidence(hass, installe
     assert c.transient.cold_since[c.config["climates"][0]] >= now
     assert c.transient.zones_since[c.config["climates"][0]] == now - 1000
     assert c.transient.heater_idle_since == now - 300
+
+
+def test_mild_deficit_requires_long_delay_and_preserves_ceiling(config):
+    t = Transient(zones_since={e: NOW - 480 for e in config["climates"]})
+    config["heat_bias"] = 3
+    for seconds in (0, 1200, 3599, 3600):
+        states = readings(config, NOW + seconds)
+        for e in config["climates"]:
+            states[e].attributes["current_temperature"] = 22
+        d = decide(config, t, NOW + seconds, states)
+        assert d.data["cold_room_rescue"] is (seconds == 3600)
+    assert d.memory.warm
+    assert d.targets["offset_entity"] == -9
+    assert d.targets["heater_limit_entity"] == 0
+    states[config["priority_entity"]].state = "HOT WATER"
+    decide(config, t, NOW + 3600, states)
+    assert not t.mild_since and not t.rescue_rooms
+
+
+def test_mild_deficit_interruption_restarts_evidence(config):
+    t = Transient(zones_since={e: NOW - 480 for e in config["climates"]})
+    for seconds, deficit in ((0, 0.5), (3599, 0.4), (3600, 0.5), (7199, 0.5)):
+        states = readings(config, NOW + seconds)
+        for e in config["climates"]:
+            states[e].attributes["current_temperature"] = 22.5 - deficit
+        assert not decide(config, t, NOW + seconds, states).data["cold_room_rescue"]

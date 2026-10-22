@@ -11,6 +11,8 @@ from .entity import AutopilotEntity
 
 SENSORS = {
     "status": ("Status", None),
+    "dhw_observation": ("DHW cycle observation", None),
+    "last_dhw_target_reached": ("Last observed DHW target reached", None),
     "indoor": ("Indoor temperature", "°C"),
     "ready_zones": ("Ready zone count", None),
     "demand_error": ("Room demand", "°C"),
@@ -38,9 +40,9 @@ class AutopilotSensor(AutopilotEntity, SensorEntity):
         super().__init__(coordinator, key, name)
         self._attr_native_unit_of_measurement = unit
         self._attr_icon = "mdi:heat-pump-outline"
-        if key in ("global_until", "condenser_until"):
+        if key in ("global_until", "condenser_until", "last_dhw_target_reached"):
             self._attr_device_class = SensorDeviceClass.TIMESTAMP
-        elif key not in ("status",):
+        elif key not in ("status", "dhw_observation"):
             self._attr_state_class = SensorStateClass.MEASUREMENT
         if key in ("circuit_power", "electrical_allowance", "target_heater"):
             self._attr_device_class = SensorDeviceClass.POWER
@@ -50,6 +52,9 @@ class AutopilotSensor(AutopilotEntity, SensorEntity):
     @property
     def native_value(self):
         data = self.coordinator.data or {}
+        if self.key == "last_dhw_target_reached":
+            stamp = data.get("last_target_reached_observation", {}).get("ended")
+            return datetime.fromtimestamp(stamp, timezone.utc) if stamp else None
         if self.key.endswith("_until"):
             stamp = data.get("memory", {}).get(self.key)
             return datetime.fromtimestamp(stamp, timezone.utc) if stamp else None
@@ -57,6 +62,12 @@ class AutopilotSensor(AutopilotEntity, SensorEntity):
 
     @property
     def extra_state_attributes(self):
+        if self.key == "dhw_observation":
+            data = self.coordinator.data or {}
+            return {
+                key: data.get(key)
+                for key in ("last_dhw_observation", "last_target_reached_observation")
+            } | {"pump_confirmed_success": False, "periodic_cycle_identified": False}
         if self.key != "status":
             return None
         c = self.coordinator
@@ -78,6 +89,9 @@ class AutopilotSensor(AutopilotEntity, SensorEntity):
                 ("ready_zones", "sensor", "ready_zones"),
                 ("warm_guard", "binary_sensor", "warm_guard"),
                 ("cold_room_rescue", "binary_sensor", "cold_room_rescue"),
+                ("frequency_limit_exceeded", "binary_sensor", "frequency_limit_exceeded"),
+                ("dhw_observation", "sensor", "dhw_observation"),
+                ("last_dhw_target_reached", "sensor", "last_dhw_target_reached"),
                 ("mains_fresh", "binary_sensor", "mains_fresh"),
                 ("global_hold", "sensor", "global_until"),
                 ("condenser_hold", "sensor", "condenser_until"),
@@ -113,6 +127,9 @@ class AutopilotSensor(AutopilotEntity, SensorEntity):
                 "cold_room_rescue",
                 "cold_room_rescue_entities",
                 "cold_room_pending_entities",
+                "frequency_observation",
+                "dhw_observation",
+                "last_target_reached_observation",
             )
         } | {
             "nibe_autopilot": True,

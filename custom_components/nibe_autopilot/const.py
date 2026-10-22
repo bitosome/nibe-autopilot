@@ -4,7 +4,7 @@ from dataclasses import dataclass
 
 DOMAIN = "nibe_autopilot"
 PLATFORMS = ["sensor", "binary_sensor", "number", "switch"]
-VERSION = "0.1.1"
+VERSION = "0.1.2"
 OUTPUTS = ("offset_entity", "heater_limit_entity", "frequency_limit_entity")
 CRITICAL_ALARMS = frozenset(
     [
@@ -94,11 +94,34 @@ SOURCES = {
     ),
     "brine_entity": ("Brine inlet BT10", "sensor", "sensor.eb100_ep14_bt10_brine_in_temp_40015"),
 }
+DIAGNOSTIC_SOURCES = {
+    "actual_frequency_entity": (
+        "Actual compressor frequency (optional)",
+        "sensor",
+        "sensor.compressor_frequency_actual_43136",
+    ),
+    "dhw_temperature_entity": (
+        "DHW loading temperature BT6 (optional)",
+        "sensor",
+        "sensor.bt6_hw_load_40014",
+    ),
+    "periodic_stop_entity": (
+        "Periodic increase stop temperature (optional)",
+        "number",
+        "number.stop_temperature_periodic_hw_47046",
+    ),
+    "periodic_enabled_entity": (
+        "Periodic increase enabled (optional)",
+        "switch",
+        "switch.periodic_hw_47050",
+    ),
+}
 REQUIRED_SOURCES = tuple(
     key
     for key in SOURCES
     if key not in ("outdoor_entity", "outdoor_fallback_entity", "brine_entity")
 )
+SOURCES.update(DIAGNOSTIC_SOURCES)
 
 
 @dataclass(frozen=True)
@@ -125,6 +148,12 @@ SETTINGS = {
     ),
     "room_rescue_seconds": Setting(
         "Sustained cold-room delay", 1200, 600, 3600, 60, "heating", "s"
+    ),
+    "room_rescue_mild_enter": Setting(
+        "Sustained mild room deficit", 0.5, 0.5, 1, 0.1, "heating", "°C"
+    ),
+    "room_rescue_mild_seconds": Setting(
+        "Mild room deficit delay", 3600, 1800, 7200, 60, "heating", "s"
     ),
     "room_rescue_offset": Setting("Cold-room rescue offset ceiling", 0, -4, 0, 1, "heating"),
     "recovery_seconds": Setting("Warm guard recovery delay", 480, 60, 1800, 60, "heating", "s"),

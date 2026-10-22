@@ -7,7 +7,15 @@ from homeassistant import config_entries
 from homeassistant.core import callback
 from homeassistant.helpers import selector
 
-from .const import DEFAULTS, DOMAIN, LEGACY_WRITERS, REQUIRED_SOURCES, SETTINGS, SOURCES
+from .const import (
+    DEFAULTS,
+    DIAGNOSTIC_SOURCES,
+    DOMAIN,
+    LEGACY_WRITERS,
+    REQUIRED_SOURCES,
+    SETTINGS,
+    SOURCES,
+)
 from .engine import number, validate
 
 GROUPS = (
@@ -114,6 +122,8 @@ def fields(group, values):
             )
         )
     if group == "inputs":
+        for key, (_, domain, _) in DIAGNOSTIC_SOURCES.items():
+            entity(key, domain)
         for key in ("outdoor_entity", "outdoor_fallback_entity", "brine_entity"):
             entity(key, "sensor")
         entity("mains_sensors", "sensor", True, True)
@@ -150,6 +160,8 @@ def fields(group, values):
 def merge_group(group, original, user_input):
     result = dict(original)
     if group == "inputs":
+        for key in DIAGNOSTIC_SOURCES:
+            result.pop(key, None)
         for key in ("outdoor_entity", "outdoor_fallback_entity", "brine_entity"):
             result.pop(key, None)
         result["power_sensors"] = []
