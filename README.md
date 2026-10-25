@@ -121,3 +121,12 @@ means no qualifying cycle has yet been observed by this version, not a failed
 previous cycle. EV schedules, electric limits, Auto mode and pump schedules are
 unchanged. Runtime rollback to 0.1.1 must keep the latest controller Store so
 protection holds are not lost; 0.1.1 ignores the added observation records.
+
+## Durable safety state (0.1.3)
+
+The native integration now uses atomic storage writes and detects the disk or
+serialization errors that Home Assistant's default Store logs without raising.
+If safety state cannot be saved, the existing fail-closed control path stops
+further commands. Cancelled saves retain the disk-write lock until the worker
+finishes, preventing an older snapshot from replacing a newer one. The storage
+key, schema, holds, tuning and control policy are unchanged.

@@ -13,13 +13,13 @@ from homeassistant.exceptions import HomeAssistantError
 from homeassistant.helpers import entity_registry as er
 from homeassistant.helpers.debounce import Debouncer
 from homeassistant.helpers.event import async_track_state_change_event
-from homeassistant.helpers.storage import Store
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
 from homeassistant.util import dt as dt_util
 
 from .const import DOMAIN, LEGACY_HOLDS, LEGACY_IDS, LEGACY_WRITERS, OUTPUTS, SOURCES
 from .engine import Memory, Reading, Transient, evaluate, number, validate
 from .observations import Observations
+from .storage import StrictStore
 
 LOGGER = logging.getLogger(__name__)
 
@@ -47,7 +47,7 @@ class AutopilotCoordinator(DataUpdateCoordinator):
         self.closing = False
         self.started = False
         self.lock = asyncio.Lock()
-        self.store = Store(hass, 1, f"{DOMAIN}.{entry.entry_id}")
+        self.store = StrictStore(hass, 1, f"{DOMAIN}.{entry.entry_id}")
         self.pending: dict[str, tuple[float, float]] = {}
         self._saved = None
         self._unsub = None

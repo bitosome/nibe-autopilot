@@ -4,7 +4,7 @@ from dataclasses import dataclass
 
 DOMAIN = "nibe_autopilot"
 PLATFORMS = ["sensor", "binary_sensor", "number", "switch"]
-VERSION = "0.1.2"
+VERSION = "0.1.3"
 OUTPUTS = ("offset_entity", "heater_limit_entity", "frequency_limit_entity")
 CRITICAL_ALARMS = frozenset(
     [

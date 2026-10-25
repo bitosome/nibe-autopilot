@@ -1,9 +1,12 @@
-from unittest.mock import AsyncMock
+from unittest.mock import AsyncMock, patch
 
 import pytest
 from homeassistant.exceptions import HomeAssistantError
 from homeassistant.helpers import entity_registry as er
+from homeassistant.helpers.storage import Store
 from homeassistant.util import dt as dt_util
+from homeassistant.util.file import WriteError
+from homeassistant.util.json import SerializationError
 
 from custom_components.nibe_autopilot.const import DOMAIN, LEGACY_HOLDS
 
@@ -146,6 +149,17 @@ async def test_storage_failure_blocks_every_output(hass, installed):
     c.config["ownership_reviewed"] = True
     with pytest.raises(HomeAssistantError, match="storage"):
         await c.async_set_enabled(True)
+    assert not c.enabled and c.storage_error and not calls
+
+
+@pytest.mark.parametrize("error", [WriteError("disk full"), SerializationError("invalid data")])
+async def test_native_storage_failures_are_not_silently_acknowledged(hass, installed, error):
+    entry, calls = installed
+    c = entry.runtime_data
+    c.config["ownership_reviewed"] = True
+    with patch.object(Store, "_async_write_data", AsyncMock(side_effect=error)):
+        with pytest.raises(HomeAssistantError, match="storage"):
+            await c.async_set_enabled(True)
     assert not c.enabled and c.storage_error and not calls
 
 
