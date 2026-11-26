@@ -286,3 +286,96 @@ async def test_corrupt_persistent_holds_fail_closed_on_reload(hass, installed):
     assert entry.runtime_data.enabled is False
     assert entry.runtime_data.data["status"] == "blocked"
     assert calls == []
+
+
+class WriteTimeoutException(Exception):
+    """Same name as nibe.exceptions.WriteTimeoutException, which HA wraps."""
+
+
+def unacknowledged(hass, calls, *, apply):
+    """Pump write whose acknowledgement times out; optionally the value still lands."""
+
+    async def dispatch(_self, domain, service, service_data=None, **kwargs):
+        calls.append(dict(service_data))
+        if apply:
+            state = hass.states.get(service_data["entity_id"])
+            hass.states.async_set(state.entity_id, str(service_data["value"]), state.attributes)
+        try:
+            raise WriteTimeoutException("Timeout waiting for write feedback")
+        except WriteTimeoutException as exc:
+            raise HomeAssistantError("Timeout while writing coil") from exc
+
+    return dispatch
+
+
+async def write_frequency_50(hass, c):
+    async with c.lock:
+        hass.states.async_set(c.config["priority_entity"], "HEAT")
+        output = hass.states.get(c.config["frequency_limit_entity"])
+        hass.states.async_set(output.entity_id, "85", output.attributes)
+        c.pending.clear()
+        c.write_timeouts.clear()
+        await c._write("frequency_limit_entity", 50)
+
+
+async def test_unacknowledged_write_confirmed_by_readback_keeps_control(
+    hass, installed, monkeypatch
+):
+    entry, calls = installed
+    await enable(hass, entry)
+    c = entry.runtime_data
+    monkeypatch.setattr(type(hass.services), "async_call", unacknowledged(hass, calls, apply=True))
+    calls.clear()
+    await write_frequency_50(hass, c)
+    assert calls == [{"entity_id": c.config["frequency_limit_entity"], "value": 50}]
+    assert c.enabled and not c.error
+    assert c.pending["frequency_limit_entity"][0] == 50
+    async with c.lock:
+        await c._write("frequency_limit_entity", 50)
+    assert "frequency_limit_entity" not in c.pending
+    assert "frequency_limit_entity" not in c.write_timeouts
+    frequency = c.config["frequency_limit_entity"]
+    assert [call for call in calls if call["entity_id"] == frequency] == [
+        {"entity_id": frequency, "value": 50}
+    ]
+
+
+async def test_unacknowledged_write_is_resent_once_then_stops_at_deadline(
+    hass, installed, monkeypatch
+):
+    entry, calls = installed
+    await enable(hass, entry)
+    c = entry.runtime_data
+    frequency = c.config["frequency_limit_entity"]
+    monkeypatch.setattr(type(hass.services), "async_call", unacknowledged(hass, calls, apply=False))
+    calls.clear()
+    await write_frequency_50(hass, c)
+    first_deadline = c.pending["frequency_limit_entity"][1]
+    for _ in range(3):
+        async with c.lock:
+            await c._write("frequency_limit_entity", 50)
+    sent = [call for call in calls if call["entity_id"] == frequency]
+    assert len(sent) == 2  # first write plus exactly one resend
+    assert c.pending["frequency_limit_entity"] == (50, first_deadline)
+    assert c.write_timeouts["frequency_limit_entity"] == 2
+    c.pending["frequency_limit_entity"] = (50, dt_util.utcnow().timestamp() - 1)
+    with pytest.raises(HomeAssistantError, match="five minutes"):
+        async with c.lock:
+            await c._write("frequency_limit_entity", 50)
+    assert len([call for call in calls if call["entity_id"] == frequency]) == 2
+
+
+async def test_refused_write_still_stops_control_immediately(hass, installed, monkeypatch):
+    entry, calls = installed
+    await enable(hass, entry)
+    c = entry.runtime_data
+
+    async def refuse(_self, domain, service, service_data=None, **kwargs):
+        calls.append(dict(service_data))
+        raise HomeAssistantError("Value out of range")
+
+    monkeypatch.setattr(type(hass.services), "async_call", refuse)
+    calls.clear()
+    with pytest.raises(HomeAssistantError, match="range"):
+        await write_frequency_50(hass, c)
+    assert "frequency_limit_entity" not in c.pending

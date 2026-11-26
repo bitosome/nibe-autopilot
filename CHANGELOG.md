@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.4 - 2026-11-26
+
+- A pump write whose acknowledgement times out (NibeGW `WriteTimeoutException`)
+  no longer stops control at once. The value stays pending, is resent once, and
+  readback within the original five-minute deadline confirms it; if it never reads
+  back, control stops as before. Refused or other failed writes still stop control
+  immediately. In production a single missed acknowledgement had latched control
+  off for 46 hours.
+
 ## 0.1.2 - 2026-10-22
 
 - Read-only sustained frequency-limit overrun diagnostic with settling, freshness,
