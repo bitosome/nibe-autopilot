@@ -23,6 +23,21 @@ from .storage import StrictStore
 
 LOGGER = logging.getLogger(__name__)
 
+# A pump write whose acknowledgement times out is resent once; after that only
+# readback within the original five-minute deadline can confirm it.
+MAX_WRITE_TIMEOUTS = 2
+
+
+def is_write_timeout(exc: BaseException) -> bool:
+    """True when the pump did not acknowledge a write in time (not a refusal)."""
+    seen = set()
+    while exc is not None and id(exc) not in seen:
+        seen.add(id(exc))
+        if isinstance(exc, TimeoutError) or type(exc).__name__ == "WriteTimeoutException":
+            return True
+        exc = exc.__cause__ or exc.__context__
+    return False
+
 
 class AutopilotCoordinator(DataUpdateCoordinator):
     """Observe existing HA entities; never create a second Modbus connection."""
@@ -49,6 +64,7 @@ class AutopilotCoordinator(DataUpdateCoordinator):
         self.lock = asyncio.Lock()
         self.store = StrictStore(hass, 1, f"{DOMAIN}.{entry.entry_id}")
         self.pending: dict[str, tuple[float, float]] = {}
+        self.write_timeouts: dict[str, int] = {}
         self._saved = None
         self._unsub = None
 
@@ -280,6 +296,7 @@ class AutopilotCoordinator(DataUpdateCoordinator):
                         await self.persist()
                         raise
                 self.pending.clear()
+                self.write_timeouts.clear()
         await self.async_refresh()
 
     async def async_change_settings(self, patch: dict):
@@ -306,6 +323,7 @@ class AutopilotCoordinator(DataUpdateCoordinator):
                 self.transient = Transient()
                 self.observations = Observations()
                 self.pending.clear()
+                self.write_timeouts.clear()
             elif any(
                 new[key] != self.config[key]
                 for key in (
@@ -364,12 +382,21 @@ class AutopilotCoordinator(DataUpdateCoordinator):
         pending = self.pending.get(key)
         if pending and abs(current - pending[0]) < 0.005:
             self.pending.pop(key)
+            self.write_timeouts.pop(key, None)
             pending = None
+        retry = False
         if pending:
             urgent = (key == "frequency_limit_entity" and target == 120 and pending[0] < 120) or (
                 target < pending[0]
             )
-            if not urgent:
+            # One resend of the same value after an unacknowledged write, inside its deadline.
+            retry = (
+                not urgent
+                and self.write_timeouts.get(key) == 1
+                and abs(target - pending[0]) < 0.005
+                and now < pending[1]
+            )
+            if not urgent and not retry:
                 if now >= pending[1]:
                     raise HomeAssistantError("Pump write was not confirmed within five minutes")
                 return
@@ -395,7 +422,10 @@ class AutopilotCoordinator(DataUpdateCoordinator):
             if latest.targets.get(key) != target:
                 await self.persist()
                 return
-        self.pending[key] = (target, now + 300)
+        if not retry:
+            self.write_timeouts.pop(key, None)
+        # A resend keeps the original deadline, so an unconfirmed value still stops control.
+        self.pending[key] = (target, pending[1] if retry else now + 300)
         try:
             await self.hass.services.async_call(
                 "number",
@@ -403,9 +433,23 @@ class AutopilotCoordinator(DataUpdateCoordinator):
                 {"entity_id": self.config[key], "value": target},
                 blocking=True,
             )
-        except Exception:
+        except Exception as exc:
+            count = self.write_timeouts.get(key, 0) + 1
+            if is_write_timeout(exc) and count <= MAX_WRITE_TIMEOUTS:
+                # The value may have been applied; readback or the deadline decides.
+                self.write_timeouts[key] = count
+                LOGGER.warning(
+                    "Write of %s=%s was not acknowledged (%s/%s); awaiting readback",
+                    self.config[key],
+                    target,
+                    count,
+                    MAX_WRITE_TIMEOUTS,
+                )
+                return
             self.pending.pop(key, None)
+            self.write_timeouts.pop(key, None)
             raise
+        self.write_timeouts.pop(key, None)
 
     async def _async_update_data(self):
         async with self.lock:
@@ -436,6 +480,7 @@ class AutopilotCoordinator(DataUpdateCoordinator):
                         actual = number(state.state) if state else None
                         if actual is not None and abs(actual - value) < 0.005:
                             self.pending.pop(key)
+                            self.write_timeouts.pop(key, None)
                         elif dt_util.utcnow().timestamp() >= deadline:
                             raise HomeAssistantError(
                                 "Pump write was not confirmed within five minutes"
